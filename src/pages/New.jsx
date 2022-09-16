@@ -1,8 +1,8 @@
 import styled, { keyframes } from "styled-components";
-import Loader from "../Loader";
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 import { useState } from "react";
-import {userAuth} from '../../context/AuthContext'
+import {userAuth} from '../context/AuthContext'
 import { useNavigate } from "react-router-dom";
 
 const upColorPicker = keyframes`
@@ -142,6 +142,23 @@ const NewNote = styled.div`
     border-radius: 0.25rem;
     border: solid 3px #3b3b3b;
   }
+
+  textarea{
+  width:100%;
+  height:49vh;
+  resize:none;
+  padding-bottom:2rem;
+  background-color:transparent;
+  border:none;
+  outline:none;
+  font-size:1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color:#fff4;
+  }
+
+  textarea:focus{
+  color:whitesmoke;
+  }
 `;
 
 const New = () => {
@@ -159,13 +176,14 @@ const New = () => {
   };
 
   const handdleAddDoc = async () => {
-    await AddDoc(title,body,color,Date.now()) 
+    const date = new Date().toLocaleDateString();
+    await AddDoc(title,body,color,date) 
     navigate('/')
   }
 
   return (
     <NewNote>
-      <Loader />
+      <Loader start='.5s'/>
       <header>
         <Link to="/" className="icon-button">
           <span className="material-symbols-outlined">arrow_back_ios_new</span>
@@ -192,7 +210,7 @@ const New = () => {
       )}
       <div className="form">
         <span className="new-note title" role="textbox" contentEditable onKeyUp={(e)=>setTitle(e.target.textContent)}></span>
-        <span className="new-note body" role="textbox" contentEditable onKeyUp={(e)=>setBody(e.target.textContent)}></span>
+        <textarea onChange={(e)=>setBody(e.target.value)} placeholder='Type something...'></textarea>
       </div>
     </NewNote>
   );

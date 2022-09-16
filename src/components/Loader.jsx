@@ -6,7 +6,7 @@ const fadeOut = keyframes`
 `;
 
 const LoaderContainer = styled.div`
-  position: absolute;
+  position: fixed;
   z-index:3;
   top: 0;
   left: 0;
@@ -17,12 +17,12 @@ const LoaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(0.5rem);
-  animation: ${fadeOut} 0.3s 1s ease both;
+  animation: ${fadeOut} 0.3s ${props=>props.start} ease both;
 `;
 
-const Loader = () => {
+const Loader = (props) => {
   return (
-    <LoaderContainer>
+    <LoaderContainer start={props.start}>
       <span className="loader"></span>
     </LoaderContainer>
   );

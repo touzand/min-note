@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const WellcomeContainer = styled.div`
   padding: 2rem;
@@ -47,6 +48,7 @@ const WellcomeContainer = styled.div`
 const Wellcome = () => {
   return (
     <WellcomeContainer>
+      <Loader start='.5s'/>
       <div>
         <span>wellcome to</span>
         <h1>Min note</h1>

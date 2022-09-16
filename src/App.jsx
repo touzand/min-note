@@ -5,7 +5,7 @@ import Notes from './pages/Notes'
 import Signin from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Wellcome from './pages/Wellcome'
-import New from './components/Notes/New'
+import New from './pages/New'
 import View from './pages/View'
 
 function App() {

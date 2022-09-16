@@ -27,17 +27,17 @@ const NotesGeneralContainer = styled.div`
   .masonry-grid {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    gap: 0.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    columns:5 120px;
+    column-gap:.5rem;
   }
 
   .add {
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
     text-decoration: none;
     color: whitesmoke;
+    background-color: #2b2b2b;
   }
 `;
 
@@ -66,11 +66,11 @@ const Notes = ({ children }) => {
       setData(querySnapshot.docs.map((doc)=>({...doc.data(),id:doc.id})))
     }
       AddDoc()
-  },[data])
+  },[])
 
   return (
     <NotesGeneralContainer>
-      <Loader />
+      <Loader start='1s' />
       <header>
         <h1>Notes</h1>
         <div className="header-subsection">

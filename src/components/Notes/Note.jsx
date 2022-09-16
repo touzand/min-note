@@ -7,6 +7,8 @@ padding:1rem;
 border-radius:.25rem;
 text-align:left;
 color:#141414;
+margin-bottom:.5rem;
+break-inside:avoid;
 
 *{
 margin:0;

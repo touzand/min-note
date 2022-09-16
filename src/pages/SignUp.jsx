@@ -67,7 +67,7 @@ const SignUp = () => {
 
   return (
     <SignUpContainer>
-      <Loader />
+      <Loader start='.3s'/>
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>
       </Link>
