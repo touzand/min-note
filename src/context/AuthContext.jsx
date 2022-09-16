@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { auth,db } from "../firebase.config";
 import { useContext, createContext } from "react";
-import {getDocs,addDoc,collection} from 'firebase/firestore'
+import {getDocs,addDoc,collection,updateDoc,doc, deleteDoc} from 'firebase/firestore'
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -47,6 +47,19 @@ export const AuthContextProvider = ({ children }) => {
     return getDocs(collection(db,user.uid))
   }
 
+  const UpdateDoc = (coll,docu,bod,titl) => {
+    const docRef = doc(db,coll,docu) 
+
+    updateDoc(docRef,{
+      title:titl,
+      body:bod,
+    })
+  }
+
+  const DeleteDoc = (docu) => {
+    deleteDoc(doc(db,user.uid,docu))
+  }
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -65,7 +78,9 @@ export const AuthContextProvider = ({ children }) => {
         SignInWithEmail,
         CreateUserWithEmail,
         GetDocs,
-        AddDoc
+        AddDoc,
+        UpdateDoc,
+        DeleteDoc
       }}
     >
       {children}

@@ -10,6 +10,11 @@ const upColorPicker = keyframes`
 100%{top:0;opacity:1;}
 `;
 
+const BlueColorPickerFade = keyframes`
+0%{backdrop-filter: blur(0rem)}
+100%{backdrop-filter: blur(0.5rem)}
+`
+
 const ColorPicker = styled.div`
   position: absolute;
   z-index: 3;
@@ -21,8 +26,9 @@ const ColorPicker = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(0.5rem);
+  animation:${ BlueColorPickerFade } .4s linear both;
   padding: 2rem;
+  cursor:pointer;
 
   div {
     background-color: transparent;
@@ -99,6 +105,15 @@ const NewNote = styled.div`
     content: "Title";
     margin: 3rem 0;
     line-height: 1;
+    font-weight:bold;
+
+    font-size: 2rem;
+    content: "Title";
+    margin: 3rem 0;
+    line-height: 1;
+    font-weight: bold;
+    margin: 21.44px 0;
+    outline: none;
   }
 
   .title[contenteditable]:empty::before {
@@ -209,7 +224,7 @@ const New = () => {
         </ColorPicker>
       )}
       <div className="form">
-        <span className="new-note title" role="textbox" contentEditable onKeyUp={(e)=>setTitle(e.target.textContent)}></span>
+        <span active className="new-note title" role="textbox" contentEditable onKeyUp={(e)=>setTitle(e.target.textContent)}></span>
         <textarea onChange={(e)=>setBody(e.target.value)} placeholder='Type something...'></textarea>
       </div>
     </NewNote>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Note from "../components/Notes/Note";
 import { Link } from "react-router-dom";
-import {collection, getDocs, query} from "firebase/firestore";
+import {collection, doc, getDocs, orderBy, query} from "firebase/firestore";
 import {db} from '../firebase.config'
 
 const NotesGeneralContainer = styled.div`
@@ -67,6 +67,10 @@ const Notes = ({ children }) => {
     }
       AddDoc()
   },[])
+
+  //const docRef = collection(db, user.uid)
+  //const q = query(docRef,orderBy(`${user.uid}`,'desc'))
+  //console.log(q)
 
   return (
     <NotesGeneralContainer>
