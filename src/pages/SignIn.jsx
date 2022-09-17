@@ -5,6 +5,7 @@ import Loader from "../components/Loader";
 import { userAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Notification from "../components/Notification";
 
 const SignInContainer = styled.div`
   padding: 2rem;
@@ -58,6 +59,10 @@ const SignInContainer = styled.div`
     line-height: 0px;
     margin: 0px 8px;
   }
+
+  input[type='submit']:active{
+  transform:scale(.9);
+  }
 `;
 
 const SignIn = () => {
@@ -65,6 +70,7 @@ const SignIn = () => {
   const [password, SetPassword] = useState("");
   const navigate = useNavigate();
   const { googleSigIn, user, SignInWithEmail } = userAuth();
+  const [error,setError] = useState(false)
 
   const handdleSignInWithGoogle = async () => {
     try {
@@ -79,7 +85,6 @@ const SignIn = () => {
     try {
       await SignInWithEmail(email, password);
     } catch (err) {
-      console.log(err);
     }
   };
 
@@ -95,6 +100,11 @@ const SignIn = () => {
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>
       </Link>
+      {error &&
+      <Notification>
+        Esta cuenta no esta registrada
+      </Notification>
+      }
       <div className="signin">
         <h3>Welcom back</h3>
         <form onSubmit={handdleSignInWithEmail}>
