@@ -85,6 +85,7 @@ const SignIn = () => {
     try {
       await SignInWithEmail(email, password);
     } catch (err) {
+      console.log(err);
     }
   };
 

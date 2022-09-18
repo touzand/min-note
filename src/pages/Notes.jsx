@@ -7,6 +7,7 @@ import Note from "../components/Notes/Note";
 import { Link } from "react-router-dom";
 import {collection, doc, getDocs, orderBy, query} from "firebase/firestore";
 import {db} from '../firebase.config'
+import { useEffectOnce } from '../hooks/useEffectOnce'
 
 const NotesGeneralContainer = styled.div`
   padding: 1rem;
@@ -60,17 +61,14 @@ const Notes = ({ children }) => {
     }
   }, [user]);
 
-  useEffect(()=>{
     const AddDoc = async () => {
       const querySnapshot = await getDocs(collection(db,`${user.uid}`))
       setData(querySnapshot.docs.map((doc)=>({...doc.data(),id:doc.id})))
     }
+
+  useEffect(()=>{
       AddDoc()
   },[])
-
-  //const docRef = collection(db, user.uid)
-  //const q = query(docRef,orderBy(`${user.uid}`,'desc'))
-  //console.log(q)
 
   return (
     <NotesGeneralContainer>
