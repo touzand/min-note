@@ -21,6 +21,7 @@ font-size:.8rem;
 
 h4{
 margin-bottom:1rem;
+line-height:1.1rem;
 }
 
 a{

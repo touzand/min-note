@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { db } from "../firebase.config";
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 const DeleteMessageFade = keyframes`
 0%{opacity:0}
 100%{opacity:1;}
-`
+`;
 
 const DeleteMessage = styled.div`
   position: fixed;
@@ -25,7 +25,7 @@ const DeleteMessage = styled.div`
   align-items: center;
   background-color: #1b1b1b50;
   backdrop-filter: blur(0.5rem);
-  animation:${DeleteMessageFade} .2s ease both;
+  animation: ${DeleteMessageFade} 0.2s ease both;
 
   .content-container {
     background-color: #2b2b2b;
@@ -48,11 +48,11 @@ const DeleteMessage = styled.div`
         background-color: #1b1b1b;
         border: none;
         color: whitesmoke;
-        font-weight:bold;
+        font-weight: bold;
       }
 
-      button:nth-child(1){
-      background-color:#dc3545;
+      button:nth-child(1) {
+        background-color: #dc3545;
       }
     }
   }
@@ -141,7 +141,7 @@ const View = () => {
   const [title, setTitle] = useState(data.title);
   const [body, setBody] = useState("");
   const [deleteMessage, setDeleteMessage] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const AddDoc = async () => {
@@ -164,32 +164,47 @@ const View = () => {
   const handdleDelete = async () => {
     try {
       await DeleteDoc(id);
-      await navigate('/')
+      await navigate("/");
     } catch (err) {
       console.log(err);
     }
-    setDeleteMessage(false)
+    setDeleteMessage(false);
   };
+
+  useEffect(()=>{
+    (()=>{
+      if(activeEdit){document.querySelector('.title').textContent = title ? title : data.title
+      }else{
+        return
+      }
+
+    })()
+  },[activeEdit])
 
   return (
     <ViewContainer>
       <Loader start=".5s" />
-      {deleteMessage && <DeleteMessage>
-        <div className="content-container">
-          <p>Are you sure that do u wanna delete this note?</p>
-          <div>
-            <button onClick={handdleDelete}>Yes</button>
-            <button onClick={()=>setDeleteMessage(false)}>No</button>
+      {deleteMessage && (
+        <DeleteMessage>
+          <div className="content-container">
+            <p>Are you sure that do u wanna delete this note?</p>
+            <div>
+              <button onClick={handdleDelete}>Yes</button>
+              <button onClick={() => setDeleteMessage(false)}>No</button>
+            </div>
           </div>
-        </div>
-      </DeleteMessage>
-      }
+        </DeleteMessage>
+      )}
       <header>
         <Link to="/" className="icon-button">
           <span className="material-symbols-outlined">arrow_back_ios_new</span>
         </Link>
         <div>
-          <div to="/" className="icon-button" onClick={()=>setDeleteMessage(true)}>
+          <div
+            to="/"
+            className="icon-button"
+            onClick={() => setDeleteMessage(true)}
+          >
             <span className="material-symbols-outlined">delete</span>
           </div>
           {activeEdit ? (
@@ -210,12 +225,13 @@ const View = () => {
       {activeEdit ? (
         <div className="note-content edit-enable">
           <span
-            className="new-note title"
+          className="new-note title"
+          id='title'
             role="textbox"
             contentEditable
             onKeyUp={(e) => setTitle(e.target.textContent)}
+            span={data.title}
           >
-            {data.title}
           </span>
           <span>{data.date}</span>
           <textarea

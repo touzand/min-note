@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
-import { auth,db } from "../firebase.config";
+import { auth, db } from "../firebase.config";
 import { useContext, createContext } from "react";
-import {getDocs,addDoc,collection,updateDoc,doc, deleteDoc} from 'firebase/firestore'
+import {
+  getDocs,
+  addDoc,
+  collection,
+  updateDoc,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -15,50 +22,75 @@ const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [firstUser, setFirstUser] = useState(true);
+  const [createUserError,setCreateUserError] = useState('')
+  const [signInError,setSignInError] = useState('')
+  const [googleSignError,setGoogleSignError] = useState('')
 
-  const googleSigIn = () => {
+  const googleSigIn = async () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
+    try {
+    await signInWithRedirect(auth, provider);
+    } catch (e) {
+      setGoogleSignError(e.message)
+      setTimeout(()=>{
+        setGoogleSignError('')
+      },5000)
+    }
   };
 
   const SignOut = () => {
     signOut(auth);
   };
 
-  const SignInWithEmail = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const SignInWithEmail = async (email, password) => {
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+    } catch (e) {
+      setSignInError(e.message)
+      setTimeout(()=>{
+      setSignInError('')
+      },5000)
+    }
   };
 
-  const CreateUserWithEmail = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+  const CreateUserWithEmail = async (email, password) => {
+    try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    } catch (e) {
+      setCreateUserError(e.message)
+      setTimeout(()=>{
+        setCreateUserError('')
+      },5000)
+    }
   };
 
-  const AddDoc = (title,body,bg,date) => {
-    const docRef = addDoc(collection(db,user.uid),{
+  const AddDoc = (title, body, bg, date) => {
+    const docRef = addDoc(collection(db, user.uid), {
       title,
       body,
       bg,
-      date
-    }) 
+      date,
+    });
     console.log(docRef.id);
-  }
+  };
 
   const GetDocs = () => {
-    return getDocs(collection(db,user.uid))
-  }
+    return getDocs(collection(db, user.uid));
+  };
 
-  const UpdateDoc = (coll,docu,bod,titl) => {
-    const docRef = doc(db,coll,docu) 
+  const UpdateDoc = (coll, docu, bod, titl) => {
+    const docRef = doc(db, coll, docu);
 
-    updateDoc(docRef,{
-      title:titl,
-      body:bod,
-    })
-  }
+    updateDoc(docRef, {
+      title: titl,
+      body: bod,
+    });
+  };
 
   const DeleteDoc = (docu) => {
-    deleteDoc(doc(db,user.uid,docu))
-  }
+    deleteDoc(doc(db, user.uid, docu));
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -68,6 +100,10 @@ export const AuthContextProvider = ({ children }) => {
       unSubscribe();
     };
   }, []);
+
+  useEffect(()=>{
+    
+  },[])
 
   return (
     <AuthContext.Provider
@@ -80,7 +116,10 @@ export const AuthContextProvider = ({ children }) => {
         GetDocs,
         AddDoc,
         UpdateDoc,
-        DeleteDoc
+      DeleteDoc,
+        createUserError,
+        signInError,
+        googleSignError
       }}
     >
       {children}

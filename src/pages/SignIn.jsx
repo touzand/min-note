@@ -69,8 +69,7 @@ const SignIn = () => {
   const [email, SetEmail] = useState("");
   const [password, SetPassword] = useState("");
   const navigate = useNavigate();
-  const { googleSigIn, user, SignInWithEmail } = userAuth();
-  const [error,setError] = useState(false)
+  const { googleSigIn, user, SignInWithEmail,signInError,googleSignError } = userAuth();
 
   const handdleSignInWithGoogle = async () => {
     try {
@@ -101,11 +100,8 @@ const SignIn = () => {
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>
       </Link>
-      {error &&
-      <Notification>
-        Esta cuenta no esta registrada
-      </Notification>
-      }
+      {signInError && <Notification>{signInError}</Notification>}
+      {googleSignError && <Notification>{googleSignError}</Notification>}
       <div className="signin">
         <h3>Welcom back</h3>
         <form onSubmit={handdleSignInWithEmail}>

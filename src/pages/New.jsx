@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 import { useState } from "react";
 import {userAuth} from '../context/AuthContext'
 import { useNavigate } from "react-router-dom";
+import Notification from "../components/Notification";
 
 const upColorPicker = keyframes`
 0%{top:5rem;opacity:0}
@@ -177,12 +178,14 @@ const NewNote = styled.div`
 `;
 
 const New = () => {
+  const [noteError,setNoteError] = useState('');
   const [color, setColor] = useState("#C78DD0");
   const [title,setTitle] = useState('')
   const [body,setBody] = useState('')
   const [visible, setVisible] = useState(false);
   const {user,AddDoc} = userAuth()
   const navigate = useNavigate()
+  
    
   const handdleColorPicker = (e) => {
     setColor(e.target.getAttribute("value"));
@@ -191,13 +194,21 @@ const New = () => {
   };
 
   const handdleAddDoc = async () => {
+    if(title && body && color){
     const date = new Date().toLocaleDateString();
     await AddDoc(title,body,color,date) 
     navigate('/')
+    }else{
+      setNoteError('You cannot save a note without title or without body')
+      setTimeout(()=>{
+        setNoteError('')
+      },5000)
+    }
   }
 
   return (
     <NewNote>
+      {noteError && <Notification>{noteError}</Notification>}
       <Loader start='.5s'/>
       <header>
         <Link to="/" className="icon-button">
@@ -213,7 +224,7 @@ const New = () => {
         </div>
       </header>
       {visible && (
-        <ColorPicker>
+        <ColorPicker onClick={()=>setVisible(false)}>
           <div>
             <article value="#F5A38A" onClick={handdleColorPicker}></article>
             <article value="#f3c57d" onClick={handdleColorPicker}></article>
@@ -224,7 +235,7 @@ const New = () => {
         </ColorPicker>
       )}
       <div className="form">
-        <span active className="new-note title" role="textbox" contentEditable onKeyUp={(e)=>setTitle(e.target.textContent)}></span>
+        <span className="new-note title" role="textbox" contentEditable onKeyUp={(e)=>setTitle(e.target.textContent)}></span>
         <textarea onChange={(e)=>setBody(e.target.value)} placeholder='Type something...'></textarea>
       </div>
     </NewNote>

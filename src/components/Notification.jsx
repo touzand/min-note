@@ -1,26 +1,28 @@
 import styled,{keyframes} from "styled-components";
 
 const PopUp = keyframes`
-0%{right:100%;}
-10%{right:0%;}
-90%{right:0%;}
-100%{right:100%;}
+0%{transform:translate(-50%,-50%) scale(.5)}
+5%{transform:translate(-50%,-50%) scale(1)}
+100%{transform:translate(-50%,-50%) scale(1)}
 `
 
 const NotificationContainer = styled.div`
 position:absolute;
 width:300px;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 height:auto;
 top:5rem;
-right:100%;
-background-color:#1b1b1b;
+background-color:#dc3545;
+font-weight:bold;
 text-align:center;
-padding:2rem;
+padding:1rem;
 outline:solid thin whitesmoke;
 outline-offset:-3px;
 animation:${PopUp} 4s ease-in-out both;
 border-radius:.5rem;
-margin:1rem;
+margin-top:3rem;
 `;
 
 const Notification = ({ children }) => {

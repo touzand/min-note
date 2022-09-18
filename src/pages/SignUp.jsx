@@ -5,6 +5,7 @@ import { userAuth } from "../context/AuthContext";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
+import Notification from "../components/Notification";
 
 const SignUpContainer = styled.div`
   padding: 2rem;
@@ -34,21 +35,21 @@ const SignUpContainer = styled.div`
     border: solid 0.5px whitesmoke;
     color: whitesmoke;
   }
+
+  input[type='submit']:active{
+  transform:scale(.9);
+  }
 `;
 
 const SignUp = () => {
-  const { user, CreateUserWithEmail, googleSigIn } = userAuth();
+  const { user, CreateUserWithEmail, googleSigIn,createUserError,googleSignError } = userAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handdleSignUpWithEmail = async (e) => {
-    e.preventDefault();
-    try {
-      await CreateUserWithEmail(email, password);
-    } catch (err) {
-      console.log(err);
-    }
+    e.preventDefault()
+      CreateUserWithEmail(email, password);
   };
 
   const handdleSignInWithGoogle = async () => {
@@ -67,6 +68,8 @@ const SignUp = () => {
 
   return (
     <SignUpContainer>
+      {createUserError && <Notification>{createUserError}</Notification>}
+      {googleSignError && <Notification>{googleSignError}</Notification>}
       <Loader start='.3s'/>
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>

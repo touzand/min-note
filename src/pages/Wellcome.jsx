@@ -8,7 +8,7 @@ const WellcomeContainer = styled.div`
   flex-direction: column;
   justify-content: end;
   height: 100vh;
-  width:100vw;
+  width:100%;
   gap: 3rem;
 
   h1 {
