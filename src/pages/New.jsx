@@ -5,6 +5,7 @@ import { useState } from "react";
 import {userAuth} from '../context/AuthContext'
 import { useNavigate } from "react-router-dom";
 import Notification from "../components/Notification";
+import {useEffect} from 'react'
 
 const upColorPicker = keyframes`
 0%{top:5rem;opacity:0}
@@ -77,6 +78,9 @@ const ColorPicker = styled.div`
 const NewNote = styled.div`
   padding: 1rem;
   z-index: 2;
+  background-color:${props=>props.bg};
+  min-height:100vh;
+  transition:background-color 1s ease;
 
   header {
     display: flex;
@@ -115,11 +119,12 @@ const NewNote = styled.div`
     font-weight: bold;
     margin: 21.44px 0;
     outline: none;
+    color:#fff8;
   }
 
   .title[contenteditable]:empty::before {
     content: "Title";
-    color: gray;
+    color: #fff9;
   }
 
   .date {
@@ -136,7 +141,7 @@ const NewNote = styled.div`
 
   .body[contenteditable]:empty::before {
     content: "Type something...";
-    color: gray;
+    color: #fff8;
   }
 
   .icon-button {
@@ -169,7 +174,11 @@ const NewNote = styled.div`
   outline:none;
   font-size:1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color:#fff4;
+  color:whitesmoke;
+  }
+
+  textarea::placeholder{
+  color:#fff8;
   }
 
   textarea:focus{
@@ -182,6 +191,7 @@ const New = () => {
   const [color, setColor] = useState("#C78DD0");
   const [title,setTitle] = useState('')
   const [body,setBody] = useState('')
+  const [textContrast,setTextContrast] = useState('whitesmoke')
   const [visible, setVisible] = useState(false);
   const {user,AddDoc} = userAuth()
   const navigate = useNavigate()
@@ -196,7 +206,7 @@ const New = () => {
   const handdleAddDoc = async () => {
     if(title && body && color){
     const date = new Date().toLocaleDateString();
-    await AddDoc(title,body,color,date) 
+    await AddDoc(title,body,color,date,textContrast) 
     navigate('/')
     }else{
       setNoteError('You cannot save a note without title or without body')
@@ -206,8 +216,19 @@ const New = () => {
     }
   }
 
+  useEffect(()=>{
+    if(color === '#7BD5E1' || color === '#DDE595' ){
+      setTextContrast('#1b1b1b')
+      console.log('negro');
+    }
+    else if( color === '#F5A38A' || color === '#F3C57D' || color === '#C78DD0'  ){
+      setTextContrast('whitesmoke')
+      console.log('blanco');
+    }
+  },[color])
+
   return (
-    <NewNote>
+    <NewNote bg={color}>
       {noteError && <Notification>{noteError}</Notification>}
       <Loader start='.5s'/>
       <header>

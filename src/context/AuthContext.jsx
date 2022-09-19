@@ -65,12 +65,13 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const AddDoc = (title, body, bg, date) => {
+  const AddDoc = (title, body, bg, date,text) => {
     const docRef = addDoc(collection(db, user.uid), {
       title,
       body,
       bg,
       date,
+      text,
     });
     console.log(docRef.id);
   };

@@ -60,6 +60,8 @@ const DeleteMessage = styled.div`
 
 const ViewContainer = styled.div`
   padding: 1rem;
+  background-color:${props=>props.bg};
+  min-height:100vh;
 
   header {
     display: flex;
@@ -71,13 +73,21 @@ const ViewContainer = styled.div`
     }
   }
 
+  .note-content{
+  color:${props=>props.textContrast};
+  }
+
   h1 {
     line-height: 2rem;
     line-break: break-word;
   }
 
-  span {
-    color: grey;
+  .date {
+    color: inherit;
+  }
+
+  span{
+  color:whitesmoke;
   }
 
   a {
@@ -182,7 +192,7 @@ const View = () => {
   },[activeEdit])
 
   return (
-    <ViewContainer>
+    <ViewContainer bg={data.bg} textContrast={data.text}>
       <Loader start=".5s" />
       {deleteMessage && (
         <DeleteMessage>
@@ -242,8 +252,9 @@ const View = () => {
         </div>
       ) : (
         <div className="note-content">
+          {console.log(data.text)}
           <h1>{title ? title : data.title}</h1>
-          <span>{data.date}</span>
+          <span className="date">{data.date}</span>
           <p className="body">{body ? body : data.body}</p>
         </div>
       )}

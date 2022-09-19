@@ -139,7 +139,7 @@ const Notes = ({ children, props }) => {
     })();
   }, [user]);
 
-  const dataFilter = data.filter((nota)=> nota.title.toLowerCase().includes(query.toLowerCase()))
+  const dataFilter = data.filter((nota)=> nota.title.toLowerCase().includes(query.toLowerCase())) && data.filter((nota)=> nota.body.toLowerCase().includes(query.toLowerCase())) 
 
   return (
     <NotesGeneralContainer>
