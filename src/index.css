@@ -25,11 +25,14 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
+  color:whitesmoke;
 }
 
 .icon-button span {
   font-size: 2rem;
 }
+
 form {
   display: flex;
   flex-direction: column;

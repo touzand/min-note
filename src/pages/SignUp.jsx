@@ -21,11 +21,15 @@ const SignUpContainer = styled.div`
     font-weight: bold;
   }
 
+  h3 {
+    color: #5b5b5b;
+  }
+
   .subsection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
 
   .submit {
@@ -36,20 +40,45 @@ const SignUpContainer = styled.div`
     color: whitesmoke;
   }
 
-  input[type='submit']:active{
-  transform:scale(.9);
+  input[type="submit"]:active {
+    transform: scale(0.95);
+  }
+
+  .hr-sect {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #fff2;
+    margin: 8px 0px;
+  }
+
+  .hr-sect:before,
+  .hr-sect:after {
+    content: "";
+    flex-grow: 1;
+    background: #fff2;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 8px;
   }
 `;
 
 const SignUp = () => {
-  const { user, CreateUserWithEmail, googleSigIn,createUserError,googleSignError } = userAuth();
+  const {
+    user,
+    CreateUserWithEmail,
+    googleSigIn,
+    createUserError,
+    googleSignError,
+  } = userAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handdleSignUpWithEmail = async (e) => {
-    e.preventDefault()
-      CreateUserWithEmail(email, password);
+    e.preventDefault();
+    CreateUserWithEmail(email, password);
   };
 
   const handdleSignInWithGoogle = async () => {
@@ -70,7 +99,7 @@ const SignUp = () => {
     <SignUpContainer>
       {createUserError && <Notification>{createUserError}</Notification>}
       {googleSignError && <Notification>{googleSignError}</Notification>}
-      <Loader start='.3s'/>
+      <Loader start=".3s" />
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>
       </Link>

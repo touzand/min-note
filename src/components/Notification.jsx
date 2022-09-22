@@ -25,13 +25,5 @@ border-radius:.5rem;
 margin-top:3rem;
 `;
 
-const Notification = ({ children }) => {
-
-  return (
-    <NotificationContainer>
-      {children}
-    </NotificationContainer>
-  );
-};
-
+const Notification = ({ children }) => <NotificationContainer>{children}</NotificationContainer>
 export default Notification;

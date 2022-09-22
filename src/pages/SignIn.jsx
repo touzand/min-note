@@ -18,7 +18,7 @@ const SignInContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
 
   a {
@@ -27,18 +27,26 @@ const SignInContainer = styled.div`
     font-weight: bold;
   }
 
-  .signin {
+  .signin-form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .submit {
+  h3{
+  color:#5b5b5b;
+  }
+
+  .submit-button {
     padding: 0.5rem;
     background-color: transparent;
     border: none;
     border: solid 0.5px whitesmoke;
     color: whitesmoke;
+  }
+
+  .submit-button:active {
+    transform: scale(0.95);
   }
 
   .hr-sect {
@@ -59,17 +67,14 @@ const SignInContainer = styled.div`
     line-height: 0px;
     margin: 0px 8px;
   }
-
-  input[type='submit']:active{
-  transform:scale(.9);
-  }
 `;
 
 const SignIn = () => {
   const [email, SetEmail] = useState("");
   const [password, SetPassword] = useState("");
   const navigate = useNavigate();
-  const { googleSigIn, user, SignInWithEmail,signInError,googleSignError } = userAuth();
+  const { googleSigIn, user, SignInWithEmail, signInError, googleSignError } =
+    userAuth();
 
   const handdleSignInWithGoogle = async () => {
     try {
@@ -96,13 +101,13 @@ const SignIn = () => {
 
   return (
     <SignInContainer>
-      <Loader start='.3s'/>
+      <Loader start=".3s" />
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>
       </Link>
       {signInError && <Notification>{signInError}</Notification>}
       {googleSignError && <Notification>{googleSignError}</Notification>}
-      <div className="signin">
+      <div className="signin-form">
         <h3>Welcom back</h3>
         <form onSubmit={handdleSignInWithEmail}>
           <div className="input">
@@ -121,7 +126,7 @@ const SignIn = () => {
               onChange={(e) => SetPassword(e.target.value)}
             />
           </div>
-          <input type="submit" value="Sig in" className="submit" />
+          <input type="submit" value="Sig in" className="submit-button" />
         </form>
       </div>
       <div className="subsection">
