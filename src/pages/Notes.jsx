@@ -18,9 +18,28 @@ const downHeader = keyframes`
 100%{top:0}
 `;
 
+const transitionExpand = keyframes`
+0%{width:0%}
+100%{width:100%}
+`
+
 const NotesGeneralContainer = styled.div`
   padding: 1rem;
   width: 100%;
+
+  .add-background-transition{
+  background-color:#c78dd0;
+  top:0;
+  bottom:0;
+  right:0;
+  width:0%;
+  position:absolute;
+  z-index:2;
+  }
+
+  .background-transition-expand{
+  animation:${transitionExpand} .5s ease-in both;
+  }
 
   header {
     display: flex;
@@ -144,8 +163,16 @@ const Notes = ({ children }) => {
       nota.body.toLowerCase().includes(query.toLowerCase())
     );
 
+  const handdleAdd = () => {
+    document.querySelector('.add-background-transition').classList.add('background-transition-expand')
+    setTimeout(()=>{
+      navigate('/new')
+    },600)
+  }
+
   return (
     <NotesGeneralContainer>
+      <div className="add-background-transition"></div>
       <Loader start="1s" />
       {searchVisible && (
         <div className="search-container">
@@ -153,12 +180,11 @@ const Notes = ({ children }) => {
             autoFocus
             className="search-input"
             role="textbox"
-            contentEditable
             defaultValue={query}
             onKeyUp={(e) => setQuery(e.target.value)}
             placeholder="Search something..."
-          ></textarea>
-          <div className="icon-button" onClick={() => setSearchVisible(false)}>
+          />
+          <div className="icon-button" onClick={() => setSearchVisible(false)} translate='no'>
             <span className="material-symbols-outlined">check</span>
           </div>
         </div>
@@ -168,11 +194,12 @@ const Notes = ({ children }) => {
         <div className="header-subsection">
           <div
             className="icon-button search"
-            onClick={() => setSearchVisible(true)}
+          onClick={() => setSearchVisible(true)}
+          translate='no'
           >
             <span className="material-symbols-outlined">search</span>
           </div>
-          <div className="icon-button" onClick={handdleSignOut}>
+          <div className="icon-button" onClick={handdleSignOut} translate='no'>
             <span className="material-symbols-outlined">logout</span>
           </div>
         </div>
@@ -196,9 +223,9 @@ const Notes = ({ children }) => {
           <h3 className="no-notes">You dont have any notes :(</h3>
         )}
       </div>
-      <Link to="/new" className="icon-button add">
+      <button onClick={handdleAdd} className="icon-button add" translate='no'>
         <span className="material-symbols-outlined">add</span>
-      </Link>
+      </button>
       <div>{children}</div>
     </NotesGeneralContainer>
   );

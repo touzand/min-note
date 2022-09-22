@@ -78,6 +78,19 @@ const NewNote = styled.div`
   min-height: 100vh;
   transition: background-color 1s ease;
 
+  header *,.form{
+  opacity:.0;
+  transition:all .8s ease-in-out;
+  }
+
+  .start{
+  opacity:1 !important;
+  }
+
+  .start *{
+  opacity:1 !important;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -192,12 +205,19 @@ const New = () => {
     }
   }, [color]);
 
+  useEffect(()=>{
+    setTimeout(()=>{
+    document.querySelector('header').classList.add('start')
+      document.querySelector('.form').classList.add('start')
+      document.querySelector('.color-picker-container').classList.add('start')
+    },100)
+  },[])
+
   return (
-    <NewNote bg={color} tc={textContrast}>
+    <NewNote bg={color} tc={textContrast} id='new'>
       {noteError && <Notification>{noteError}</Notification>}
-      <Loader start=".5s" />
       <header>
-        <Link to="/" className="icon-button">
+        <Link to="/" className="icon-button" translate='no'>
           <span className="material-symbols-outlined">arrow_back_ios_new</span>
         </Link>
         <div className="header-subsection">
@@ -209,14 +229,14 @@ const New = () => {
               }}
             ></div>
           </div>
-          <div className="icon-button" onClick={handdleAddDoc}>
+          <div className="icon-button" onClick={handdleAddDoc} translate='no'>
             <span className="material-symbols-outlined">push_pin</span>
           </div>
         </div>
       </header>
       {visible && (
         <ColorPicker onClick={() => setVisible(false)}>
-          <div>
+          <div className="color-picker-container">
             <article value="#F5A38A" onClick={handdleColorPicker}></article>
             <article value="#f3C57D" onClick={handdleColorPicker}></article>
             <article value="#DDE595" onClick={handdleColorPicker}></article>

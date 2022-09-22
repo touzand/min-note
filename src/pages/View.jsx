@@ -125,6 +125,10 @@ const ViewContainer = styled.div`
     color: ${(props) => props.tc}70;
   }
 
+  .date{
+    color: ${(props) => props.tc};
+  }
+
   .date-edit {
     color: ${(props) => props.tc}70;
   }
@@ -219,11 +223,12 @@ const View = () => {
         </DeleteMessage>
       )}
       <header>
-        <Link to="/" className="icon-button">
+        <Link to="/" className="icon-button" translate='no'>
           <span className="material-symbols-outlined">arrow_back_ios_new</span>
         </Link>
         <div>
-          <div
+          <div 
+            translate='no'
             to="/"
             className="icon-button"
             onClick={() => setDeleteMessage(true)}
@@ -231,14 +236,15 @@ const View = () => {
             <span className="material-symbols-outlined">delete</span>
           </div>
           {activeEdit ? (
-            <div to="/" className="icon-button" onClick={handdleUpdate}>
+            <div to="/" className="icon-button" onClick={handdleUpdate} translate='no'>
               <span className="material-symbols-outlined">save</span>
             </div>
           ) : (
             <div
               to="/"
               className="icon-button"
-              onClick={() => setActiveEdit(!activeEdit)}
+            onClick={() => setActiveEdit(!activeEdit)}
+             translate='no'
             >
               <span className="material-symbols-outlined">edit</span>
             </div>
