@@ -1,4 +1,4 @@
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import {HashRouter as Router,Routes,Route} from 'react-router-dom'
 import {AuthContextProvider} from './context/AuthContext'
 import Protect from './components/Protect'
 import Notes from './pages/Notes'

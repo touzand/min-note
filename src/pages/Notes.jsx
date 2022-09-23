@@ -126,6 +126,10 @@ const NotesGeneralContainer = styled.div`
     }
   }
 
+  .desktop-add{
+  display:none;
+  }
+
   @media (min-width:800px){
   display:flex;
   flex-direction:column;
@@ -145,6 +149,14 @@ const NotesGeneralContainer = styled.div`
   width:1000px;
   max-height:auto;
   //position:relative;
+  }
+
+  .mobile-add{
+  display:none;
+  }
+
+  .desktop-add{
+  display:flex;
   }
   }
 `;
@@ -227,6 +239,9 @@ const Notes = ({ children }) => {
       <header className={`${searchVisible ? "up-header" : "down-header"}`}>
         <h1>Notes</h1>
         <div className="header-subsection">
+      <button onClick={handdleAdd} className="icon-button desktop-add" translate='no'>
+        <span className="material-symbols-outlined">add</span>
+      </button>
           <div
             className="icon-button search"
           onClick={() => setSearchVisible(true)}
@@ -258,7 +273,7 @@ const Notes = ({ children }) => {
           <h3 className="no-notes">You dont have any notes :(</h3>
         )}
       </div>
-      <button onClick={handdleAdd} className="icon-button add" translate='no'>
+      <button onClick={handdleAdd} className="icon-button add mobile-add" translate='no'>
         <span className="material-symbols-outlined">add</span>
       </button>
       <div>{children}</div>
