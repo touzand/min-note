@@ -78,17 +78,18 @@ const NewNote = styled.div`
   min-height: 100vh;
   transition: background-color 1s ease;
 
-  header *,.form{
-  opacity:.0;
-  transition:all .8s ease-in-out;
+  header *,
+  .form {
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
   }
 
-  .start{
-  opacity:1 !important;
+  .start {
+    opacity: 1 !important;
   }
 
-  .start *{
-  opacity:1 !important;
+  .start * {
+    opacity: 1 !important;
   }
 
   header {
@@ -136,9 +137,9 @@ const NewNote = styled.div`
   .color-picker div {
     width: 48px;
     height: 48px;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     border: solid 3px #3b3b3b;
-    cursor:pointer;
+    cursor: pointer;
   }
 
   .body {
@@ -161,6 +162,22 @@ const NewNote = styled.div`
 
   .body:focus {
     color: ${(props) => props.tc};
+  }
+
+  @media (min-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header {
+      justify-content: space-between;
+    }
+
+    .general-container {
+      width: 700px;
+      max-height: auto;
+      //position:relative;
+    }
   }
 `;
 
@@ -205,58 +222,63 @@ const New = () => {
     }
   }, [color]);
 
-  useEffect(()=>{
-    setTimeout(()=>{
-    document.querySelector('header').classList.add('start')
-      document.querySelector('.form').classList.add('start')
-      document.querySelector('.color-picker-container').classList.add('start')
-    },100)
-  },[])
+  useEffect(() => {
+    setTimeout(() => {
+      document.querySelector("header").classList.add("start");
+      document.querySelector(".form").classList.add("start");
+      document.querySelector(".color-picker-container").classList.add("start");
+    }, 100);
+  }, []);
 
   return (
-    <NewNote bg={color} tc={textContrast} id='new'>
+    <NewNote bg={color} tc={textContrast} id="new">
       {noteError && <Notification>{noteError}</Notification>}
-      <header>
-        <Link to="/" className="icon-button" translate='no'>
-          <span className="material-symbols-outlined">arrow_back_ios_new</span>
-        </Link>
-        <div className="header-subsection">
-          <div className="color-picker" onClick={() => setVisible(true)}>
-            <div
-              style={{
-                backgroundColor: color,
-                transition: "background-color 1s ease",
-              }}
-            ></div>
+      <div className="general-container">
+        <header>
+          <Link to="/" className="icon-button" translate="no">
+            <span className="material-symbols-outlined">
+              arrow_back_ios_new
+            </span>
+          </Link>
+          <div className="header-subsection">
+            <div className="color-picker" onClick={() => setVisible(true)}>
+              <div
+                style={{
+                  backgroundColor: color,
+                  transition: "background-color 1s ease",
+                }}
+              ></div>
+            </div>
+            <div className="icon-button" onClick={handdleAddDoc} translate="no">
+              <span className="material-symbols-outlined">push_pin</span>
+            </div>
           </div>
-          <div className="icon-button" onClick={handdleAddDoc} translate='no'>
-            <span className="material-symbols-outlined">push_pin</span>
-          </div>
+        </header>
+        {visible && (
+          <ColorPicker onClick={() => setVisible(false)}>
+            <div className="color-picker-container">
+              <article value="#F5A38A" onClick={handdleColorPicker}></article>
+              <article value="#f3C57D" onClick={handdleColorPicker}></article>
+              <article value="#DDE595" onClick={handdleColorPicker}></article>
+              <article value="#7BD5E1" onClick={handdleColorPicker}></article>
+              <article value="#C78DD0" onClick={handdleColorPicker}></article>
+            </div>
+          </ColorPicker>
+        )}
+        <div className="form">
+          <span
+            className="note-component title"
+            role="textbox"
+            contentEditable
+            onKeyUp={(e) => setTitle(e.target.textContent)}
+          ></span>
+          <textarea
+            onChange={(e) => setBody(e.target.value)}
+            placeholder="Type something..."
+            className="note-component body"
+            spellcheck="false"
+          ></textarea>
         </div>
-      </header>
-      {visible && (
-        <ColorPicker onClick={() => setVisible(false)}>
-          <div className="color-picker-container">
-            <article value="#F5A38A" onClick={handdleColorPicker}></article>
-            <article value="#f3C57D" onClick={handdleColorPicker}></article>
-            <article value="#DDE595" onClick={handdleColorPicker}></article>
-            <article value="#7BD5E1" onClick={handdleColorPicker}></article>
-            <article value="#C78DD0" onClick={handdleColorPicker}></article>
-          </div>
-        </ColorPicker>
-      )}
-      <div className="form">
-        <span
-          className="note-component title"
-          role="textbox"
-          contentEditable
-          onKeyUp={(e) => setTitle(e.target.textContent)}
-        ></span>
-        <textarea
-          onChange={(e) => setBody(e.target.value)}
-          placeholder="Type something..."
-          className="note-component body"
-        ></textarea>
       </div>
     </NewNote>
   );

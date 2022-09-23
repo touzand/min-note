@@ -82,6 +82,32 @@ const WellcomeContainer = styled.div`
     flex-direction: column;
     gap: 2rem;
   }
+
+  @media (min-width:800px){
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  .figure-logo{
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  }
+
+  .main-content{
+  justify-content:center;
+  align-items:center;
+  gap:3rem;
+
+  a{
+  width:200px;
+  }
+
+  a:hover{
+  transform:scale(1.1);
+  }
+  }
+  }
 `;
 
 const Wellcome = () => {
@@ -99,7 +125,6 @@ const Wellcome = () => {
       </div>
       <div className="main-content">
         <div>
-          <span>wellcome to</span>
           <h1>Min note</h1>
           <p>A minimal note app where you can save any idea quick and easy</p>
         </div>

@@ -125,7 +125,7 @@ const ViewContainer = styled.div`
     color: ${(props) => props.tc}70;
   }
 
-  .date{
+  .date {
     color: ${(props) => props.tc};
   }
 
@@ -155,6 +155,22 @@ const ViewContainer = styled.div`
 
   textarea:focus {
     color: ${(props) => props.tc};
+  }
+
+  @media (min-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header {
+      justify-content: space-between;
+    }
+
+    .general-container {
+      width: 700px;
+      max-height: auto;
+      //position:relative;
+    }
   }
 `;
 
@@ -222,62 +238,72 @@ const View = () => {
           </div>
         </DeleteMessage>
       )}
-      <header>
-        <Link to="/" className="icon-button" translate='no'>
-          <span className="material-symbols-outlined">arrow_back_ios_new</span>
-        </Link>
-        <div>
-          <div 
-            translate='no'
-            to="/"
-            className="icon-button"
-            onClick={() => setDeleteMessage(true)}
-          >
-            <span className="material-symbols-outlined">delete</span>
-          </div>
-          {activeEdit ? (
-            <div to="/" className="icon-button" onClick={handdleUpdate} translate='no'>
-              <span className="material-symbols-outlined">save</span>
-            </div>
-          ) : (
+      <div className="general-container">
+        <header>
+          <Link to="/" className="icon-button" translate="no">
+            <span className="material-symbols-outlined">
+              arrow_back_ios_new
+            </span>
+          </Link>
+          <div>
             <div
+              translate="no"
               to="/"
               className="icon-button"
-            onClick={() => setActiveEdit(!activeEdit)}
-             translate='no'
+              onClick={() => setDeleteMessage(true)}
             >
-              <span className="material-symbols-outlined">edit</span>
+              <span className="material-symbols-outlined">delete</span>
             </div>
-          )}
-        </div>
-      </header>
-      {activeEdit ? (
-        <div className="note-content edit-enable">
-          <span
-            className="new-note title"
-            id="title"
-            role="textbox"
-            contentEditable
-            onKeyUp={(e) => setTitle(e.target.textContent)}
-            span={data.title}
-          ></span>
-          <span className={`${activeEdit ? "date-edit" : "date"}`}>
-            {data.date}
-          </span>
-          <textarea
-            className="body"
-            defaultValue={data.body}
-            onKeyUp={(e) => setBody(e.target.value)}
-            placeholder="Type something..."
-          ></textarea>
-        </div>
-      ) : (
-        <div className="note-content">
-          <h1>{title ? title : data.title}</h1>
-          <span className="date">{data.date}</span>
-          <p className="body">{body ? body : data.body}</p>
-        </div>
-      )}
+            {activeEdit ? (
+              <div
+                to="/"
+                className="icon-button"
+                onClick={handdleUpdate}
+                translate="no"
+              >
+                <span className="material-symbols-outlined">save</span>
+              </div>
+            ) : (
+              <div
+                to="/"
+                className="icon-button"
+                onClick={() => setActiveEdit(!activeEdit)}
+                translate="no"
+              >
+                <span className="material-symbols-outlined">edit</span>
+              </div>
+            )}
+          </div>
+        </header>
+        {activeEdit ? (
+          <div className="note-content edit-enable">
+            <span
+              className="new-note title"
+              id="title"
+              role="textbox"
+              contentEditable
+              onKeyUp={(e) => setTitle(e.target.textContent)}
+              span={data.title}
+            ></span>
+            <span className={`${activeEdit ? "date-edit" : "date"}`}>
+              {data.date}
+            </span>
+            <textarea
+              className="body"
+              defaultValue={data.body}
+              onKeyUp={(e) => setBody(e.target.value)}
+              placeholder="Type something..."
+              spellcheck="false"
+            ></textarea>
+          </div>
+        ) : (
+          <div className="note-content">
+            <h1>{title ? title : data.title}</h1>
+            <span className="date">{data.date}</span>
+            <p className="body">{body ? body : data.body}</p>
+          </div>
+        )}
+      </div>
     </ViewContainer>
   );
 };

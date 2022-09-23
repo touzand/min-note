@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const link = {
+  color:'red',
+  textDecoration:'none',
+  display:'block'
+}
+
 const NoteContaier = styled.article`
   background-color: ${(props) => props.bg};
   padding: 1rem;
@@ -32,12 +38,12 @@ const NoteContaier = styled.article`
 
 const Note = (props) => {
   return (
-    <NoteContaier bg={props.bg}>
-      <h4>
-        <Link to={`/note/${props.id}`}>{props.title}</Link>
-      </h4>
-      <span>{props.date}</span>
-    </NoteContaier>
+    <Link to={`/note/${props.id}`} style={link}>
+      <NoteContaier bg={props.bg}>
+        <h4>{props.title}</h4>
+        <span>{props.date}</span>
+      </NoteContaier>
+    </Link>
   );
 };
 

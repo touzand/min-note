@@ -67,6 +67,19 @@ const SignInContainer = styled.div`
     line-height: 0px;
     margin: 0px 8px;
   }
+
+  @media (min-width:800px){
+  align-items:center;
+
+  a:nth-child(2){
+  visibility:hidden;
+  }
+
+  input[type='submit']:hover{
+  transform:scale(1.1);
+  cursor:pointer;
+  }
+  }
 `;
 
 const SignIn = () => {

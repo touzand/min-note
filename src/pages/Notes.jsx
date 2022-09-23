@@ -125,6 +125,28 @@ const NotesGeneralContainer = styled.div`
       }
     }
   }
+
+  @media (min-width:800px){
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  header{
+  justify-content:space-between;
+  }
+
+  .add{
+  position:absolute;
+  bottom:1rem;
+  }
+
+  .general-container{
+  width:1000px;
+  max-height:auto;
+  //position:relative;
+  }
+  }
 `;
 
 const Notes = ({ children }) => {
@@ -170,6 +192,16 @@ const Notes = ({ children }) => {
     },600)
   }
 
+  const handdleSearch = (e) => {
+    setQuery(e.target.value)
+  }
+
+  const enterControl = (e) => {
+    if(e.keyCode === 13){
+      setSearchVisible(false)
+    }
+  }
+
   return (
     <NotesGeneralContainer>
       <div className="add-background-transition"></div>
@@ -181,7 +213,8 @@ const Notes = ({ children }) => {
             className="search-input"
             role="textbox"
             defaultValue={query}
-            onKeyUp={(e) => setQuery(e.target.value)}
+          onKeyUp={handdleSearch}
+          onKeyDown={enterControl}
             placeholder="Search something..."
           />
           <div className="icon-button" onClick={() => setSearchVisible(false)} translate='no'>
@@ -189,6 +222,8 @@ const Notes = ({ children }) => {
           </div>
         </div>
       )}
+        <div className="general-container">
+
       <header className={`${searchVisible ? "up-header" : "down-header"}`}>
         <h1>Notes</h1>
         <div className="header-subsection">
@@ -227,6 +262,8 @@ const Notes = ({ children }) => {
         <span className="material-symbols-outlined">add</span>
       </button>
       <div>{children}</div>
+
+        </div>
     </NotesGeneralContainer>
   );
 };
