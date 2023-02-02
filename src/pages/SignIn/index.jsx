@@ -1,10 +1,11 @@
 import GoogleButton from "react-google-button";
 import { Link } from "react-router-dom";
-import Loader from "../components/Loader";
-import { userAuth } from "../context/AuthContext";
+import Loader from "../../components/Loader";
+import { userAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Notification from "../components/Notification";
+import Notification from "../../components/Notification";
+import {SignInContainer} from "./style";
 
 const SignIn = () => {
   const [email, SetEmail] = useState("");
