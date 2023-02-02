@@ -75,56 +75,56 @@ export const WellcomeContainer = styled.div`
 
   .main-content {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    min-height:100vh;
+    min-height: 100vh;
   }
 
-  .img{
-width: 96%;
-max-width: 960px;
-margin: 2rem auto;
-}
+  .img {
+    width: 96%;
+    max-width: 960px;
+    margin: 2rem auto;
+  }
 
-  img{
-width: 100%;
-height: auto; 
-}
+  img {
+    width: 100%;
+    height: auto;
+  }
 
   @media (min-width: 800px) {
     justify-content: start;
     align-items: center;
     text-align: center;
 
-    .body{
-    width:1000px;
-    display:flex;
-    flex-direction:column;
-    gap:5rem;
+    .body {
+      width: 1000px;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
     }
 
-    .side{
-    display:flex;
-   text-align:left;
-   gap:2rem;
-   align-items:center;
+    .side {
+      display: flex;
+      text-align: left;
+      gap: 2rem;
+      align-items: center;
 
-   p{
-   width:500px;
-   }
+      p {
+        width: 500px;
+      }
     }
 
-   .side:nth-child(2) {
-   flex-direction:row-reverse;
-   text-align:right;
-   }
+    .side:nth-child(2) {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
 
     .main-content {
       justify-content: center;
       align-items: center;
       gap: 3rem;
-      min-height:100vh;
+      min-height: 100vh;
 
       a {
         width: 200px;
@@ -133,20 +133,22 @@ height: auto;
       a:hover {
         transform: scale(1.025);
       }
-
     }
   }
 
-  footer{
-  padding:1rem;
-  margin-top:4rem;
+  footer {
+    padding: 1rem;
+    margin-top: 4rem;
 
-  a{
-  color:inherit;
-  font-weight:bold;
-  text-decoration:none;
-  display:inline-block;
-  }
+    a {
+      color: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+
+      &:hover{
+      text-decoration: underline;
+      }
+    }
   }
 `;
-

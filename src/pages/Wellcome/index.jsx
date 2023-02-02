@@ -36,7 +36,7 @@ const Wellcome = () => {
           </div>
         </article>
       </div>
-      <footer>make by Alan G. Alonso ( <a href='https://github.com/touzand' target='_blank'>Touzand</a> )</footer>
+      <footer>build by Alan G. Alonso ( <a href='https://github.com/touzand' target='_blank'>Touzand</a> ) a few seconds ago</footer>
     </WellcomeContainer>
   );
 };
