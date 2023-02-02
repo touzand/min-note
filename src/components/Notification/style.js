@@ -6,7 +6,7 @@ const PopUp = keyframes`
 100%{transform:translate(-50%,-50%) scale(1)}
 `
 
-const NotificationContainer = styled.div`
+export const NotificationContainer = styled.div`
 position:absolute;
 width:300px;
 top:50%;
@@ -25,5 +25,3 @@ border-radius:.5rem;
 margin-top:3rem;
 `;
 
-const Notification = ({ children }) => <NotificationContainer>{children}</NotificationContainer>
-export default Notification;

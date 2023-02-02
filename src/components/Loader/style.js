@@ -5,7 +5,7 @@ const fadeOut = keyframes`
 100%{opacity:0;visibility:hidden}
 `;
 
-const LoaderContainer = styled.div`
+export const LoaderContainer = styled.div`
   position: fixed;
   z-index: 3;
   top: 0;
@@ -19,5 +19,3 @@ const LoaderContainer = styled.div`
   animation: ${fadeOut} 0.3s ${(props) => props.start} ease both;
 `;
 
-const Loader = (props) => <LoaderContainer start={props.start}><span className="loader"></span></LoaderContainer>
-export default Loader;
