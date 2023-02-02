@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="https://www.svgrepo.com/show/187113/notes-note.svg" alt="Responsively Logo" width="150">
+  <img src="https://www.svgrepo.com/show/187113/notes-note.svg" alt="Responsively Logo" width="114">
   <h1>Min notes</h1>
   <strong>A minimal note app to save any idea quick and easy 🚀</strong>
-  <h6>Save time by becoming 5x faster!</h6>
+  <h6 style='margin:0;'>Save time by becoming 5x faster!</h6>
 </div>
 
 <br>
