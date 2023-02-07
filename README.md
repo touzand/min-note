@@ -16,7 +16,7 @@
 
 ## Min notes
 
-This is a **minimalist** user-focused note-taking web app. being simple and easy to use, giving you the opportunity to save your notes or ideas quickly and easily. Built with React, firebase, style-components and implemented with responsive design, among other technologies and tools. 
+This is a **minimalist** user-focused note-taking web app. being simple and easy to use, giving you the opportunity to save your notes or ideas quickly and easily. Built with React, firebase, style-components and implemented with responsive design, among other technologies and tools...
 <br>
 
 ![Quick Demo](http://imgfz.com/i/hVniZW1.png)
@@ -29,4 +29,4 @@ This is a **minimalist** user-focused note-taking web app. being simple and easy
 5. simple and intuitive design
 6. note search system
 
-Please visit the website to know more about the application - [Min notes](https://touzand.github.io/min-notes) -
+Please visit the website to know more about the application - [Min notes](https://touzand.github.io/min-notes)
