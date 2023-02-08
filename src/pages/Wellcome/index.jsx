@@ -9,7 +9,7 @@ const Wellcome = () => {
       <div className="main-content">
         <div>
           <h1>Min note</h1>
-          <p>Um aplicativo de notas mínimo onde você pode salvar qualquer ideia de forma rápida e fácil</p>
+          <p>A minimal notes application where you can save any idea quickly and easily.</p>
         </div>
         <div className="buttons-container">
           <Link to="/signin">Sig in</Link>
