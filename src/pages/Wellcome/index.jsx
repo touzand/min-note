@@ -18,19 +18,19 @@ const Wellcome = () => {
       </div>
       <div className="body">
         <article className="side">
-          <p>Min notes é um aplicativo web simples e fácil de usar. focado em um usuário minimalista fornecendo a função de salvar notas, ideias, receitas ou o que você precisar em notas básicas armazenadas na nuvem. dando-lhe a opção de visualizar, editar ou excluir essas notas de forma rápida e fácil</p>
+          <p>Min notes is a simple and easy to use web application. focused on a minimalist user providing the function to save notes, ideas, recipes or whatever you need in basic notes stored in the cloud. giving you the option to view, edit or delete these notes quickly and easily</p>
           <div className="img">
             <img src='http://imgfz.com/i/bCtYDjB.png'/>
           </div>
         </article>
         <article className="side">
-          <p>Além de dar a opção de mudar a cor dos cartões ou notas, podendo diferenciá-los facilmente. 5 cores, 5 tipos ou temas diferentes se desejar</p>
+          <p>In addition to giving the option to change the color of the cards or notes, being able to easily differentiate them. 5 colors, 5 different types or themes if you want</p>
           <div className="img">
             <img src='http://imgfz.com/i/M2RDcIu.png'/>
           </div>
         </article>
         <article className="side">
-          <p>Ao ter várias notas armazenadas, é fácil demorar para encontrar uma específica ou perder diretamente uma nota. Mas Min notes oferece um filtro de pesquisa fácil de usar com o qual você pode pesquisar títulos ou palavras escritas no corpo das notas para encontrar a nota que procura mais rapidamente.</p>
+          <p>When having multiple notes stored, it's easy to take time to find a specific one or directly miss a note. But Min notes offers an easy-to-use search filter with which you can search for titles or words written in the body of notes to find the note you are looking for faster.</p>
           <div className="img">
             <img src='http://imgfz.com/i/Ra3OBtz.png'/>
           </div>
