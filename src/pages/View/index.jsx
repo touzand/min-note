@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { useNavigate } from "react-router-dom";
 import {DeleteMessage, ViewContainer} from "./style";
+import MessageNotification from "../../components/OptionNotification";
 
 const View = () => {
   const [data, setData] = useState([]);
@@ -63,15 +64,7 @@ const View = () => {
     <ViewContainer bg={data.bg} tc={data.text}>
       <Loader start=".5s" />
       {deleteMessage && (
-        <DeleteMessage onClick={() => setDeleteMessage(false)}>
-          <div className="content-container">
-            <p>Are you sure that do u wanna delete this note?</p>
-            <div>
-              <button onClick={handdleDelete}>Yes</button>
-              <button onClick={() => setDeleteMessage(false)}>No</button>
-            </div>
-          </div>
-        </DeleteMessage>
+      <MessageNotification message='Are you sure that do u wanna delete this note?' action={handdleDelete} setState={setDeleteMessage}/>
       )}
       <div className="general-container">
         <header>

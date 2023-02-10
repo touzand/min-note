@@ -6,6 +6,7 @@ import Note from "../../components/Notes/Note";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase.config";
 import {DeleteMessage, NotesGeneralContainer} from "./style";
+import MessageNotification from "../../components/OptionNotification";
 
 const Notes = ({ children }) => {
   const [searchVisible, setSearchVisible] = useState(false);
@@ -64,15 +65,7 @@ const Notes = ({ children }) => {
   return (
     <NotesGeneralContainer>
       {deleteMessage && (
-        <DeleteMessage onClick={() => setDeleteMessage(false)}>
-          <div className="content-container">
-            <p>Do you wanna sign out ?</p>
-            <div>
-              <button onClick={handdleSignOut}>Yes</button>
-              <button onClick={() => setDeleteMessage(false)}>No</button>
-            </div>
-          </div>
-        </DeleteMessage>
+      <MessageNotification message='Do you wanna sign out ?' action={handdleSignOut} setState={setDeleteMessage}/>
       )}
       <div className="add-background-transition"></div>
       <Loader start="1s" />
