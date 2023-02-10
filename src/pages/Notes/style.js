@@ -13,24 +13,24 @@ const downHeader = keyframes`
 const transitionExpand = keyframes`
 0%{width:0%}
 100%{width:100%}
-`
+`;
 
 export const NotesGeneralContainer = styled.div`
   padding: 1rem;
   width: 100%;
 
-  .add-background-transition{
-  background-color:#c78dd0;
-  top:0;
-  bottom:0;
-  right:0;
-  width:0%;
-  position:absolute;
-  z-index:2;
+  .add-background-transition {
+    background-color: #c78dd0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    position: absolute;
+    z-index: 2;
   }
 
-  .background-transition-expand{
-  animation:${transitionExpand} .5s ease-in both;
+  .background-transition-expand {
+    animation: ${transitionExpand} 0.5s ease-in both;
   }
 
   header {
@@ -73,7 +73,19 @@ export const NotesGeneralContainer = styled.div`
   }
 
   .no-notes {
-    color: #3b3b3b;
+    width:100%;
+    text-align:center;
+
+    h3 {
+      color: #3b3b3b;
+    }
+  }
+
+  .no-notes-cont{
+    height:5rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
   }
 
   .search-container {
@@ -118,39 +130,37 @@ export const NotesGeneralContainer = styled.div`
     }
   }
 
-  .desktop-add{
-  display:none;
+  .desktop-add {
+    display: none;
   }
 
-  @media (min-width:800px){
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  @media (min-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  header{
-  justify-content:space-between;
-  }
+    header {
+      justify-content: space-between;
+    }
 
-  .add{
-  position:absolute;
-  bottom:1rem;
-  }
+    .add {
+      position: absolute;
+      bottom: 1rem;
+    }
 
-  .general-container{
-  width:1000px;
-  max-height:auto;
-  //position:relative;
-  }
+    .general-container {
+      width: 1000px;
+      max-height: auto;
+      //position:relative;
+    }
 
-  .mobile-add{
-  display:none;
-  }
+    .mobile-add {
+      display: none;
+    }
 
-  .desktop-add{
-  display:flex;
-  }
+    .desktop-add {
+      display: flex;
+    }
   }
 `;
-
-

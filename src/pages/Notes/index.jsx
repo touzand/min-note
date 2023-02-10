@@ -103,7 +103,7 @@ const Notes = ({ children }) => {
       <div
         className={` masonry-grid ${
           searchVisible ? "up-header" : "down-header"
-        }`}
+        } ${data.length === 0 ? 'no-notes-cont' : 'with-notes-cont'}`}
       >
         {data.length !== 0 ? (
           dataFilter.map((note) => (
@@ -116,7 +116,9 @@ const Notes = ({ children }) => {
             />
           ))
         ) : (
-          <h3 className="no-notes">You dont have any notes :(</h3>
+        <div className="no-notes">
+          <h3>You dont have any notes :(</h3>
+        </div>
         )}
       </div>
       <button onClick={handdleAdd} className="icon-button add mobile-add" translate='no'>
