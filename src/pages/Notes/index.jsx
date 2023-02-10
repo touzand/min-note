@@ -5,12 +5,13 @@ import Loader from "../../components/Loader";
 import Note from "../../components/Notes/Note";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase.config";
-import {NotesGeneralContainer} from "./style";
+import {DeleteMessage, NotesGeneralContainer} from "./style";
 
 const Notes = ({ children }) => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
+  const [deleteMessage, setDeleteMessage] = useState(false);
   const { user, SignOut } = userAuth();
   const navigate = useNavigate();
 
@@ -62,6 +63,17 @@ const Notes = ({ children }) => {
 
   return (
     <NotesGeneralContainer>
+      {deleteMessage && (
+        <DeleteMessage onClick={() => setDeleteMessage(false)}>
+          <div className="content-container">
+            <p>Do you wanna sign out ?</p>
+            <div>
+              <button onClick={handdleSignOut}>Yes</button>
+              <button onClick={() => setDeleteMessage(false)}>No</button>
+            </div>
+          </div>
+        </DeleteMessage>
+      )}
       <div className="add-background-transition"></div>
       <Loader start="1s" />
       {searchVisible && (
@@ -95,7 +107,7 @@ const Notes = ({ children }) => {
           >
             <span className="material-symbols-outlined">search</span>
           </div>
-          <div className="icon-button" onClick={handdleSignOut} translate='no'>
+          <div className="icon-button" onClick={() => setDeleteMessage(true)} translate='no'>
             <span className="material-symbols-outlined">logout</span>
           </div>
         </div>

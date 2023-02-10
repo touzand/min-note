@@ -15,6 +15,7 @@ export const DeleteMessage = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #1b1b1b90;
+  filter:blur(1rem);
   animation: ${DeleteMessageFade} 0.2s ease both;
 
   .content-container {
