@@ -12,7 +12,7 @@ const Notes = ({ children }) => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
-  const [deleteMessage, setDeleteMessage] = useState(false);
+  const [messageNotification, setMessageNotification] = useState(false);
   const { user, SignOut } = userAuth();
   const navigate = useNavigate();
 
@@ -64,8 +64,8 @@ const Notes = ({ children }) => {
 
   return (
     <NotesGeneralContainer>
-      {deleteMessage && (
-      <MessageNotification message='Do you wanna sign out ?' action={handdleSignOut} setState={setDeleteMessage}/>
+      {messageNotification && (
+      <MessageNotification message='Do you wanna sign out ?' action={handdleSignOut} setState={setMessageNotification}/>
       )}
       <div className="add-background-transition"></div>
       <Loader start="1s" />
@@ -100,7 +100,7 @@ const Notes = ({ children }) => {
           >
             <span className="material-symbols-outlined">search</span>
           </div>
-          <div className="icon-button" onClick={() => setDeleteMessage(true)} translate='no'>
+          <div className="icon-button" onClick={() => setMessageNotification(true)} translate='no'>
             <span className="material-symbols-outlined">logout</span>
           </div>
         </div>

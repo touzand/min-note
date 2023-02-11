@@ -51,7 +51,7 @@ const New = () => {
     setTimeout(() => {
       document.querySelector("header").classList.add("start");
       document.querySelector(".form").classList.add("start");
-      document.querySelector(".color-picker-container").classList.add("start");
+      //document.querySelector(".color-picker-container").classList.add("start");
     }, 100);
   }, []);
 
@@ -101,7 +101,7 @@ const New = () => {
             onChange={(e) => setBody(e.target.value)}
             placeholder="Type something..."
             className="note-component body"
-            spellcheck="false"
+            spellCheck="false"
           ></textarea>
         </div>
       </div>

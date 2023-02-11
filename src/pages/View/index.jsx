@@ -121,7 +121,7 @@ const View = () => {
               defaultValue={data.body}
               onKeyUp={(e) => setBody(e.target.value)}
               placeholder="Type something..."
-              spellcheck="false"
+              spellCheck="false"
             ></textarea>
           </div>
         ) : (
