@@ -46,6 +46,10 @@ const View = () => {
       console.log(err);
     }
     setDeleteMessage(false);
+    setSuccessNotification(true)
+
+    setTimeout(()=>{},5000)
+
   };
 
   useEffect(() => {
@@ -67,6 +71,7 @@ const View = () => {
       <MessageNotification message='Are you sure that do u wanna delete this note?' action={handdleDelete} setState={setDeleteMessage}/>
       )}
       <div className="general-container">
+      {signInError && <Notification>{signInError}</Notification>}
         <header>
           <Link to="/" className="icon-button" translate="no">
             <span className="material-symbols-outlined">

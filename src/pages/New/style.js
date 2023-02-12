@@ -135,27 +135,27 @@ export const NewNote = styled.div`
     cursor: pointer;
   }
 
-  .body {
-    width: 100%;
-    height: 49vh;
-    padding-bottom: 2rem;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: ${(props) => props.tc}70;
-    transition: color 1s ease;
-  }
+  //.body {
+    //width: 100%;
+    //height: 49vh;
+    //padding-bottom: 2rem;
+    //border: none;
+    //outline: none;
+    //font-size: 1rem;
+    //font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      //Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    //color: ${(props) => props.tc}70;
+    //transition: color 1s ease;
+  //}
 
-  .body::placeholder {
-    color: ${(props) => props.tc}70;
-    transition: color 1s ease;
-  }
+  //.body::placeholder {
+    //color: ${(props) => props.tc}70;
+    //transition: color 1s ease;
+  //}
 
-  .body:focus {
-    color: ${(props) => props.tc};
-  }
+  //.body:focus {
+    //color: ${(props) => props.tc};
+  //}
 
   @media (min-width: 800px) {
     display: flex;

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Notification from "../../components/Notification";
 import { useEffect } from "react";
 import {ColorPicker, NewNote} from "./style";
+import InputElem from "../../components/Body-Component";
 
 const New = () => {
   const [noteError, setNoteError] = useState("");
@@ -95,15 +96,15 @@ const New = () => {
             className="note-component title"
             role="textbox"
             contentEditable
+            spellCheck="false"
             onKeyUp={(e) => setTitle(e.target.textContent)}
-            spellCheck="false"
           ></span>
-          <textarea
-            onChange={(e) => setBody(e.target.value)}
+          <InputElem
             placeholder="Type something..."
-            className="note-component body"
             spellCheck="false"
-          ></textarea>
+            tc={ textContrast }
+            setBody={setBody}
+          />
         </div>
       </div>
     </NewNote>
