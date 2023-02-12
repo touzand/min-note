@@ -9,6 +9,7 @@ import Loader from "../../components/Loader";
 import { useNavigate } from "react-router-dom";
 import {ViewContainer} from "./style";
 import MessageNotification from "../../components/OptionNotification";
+import Notification from "../../components/Notification";
 
 const View = () => {
   const [data, setData] = useState([]);
@@ -18,6 +19,7 @@ const View = () => {
   const [title, setTitle] = useState(data.title);
   const [body, setBody] = useState("");
   const [deleteMessage, setDeleteMessage] = useState(false);
+  const [successNotification,setSuccessNotification] = useState(false)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,6 +38,11 @@ const View = () => {
       title ? title : data.title
     );
     setActiveEdit(!activeEdit);
+    setSuccessNotification(true)
+
+    setTimeout(()=>{
+    setSuccessNotification(false)
+    },2000)
   };
 
   const handdleDelete = async () => {
@@ -46,9 +53,6 @@ const View = () => {
       console.log(err);
     }
     setDeleteMessage(false);
-    setSuccessNotification(true)
-
-    setTimeout(()=>{},5000)
 
   };
 
@@ -71,7 +75,7 @@ const View = () => {
       <MessageNotification message='Are you sure that do u wanna delete this note?' action={handdleDelete} setState={setDeleteMessage}/>
       )}
       <div className="general-container">
-      {signInError && <Notification>{signInError}</Notification>}
+      {successNotification && <Notification final='success'>Note updated successfully</Notification>}
         <header>
           <Link to="/" className="icon-button" translate="no">
             <span className="material-symbols-outlined">

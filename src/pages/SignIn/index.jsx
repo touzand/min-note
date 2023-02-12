@@ -43,7 +43,7 @@ const SignIn = () => {
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>
       </Link>
-      {signInError && <Notification>{signInError}</Notification>}
+      {signInError && <Notification final='error'>{signInError}</Notification>}
       {googleSignError && <Notification>{googleSignError}</Notification>}
       <div className="signin-form">
         <h3>Welcom back</h3>

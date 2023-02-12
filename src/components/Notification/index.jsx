@@ -1,4 +1,4 @@
 import {NotificationContainer} from "./style";
 
-const Notification = ({ children }) => <NotificationContainer>{children}</NotificationContainer>
+const Notification = (props) => <NotificationContainer><p className={props.final}>{props.children}</p></NotificationContainer>
 export default Notification;

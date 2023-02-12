@@ -40,8 +40,8 @@ const SignUp = () => {
 
   return (
     <SignUpContainer>
-      {createUserError && <Notification>{createUserError}</Notification>}
-      {googleSignError && <Notification>{googleSignError}</Notification>}
+      {createUserError && <Notification final='error'>{createUserError}</Notification>}
+      {googleSignError && <Notification final='error'>{googleSignError}</Notification>}
       <Loader start=".3s" />
       <Link to="/home">
         <span className="material-symbols-outlined">arrow_back_ios</span>
