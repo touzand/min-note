@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import {ViewContainer} from "./style";
 import MessageNotification from "../../components/OptionNotification";
 import Notification from "../../components/Notification";
+import InputElem from "../../components/Body-Component";
 
 const View = () => {
   const [data, setData] = useState([]);
@@ -121,17 +122,18 @@ const View = () => {
               contentEditable
               onKeyUp={(e) => setTitle(e.target.textContent)}
               span={data.title}
+              spellCheck='false'
             ></span>
             <span className={`${activeEdit ? "date-edit" : "date"}`}>
               {data.date}
             </span>
-            <textarea
-              className="body"
-              defaultValue={data.body}
-              onKeyUp={(e) => setBody(e.target.value)}
-              placeholder="Type something..."
-              spellCheck="false"
-            ></textarea>
+          <InputElem
+            placeholder="Type something..."
+            spellCheck="false"
+            tc={ data.text }
+            setBody={setBody}
+            defaultValue={data.body}
+          />
           </div>
         ) : (
           <div className="note-content">

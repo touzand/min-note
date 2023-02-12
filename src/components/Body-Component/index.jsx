@@ -30,7 +30,7 @@ const InputElem = (props) => {
         minHeight: MIN_TEXTAREA_HEIGHT,
         resize: "none"
       }}
-      value={value}
+      defaultValue={props.defaultValue || value}
     />
   );
 }
