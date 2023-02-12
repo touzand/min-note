@@ -96,6 +96,7 @@ const New = () => {
             role="textbox"
             contentEditable
             onKeyUp={(e) => setTitle(e.target.textContent)}
+            spellCheck="false"
           ></span>
           <textarea
             onChange={(e) => setBody(e.target.value)}

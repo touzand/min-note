@@ -2,10 +2,10 @@ import { userAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader";
-import Note from "../../components/Notes/Note";
+import Note from "../../components/Card-Nts/Note";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase.config";
-import {DeleteMessage, NotesGeneralContainer} from "./style";
+import {NotesGeneralContainer} from "./style";
 import MessageNotification from "../../components/OptionNotification";
 
 const Notes = ({ children }) => {

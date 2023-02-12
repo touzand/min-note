@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import {WellcomeContainer} from "./style";
 
-const Wellcome = () => {
+const Home = () => {
   return (
     <WellcomeContainer>
       <Loader start=".5s" />
@@ -41,4 +41,4 @@ const Wellcome = () => {
   );
 };
 
-export default Wellcome;
+export default Home;

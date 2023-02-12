@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { useNavigate } from "react-router-dom";
-import {DeleteMessage, ViewContainer} from "./style";
+import {ViewContainer} from "./style";
 import MessageNotification from "../../components/OptionNotification";
 
 const View = () => {
