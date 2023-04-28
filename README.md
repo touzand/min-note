@@ -2,7 +2,7 @@
 
 A simple and elegant note-taking app built with React, designed for simplicity and ease of use.
 
-This is a **minimalist** user-focused note-taking web app. being simple and easy to use, giving you the opportunity to save your notes or ideas quickly and easily. Built with React, firebase, style-components and implemented with responsive design, among other technologies and tools.
+This is a **minimalist** user-focused note-taking web app. being simple and easy to use, giving you the opportunity to save your notes or ideas quickly and easily. Built with React, firebase, style-components and implemented with responsive design, among other technologies and tools...
 <br>
 
 ![Quick Demo](http://imgfz.com/i/Wxa32sl.png)
