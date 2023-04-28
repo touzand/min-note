@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --font-color: #F6F1E9;
+  /*--background-color: #0a0a0a; original*/
+  --background-color: #070707;
+  /*--background-color: #273547;*/
+  /*--background-color: #0a0a0a00;*/
+  --divisor-line-color: red;
+  --background-bubble-up: #31324b;
+  --background-bubble-middle: #52724d;
+  --background-bubble-down: #cc5a5a;
+  --desktop-width: 500px;
+  --no-grey: #ddd4;
+  --font-size-title:64px;
+  --font-size-pharag:24px;
+
+  --option-background:#fff5;
+  /*--option-color:red;*/
+}
+
+html {
+  font-family:Outfit;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  /*background-color: #141414; Original */
+  background-color: var(--background-color);
+  /*color: var(--font-color);*/
+  font-family: Outfit;
+}
+
+.icon-button {
+  background-color: #2b2b2b;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  color: whitesmoke;
+}
+
+.icon-button span {
+  /*font-size: 2rem;*/
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form input {
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.input input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: whitesmoke;
+  border: solid thin var(--no-grey);
+  color: var(--no-grey);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid whitesmoke;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
