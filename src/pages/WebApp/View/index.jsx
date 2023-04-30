@@ -81,7 +81,7 @@ const View = () => {
           setState={setDeleteMessage}
         />
       )}
-      <div className="general-container">
+      <div className="general-container" style={{width:"100vw"}}>
         {successNotification && (
           <Notification final="success">Note updated successfully</Notification>
         )}
