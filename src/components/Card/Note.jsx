@@ -25,7 +25,7 @@ const NoteContaier = styled.article`
     font-size: 0.8rem;
   }
 
-  h4 {
+  p {
     margin-bottom: 1rem;
     line-height: 1.1rem;
   }
@@ -40,7 +40,7 @@ const Note = (props) => {
   return (
     <Link to={`/note/${props.id}`} style={link}>
       <NoteContaier bg={props.bg}>
-        <h4>{props.title}</h4>
+        <p>{props.title}</p>
         <span>{props.date}</span>
       </NoteContaier>
     </Link>
