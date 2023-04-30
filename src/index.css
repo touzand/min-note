@@ -36,6 +36,7 @@ body {
   /*background-color: #141414; Original */
   background-color: var(--background-color);
   /*color: var(--font-color);*/
+  color:transparent;
   font-family: Outfit;
 }
 
@@ -49,7 +50,7 @@ body {
   cursor: pointer;
   text-decoration: none;
   border: none;
-  color: whitesmoke;
+  /*color: whitesmoke;*/
 }
 
 .icon-button span {
@@ -78,9 +79,9 @@ form input {
   border: none;
   background-color: transparent;
   outline: none;
-  color: whitesmoke;
+  /*color: whitesmoke;*/
   border: solid thin var(--no-grey);
-  color: var(--no-grey);
+  /*color: var(--no-grey);*/
 }
 
 .loader {

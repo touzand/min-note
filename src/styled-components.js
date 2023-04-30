@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from 'styled-components';
 
 const heightOpen = keyframes`
 0%{max-height:5px}
@@ -8,8 +8,7 @@ const heightOpen = keyframes`
 export const Hr = styled.hr`
   width: 100%;
   border-top: none;
-  border-color: ${(props) =>
-    props.tc ? props.tc : "var(--divisor-line-color)"};
+  border-color: ${props => (props.tc ? props.tc : 'var(--divisor-line-color)')};
   margin-top: 0rem;
   margin-bottom: 1rem;
   position: relative;
@@ -17,7 +16,7 @@ export const Hr = styled.hr`
 
 export const IconButtom = styled.button`
   background-color: transparent;
-  padding: 0.75rem;
+  //padding: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,10 +24,14 @@ export const IconButtom = styled.button`
   text-decoration: none;
   border: none;
   border-left: solid thin
-    ${(props) => (props.left || props.both ? props.tc : "transparent")};
+    ${props => (props.left || props.both ? props.tc : 'transparent')};
   border-right: solid thin
-    ${(props) => (props.right || props.both ? props.tc : "transparent")};
+    ${props => (props.right || props.both ? props.tc : 'transparent')};
   transition: none !important;
+
+  button{
+    background-color:red;
+  }
 
   &:active {
     background-color: red;
@@ -36,7 +39,7 @@ export const IconButtom = styled.button`
 
   & * {
     //pointer-events:none;
-    color: ${(props) => (props.tc ? props.tc : "var(--font-color)")};
+    color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
   }
 
   & svg {
@@ -44,6 +47,7 @@ export const IconButtom = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    //padding: 0.75rem;
   }
 
   .option-container {
@@ -66,7 +70,7 @@ export const IconButtom = styled.button`
       gap: 0.5rem;
       position: relative;
       padding: 0.5rem;
-      transition:none;
+      transition: none;
     }
 
     article:hover {
@@ -82,7 +86,7 @@ export const IconButtom = styled.button`
   }
 
   .option-container::before {
-    content: "";
+    content: '';
     width: 10px;
     height: 10px;
     background-color: var(--option-background);

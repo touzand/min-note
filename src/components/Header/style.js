@@ -11,6 +11,14 @@ export const HeaderContainer = styled.header`
     color:var( --font-color );
   }
 
+  & div button{
+    padding:.75rem;
+  }
+
+  & a{
+    padding:.75rem;
+  }
+
   * {
     //font-size:32px !important;
   }
