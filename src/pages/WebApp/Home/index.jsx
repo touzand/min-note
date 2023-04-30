@@ -2,7 +2,7 @@ import { userAuth } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loader from "../../../components/loader";
-import Note from "../../../components/card/Note";
+import Note from "../../../components/Card/Note.jsx";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase.config.js";
 import { NotesGeneralContainer } from "./style";

@@ -26,7 +26,7 @@ const NoteContaier = styled.article`
   }
 
   p {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     line-height: 1.1rem;
   }
 
