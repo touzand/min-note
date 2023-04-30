@@ -104,7 +104,6 @@ const View = () => {
             <Title content={title ? title : data.title} editable={false} textAlign={data.align}/>
             <span className="date" style={{textAlign:data.align}}>{data.date}</span>
             <p className="body" style={{textAlign:data.align}}>{body ? body : data.body}</p>
-            {console.log(data)}
           </div>
         )}
       </div>
