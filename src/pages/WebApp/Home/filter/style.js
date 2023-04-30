@@ -6,8 +6,9 @@ height:40px;
 margin:.5rem auto;
 display:flex;
 gap:.5rem;
+box-sizing:border-box;
 
-*{
+button,div{
   flex:1;
   border:none;
   outline:none;
@@ -17,7 +18,17 @@ gap:.5rem;
   outline:none;
   }
 
-  input{
+  .input{
   flex:5;
+
+    svg{
+      color:white;
+      font-size:1rem;
+    }
+
+    input{
+      height:100%;
+      border:none;
+    }
   }
 `

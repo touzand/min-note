@@ -1,15 +1,18 @@
-import { FilterContainer } from "./style"
+import {FilterContainer} from './style';
+import { BsSearch } from "react-icons/bs";
 
-const Filter = () =>{
-  return(
+const Filter = () => {
+  return (
     <FilterContainer>
       <button>add</button>
-      <input type='text'/>
+      <div className="input">
+        <BsSearch />
+        <input type="text" />
+      </div>
       <button>filter</button>
       <button>filter</button>
     </FilterContainer>
+  );
+};
 
-  )
-}
-
-export default Filter
+export default Filter;
