@@ -11,7 +11,7 @@ import { Hr } from "../../../styled-components";
 
 const New = () => {
   const [noteError, setNoteError] = useState("");
-  const [color, setColor] = useState("#C78DD0");
+  const [color, setColor] = useState("#DDE595");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [textContrast, setTextContrast] = useState("#F6F1E9");
