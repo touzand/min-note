@@ -4,6 +4,7 @@ const ColorPicker = (props) => {
   return (
     <ColorPickerContainer onClick={() => props.setVisible(false)}>
       <div className="color-picker-container">
+        <article value="#DDDDDD" onClick={props.handdleColorPicker}></article>
         <article value="#F5A38A" onClick={props.handdleColorPicker}></article>
         <article value="#f3C57D" onClick={props.handdleColorPicker}></article>
         <article value="#DDE595" onClick={props.handdleColorPicker}></article>

@@ -10,7 +10,7 @@ export const Hr = styled.hr`
   border-top: none;
   border-color: ${props => (props.tc ? props.tc : 'var(--divisor-line-color)')};
   margin-top: 0rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   position: relative;
 `;
 

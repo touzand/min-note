@@ -11,10 +11,10 @@ import { Hr } from "../../../styled-components";
 
 const New = () => {
   const [noteError, setNoteError] = useState("");
-  const [color, setColor] = useState("#DDE595");
+  const [color, setColor] = useState("#DDDDDD");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [textContrast, setTextContrast] = useState("#F6F1E9");
+  const [textContrast, setTextContrast] = useState("#1b1b1b");
   const [visible, setVisible] = useState(false);
   const { AddDoc } = userAuth();
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ const New = () => {
   };
 
   useEffect(() => {
-    if (color === "#7BD5E1" || color === "#DDE595") {
+    if (color === "#7BD5E1" || color === "#DDE595" || color === "#DDDDDD"  ) {
       setTextContrast("#1b1b1b");
     } else if (
       color === "#F5A38A" ||

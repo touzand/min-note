@@ -11,6 +11,7 @@ import InputSearch from "./inputSearch";
 import NoNotes from "./noNotes";
 import useIsMobile from "../../../hooks/useIsMobile";
 import { Hr } from "../../../styled-components";
+import Filter from "./filter";
 
 const Notes = ({ children }) => {
   const [searchVisible, setSearchVisible] = useState(false);
@@ -68,6 +69,7 @@ const Notes = ({ children }) => {
           searchVisible={searchVisible}
           setSearchVisible={setSearchVisible}
         />
+        <Filter/>
         <div
           className={` masonry-grid ${
             searchVisible ? "up-header" : "down-header"

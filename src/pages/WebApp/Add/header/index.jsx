@@ -51,6 +51,10 @@ const Header = (props) => {
             <HiOutlineColorSwatch />
             {colorPicker &&
             <div className="option-container color-picker">
+              <article value="#DDDDDD" onClick={props.handdleColorPicker}>
+                <div style={{backgroundColor:"#DDDDDD"}}></div>
+                <span>color</span>
+              </article>
               <article value="#F5A38A" onClick={props.handdleColorPicker}>
                 <div style={{backgroundColor:"#F5A38A"}}></div>
                 <span>color</span>

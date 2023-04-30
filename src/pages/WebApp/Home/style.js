@@ -20,7 +20,7 @@ export const NotesGeneralContainer = styled.div`
   padding:0 1rem;
 
   .add-background-transition {
-    background-color: #DDE595;
+    background-color: #DDDDDD;
     top: 0;
     bottom: 0;
     right: 0;
