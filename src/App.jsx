@@ -1,11 +1,11 @@
 import {HashRouter as Router,Routes,Route} from 'react-router-dom'
 import {AuthContextProvider} from './contexts/AuthContext'
-import Protect from './pages/Protect'
+import Protect from './pages/Protect.jsx'
 import SignIn from './pages/client/signIn'
 import SignUp from './pages/client/signUp'
-import Notes from './pages/webApp/home'
-import New from './pages/webApp/add'
-import View from './pages/webApp/view'
+import Notes from './pages/WebApp/Home'
+import New from './pages/WebApp/Add'
+import View from './pages/WebApp/View'
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FilterContainer = styled.article`
+const FilterContainer = styled.article`
 width:min(100%,800px);
 height:40px;
 margin:.5rem auto;
@@ -32,3 +32,4 @@ button,div{
     }
   }
 `
+export default FilterContainer;

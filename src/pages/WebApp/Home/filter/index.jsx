@@ -1,4 +1,4 @@
-import {FilterContainer} from './style';
+import FilterContainer from './style';
 import { BsSearch } from "react-icons/bs";
 
 const Filter = () => {
