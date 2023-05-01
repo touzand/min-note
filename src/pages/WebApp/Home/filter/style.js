@@ -17,10 +17,10 @@ const FilterContainer = styled.article`
   gap: 0.5rem;
   box-sizing: border-box;
   position: relative;
-animation:${downHeader} .5s ease both;
+animation:downHeader .5s ease both;
 
 &.up-header{
-animation:${upHeader} .5s ease both;
+animation:upHeader .5s ease both;
 }
 
   button,

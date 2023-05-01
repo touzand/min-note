@@ -43,7 +43,7 @@ const Header = (props) => {
           setState={setOptionMessage}
         />
       )}
-      <HeaderTop>
+      <HeaderTop className={props.query && 'up-header'}>
         <article
           className={`${props.searchVisible ? "up-header" : "down-header"}`}
           style={{width:"100%",display:"flex",justifyContent:"space-between",alignItems:"center",position:"relative"}}
@@ -80,7 +80,7 @@ const Header = (props) => {
           </div>
         </article>
       </HeaderTop>
-        <Hr tc={`var(--font-color)`} className={`${props.searchVisible ? "up-header" : "down-header"}`} />
+        <Hr tc={`var(--font-color)`} className={`${props.query ? "up-header" : "down-header"}`} />
     </>
   );
 };

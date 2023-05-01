@@ -20,6 +20,10 @@ export const HeaderContainer = styled.header`
   //width: min(100%, 800px);
   width: 100%;
 
+.up-header{
+  animation:upHeader .5s ease both;
+}
+
 h1{
   color:red;
 }
