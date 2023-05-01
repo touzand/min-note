@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
 
   h1{
     margin:0;
+    //color:#787878;
     color:var( --font-color );
   }
 

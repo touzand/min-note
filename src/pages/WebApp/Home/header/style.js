@@ -20,6 +20,10 @@ export const HeaderContainer = styled.header`
   //width: min(100%, 800px);
   width: 100%;
 
+h1{
+  color:red;
+}
+
   * {
     font-size: 32px !important;
   }

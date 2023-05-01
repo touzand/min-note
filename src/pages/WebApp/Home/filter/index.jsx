@@ -7,7 +7,7 @@ const Filter = () => {
       <button>add</button>
       <div className="input">
         <BsSearch />
-        <input type="text" />
+        <input type="text" placeholder='Search...' />
       </div>
       <button>filter</button>
       <button>filter</button>
