@@ -66,13 +66,14 @@ const Notes = ({ children }) => {
           />
         )}
         <Header
+          query={query}
           searchVisible={searchVisible}
           setSearchVisible={setSearchVisible}
         />
-        <Filter/>
+        <Filter query={query} setQuery={setQuery}/>
         <div
           className={` masonry-grid ${
-            searchVisible ? "up-header" : "down-header"
+            query ? "up-header" : "down-header"
           } ${data.length === 0 ? "no-notes-cont" : "with-notes-cont"}`}
         >
           {data.length !== 0 ? (

@@ -1,15 +1,4 @@
 import styled, { keyframes } from "styled-components";
-
-const upHeader = keyframes`
-0%{top:0}
-100%{top:-4rem}
-`;
-
-const downHeader = keyframes`
-0%{top:-4rem}
-100%{top:0}
-`;
-
 const transitionExpand = keyframes`
 0%{width:0%}
 100%{width:100%}
@@ -50,11 +39,11 @@ export const NotesGeneralContainer = styled.div`
   //}
 
   .up-header {
-    animation: ${upHeader} 0.5s ease both;
+    animation: upHeader 0.5s ease both;
   }
 
   .down-header {
-    animation: ${downHeader} 0.5s ease both;
+    animation: downHeader 0.5s ease both;
   }
 
   .masonry-grid {
