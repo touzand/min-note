@@ -1,15 +1,19 @@
 import FilterContainer from './style';
-import { BsSearch } from "react-icons/bs";
-import { useState } from 'react';
+import {BsSearch} from 'react-icons/bs';
 
-const Filter = (props) => {
-
+const Filter = props => {
   return (
-    <FilterContainer className={props.query && "up-header"}>
+    <FilterContainer className={props.query && 'up-header'}>
       <button>add</button>
       <div className="input">
         <BsSearch />
-        <input type="text" placeholder='Search...' onKeyUp={(e)=>props.setQuery(e.target.value)} autoComplete="off" spellCheck="false"/>
+        <input
+          type="text"
+          placeholder="Search..."
+          onKeyUp={e => props.setQuery(e.target.value)}
+          autoComplete="off"
+          spellCheck="false"
+        />
       </div>
       <button>filter</button>
       <button>filter</button>

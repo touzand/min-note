@@ -22,22 +22,6 @@ export const NotesGeneralContainer = styled.div`
     animation: ${transitionExpand} 0.5s ease-in both;
   }
 
-  //header {
-    //display: flex;
-    //justify-content: space-between;
-    //align-items: center;
-    //position: relative;
-
-    //h1 {
-      //margin: 0;
-    //}
-
-    //.header-subsection {
-      //display: flex;
-      //gap: 0.25rem;
-    //}
-  //}
-
   .up-header {
     animation: upHeader 0.5s ease both;
   }
@@ -47,8 +31,6 @@ export const NotesGeneralContainer = styled.div`
   }
 
   .masonry-grid {
-    //max-width: 1200px;
-    //width: min(100%, 700px);
     width:min(100%,800px);
     margin: 0 auto;
     columns: 5 180px;
@@ -101,9 +83,7 @@ export const NotesGeneralContainer = styled.div`
     }
 
     .general-container {
-      //width: 1000px;
       max-height: auto;
-      //position:relative;
     }
 
     .mobile-add {

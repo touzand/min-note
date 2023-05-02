@@ -5,11 +5,6 @@ import styled, { keyframes } from "styled-components";
 //100%{top:-4rem}
 //`;
 
-//const downHeader = keyframes`
-//0%{top:-4rem}
-//100%{top:0}
-//`;
-
 const transitionExpand = keyframes`
 0%{width:0%}
 100%{width:100%}

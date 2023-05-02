@@ -51,8 +51,6 @@ const Notes = ({ children }) => {
     }, 600);
   };
 
-        //<Hr tc={`var(--font-color)`} className={`${searchVisible ? "up-header" : "down-header"}`} />
-
   return (
     <>
       <NotesGeneralContainer>
