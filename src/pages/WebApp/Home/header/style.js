@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from 'styled-components';
 
 const transitionExpand = keyframes`
 0%{width:0%}
@@ -8,9 +8,9 @@ const transitionExpand = keyframes`
 export const HeaderContainer = styled.header`
   width: 100%;
 
-h1{
-  color:red;
-}
+  h1 {
+    color: red;
+  }
 
   * {
     font-size: 32px !important;
@@ -29,7 +29,6 @@ h1{
   .background-transition-expand {
     animation: ${transitionExpand} 0.5s ease-in both;
   }
-  
 
   > article {
     display: flex;
@@ -43,7 +42,7 @@ h1{
     }
   }
 
-  #a{
+  #a {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -109,8 +108,8 @@ h1{
       resize: none;
       border: none;
       outline: none;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     textarea::placeholder {
