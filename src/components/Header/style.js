@@ -8,11 +8,11 @@ export const HeaderContainer = styled.header`
   position:relative;
 
   & .up-header {
-    animation: upHeader 0.5s ease both;
+    animation: upHeaderTop .5s ease both;
   }
 
-  & .up-header {
-    animation: downHeader 0.5s ease both;
+  & .down-header {
+    animation: downHeaderTop .5s ease both;
   }
 
   h1 {

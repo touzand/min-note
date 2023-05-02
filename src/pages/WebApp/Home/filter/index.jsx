@@ -9,7 +9,7 @@ const Filter = (props) => {
       <button>add</button>
       <div className="input">
         <BsSearch />
-        <input type="text" placeholder='Search...' onKeyUp={(e)=>props.setQuery(e.target.value)}/>
+        <input type="text" placeholder='Search...' onKeyUp={(e)=>props.setQuery(e.target.value)} autoComplete="off" spellCheck="false"/>
       </div>
       <button>filter</button>
       <button>filter</button>

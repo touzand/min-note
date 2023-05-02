@@ -1,15 +1,5 @@
 import styled,{keyframes} from 'styled-components';
 
-const upHeader = keyframes`
-0%{top:0}
-100%{top:-3rem}
-`;
-
-const downHeader = keyframes`
-0%{top:-3rem}
-100%{top:0}
-`;
-
 const FilterContainer = styled.article`
   width: min(100%, 800px);
   margin: 0.5rem auto;

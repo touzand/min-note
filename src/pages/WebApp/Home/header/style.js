@@ -1,14 +1,14 @@
 import styled, { keyframes } from "styled-components";
 
-const upHeader = keyframes`
-0%{top:0}
-100%{top:-4rem}
-`;
+//const upHeader = keyframes`
+//0%{top:0}
+//100%{top:-4rem}
+//`;
 
-const downHeader = keyframes`
-0%{top:-4rem}
-100%{top:0}
-`;
+//const downHeader = keyframes`
+//0%{top:-4rem}
+//100%{top:0}
+//`;
 
 const transitionExpand = keyframes`
 0%{width:0%}
@@ -20,9 +20,9 @@ export const HeaderContainer = styled.header`
   //width: min(100%, 800px);
   width: 100%;
 
-.up-header{
-  animation:upHeader .5s ease both;
-}
+//.up-header{
+  //animation:upHeader .5s ease both;
+//}
 
 h1{
   color:red;
@@ -67,11 +67,11 @@ h1{
   }
 
   .up-header {
-    animation: ${upHeader} 0.5s ease both;
+    animation: upHeader 0.5s ease both;
   }
 
   .down-header {
-    animation: ${downHeader} 0.5s ease both;
+    animation: downHeader 0.5s ease both;
   }
 
   .masonry-grid {
