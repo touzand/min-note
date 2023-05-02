@@ -1,23 +1,12 @@
 import styled, { keyframes } from "styled-components";
 
-//const upHeader = keyframes`
-//0%{top:0}
-//100%{top:-4rem}
-//`;
-
 const transitionExpand = keyframes`
 0%{width:0%}
 100%{width:100%}
 `;
 
 export const HeaderContainer = styled.header`
-  //background-color:red;
-  //width: min(100%, 800px);
   width: 100%;
-
-//.up-header{
-  //animation:upHeader .5s ease both;
-//}
 
 h1{
   color:red;
