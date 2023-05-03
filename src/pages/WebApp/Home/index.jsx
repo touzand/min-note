@@ -12,7 +12,7 @@ import NoNotes from "./noNotes";
 import useIsMobile from "../../../hooks/useIsMobile";
 import Filter from "./filter";
 
-const Notes = ({ children }) => {
+const Home = ({ children }) => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
@@ -102,4 +102,4 @@ const Notes = ({ children }) => {
   );
 };
 
-export default Notes;
+export default Home;
