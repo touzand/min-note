@@ -10,7 +10,6 @@ import Header from "./header";
 import InputSearch from "./inputSearch";
 import NoNotes from "./noNotes";
 import useIsMobile from "../../../hooks/useIsMobile";
-import { Hr } from "../../../styled-components";
 import Filter from "./filter";
 
 const Notes = ({ children }) => {

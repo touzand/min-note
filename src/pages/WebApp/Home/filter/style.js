@@ -1,4 +1,4 @@
-import styled,{keyframes} from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 const FilterContainer = styled.article`
   width: min(100%, 800px);
@@ -7,11 +7,11 @@ const FilterContainer = styled.article`
   gap: 0.5rem;
   box-sizing: border-box;
   position: relative;
-animation:downHeader .5s ease both;
+  animation: downHeader 0.5s ease both;
 
-&.up-header{
-animation:upHeader .5s ease both;
-}
+  &.up-header {
+    animation: upHeader 0.5s ease both;
+  }
 
   button,
   div {
