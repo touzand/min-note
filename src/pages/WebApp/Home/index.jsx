@@ -11,9 +11,11 @@ import InputSearch from "./inputSearch";
 import NoNotes from "./noNotes";
 import useIsMobile from "../../../hooks/useIsMobile";
 import Filter from "./filter";
+import Menu from './menu';
 
 const Home = ({ children }) => {
   const [searchVisible, setSearchVisible] = useState(false);
+  const [menu, setMenu] = useState(true);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
   const { user } = userAuth();
@@ -52,6 +54,9 @@ const Home = ({ children }) => {
 
   return (
     <>
+      {menu && (
+        <Menu setMenu={setMenu}/>
+      )}
       <NotesGeneralContainer>
         <div className="add-background-transition"></div>
         <Loader start="1s" />
@@ -66,6 +71,7 @@ const Home = ({ children }) => {
           query={query}
           searchVisible={searchVisible}
           setSearchVisible={setSearchVisible}
+ setMenu={setMenu}
         />
         <Filter query={query} setQuery={setQuery}/>
         <div
