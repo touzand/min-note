@@ -10,16 +10,17 @@ const BackgroundOpacity = keyframes`
 `;
 
 export const BackgroundContainer = styled.div`
+color:var(--font-color);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  opacity: 0;
+  //opacity: 0;
 pointer-events:none;
   background-color: #00000000;
-transition:all .5s ease both;
+transition:all .5s ease;
 ${props =>
   props.menu &&
   `
@@ -28,9 +29,13 @@ pointer-events:auto;
   background-color: #00000080;
   `}
 
+article{
+  padding:1rem;
+}
+
   > div {
   right:-300px;
-transition:all .5s ease both;
+transition:all .5s ease;
 ${props =>
   props.menu &&
   `
@@ -57,6 +62,13 @@ ${props =>
   & .close div{
   //right:-300px;
   }
+
+
+
+hr{
+  border-top:none;
+  border-color:#2d2f3350;
+}
 `;
 
 export const ContentContainer = styled.div`
@@ -64,6 +76,6 @@ export const ContentContainer = styled.div`
   top: 0;
   bottom: 0;
   right: -300px;
-  background-color: red;
+  background-color:#1a1c20;
   width: 300px;
 `;
