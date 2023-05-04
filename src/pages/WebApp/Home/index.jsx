@@ -50,9 +50,10 @@ const Home = ({children}) => {
     }, 600);
   };
 
+      //{menu && <Menu setMenu={setMenu} menu={menu}/>}
   return (
     <>
-      {menu && <Menu setMenu={setMenu} />}
+      <Menu setMenu={setMenu} menu={menu}/>
       <NotesGeneralContainer>
         <div className="add-background-transition"></div>
         <Loader start="1s" />
