@@ -94,6 +94,7 @@ hr{
 
     &:hover{
     background-color:#2d2f33;
+      border-radius:.5rem;
     }
 
     h3{
@@ -104,7 +105,7 @@ hr{
       width:20px;
       height:20px;
       margin:0;
-      background-color:${props=>props.bg ? props.bg : 'red'}
+      border-radius:.3rem;
     }
   }
 
@@ -115,11 +116,15 @@ hr{
   }
 `;
 
+export const FigureColor = styled.figure`
+  background-color: ${props => (props.bg ? props.bg : 'red')};
+`;
+
 export const ContentContainer = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
   right: -300px;
-  background-color:#1a1c20;
+  background-color: #1a1c20;
   width: 300px;
 `;
