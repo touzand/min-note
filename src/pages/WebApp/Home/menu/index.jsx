@@ -10,12 +10,18 @@ const Menu = props => {
 
   for (let i = 0; i < props.data; i++) {
     switch (props.data[i].bg){
-      case "#DDDDDD"
-      case "#F5A38A"
-      case "#f3C57D"
-      case "#DDE595"
-      case "#7BD5E1"
-      case "#C78DD0"
+      case "#DDDDDD":
+        white.push(props.data[i])
+      case "#F5A38A":
+        red.push(props.data[i])
+      case "#f3C57D":
+        orange.push(props.data[i])
+      case "#DDE595":
+        green.push(props.data[i])
+      case "#7BD5E1":
+        blue.push(props.data[i])
+      case "#C78DD0":
+        purple.push(props.data[i])
     }
 }
 
