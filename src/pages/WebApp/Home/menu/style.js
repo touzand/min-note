@@ -69,6 +69,50 @@ hr{
   border-top:none;
   border-color:#2d2f3350;
 }
+
+  .row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .row:has(div) div{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+  }
+
+  button{
+    display:flex;
+    justify-content:space-between;
+    background-color:transparent;
+    border:none;
+    color:var(--font-color);
+    align-items:center;
+    width:100%;
+    padding:.75rem;
+
+    &:hover{
+    background-color:#2d2f33;
+    }
+
+    h3{
+      margin:0;
+    }
+
+    figure{
+      width:20px;
+      height:20px;
+      margin:0;
+      background-color:${props=>props.bg ? props.bg : 'red'}
+    }
+  }
+
+  button:has(div) div{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+  }
 `;
 
 export const ContentContainer = styled.div`
