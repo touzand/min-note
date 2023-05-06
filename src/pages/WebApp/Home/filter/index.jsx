@@ -15,6 +15,10 @@ const Filter = props => {
       //navigate('/new');
     //}, 600);
   //};
+  
+  const handdleColorFilter = () => {
+
+  }
 
   return (
     <FilterContainer className={props.query && 'up-header'}>

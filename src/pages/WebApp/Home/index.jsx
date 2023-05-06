@@ -124,7 +124,7 @@ const Home = ({children}) => {
           setSearchVisible={setSearchVisible}
           setMenu={setMenu}
         />
-        <Filter query={query} setQuery={setQuery} />
+        <Filter query={query} setQuery={setQuery} data={data}/>
         <div
           className={` masonry-grid ${query ? 'up-header' : 'down-header'} ${
             data.length === 0 ? 'no-notes-cont' : 'with-notes-cont'
