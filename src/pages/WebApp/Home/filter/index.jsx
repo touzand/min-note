@@ -1,10 +1,11 @@
 import FilterContainer from './style';
 import {BsSearch} from 'react-icons/bs';
+import { handdleAdd } from '../../../../helpers/helpAdd';
 
 const Filter = props => {
   return (
     <FilterContainer className={props.query && 'up-header'}>
-      <button>add</button>
+      <button onClick={handdleAdd}>add</button>
       <div className="input">
         <BsSearch />
         <input

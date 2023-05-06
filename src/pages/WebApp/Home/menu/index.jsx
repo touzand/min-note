@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {BackgroundContainer, ContentContainer, FigureColor} from './style';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {VscNote} from 'react-icons/vsc';
+import { RiDeleteBinLine } from "react-icons/ri";
 
 const Menu = props => {
   const [bgCounts, setBgCounts] = useState({});
@@ -20,8 +21,15 @@ const Menu = props => {
     }, {});
   };
 
+  const handdleClickOnMenu = (e) =>{
+    console.log('hola mundo')
+    if (e.target === document.querySelector('#bg-menu')){
+      props.setMenu(false)
+    }
+  }
+
   return (
-    <BackgroundContainer onClick={() => props.setMenu(false)} menu={props.menu}>
+    <BackgroundContainer onClick={handdleClickOnMenu} menu={props.menu} id='bg-menu'>
       <ContentContainer>
         <article>
           <div className="row">
@@ -37,6 +45,10 @@ const Menu = props => {
               <span>{props.data.length}</span>
               <VscNote/>
             </div> 
+          </button>
+          <button className='delete'>
+            <h3>Delete</h3>
+            <RiDeleteBinLine/>
           </button>
         </article>
         <hr />

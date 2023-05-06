@@ -34,6 +34,7 @@ article{
 }
 
   > div {
+pointer-events:auto;
   right:-300px;
 transition:all .5s ease;
 ${props =>
@@ -106,7 +107,49 @@ hr{
     gap:1rem;
   }
 
+  .delete{
+    margin-top:.5rem;
+    //border:solid thin #dc3545;
+    border:solid 1px transparent;
+      //border-radius:.5rem;
+    //color:#dc3545;
+
+    svg{
+      font-size:1.2rem;
+    }
+  }
+
+  .delete:hover{
+    color:#dc3545;
+    border:solid 1px #dc3545;
+  background-color:#dc354520;
+  }
+
+  .count{
+    border:solid thin #2d2f33;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:.5rem;
+    height:100px;
+
+    //div{
+    //display:flex;
+    //align-items:end;
+    //justify-content:center;
+    //}
+
+    svg{
+      font-size:1.5rem;
+    }
+
+    span{
+      font-size:3.5rem;
+    }
+  }
+
   button{
+    cursor:pointer;
     display:flex;
     justify-content:space-between;
     background-color:transparent;
@@ -151,4 +194,8 @@ export const ContentContainer = styled.div`
   right: -300px;
   background-color: #1a1c20;
   width: 300px;
+ 
+*{
+  //pointer-events:none;
+}
 `;
