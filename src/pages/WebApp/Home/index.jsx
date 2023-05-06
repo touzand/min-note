@@ -17,10 +17,57 @@ const Home = ({children}) => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [menu, setMenu] = useState(true);
   const [data, setData] = useState([]);
+  const [countData, setCountData] = useState({
+    orange: 0,
+    blue: 0,
+    purple: 0,
+    red: 0,
+    white: 0,
+    green: 0
+  });
   const [query, setQuery] = useState('');
   const {user} = userAuth();
   const navigate = useNavigate();
   const isMobile = useIsMobile(800);
+
+  useEffect(() => {
+    if (data.length != 0) {
+      data.forEach((item) => {
+        switch (item.bg) {
+          case '#DDDDDD':
+            setCountData({...countData,white:countData.white+1})
+            console.log('blanco');
+            console.log(item.bg);
+            break;
+          case '#F5A38A':
+            setCountData({...countData,red:countData.red+1})
+            console.log('rojo');
+            console.log(item.bg);
+            break;
+          case '#f3C57D':
+            setCountData({...countData,orange:countData.orange+1})
+            console.log('naranja');
+            console.log(item.bg);
+            break;
+          case '#DDE595':
+            setCountData({...countData,green:countData.green+1})
+            console.log('verde');
+            console.log(item.bg);
+            break;
+          case '#7BD5E1':
+            setCountData({...countData,blue:countData.blue+1})
+            console.log('azul');
+            console.log(item.bg);
+            break;
+          default:
+            setCountData({...countData,purple:countData.purple+1})
+            console.log('morado');
+            console.log(item.bg);
+            break;
+        }
+      })
+    }
+  }, [data]);
 
   useEffect(() => {
     if (user === null) {
@@ -50,10 +97,11 @@ const Home = ({children}) => {
     }, 600);
   };
 
-      //{menu && <Menu setMenu={setMenu} menu={menu}/>}
+  //{menu && <Menu setMenu={setMenu} menu={menu}/>}
   return (
     <>
-      <Menu setMenu={setMenu} menu={menu} data={data}/>
+      {console.log(countData)}
+      <Menu setMenu={setMenu} menu={menu} data={data} />
       <NotesGeneralContainer>
         <div className="add-background-transition"></div>
         <Loader start="1s" />
