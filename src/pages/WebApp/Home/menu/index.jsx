@@ -19,42 +19,42 @@ const Menu = props => {
               <FigureColor bg="#F5A38A" />
               <h3>Nombre del color</h3>
             </div>
-            <h3></h3>
+            <h3>{props.countData.red}</h3>
           </button>
           <button>
             <div>
               <FigureColor bg="#f3C57D" />
               <h3>Nombre del color</h3>
             </div>
-            <h3></h3>
+            <h3>{props.countData.orange}</h3>
           </button>
           <button>
             <div>
               <FigureColor bg="#dde595" />
               <h3>Nombre del color</h3>
             </div>
-            <h3></h3>
+            <h3>{props.countData.green}</h3>
           </button>
           <button>
             <div>
               <FigureColor bg="#7bd5e1" />
               <h3>Nombre del color</h3>
             </div>
-            <h3></h3>
+            <h3>{props.countData.blue}</h3>
           </button>
           <button>
             <div>
               <FigureColor bg="#c78dd0" />
               <h3>Nombre del color</h3>
             </div>
-            <h3></h3>
+            <h3>{props.countData.purple}</h3>
           </button>
           <button>
             <div>
               <FigureColor bg="#dddddd" />
               <h3>Nombre del color</h3>
             </div>
-            <h3></h3>
+            <h3>{props.countData.white}</h3>
           </button>
         </article>
 

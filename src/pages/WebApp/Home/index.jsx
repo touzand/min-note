@@ -23,7 +23,7 @@ const Home = ({children}) => {
     purple: 0,
     red: 0,
     white: 0,
-    green: 0
+    green: 0,
   });
   const [query, setQuery] = useState('');
   const {user} = userAuth();
@@ -32,40 +32,46 @@ const Home = ({children}) => {
 
   useEffect(() => {
     if (data.length != 0) {
-      data.forEach((item) => {
+      data.forEach(item => {
         switch (item.bg) {
-          case '#DDDDDD':
-            setCountData({...countData,white:countData.white+1})
-            console.log('blanco');
-            console.log(item.bg);
-            break;
           case '#F5A38A':
-            setCountData({...countData,red:countData.red+1})
+            const addAcount1 = {...countData, red: countData.red + 1};
+            setCountData(addAcount1);
             console.log('rojo');
             console.log(item.bg);
             break;
+          case '#DDDDDD':
+            const addAcount2 = {...countData, white: countData.white + 1};
+            setCountData(addAcount2);
+            console.log('blanco');
+            console.log(item.bg);
+            break;
           case '#f3C57D':
-            setCountData({...countData,orange:countData.orange+1})
+            const addAcount3 = {...countData, orange: countData.orange + 1}
+            setCountData(addAcount3);
             console.log('naranja');
             console.log(item.bg);
             break;
           case '#DDE595':
-            setCountData({...countData,green:countData.green+1})
+            const addAcount4 = {...countData, green: countData.green + 1}
+            setCountData(addAcount4);
             console.log('verde');
             console.log(item.bg);
             break;
           case '#7BD5E1':
-            setCountData({...countData,blue:countData.blue+1})
+            const addAcount5 = {...countData, blue: countData.blue + 1}
+            setCountData(addAcount5);
             console.log('azul');
             console.log(item.bg);
             break;
           default:
-            setCountData({...countData,purple:countData.purple+1})
+            const addAcount6 = {...countData, purple: countData.purple + 1}
+            setCountData(addAcount6);
             console.log('morado');
             console.log(item.bg);
             break;
         }
-      })
+      });
     }
   }, [data]);
 
@@ -101,7 +107,7 @@ const Home = ({children}) => {
   return (
     <>
       {console.log(countData)}
-      <Menu setMenu={setMenu} menu={menu} data={data} />
+      <Menu setMenu={setMenu} menu={menu} data={data} countData={countData} />
       <NotesGeneralContainer>
         <div className="add-background-transition"></div>
         <Loader start="1s" />
