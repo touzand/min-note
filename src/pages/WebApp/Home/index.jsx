@@ -107,7 +107,7 @@ const Home = ({children}) => {
   return (
     <>
       {console.log(countData)}
-      <Menu setMenu={setMenu} menu={menu} data={data} countData={countData} />
+      <Menu setMenu={setMenu} menu={menu} data={data} countData={countData} handdleAdd={handdleAdd} />
       <NotesGeneralContainer>
         <div className="add-background-transition"></div>
         <Loader start="1s" />

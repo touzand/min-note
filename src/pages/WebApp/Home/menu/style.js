@@ -74,6 +74,30 @@ hr{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:.75rem;
+
+    h3{
+      margin:0;
+      font-size:16px;
+    }
+
+    svg{
+      //font-size:1.25rem;
+    }
+
+      .add-button{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color:#2D2F33;
+        padding:.25rem;
+        width:25px;
+        height:25px;
+        font-size:24px;
+        font-weight:600;
+        border-radius:.25rem;
+      }
+    
   }
 
   .row:has(div) div{
