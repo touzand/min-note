@@ -94,6 +94,10 @@ export const AuthContextProvider = ({ children }) => {
     deleteDoc(doc(db, user.uid, docu));
   };
 
+  const DeleteAllDoc = (docu) => {
+    console.log{db,user.uid,docu}
+  };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

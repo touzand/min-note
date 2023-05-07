@@ -73,7 +73,7 @@ const Menu = props => {
             </div> 
           </button>
           <button className='delete'>
-            <h3>Delete</h3>
+            <h3>Delete all</h3>
             <RiDeleteBinLine/>
           </button>
         </article>

@@ -1,7 +1,7 @@
 import styled, {keyframes} from 'styled-components';
 
 const ShowMenu = keyframes`
-0%{right:-300px}
+0%{right:-350px}
 100%{right:0;}
 `;
 const BackgroundOpacity = keyframes`
@@ -35,7 +35,7 @@ article{
 
   > div {
 pointer-events:auto;
-  right:-300px;
+  right:-350px;
 transition:all .5s ease;
 ${props =>
   props.menu &&
@@ -191,9 +191,9 @@ export const ContentContainer = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  right: -300px;
+  right: -350px;
   background-color: #1a1c20;
-  width: 300px;
+  width: 350px;
  
 *{
   //pointer-events:none;
