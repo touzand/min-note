@@ -3,13 +3,21 @@ import {BackgroundContainer, ContentContainer, FigureColor} from './style';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {VscNote} from 'react-icons/vsc';
 import { RiDeleteBinLine } from "react-icons/ri";
+import { RxLetterCaseToggle } from "react-icons/rx";
 
 const Menu = props => {
   const [bgCounts, setBgCounts] = useState({});
+  const [characterCount, setCharacterCount] = useState(0);
 
   useEffect(() => {
     if (props.data.length != 0) {
       setBgCounts(() => countBgOccurrences(props.data));
+    }
+  }, [props.data]);
+
+  useEffect(() => {
+    if (props.data.length != 0) {
+      setCharacterCount(()=>sumCharacters(props.data))
     }
   }, [props.data]);
 
@@ -20,6 +28,18 @@ const Menu = props => {
       return countMap;
     }, {});
   };
+
+  function sumCharacters(arr) {
+  let sum = 0;
+  
+  arr.forEach(obj => {
+    if (obj.hasOwnProperty('body') && typeof obj.body === 'string') {
+      sum += obj.body.length;
+    }
+  });
+  
+  return sum;
+}
 
   const handdleClickOnMenu = (e) =>{
     console.log('hola mundo')
@@ -40,6 +60,12 @@ const Menu = props => {
               <h3>Manager</h3>
             </div>
           </div>
+          <button className='count'>
+            <div>
+              <span>{characterCount}</span>
+              <RxLetterCaseToggle/>
+            </div> 
+          </button>
           <button className='count'>
             <div>
               <span>{props.data.length}</span>

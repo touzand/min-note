@@ -108,7 +108,6 @@ hr{
   }
 
   .delete{
-    margin-top:.5rem;
     //border:solid thin #dc3545;
     border:solid 1px transparent;
       //border-radius:.5rem;
@@ -126,6 +125,7 @@ hr{
   }
 
   .count{
+    margin-bottom:.5rem;
     border:solid thin #2d2f33;
     display:flex;
     align-items:center;
@@ -144,7 +144,7 @@ hr{
     }
 
     span{
-      font-size:3.5rem;
+      font-size:3rem;
     }
   }
 
