@@ -43,8 +43,8 @@ const Home = ({children}) => {
 
   const handdleAdd = () => {
     document
-      .querySelector('.add-background-transition')
-      .classList.add('background-transition-expand');
+      .querySelector('.add_background_transition')
+      .classList.add('background_transition_expand');
     setTimeout(() => {
       navigate('/new');
     }, 600);
@@ -71,24 +71,24 @@ const Home = ({children}) => {
     setMenu,
   };
 
+  const inputSearchProps = {
+    query,
+    setQuery,
+    setSearchVisible,
+  };
+
   return (
     <>
       <Menu {...menuProps} />
       <NotesGeneralContainer>
-        <div className="add-background-transition"></div>
+        <div className="add_background_transition"></div>
         <Loader start="1s" />
-        {searchVisible && (
-          <InputSearch
-            query={query}
-            setQuery={setQuery}
-            setSearchVisible={setSearchVisible}
-          />
-        )}
+        {searchVisible && <InputSearch {...inputSearchProps} />}
         <Header {...headerProps} />
         <Filter {...filterProps} />
         <div
-          className={` masonry-grid ${query ? 'up-header' : 'down-header'} ${
-            data.length === 0 ? 'no-notes-cont' : 'with-notes-cont'
+          className={` masonry_grid ${query ? 'up_header' : 'down_header'} ${
+            data.length === 0 ? 'no_notes_cont' : 'with_notes_cont'
           }`}>
           {data.length !== 0 ? (
             dataFilter.map(note => (
@@ -102,9 +102,9 @@ const Home = ({children}) => {
         {isMobile && (
           <button
             onClick={handdleAdd}
-            className="icon-button add"
+            className="icon_button add"
             translate="no">
-            <span className="material-symbols-outlined">add</span>
+            <span className="material_symbols_outlined">add</span>
           </button>
         )}
         <div>{children}</div>

@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+
 const transitionExpand = keyframes`
 0%{width:0%}
 100%{width:100%}
@@ -8,7 +9,7 @@ export const NotesGeneralContainer = styled.div`
   width: 100%;
   padding:0 1rem;
 
-  .add-background-transition {
+  .add_background_transition {
     background-color: #DDDDDD;
     top: 0;
     bottom: 0;
@@ -18,19 +19,19 @@ export const NotesGeneralContainer = styled.div`
     z-index: 2;
   }
 
-  .background-transition-expand {
+  .background_transition_expand {
     animation: ${transitionExpand} 0.5s ease-in both;
   }
 
-  .up-header {
+  .up_header {
     animation: upHeader 0.5s ease both;
   }
 
-  .down-header {
+  .down_header {
     animation: downHeader 0.5s ease both;
   }
 
-  .masonry-grid {
+  .masonry_grid {
     width:min(100%,800px);
     margin: 0 auto;
     columns: 5 180px;
@@ -44,7 +45,7 @@ export const NotesGeneralContainer = styled.div`
     bottom: 1rem;
   }
 
-  .no-notes {
+  .no_notes {
     width:100%;
     text-align:center;
 
@@ -53,14 +54,14 @@ export const NotesGeneralContainer = styled.div`
     }
   }
 
-  .no-notes-cont{
+  .no_notes_cont{
     height:5rem;
     display:flex;
     justify-content:center;
     align-items:center;
   }
 
-  .desktop-add {
+  .desktop_add {
     display: none;
   }
 
@@ -82,15 +83,15 @@ export const NotesGeneralContainer = styled.div`
       bottom: 1rem;
     }
 
-    .general-container {
+    .general_container {
       max-height: auto;
     }
 
-    .mobile-add {
+    .mobile_add {
       display: none;
     }
 
-    .desktop-add {
+    .desktop_add {
       display: flex;
     }
   }
