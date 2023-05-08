@@ -2,7 +2,7 @@ import styled, {keyframes} from 'styled-components';
 
 const FilterContainer = styled.article`
   width: min(100%, 800px);
-  margin: 0rem auto 1rem auto;
+  margin: 1rem auto 1rem auto;
   display: flex;
   gap: 0.5rem;
   box-sizing: border-box;

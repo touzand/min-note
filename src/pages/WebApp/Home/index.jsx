@@ -50,9 +50,23 @@ const Home = ({children}) => {
     }, 600);
   };
 
+  const menuProps = {
+    setMenu,
+    menu,
+    data,
+    handdleAdd,
+  };
+
+  const filterProps = {
+    query,
+    setQuery,
+    data,
+    handdleAdd,
+  };
+
   return (
     <>
-      <Menu setMenu={setMenu} menu={menu} data={data} handdleAdd={handdleAdd} />
+      <Menu {...menuProps} />
       <NotesGeneralContainer>
         <div className="add-background-transition"></div>
         <Loader start="1s" />
@@ -69,7 +83,7 @@ const Home = ({children}) => {
           setSearchVisible={setSearchVisible}
           setMenu={setMenu}
         />
-        <Filter query={query} setQuery={setQuery} data={data}/>
+        <Filter {...filterProps}/>
         <div
           className={` masonry-grid ${query ? 'up-header' : 'down-header'} ${
             data.length === 0 ? 'no-notes-cont' : 'with-notes-cont'

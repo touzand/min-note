@@ -2,38 +2,39 @@ import {useEffect, useState} from 'react';
 import {BackgroundContainer, ContentContainer, FigureColor} from './style';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {VscNote} from 'react-icons/vsc';
-import { RiDeleteBinLine } from "react-icons/ri";
-import { RxLetterCaseToggle } from "react-icons/rx";
-import { userAuth } from '../../../../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import {RiDeleteBinLine} from 'react-icons/ri';
+import {RxLetterCaseToggle} from 'react-icons/rx';
+import {userAuth} from '../../../../contexts/AuthContext';
+import {useNavigate} from 'react-router-dom';
 
 const Menu = props => {
+  const {setMenu, menu, data, handdleAdd} = props;
   const [bgCounts, setBgCounts] = useState({});
   const [characterCount, setCharacterCount] = useState(0);
-  const { user, DeleteAllDoc } = userAuth();
+  const {user, DeleteAllDoc} = userAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (props.data.length != 0) {
-      setBgCounts(() => countBgOccurrences(props.data));
+    if (data.length != 0) {
+      setBgCounts(() => countBgOccurrences(data));
     }
-  }, [props.data]);
+  }, [data]);
 
   useEffect(() => {
-    if (props.data.length != 0) {
-      setCharacterCount(()=>sumCharacters(props.data))
+    if (data.length != 0) {
+      setCharacterCount(() => sumCharacters(data));
     }
-  }, [props.data]);
+  }, [data]);
 
   const handdleDeleteAll = async () => {
     try {
       await DeleteAllDoc();
-      await navigate("/");
+      await navigate('/');
     } catch (err) {
       console.log(err);
     }
     //setDeleteMessage(false);
-  }
+  };
 
   const countBgOccurrences = arr => {
     return arr.reduce((countMap, obj) => {
@@ -44,25 +45,28 @@ const Menu = props => {
   };
 
   function sumCharacters(arr) {
-  let sum = 0;
-  
-  arr.forEach(obj => {
-    if (obj.hasOwnProperty('body') && typeof obj.body === 'string') {
-      sum += obj.body.length;
-    }
-  });
-  
-  return sum;
-}
+    let sum = 0;
 
-  const handdleClickOnMenu = (e) =>{
-    if (e.target === document.querySelector('#bg-menu')){
-      props.setMenu(false)
-    }
+    arr.forEach(obj => {
+      if (obj.hasOwnProperty('body') && typeof obj.body === 'string') {
+        sum += obj.body.length;
+      }
+    });
+
+    return sum;
   }
 
+  const handdleClickOnMenu = e => {
+    if (e.target === document.querySelector('#bg-menu')) {
+      setMenu(false);
+    }
+  };
+
   return (
-    <BackgroundContainer onClick={handdleClickOnMenu} menu={props.menu} id='bg-menu'>
+    <BackgroundContainer
+      onClick={handdleClickOnMenu}
+      menu={menu}
+      id="bg-menu">
       <ContentContainer>
         <article>
           <div className="row">
@@ -73,26 +77,26 @@ const Menu = props => {
               <h3>Manager</h3>
             </div>
           </div>
-          <button className='count'>
+          <button className="count">
             <div>
               <span>{characterCount}</span>
-              <RxLetterCaseToggle/>
-            </div> 
+              <RxLetterCaseToggle />
+            </div>
           </button>
-          <button className='count'>
+          <button className="count">
             <div>
-              <span>{props.data.length}</span>
-              <VscNote/>
-            </div> 
+              <span>{data.length}</span>
+              <VscNote />
+            </div>
           </button>
-          <button className='delete' onClick={() => handdleDeleteAll()}>
+          <button className="delete" onClick={() => handdleDeleteAll()}>
             <h3>Delete all</h3>
-            <RiDeleteBinLine/>
+            <RiDeleteBinLine />
           </button>
         </article>
         <hr />
         <article>
-          <button className="row" onClick={props.handdleAdd}>
+          <button className="row" onClick={handdleAdd}>
             <div>
               <div>
                 <MdKeyboardArrowDown />
