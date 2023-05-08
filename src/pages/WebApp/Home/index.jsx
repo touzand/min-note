@@ -2,7 +2,7 @@ import {userAuth} from '../../../contexts/AuthContext';
 import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import Loader from '../../../components/loader';
-import Note from '../../../components/Card/Note.jsx';
+import Note from './Card/Note';
 import {collection, getDocs} from 'firebase/firestore';
 import {db} from '../../../firebase.config.js';
 import {NotesGeneralContainer} from './style';
@@ -64,12 +64,11 @@ const Home = ({children}) => {
     handdleAdd,
   };
 
-  const noteProps = {
-    bg: data.bg,
-    title: data.title,
-    date: data.date,
-    key: data.id,
-    id: data.id,
+  const headerProps = {
+    query,
+    searchVisible,
+    setSearchVisible,
+    setMenu,
   };
 
   return (
@@ -85,12 +84,7 @@ const Home = ({children}) => {
             setSearchVisible={setSearchVisible}
           />
         )}
-        <Header
-          query={query}
-          searchVisible={searchVisible}
-          setSearchVisible={setSearchVisible}
-          setMenu={setMenu}
-        />
+        <Header {...headerProps} />
         <Filter {...filterProps} />
         <div
           className={` masonry-grid ${query ? 'up-header' : 'down-header'} ${
@@ -98,13 +92,8 @@ const Home = ({children}) => {
           }`}>
           {data.length !== 0 ? (
             dataFilter.map(note => (
-              <Note
-                key={note.id}
-                bg={note.bg}
-                title={note.title}
-                date={note.date}
-                id={note.id}
-              />
+              //[> Aqui hace falta resolver el atributo key<]
+              <Note key={note.id} {...note} />
             ))
           ) : (
             <NoNotes />

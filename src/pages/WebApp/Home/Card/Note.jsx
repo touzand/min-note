@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import {Hr} from '../../styled-components';
+import {Hr} from '../../../../styled-components';
 
 const link = {
   color: 'red',
