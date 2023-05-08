@@ -64,6 +64,14 @@ const Home = ({children}) => {
     handdleAdd,
   };
 
+  const noteProps = {
+    bg,
+    title,
+    date,
+    key,
+    id,
+  };
+
   return (
     <>
       <Menu {...menuProps} />
@@ -83,24 +91,12 @@ const Home = ({children}) => {
           setSearchVisible={setSearchVisible}
           setMenu={setMenu}
         />
-        <Filter {...filterProps}/>
+        <Filter {...filterProps} />
         <div
           className={` masonry-grid ${query ? 'up-header' : 'down-header'} ${
             data.length === 0 ? 'no-notes-cont' : 'with-notes-cont'
           }`}>
-          {data.length !== 0 ? (
-            dataFilter.map(note => (
-              <Note
-                bg={note.bg}
-                title={note.title}
-                date={note.date}
-                key={note.id}
-                id={note.id}
-              />
-            ))
-          ) : (
-            <NoNotes />
-          )}
+          {data.length !== 0 ? dataFilter.map(note => <Note {...noteProps} />) : <NoNotes />}
         </div>
         {isMobile && (
           <button
