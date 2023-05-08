@@ -17,51 +17,51 @@ const Home = ({children}) => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [menu, setMenu] = useState(true);
   const [data, setData] = useState([]);
-  const [countData, setCountData] = useState({
-    orange: 0,
-    blue: 0,
-    purple: 0,
-    red: 0,
-    white: 0,
-    green: 0,
-  });
+  //const [countData, setCountData] = useState({
+    //orange: 0,
+    //blue: 0,
+    //purple: 0,
+    //red: 0,
+    //white: 0,
+    //green: 0,
+  //});
   const [query, setQuery] = useState('');
   const {user} = userAuth();
   const navigate = useNavigate();
   const isMobile = useIsMobile(800);
 
-  useEffect(() => {
-    if (data.length != 0) {
-      data.forEach(item => {
-        switch (item.bg) {
-          case '#F5A38A':
-            const addAcount1 = {...countData, red: countData.red + 1};
-            setCountData(addAcount1);
-            break;
-          case '#DDDDDD':
-            const addAcount2 = {...countData, white: countData.white + 1};
-            setCountData(addAcount2);
-            break;
-          case '#f3C57D':
-            const addAcount3 = {...countData, orange: countData.orange + 1}
-            setCountData(addAcount3);
-            break;
-          case '#DDE595':
-            const addAcount4 = {...countData, green: countData.green + 1}
-            setCountData(addAcount4);
-            break;
-          case '#7BD5E1':
-            const addAcount5 = {...countData, blue: countData.blue + 1}
-            setCountData(addAcount5);
-            break;
-          default:
-            const addAcount6 = {...countData, purple: countData.purple + 1}
-            setCountData(addAcount6);
-            break;
-        }
-      });
-    }
-  }, [data]);
+  //useEffect(() => {
+    //if (data.length != 0) {
+      //data.forEach(item => {
+        //switch (item.bg) {
+          //case '#F5A38A':
+            //const addAcount1 = {...countData, red: countData.red + 1};
+            //setCountData(addAcount1);
+            //break;
+          //case '#DDDDDD':
+            //const addAcount2 = {...countData, white: countData.white + 1};
+            //setCountData(addAcount2);
+            //break;
+          //case '#f3C57D':
+            //const addAcount3 = {...countData, orange: countData.orange + 1}
+            //setCountData(addAcount3);
+            //break;
+          //case '#DDE595':
+            //const addAcount4 = {...countData, green: countData.green + 1}
+            //setCountData(addAcount4);
+            //break;
+          //case '#7BD5E1':
+            //const addAcount5 = {...countData, blue: countData.blue + 1}
+            //setCountData(addAcount5);
+            //break;
+          //default:
+            //const addAcount6 = {...countData, purple: countData.purple + 1}
+            //setCountData(addAcount6);
+            //break;
+        //}
+      //});
+    //}
+  //}, [data]);
 
   useEffect(() => {
     if (user === null) {
