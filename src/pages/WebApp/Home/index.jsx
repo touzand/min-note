@@ -2,10 +2,10 @@ import {userAuth} from '../../../contexts/AuthContext';
 import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import Loader from '../../../components/loader';
-import Note from './Card/Note';
+import Note from './card/Note';
 import {collection, getDocs} from 'firebase/firestore';
 import {db} from '../../../firebase.config.js';
-import {NotesGeneralContainer} from './style';
+import {BackgroundTransition, MasonryGrid, NotesGeneralContainer} from './style';
 import Header from './header';
 import InputSearch from './inputSearch';
 import NoNotes from './noNotes';
@@ -18,6 +18,7 @@ const Home = ({children}) => {
   const [menu, setMenu] = useState(true);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState('');
+  const [addTransition, setAddTransition] = useState(false);
   const {user} = userAuth();
   const navigate = useNavigate();
   const isMobile = useIsMobile(800);
@@ -42,9 +43,10 @@ const Home = ({children}) => {
     data.filter(nota => nota.body.toLowerCase().includes(query.toLowerCase()));
 
   const handdleAdd = () => {
-    document
-      .querySelector('.add_background_transition')
-      .classList.add('background_transition_expand');
+    //document
+      //.querySelector('#add_background_transition')
+      //.classList.add('background_transition_expand');
+    setAddTransition(true)
     setTimeout(() => {
       navigate('/new');
     }, 600);
@@ -82,14 +84,12 @@ const Home = ({children}) => {
       <Menu {...menuProps} />
       <NotesGeneralContainer>
         <div className="add_background_transition"></div>
+        <BackgroundTransition id="add_background_transition" addTransition={addTransition}/>
         <Loader start="1s" />
         {searchVisible && <InputSearch {...inputSearchProps} />}
         <Header {...headerProps} />
         <Filter {...filterProps} />
-        <div
-          className={` masonry_grid ${query ? 'up_header' : 'down_header'} ${
-            data.length === 0 ? 'no_notes_cont' : 'with_notes_cont'
-          }`}>
+        <MasonryGrid query={query} dataLength={data.length}>
           {data.length !== 0 ? (
             dataFilter.map(note => (
               //[> Aqui hace falta resolver el atributo key<]
@@ -98,7 +98,7 @@ const Home = ({children}) => {
           ) : (
             <NoNotes />
           )}
-        </div>
+        </MasonryGrid>
         {isMobile && (
           <button
             onClick={handdleAdd}
