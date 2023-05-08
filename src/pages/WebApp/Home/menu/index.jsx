@@ -4,10 +4,14 @@ import {MdKeyboardArrowDown} from 'react-icons/md';
 import {VscNote} from 'react-icons/vsc';
 import { RiDeleteBinLine } from "react-icons/ri";
 import { RxLetterCaseToggle } from "react-icons/rx";
+import { userAuth } from '../../../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Menu = props => {
   const [bgCounts, setBgCounts] = useState({});
   const [characterCount, setCharacterCount] = useState(0);
+  const { user, DeleteAllDoc } = userAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (props.data.length != 0) {
@@ -20,6 +24,16 @@ const Menu = props => {
       setCharacterCount(()=>sumCharacters(props.data))
     }
   }, [props.data]);
+
+  const handdleDeleteAll = async () => {
+    try {
+      await DeleteAllDoc();
+      await navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+    //setDeleteMessage(false);
+  }
 
   const countBgOccurrences = arr => {
     return arr.reduce((countMap, obj) => {
@@ -42,7 +56,6 @@ const Menu = props => {
 }
 
   const handdleClickOnMenu = (e) =>{
-    console.log('hola mundo')
     if (e.target === document.querySelector('#bg-menu')){
       props.setMenu(false)
     }
@@ -72,7 +85,7 @@ const Menu = props => {
               <VscNote/>
             </div> 
           </button>
-          <button className='delete'>
+          <button className='delete' onClick={() => handdleDeleteAll()}>
             <h3>Delete all</h3>
             <RiDeleteBinLine/>
           </button>

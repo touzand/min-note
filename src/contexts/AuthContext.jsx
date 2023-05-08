@@ -43,6 +43,7 @@ export const AuthContextProvider = ({ children }) => {
     signOut(auth);
   };
 
+
   const SignInWithEmail = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
@@ -94,9 +95,31 @@ export const AuthContextProvider = ({ children }) => {
     deleteDoc(doc(db, user.uid, docu));
   };
 
-  const DeleteAllDoc = (docu) => {
-    console.log{db,user.uid,docu}
-  };
+  const DeleteAllDoc = () => {
+    console.log('Hola mundo')
+    console.log( {db,user:user.uid} )
+
+  // Obtiene una referencia a la colección
+  const coleccionRef = firebase.firestore().collection(coleccion);
+
+  // Realiza una consulta para obtener todos los documentos de la colección
+  coleccionRef.get().then(querySnapshot => {
+    // Crea un objeto Batch
+    const batch = firebase.firestore().batch();
+
+    // Itera sobre cada documento de la colección
+    querySnapshot.forEach(doc => {
+      // Agrega cada documento al Batch para su eliminación
+      batch.delete(doc.ref);
+    });
+
+    // Ejecuta el Batch para eliminar los documentos
+    return batch.commit();
+  }).catch(error => {
+    console.error('Error al obtener documentos de la colección:', error);
+  })
+  }
+
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -123,6 +146,7 @@ export const AuthContextProvider = ({ children }) => {
         AddDoc,
         UpdateDoc,
       DeleteDoc,
+      DeleteAllDoc,
         createUserError,
         signInError,
         googleSignError

@@ -37,38 +37,26 @@ const Home = ({children}) => {
           case '#F5A38A':
             const addAcount1 = {...countData, red: countData.red + 1};
             setCountData(addAcount1);
-            console.log('rojo');
-            console.log(item.bg);
             break;
           case '#DDDDDD':
             const addAcount2 = {...countData, white: countData.white + 1};
             setCountData(addAcount2);
-            console.log('blanco');
-            console.log(item.bg);
             break;
           case '#f3C57D':
             const addAcount3 = {...countData, orange: countData.orange + 1}
             setCountData(addAcount3);
-            console.log('naranja');
-            console.log(item.bg);
             break;
           case '#DDE595':
             const addAcount4 = {...countData, green: countData.green + 1}
             setCountData(addAcount4);
-            console.log('verde');
-            console.log(item.bg);
             break;
           case '#7BD5E1':
             const addAcount5 = {...countData, blue: countData.blue + 1}
             setCountData(addAcount5);
-            console.log('azul');
-            console.log(item.bg);
             break;
           default:
             const addAcount6 = {...countData, purple: countData.purple + 1}
             setCountData(addAcount6);
-            console.log('morado');
-            console.log(item.bg);
             break;
         }
       });
