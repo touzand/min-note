@@ -65,11 +65,11 @@ const Home = ({children}) => {
   };
 
   const noteProps = {
-    bg,
-    title,
-    date,
-    key,
-    id,
+    bg: data.bg,
+    title: data.title,
+    date: data.date,
+    key: data.id,
+    id: data.id,
   };
 
   return (
@@ -96,7 +96,19 @@ const Home = ({children}) => {
           className={` masonry-grid ${query ? 'up-header' : 'down-header'} ${
             data.length === 0 ? 'no-notes-cont' : 'with-notes-cont'
           }`}>
-          {data.length !== 0 ? dataFilter.map(note => <Note {...noteProps} />) : <NoNotes />}
+          {data.length !== 0 ? (
+            dataFilter.map(note => (
+              <Note
+                key={note.id}
+                bg={note.bg}
+                title={note.title}
+                date={note.date}
+                id={note.id}
+              />
+            ))
+          ) : (
+            <NoNotes />
+          )}
         </div>
         {isMobile && (
           <button

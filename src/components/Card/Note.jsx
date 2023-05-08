@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import {Hr} from '../../styled-components'
+import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+import {Hr} from '../../styled-components';
 
 const link = {
-  color:'red',
-  textDecoration:'none',
-  display:'block'
-}
+  color: 'red',
+  textDecoration: 'none',
+  display: 'block',
+};
 
 const NoteContaier = styled.article`
-  background-color: ${(props) => props.bg};
+  background-color: ${props => props.bg};
   border-radius: 0.25rem;
   text-align: left;
   color: #141414;
@@ -23,14 +23,14 @@ const NoteContaier = styled.article`
   span {
     color: #0009;
     font-size: 0.8rem;
-    display:block;
-  padding:.5rem 1rem 1rem 1rem;
+    display: block;
+    padding: 0.5rem 1rem 1rem 1rem;
   }
 
   p {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.1rem;
-  padding:1rem 1rem 0 1rem;
+    padding: 1rem 1rem 0 1rem;
   }
 
   a {
@@ -39,21 +39,15 @@ const NoteContaier = styled.article`
   }
 `;
 
-const Note = (props) => {
-  const {
-    bg,
-    title,
-    date,
-    key,
-    id,
-  } = props
+const Note = props => {
+  const {bg, title, date, key, id} = props;
 
   return (
-    <Link to={`/note/${props.id}`} style={link}>
-      <NoteContaier bg={props.bg}>
-        <p>{props.title}</p>
-        <Hr tc=" #0009"/>
-        <span>{props.date}</span>
+    <Link to={`/note/${id}`} style={link}>
+      <NoteContaier bg={bg}>
+        <p>{title}</p>
+        <Hr tc=" #0009" />
+        <span>{date}</span>
       </NoteContaier>
     </Link>
   );
