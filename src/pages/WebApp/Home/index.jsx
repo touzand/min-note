@@ -5,7 +5,11 @@ import Loader from '../../../components/loader';
 import Note from './card/Note';
 import {collection, getDocs} from 'firebase/firestore';
 import {db} from '../../../firebase.config.js';
-import {BackgroundTransition, MasonryGrid, NotesGeneralContainer} from './style';
+import {
+  BackgroundTransition,
+  MasonryGrid,
+  NotesGeneralContainer,
+} from './style';
 import Header from './header';
 import InputSearch from './inputSearch';
 import NoNotes from './noNotes';
@@ -36,17 +40,16 @@ const Home = ({children}) => {
     })();
   }, [user]);
 
-  const dataFilter =
-    data.filter(nota =>
-      nota.title.toLowerCase().includes(query.toLowerCase()),
-    ) &&
-    data.filter(nota => nota.body.toLowerCase().includes(query.toLowerCase()));
+    const dataFilter =
+      data.filter(nota =>
+        nota.title.toLowerCase().includes(query.toLowerCase()),
+      ) &&
+      data.filter(nota =>
+        nota.body.toLowerCase().includes(query.toLowerCase()),
+      );
 
   const handdleAdd = () => {
-    //document
-      //.querySelector('#add_background_transition')
-      //.classList.add('background_transition_expand');
-    setAddTransition(true)
+    setAddTransition(true);
     setTimeout(() => {
       navigate('/new');
     }, 600);
@@ -83,8 +86,10 @@ const Home = ({children}) => {
     <>
       <Menu {...menuProps} />
       <NotesGeneralContainer>
-        <div className="add_background_transition"></div>
-        <BackgroundTransition id="add_background_transition" addTransition={addTransition}/>
+        <BackgroundTransition
+          id="add_background_transition"
+          addTransition={addTransition}
+        />
         <Loader start="1s" />
         {searchVisible && <InputSearch {...inputSearchProps} />}
         <Header {...headerProps} />

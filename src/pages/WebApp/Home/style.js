@@ -1,10 +1,5 @@
 import styled, {keyframes} from 'styled-components';
 
-const transitionExpand = keyframes`
-0%{width:0%}
-100%{width:100%}
-`;
-
 export const MasonryGrid = styled.div`
   width: min(100%, 800px);
   margin: 0 auto;
@@ -33,30 +28,13 @@ export const BackgroundTransition = styled.div`
   width: 0%;
   position: absolute;
   z-index: 2;
-transition:width .5s ease-in;
+  transition: width 0.5s ease-in;
   ${props => props.addTransition && 'width:100%'}
 `;
 
 export const NotesGeneralContainer = styled.div`
   width: 100%;
   padding: 0 1rem;
-
-  .add_background_transition {
-  }
-
-  .background_transition_expand {
-  }
-
-  .up_header {
-    animation: upHeader 0.5s ease both;
-  }
-
-  .down_header {
-    animation: downHeader 0.5s ease both;
-  }
-
-  .masonry_grid {
-  }
 
   .add {
     position: fixed;
