@@ -1,21 +1,27 @@
-import {userAuth} from '../../../contexts/AuthContext';
+//... React
 import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
-import Loader from '../../../components/loader';
-import Note from './card/Note';
+//... Hooks
+import useIsMobile from '../../../hooks/useIsMobile';
+//... Context
+import {userAuth} from '../../../contexts/AuthContext';
+//... Firebase
 import {collection, getDocs} from 'firebase/firestore';
 import {db} from '../../../firebase.config.js';
+//... Components
+import Header from './header';
+import InputSearch from './inputSearch';
+import NoNotes from './noNotes';
+import Filter from './filter';
+import Menu from './menu';
+import Loader from '../../../components/loader';
+import Note from './card/Note';
+//... Styles
 import {
   BackgroundTransition,
   MasonryGrid,
   NotesGeneralContainer,
 } from './style';
-import Header from './header';
-import InputSearch from './inputSearch';
-import NoNotes from './noNotes';
-import useIsMobile from '../../../hooks/useIsMobile';
-import Filter from './filter';
-import Menu from './menu';
 
 const Home = ({children}) => {
   const [searchVisible, setSearchVisible] = useState(false);
