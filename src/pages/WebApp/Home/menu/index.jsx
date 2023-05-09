@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {BackgroundContainer, ContentContainer, FigureColor} from './style';
+import {Row, Count, BackgroundContainer, ContentContainer, FigureColor, AccountStatus} from './style';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {VscNote} from 'react-icons/vsc';
 import {RiDeleteBinLine} from 'react-icons/ri';
@@ -26,6 +26,7 @@ const Menu = props => {
     }
   }, [data]);
 
+  //... Falta terminar la funcionalidad de eliminar todas la notas
   const handdleDeleteAll = async () => {
     try {
       await DeleteAllDoc();
@@ -68,27 +69,24 @@ const Menu = props => {
       menu={menu}
       id="bg-menu">
       <ContentContainer>
+        {console.log(user)}
         <article>
-          <div className="row">
+          <Row>
             <div>
               <div>
                 <MdKeyboardArrowDown />
               </div>
               <h3>Manager</h3>
             </div>
-          </div>
-          <button className="count">
-            <div>
+          </Row>
+          <Count>
               <span>{characterCount}</span>
               <RxLetterCaseToggle />
-            </div>
-          </button>
-          <button className="count">
-            <div>
+          </Count>
+          <Count>
               <span>{data.length}</span>
               <VscNote />
-            </div>
-          </button>
+          </Count>
           <button className="delete" onClick={() => handdleDeleteAll()}>
             <h3>Delete all</h3>
             <RiDeleteBinLine />
@@ -150,6 +148,19 @@ const Menu = props => {
         </article>
 
         <hr />
+        <article>
+          <Row>
+            <div>
+              <div>
+                <MdKeyboardArrowDown />
+              </div>
+              <h3>Account</h3>
+            </div>
+            <AccountStatus>
+              {user.status === "premiun" ? "Premiun" : "Free"}
+            </AccountStatus>
+          </Row>
+        </article>
       </ContentContainer>
     </BackgroundContainer>
   );

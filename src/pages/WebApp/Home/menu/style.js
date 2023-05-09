@@ -9,6 +9,81 @@ const BackgroundOpacity = keyframes`
 100%{opacity:1;}
 `;
 
+export const AccountStatus = styled.div`
+
+`
+
+export const Count = styled.div`
+  margin-bottom: 0.5rem;
+  border: solid thin #2d2f33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  height: 100px;
+
+  &:hover {
+    border-color: var(--complement-color);
+  }
+
+  svg {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  span {
+    font-size: 3rem;
+  }
+`;
+
+export const Row = styled.div`
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:.75rem;
+
+    h3{
+      margin:0;
+      font-size:16px;
+    }
+
+    svg{
+      //font-size:1.25rem;
+    }
+
+      .add-button{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color:#2D2F33;
+        padding:.25rem;
+        width:25px;
+        height:25px;
+        font-size:24px;
+        font-weight:600;
+        border-radius:.25rem;
+      }
+    
+  }
+
+  &:has(div) div{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+  }
+
+  .delete{
+    //border:solid thin #dc3545;
+    border:solid 1px transparent;
+      //border-radius:.5rem;
+    //color:#dc3545;
+
+    svg{
+      font-size:1.2rem;
+    }
+
+`
+
 export const BackgroundContainer = styled.div`
 color:var(--font-color);
   position: fixed;
@@ -72,50 +147,6 @@ hr{
 }
 
   .row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:.75rem;
-
-    h3{
-      margin:0;
-      font-size:16px;
-    }
-
-    svg{
-      //font-size:1.25rem;
-    }
-
-      .add-button{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background-color:#2D2F33;
-        padding:.25rem;
-        width:25px;
-        height:25px;
-        font-size:24px;
-        font-weight:600;
-        border-radius:.25rem;
-      }
-    
-  }
-
-  .row:has(div) div{
-    display:flex;
-    align-items:center;
-    gap:1rem;
-  }
-
-  .delete{
-    //border:solid thin #dc3545;
-    border:solid 1px transparent;
-      //border-radius:.5rem;
-    //color:#dc3545;
-
-    svg{
-      font-size:1.2rem;
-    }
   }
 
   .delete:hover{
@@ -125,27 +156,6 @@ hr{
   }
 
   .count{
-    margin-bottom:.5rem;
-    border:solid thin #2d2f33;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:.5rem;
-    height:100px;
-
-    //div{
-    //display:flex;
-    //align-items:end;
-    //justify-content:center;
-    //}
-
-    svg{
-      font-size:1.5rem;
-    }
-
-    span{
-      font-size:3rem;
-    }
   }
 
   button{
@@ -194,8 +204,8 @@ export const ContentContainer = styled.div`
   right: -350px;
   background-color: #1a1c20;
   width: 350px;
- 
-*{
-  //pointer-events:none;
-}
+
+  * {
+    //pointer-events:none;
+  }
 `;
