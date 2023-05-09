@@ -154,7 +154,7 @@ const Menu = props => {
               <div>
                 <MdKeyboardArrowDown />
               </div>
-              <h3>Account</h3>
+              <h3>My account</h3>
             </div>
             <AccountStatus>
               {user.status === "premiun" ? "Premiun" : "Free"}
