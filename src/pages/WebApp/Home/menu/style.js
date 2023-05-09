@@ -9,13 +9,7 @@ const BackgroundOpacity = keyframes`
 100%{opacity:1;}
 `;
 
-export const Upgrade = styled.button`
-
-`
- 
-export const AccountStatus = styled.div`
-
-`
+export const AccountStatus = styled.div``;
 
 export const Count = styled.div`
   margin-bottom: 0.5rem;
@@ -86,7 +80,7 @@ export const Row = styled.div`
       font-size:1.2rem;
     }
 
-`
+`;
 
 export const BackgroundContainer = styled.div`
 color:var(--font-color);
@@ -208,9 +202,23 @@ export const ContentContainer = styled.div`
   right: -350px;
   background-color: #1a1c20;
   width: 350px;
-  overflow-y:scroll;
+  overflow-y: scroll;
 
   * {
     //pointer-events:none;
   }
+`;
+
+export const Upgrade = styled.button`
+  background-color: var(--complement-color) !important;
+  height: 60px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+p{
+  width:100%;
+  font-size:1rem;
+}
 `;

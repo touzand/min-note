@@ -1,5 +1,13 @@
 import {useEffect, useState} from 'react';
-import {Upgrade,Row, Count, BackgroundContainer, ContentContainer, FigureColor, AccountStatus} from './style';
+import {
+  Upgrade,
+  Row,
+  Count,
+  BackgroundContainer,
+  ContentContainer,
+  FigureColor,
+  AccountStatus,
+} from './style';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {VscNote} from 'react-icons/vsc';
 import {RiDeleteBinLine} from 'react-icons/ri';
@@ -64,10 +72,7 @@ const Menu = props => {
   };
 
   return (
-    <BackgroundContainer
-      onClick={handdleClickOnMenu}
-      menu={menu}
-      id="bg-menu">
+    <BackgroundContainer onClick={handdleClickOnMenu} menu={menu} id="bg-menu">
       <ContentContainer>
         {console.log(user)}
         <article>
@@ -80,12 +85,12 @@ const Menu = props => {
             </div>
           </Row>
           <Count>
-              <span>{characterCount}</span>
-              <RxLetterCaseToggle />
+            <span>{characterCount}</span>
+            <RxLetterCaseToggle />
           </Count>
           <Count>
-              <span>{data.length}</span>
-              <VscNote />
+            <span>{data.length}</span>
+            <VscNote />
           </Count>
           <button className="delete" onClick={() => handdleDeleteAll()}>
             <h3>Delete all</h3>
@@ -157,15 +162,18 @@ const Menu = props => {
               <h3>My account</h3>
             </div>
             <AccountStatus>
-              {user.status === "premiun" ? "Premiun" : "Free"}
+              {user.status === 'premiun' ? 'Premiun' : 'Free'}
             </AccountStatus>
           </Row>
-          <Row>
-            <h3>{user.email}</h3>
-          </Row>
-          <p>Unlock your potential with the Premium version. Exclusive benefits that will elevate your experience!</p>
-              {user.status !== "premiun" && <Upgrade>Upgrade</Upgrade> }
-          
+          <p>
+            Unlock your potential with the Premium version. Exclusive benefits
+            that will elevate your experience!
+          </p>
+          {user.status !== 'premiun' && (
+            <Upgrade>
+              <p>Upgrade</p>
+            </Upgrade>
+          )}
         </article>
       </ContentContainer>
     </BackgroundContainer>
