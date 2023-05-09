@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {Row, Count, BackgroundContainer, ContentContainer, FigureColor, AccountStatus} from './style';
+import {Upgrade,Row, Count, BackgroundContainer, ContentContainer, FigureColor, AccountStatus} from './style';
 import {MdKeyboardArrowDown} from 'react-icons/md';
 import {VscNote} from 'react-icons/vsc';
 import {RiDeleteBinLine} from 'react-icons/ri';
@@ -160,6 +160,12 @@ const Menu = props => {
               {user.status === "premiun" ? "Premiun" : "Free"}
             </AccountStatus>
           </Row>
+          <Row>
+            <h3>{user.email}</h3>
+          </Row>
+          <p>Unlock your potential with the Premium version. Exclusive benefits that will elevate your experience!</p>
+              {user.status !== "premiun" && <Upgrade>Upgrade</Upgrade> }
+          
         </article>
       </ContentContainer>
     </BackgroundContainer>

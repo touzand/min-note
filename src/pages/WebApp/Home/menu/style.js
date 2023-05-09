@@ -9,6 +9,10 @@ const BackgroundOpacity = keyframes`
 100%{opacity:1;}
 `;
 
+export const Upgrade = styled.button`
+
+`
+ 
 export const AccountStatus = styled.div`
 
 `
@@ -204,6 +208,7 @@ export const ContentContainer = styled.div`
   right: -350px;
   background-color: #1a1c20;
   width: 350px;
+  overflow-y:scroll;
 
   * {
     //pointer-events:none;
