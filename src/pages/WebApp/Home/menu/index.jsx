@@ -1,19 +1,23 @@
+//... React
 import {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+//... React Iconc
+import {MdKeyboardArrowDown} from 'react-icons/md';
+import {VscNote} from 'react-icons/vsc';
+import {RiDeleteBinLine} from 'react-icons/ri';
+import {RxLetterCaseToggle} from 'react-icons/rx';
+//... Context
+import {userAuth} from '../../../../contexts/AuthContext';
+//... Styles
 import {
   Upgrade,
-  Row,
   Count,
   BackgroundContainer,
   ContentContainer,
   FigureColor,
   AccountStatus,
+  Row,
 } from './style';
-import {MdKeyboardArrowDown} from 'react-icons/md';
-import {VscNote} from 'react-icons/vsc';
-import {RiDeleteBinLine} from 'react-icons/ri';
-import {RxLetterCaseToggle} from 'react-icons/rx';
-import {userAuth} from '../../../../contexts/AuthContext';
-import {useNavigate} from 'react-router-dom';
 
 const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
