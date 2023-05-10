@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Define el componente Button reutilizable
-const Count = ({ text, icon: IconComponent}) => {
+const Count = ({text, icon: IconComponent}) => {
   return (
     <CountWrapper>
       <span>{text}</span>
@@ -36,4 +36,3 @@ const CountWrapper = styled.div`
 `;
 
 export default Count;
-
