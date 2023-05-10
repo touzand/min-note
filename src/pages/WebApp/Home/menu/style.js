@@ -9,7 +9,13 @@ const BackgroundOpacity = keyframes`
 100%{opacity:1;}
 `;
 
-export const AccountStatus = styled.div``;
+export const AccountStatus = styled.span`
+background-image:linear-gradient(navy,var(--complement-color));
+padding:.5rem;
+border-radius:.25rem;
+//color:#1a1c20;
+//font-weight:bold;
+`;
 
 export const Count = styled.div`
   margin-bottom: 0.5rem;

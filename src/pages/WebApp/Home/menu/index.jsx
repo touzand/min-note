@@ -44,7 +44,7 @@ const Menu = props => {
       await DeleteAllDoc();
       await navigate('/');
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
     //setDeleteMessage(false);
   };
@@ -78,7 +78,6 @@ const Menu = props => {
   return (
     <BackgroundContainer onClick={handdleClickOnMenu} menu={menu} id="bg-menu">
       <ContentContainer>
-        {console.log(user)}
         <article>
           <Row>
             <div>
