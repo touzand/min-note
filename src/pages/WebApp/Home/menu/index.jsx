@@ -174,7 +174,7 @@ const Menu = props => {
           </p>
           {user.status !== 'premiun' && (
             <Upgrade>
-              <p>Upgrade</p>
+              <span>Upgrade</span>
             </Upgrade>
           )}
         </article>

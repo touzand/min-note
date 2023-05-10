@@ -10,9 +10,10 @@ const BackgroundOpacity = keyframes`
 `;
 
 export const AccountStatus = styled.span`
-background-image:linear-gradient(navy,var(--complement-color));
-padding:.5rem;
+background-image:linear-gradient(#cb1bf9,#6a05df);
+padding:.5rem 1rem;
 border-radius:.25rem;
+text-align:center;
 //color:#1a1c20;
 //font-weight:bold;
 `;
@@ -110,6 +111,10 @@ pointer-events:auto;
 
 article{
   padding:1rem;
+
+  p{
+    color:grey;
+  }
 }
 
   > div {
@@ -223,7 +228,7 @@ export const Upgrade = styled.button`
   align-items: center;
   justify-content: center;
 
-p{
+span{
   width:100%;
   font-size:1rem;
 }
