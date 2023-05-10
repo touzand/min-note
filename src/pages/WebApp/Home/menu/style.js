@@ -49,7 +49,8 @@ export const Row = styled.div`
   border:solid thin transparent;
     
 &:hover{
-  border-color:${props => (props.hover ? ' var(--complement-color)' : 'transparent')};
+  border-color:${props =>
+    props.hover ? ' var(--complement-color)' : 'transparent'};
   border-radius:.5rem;
 }
 
@@ -243,6 +244,13 @@ export const Upgrade = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  border: solid thin #ddd2 !important;
+transition:filter .s ease-in;
+    filter: drop-shadow(0px 0px 0px #0064ae);
+
+  &:hover {
+    filter: drop-shadow(0px 0px 50px #0064ae);
+  }
 
   span {
     width: 100%;
