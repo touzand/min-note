@@ -18,28 +18,8 @@ export const AccountStatus = styled.span`
   //font-weight:bold;
 `;
 
-export const Count = styled.div`
-  margin-bottom: 0.5rem;
-  border: solid thin #2d2f33;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  height: 100px;
-
-  &:hover {
-    border-color: var(--complement-color);
-  }
-
-  svg {
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
-  }
-
-  span {
-    font-size: 3rem;
-  }
-`;
+//export const Count = styled.div`
+//`;
 
 export const Row = styled.div`
     display:flex;

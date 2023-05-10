@@ -3,22 +3,22 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 //... React Iconc
 import {MdKeyboardArrowDown} from 'react-icons/md';
-import {VscNote} from 'react-icons/vsc';
 import {RiDeleteBinLine} from 'react-icons/ri';
+import {VscNote} from 'react-icons/vsc';
 import {RxLetterCaseToggle} from 'react-icons/rx';
 //... Context
 import {userAuth} from '../../../../contexts/AuthContext';
 //... Styles
 import {
   Upgrade,
-  Count,
   BackgroundContainer,
   ContentContainer,
   FigureColor,
   AccountStatus,
   Row,
 } from './style';
-import {buttonContent} from './bgCountBg';
+import {buttonContent} from './bgCount';
+import Count from './Count';
 
 const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
@@ -88,14 +88,8 @@ const Menu = props => {
               <h3>Manager</h3>
             </div>
           </Row>
-          <Count>
-            <span>{characterCount}</span>
-            <RxLetterCaseToggle />
-          </Count>
-          <Count>
-            <span>{data.length}</span>
-            <VscNote />
-          </Count>
+          <Count text={characterCount} icon={RxLetterCaseToggle} />
+          <Count text={data.length} icon={VscNote} />
           <button className="delete" onClick={() => handdleDeleteAll()}>
             <h3>Delete all</h3>
             <RiDeleteBinLine />
@@ -120,7 +114,6 @@ const Menu = props => {
             </button>
           ))}
         </article>
-
         <hr />
         <article>
           <Row>
