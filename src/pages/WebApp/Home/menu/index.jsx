@@ -18,6 +18,7 @@ import {
   AccountStatus,
   Row,
 } from './style';
+import {buttonContent} from './bgCountBg';
 
 const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
@@ -102,55 +103,22 @@ const Menu = props => {
         </article>
         <hr />
         <article>
-            <Row onClick={handdleAdd} hover={ true }>
-              <div>
-                <MdKeyboardArrowDown />
+          <Row onClick={handdleAdd} hover={true}>
+            <div>
+              <MdKeyboardArrowDown />
               <h3>Your notes</h3>
-              </div>
+            </div>
             <div className="add-button">+</div>
-            </Row>
-          <button>
-            <div>
-              <FigureColor bg="#F5A38A" />
-              <h3>Dark Salmon</h3>
-            </div>
-            <h3>{bgCounts['#F5A38A'] ?? 0}</h3>
-          </button>
-          <button>
-            <div>
-              <FigureColor bg="#F3C57D" />
-              <h3>Sandy Brown</h3>
-            </div>
-            <h3>{bgCounts['#F3C57D'] ?? 0}</h3>
-          </button>
-          <button>
-            <div>
-              <FigureColor bg="#DDE595" />
-              <h3>Khaki</h3>
-            </div>
-            <h3>{bgCounts['#DDE595'] ?? 0}</h3>
-          </button>
-          <button>
-            <div>
-              <FigureColor bg="#7BD5E1" />
-              <h3>Light Sky Blue</h3>
-            </div>
-            <h3>{bgCounts['#7BD5E1'] ?? 0}</h3>
-          </button>
-          <button>
-            <div>
-              <FigureColor bg="#C78DD0" />
-              <h3>Plum</h3>
-            </div>
-            <h3>{bgCounts['#C78DD0'] ?? 0}</h3>
-          </button>
-          <button>
-            <div>
-              <FigureColor bg="#DDDDDD" />
-              <h3>Gainsboro</h3>
-            </div>
-            <h3>{bgCounts['#DDDDDD'] ?? 0}</h3>
-          </button>
+          </Row>
+          {buttonContent.map(button => (
+            <button>
+              <div>
+                <FigureColor bg={button.hex_code} />
+                <h3>{button.color_name}</h3>
+              </div>
+              <h3>{bgCounts[button.hex_code] ?? 0}</h3>
+            </button>
+          ))}
         </article>
 
         <hr />
