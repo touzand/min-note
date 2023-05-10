@@ -49,7 +49,8 @@ export const Row = styled.div`
   border:solid thin transparent;
     
 &:hover{
-  border-color:${props => (props.hover ? ' red' : 'transparent')};
+  border-color:${props => (props.hover ? ' var(--complement-color)' : 'transparent')};
+  border-radius:.5rem;
 }
 
     h3{
