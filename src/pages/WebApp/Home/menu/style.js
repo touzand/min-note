@@ -10,12 +10,12 @@ const BackgroundOpacity = keyframes`
 `;
 
 export const AccountStatus = styled.span`
-background-image:linear-gradient(#cb1bf9,#6a05df);
-padding:.5rem 1rem;
-border-radius:.25rem;
-text-align:center;
-//color:#1a1c20;
-//font-weight:bold;
+  background-image: linear-gradient(#cb1bf9, #6a05df);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  //color:#1a1c20;
+  //font-weight:bold;
 `;
 
 export const Count = styled.div`
@@ -46,6 +46,11 @@ export const Row = styled.div`
     justify-content:space-between;
     align-items:center;
     padding:.75rem;
+  border:solid thin transparent;
+    
+&:hover{
+  border-color:${props => (props.hover ? ' red' : 'transparent')};
+}
 
     h3{
       margin:0;
@@ -77,15 +82,17 @@ export const Row = styled.div`
     gap:1rem;
   }
 
-  .delete{
-    //border:solid thin #dc3545;
-    border:solid 1px transparent;
-      //border-radius:.5rem;
-    //color:#dc3545;
+  //.delete{
+    ////border:solid thin #dc3545;
+    //border:solid 1px transparent !important;
+      ////border-radius:.5rem;
+    ////color:#dc3545;
 
-    svg{
-      font-size:1.2rem;
-    }
+    //svg{
+      //font-size:1.2rem;
+    //}
+
+  //}
 
 `;
 
@@ -158,6 +165,14 @@ hr{
   .row{
   }
 
+  .delete{
+    border:solid 1px transparent;
+
+    svg{
+      font-size:1.2rem;
+    }
+  }
+
   .delete:hover{
     color:#dc3545;
     border:solid 1px #dc3545;
@@ -228,8 +243,8 @@ export const Upgrade = styled.button`
   align-items: center;
   justify-content: center;
 
-span{
-  width:100%;
-  font-size:1rem;
-}
+  span {
+    width: 100%;
+    font-size: 1rem;
+  }
 `;

@@ -102,15 +102,13 @@ const Menu = props => {
         </article>
         <hr />
         <article>
-          <button className="row" onClick={handdleAdd}>
-            <div>
+            <Row onClick={handdleAdd} hover={ true }>
               <div>
                 <MdKeyboardArrowDown />
-              </div>
               <h3>Your notes</h3>
-            </div>
+              </div>
             <div className="add-button">+</div>
-          </button>
+            </Row>
           <button>
             <div>
               <FigureColor bg="#F5A38A" />
