@@ -1,15 +1,21 @@
-import {userAuth} from '../../../../contexts/AuthContext';
-import OptionMessage from '../../../../components/optionMessage';
-import {HeaderContainer} from './style';
+//... React
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+//... Styled
+import {HeaderContainer} from './style';
+//... Hooks
 import useIsMobile from '../../../../hooks/useIsMobile';
-import {Hr, IconButtom} from '../../../../styled-components';
+// ... Context
+import {userAuth} from '../../../../contexts/AuthContext';
+//... React icons
 import {IoMdAdd} from 'react-icons/io';
 import {BsSearch} from 'react-icons/bs';
 import {GoSignOut} from 'react-icons/go';
 import {CgMenuGridO} from 'react-icons/cg';
+//... Components
 import HeaderTop from '../../../../components/Header';
+import OptionMessage from '../../../../components/optionMessage';
+import {Hr, IconButtom} from '../../../../styled-components';
 
 const Header = props => {
   const {query, searchVisible, setSearchVisible, setMenu} = props;
@@ -18,14 +24,14 @@ const Header = props => {
   const {user, SignOut} = userAuth();
   const isMobile = useIsMobile(800);
 
-  const handdleAdd = () => {
-    document
-      .querySelector('.add-background-transition')
-      .classList.add('background-transition-expand');
-    setTimeout(() => {
-      navigate('/new');
-    }, 600);
-  };
+  //const handdleAdd = () => {
+    //document
+      //.querySelector('.add-background-transition')
+      //.classList.add('background-transition-expand');
+    //setTimeout(() => {
+      //navigate('/new');
+    //}, 600);
+  //};
 
   const handdleSignOut = async () => {
     try {
