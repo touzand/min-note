@@ -17,6 +17,7 @@ import {
   AccountStatus,
   Row,
 } from './style';
+
 import {buttonContent} from './bgCount';
 import Count from './Count';
 

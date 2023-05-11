@@ -16,7 +16,7 @@ export const Hr = styled.hr`
 
 export const IconButtom = styled.button`
   background-color: transparent;
-  //padding: 0.75rem;
+  padding:0.75rem 0.75rem 0 .75rem !important;
   display: flex;
   justify-content: center;
   align-items: center;
