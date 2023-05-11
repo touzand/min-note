@@ -115,8 +115,8 @@ const Menu = props => {
             </button>
           ))}
         </article>
-        <hr />
-        <article>
+        <article className='upgrade'>
+          {/* <hr />*/ }
           <Row>
             <div>
               <div>

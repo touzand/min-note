@@ -98,6 +98,13 @@ pointer-events:auto;
   background-color: #00000080;
   `}
 
+  .upgrade{
+    background-color:#131517;
+    position:sticky;
+    bottom:0;
+    padding-top:0;
+  }
+
 article{
   padding:1rem;
 
