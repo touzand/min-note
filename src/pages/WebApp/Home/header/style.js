@@ -33,7 +33,7 @@ export const HeaderContainer = styled.header`
   > article {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     position: relative;
     width: min(100%, 800px);
 
