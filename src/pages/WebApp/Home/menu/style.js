@@ -11,11 +11,18 @@ const BackgroundOpacity = keyframes`
 
 export const AccountStatus = styled.span`
   background-image: linear-gradient(#cb1bf9, #6a05df);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem .75rem;
   border-radius: 0.25rem;
   text-align: center;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:.5rem;
   //color:#1a1c20;
   //font-weight:bold;
+
+  
+
 `;
 
 //export const Count = styled.div`

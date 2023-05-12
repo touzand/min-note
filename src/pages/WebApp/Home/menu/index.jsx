@@ -6,6 +6,7 @@ import {MdKeyboardArrowDown} from 'react-icons/md';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {VscNote} from 'react-icons/vsc';
 import {RxLetterCaseToggle} from 'react-icons/rx';
+import {AiFillTag} from 'react-icons/ai'
 //... Context
 import {userAuth} from '../../../../contexts/AuthContext';
 //... Styles
@@ -125,6 +126,7 @@ const Menu = props => {
               <h3>My account</h3>
             </div>
             <AccountStatus>
+                <AiFillTag/>
               {user.status === 'premiun' ? 'Premiun' : 'Free'}
             </AccountStatus>
           </Row>
