@@ -1,4 +1,4 @@
-import FilterContainer from './style';
+import FilterCoNtAiner from './style';
 import {BsSearch} from 'react-icons/bs';
 //import { handdleAdd } from '../../../../helpers/helpAdd';
 import {useNavigate} from 'react-router-dom';
