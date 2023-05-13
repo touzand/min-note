@@ -27,7 +27,7 @@ margin-top:${props=>props.home ? '1rem' : '0'};
   //}
 
   & a {
-    padding: 0.75rem;
+    //padding: 0.75rem;
   }
 
   * {

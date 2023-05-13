@@ -109,6 +109,11 @@ pointer-events:auto;
     padding-top:0;
     backdrop-filter: blur(20px);
     border-top:dashed 1px grey;
+
+    & > div > div{
+  padding:0;
+  padding-top:1rem;
+}
   }
 
 article{
