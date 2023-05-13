@@ -24,7 +24,6 @@ export const HeaderButton = styled.button`
   transition: none !important;
   border: none;
   color: var(--font-color);
-  background-color: red;
   //padding:0 !important;
 
   & svg {
