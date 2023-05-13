@@ -15,7 +15,7 @@ import {CgMenuGridO} from 'react-icons/cg';
 //... Components
 import HeaderTop from '../../../../components/Header';
 import OptionMessage from '../../../../components/optionMessage';
-import {Hr, IconButtom} from '../../../../styled-components';
+import {HeaderButton, Hr, IconButtom} from '../../../../styled-components';
 
 const Header = props => {
   const {query, searchVisible, setSearchVisible, setMenu} = props;
@@ -50,7 +50,7 @@ const Header = props => {
           setState={setOptionMessage}
         />
       )}
-      <HeaderTop className={query && 'up-header'}>
+      <HeaderTop className={query && 'up-header'} home={true}>
         <article
           className={`${searchVisible ? 'up-header' : 'down-header'}`}
           style={{
@@ -62,12 +62,12 @@ const Header = props => {
           }}>
           <h1>All notes</h1>
           <div className="header-subsection">
-            <IconButtom
+            <HeaderButton
               tc={`#F6F1E9`}
               onClick={() => setMenu(true)}
               translate="no">
               <CgMenuGridO />
-            </IconButtom>
+            </HeaderButton>
           </div>
         </article>
       </HeaderTop>

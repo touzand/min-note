@@ -4,7 +4,7 @@ import { HeaderContainer } from "./style";
 const HeaderTop = (props) => {
   return (
     <>
-      <HeaderContainer className={props.className ? 'up-header': 'down-header'}>{props.children}</HeaderContainer>
+      <HeaderContainer home={props.home} className={props.className ? 'up-header': 'down-header'}>{props.children}</HeaderContainer>
     </>
   );
 };

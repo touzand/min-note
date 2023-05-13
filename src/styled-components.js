@@ -14,9 +14,29 @@ export const Hr = styled.hr`
   position: relative;
 `;
 
+export const HeaderButton = styled.button`
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: none !important;
+  border: none;
+  color: var(--font-color);
+  background-color: red;
+  padding:0 !important;
+
+  & svg {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
 export const IconButtom = styled.button`
   background-color: transparent;
-  padding:0.75rem 0.75rem 0 .75rem !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,8 +49,8 @@ export const IconButtom = styled.button`
     ${props => (props.right || props.both ? props.tc : 'transparent')};
   transition: none !important;
 
-  button{
-    background-color:red;
+  button {
+    background-color: red;
   }
 
   &:active {

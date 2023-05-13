@@ -6,6 +6,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   width: min(100%, 800px);
   position:relative;
+margin-top:${props=>props.home ? '1rem' : '0'};
 
   & .up-header {
     animation: upHeaderTop .5s ease both;

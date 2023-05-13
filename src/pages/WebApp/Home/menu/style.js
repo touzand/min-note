@@ -107,7 +107,7 @@ pointer-events:auto;
     position:sticky;
     bottom:0;
     padding-top:0;
-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border-top:dashed 1px grey;
   }
 
