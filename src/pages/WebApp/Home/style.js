@@ -28,7 +28,7 @@ export const BackgroundTransition = styled.div`
   width: 0%;
   position: absolute;
   z-index: 2;
-  transition: width 0.5s ease-in;
+  transition: width 0.5s ease-in-out;
   ${props => props.addTransition && 'width:100%'}
 `;
 

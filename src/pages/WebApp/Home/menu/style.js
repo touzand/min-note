@@ -183,7 +183,7 @@ hr{
   }
 
   button{
-    cursor:pointer;
+    //cursor:pointer;
     display:flex;
     justify-content:space-between;
     background-color:transparent;

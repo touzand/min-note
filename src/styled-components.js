@@ -75,15 +75,28 @@ a{
 
   .option-container {
     background-color: var(--option-background);
-    position: absolute;
+    position: fixed;
     top: 70px;
     display: flex;
     flex-direction: column;
     border-radius: 0.25rem;
+    //height:${props=>props.open ? '5px' : '100%'};
     animation: ${heightOpen} 0.5s ease-in-out both;
+    border: solid thin #2d2f33;
+    color:var(--font-color);
+    width:150px;
+    padding:.5rem;
 
     article * {
       pointer-events: none;
+    }
+
+    article svg{
+      color:red;
+    color:var(--font-color);
+      margin:0;
+      width: 20px;
+      height: 20px;
     }
 
     article {
@@ -93,28 +106,29 @@ a{
       position: relative;
       padding: 0.5rem;
       transition: none;
+      border-radius:.25rem;
     }
 
     article:hover {
-      background-color: red;
+      background-color: #262626;
     }
   }
 
   .color-picker {
     div {
-      width: 2rem;
-      height: 2rem;
+      width: 20px;
+      height: 20px;
     }
   }
 
-  .option-container::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: var(--option-background);
-    position: absolute;
-    top: -5px;
-    left: 45px;
-    transform: rotate(45deg);
-  }
+  //.option-container::before {
+    //content: '';
+    //width: 10px;
+    //height: 10px;
+    //background-color: var(--option-background);
+    //position: absolute;
+    //top: -5px;
+    //left: 45px;
+    //transform: rotate(45deg);
+  //}
 `;

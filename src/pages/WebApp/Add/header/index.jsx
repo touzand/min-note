@@ -51,29 +51,29 @@ const Header = (props) => {
             <HiOutlineColorSwatch />
             {colorPicker &&
             <div className="option-container color-picker">
-              <article value="#DDDDDD" onClick={props.handdleColorPicker}>
-                <div style={{backgroundColor:"#DDDDDD"}}></div>
-                <span>color</span>
-              </article>
               <article value="#F5A38A" onClick={props.handdleColorPicker}>
                 <div style={{backgroundColor:"#F5A38A"}}></div>
-                <span>color</span>
+                <span>Dark Salmon</span>
               </article>
               <article value="#f3C57D" onClick={props.handdleColorPicker}>
                 <div style={{backgroundColor:"#f3C57D"}}></div>
-                <span>color</span>
+                <span>Sandy Brown</span>
               </article>
               <article value="#DDE595" onClick={props.handdleColorPicker}>
                 <div style={{backgroundColor:"#DDE595"}}></div>
-                <span>color</span>
+                <span>Khabi</span>
               </article>
               <article value="#7BD5E1" onClick={props.handdleColorPicker}>
                 <div style={{backgroundColor:"#7BD5E1"}}></div>
-                <span>color</span>
+                <span>Light Sky Blue</span>
               </article>
               <article value="#C78DD0" onClick={props.handdleColorPicker}>
                 <div style={{backgroundColor:"#C78DD0"}}></div>
-                <span>color</span>
+                <span>Plum</span>
+              </article>
+              <article value="#DDDDDD" onClick={props.handdleColorPicker}>
+                <div style={{backgroundColor:"#DDDDDD"}}></div>
+                <span>Gainsboro</span>
               </article>
             </div>
             }

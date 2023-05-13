@@ -16,7 +16,7 @@
   --font-size-title:64px;
   --font-size-pharag:24px;
 
-  --option-background:#fff5;
+  --option-background:#1a1c20;
   /*--option-color:red;*/
 }
 
@@ -114,4 +114,8 @@ form input {
   100% {
     transform: rotate(360deg);
   }
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Oculta la barra de desplazamiento */
 }
