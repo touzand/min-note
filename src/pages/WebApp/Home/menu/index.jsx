@@ -6,7 +6,7 @@ import {MdKeyboardArrowDown} from 'react-icons/md';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {VscNote} from 'react-icons/vsc';
 import {RxLetterCaseToggle} from 'react-icons/rx';
-import {AiFillTag} from 'react-icons/ai'
+import {AiFillTag} from 'react-icons/ai';
 //... Context
 import {userAuth} from '../../../../contexts/AuthContext';
 //... Styles
@@ -116,29 +116,30 @@ const Menu = props => {
             </button>
           ))}
         </article>
-        <article className='upgrade'>
-          {/* <hr />*/ }
-          <Row>
-            <div>
+        <article className="upgrade">
+          <div>
+            <Row>
               <div>
-                <MdKeyboardArrowDown />
+                <div>
+                  <MdKeyboardArrowDown />
+                </div>
+                <h3>My account</h3>
               </div>
-              <h3>My account</h3>
-            </div>
-            <AccountStatus>
-                <AiFillTag/>
-              {user.status === 'premiun' ? 'Premiun' : 'Free'}
-            </AccountStatus>
-          </Row>
-          <p>
-            Unlock your potential with the Premium version. Exclusive benefits
-            that will elevate your experience!
-          </p>
-          {user.status !== 'premiun' && (
-            <Upgrade>
-              <span>Upgrade</span>
-            </Upgrade>
-          )}
+              <AccountStatus>
+                <AiFillTag />
+                {user.status === 'premiun' ? 'Premiun' : 'Free'}
+              </AccountStatus>
+            </Row>
+            <p>
+              Unlock your potential with the Premium version. Exclusive benefits
+              that will elevate your experience!
+            </p>
+            {user.status !== 'premiun' && (
+              <Upgrade>
+                <span>Upgrade</span>
+              </Upgrade>
+            )}
+          </div>
         </article>
       </ContentContainer>
     </BackgroundContainer>

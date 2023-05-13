@@ -11,18 +11,15 @@ const BackgroundOpacity = keyframes`
 
 export const AccountStatus = styled.span`
   background-image: linear-gradient(#cb1bf9, #6a05df);
-  padding: 0.5rem .75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
   text-align: center;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   //color:#1a1c20;
   //font-weight:bold;
-
-  
-
 `;
 
 //export const Count = styled.div`
@@ -106,10 +103,12 @@ pointer-events:auto;
   `}
 
   .upgrade{
-    background-color:#131517;
+    background-color:#13151750;
     position:sticky;
     bottom:0;
     padding-top:0;
+backdrop-filter: blur(20px);
+    border-top:dashed 1px grey;
   }
 
 article{
