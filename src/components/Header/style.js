@@ -49,6 +49,6 @@ margin-top:${props=>props.home ? '1rem' : '0'};
   //}
 
   &:hover * {
-    color: ${props => props.color && props.color} !important;
+    //color: ${props => props.color && props.color} !important;
   }
 `;

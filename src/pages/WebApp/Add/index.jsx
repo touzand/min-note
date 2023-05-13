@@ -1,30 +1,40 @@
-import { useState } from "react";
-import { userAuth } from "../../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
-import Notification from "../../../components/notification";
-import { useEffect } from "react";
-import { NewNote } from "./style";
-import Header from "./header";
-import ColorPicker from "./configurations/colorPicker";
-import BodyContent from "./noteContent";
-import { Hr } from "../../../styled-components";
+import {useState} from 'react';
+import {userAuth} from '../../../contexts/AuthContext';
+import {useNavigate} from 'react-router-dom';
+import Notification from '../../../components/notification';
+import {useEffect} from 'react';
+import {NewNote} from './style';
+import Header from './header';
+import ColorPicker from './configurations/colorPicker';
+import BodyContent from './noteContent';
+import {Hr} from '../../../styled-components';
+import ConfigPanel from './configPanel';
 
 const New = () => {
-  const [noteError, setNoteError] = useState("");
-  const [color, setColor] = useState("#DDDDDD");
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const [textContrast, setTextContrast] = useState("#1b1b1b");
+  const [noteError, setNoteError] = useState('');
+  const [color, setColor] = useState('#DDDDDD');
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+  const [textContrast, setTextContrast] = useState('#1b1b1b');
   const [visible, setVisible] = useState(false);
-  const { AddDoc } = userAuth();
+  const {AddDoc} = userAuth();
   const navigate = useNavigate();
-  const [textAlign, setTextAlign] = useState("left");
+  const [textAlign, setTextAlign] = useState('left');
 
-  const formatDate = (date) => {
+  const formatDate = date => {
     const months = [
-      "January", "February", "March", "April",
-      "May", "June", "July", "August",
-      "September", "October", "November", "December"
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
     ];
 
     const month = months[date.getMonth()];
@@ -32,36 +42,36 @@ const New = () => {
     const year = date.getFullYear();
 
     return `${month} ${day}, ${year}`;
-  }
+  };
 
-  const handdleColorPicker = (e) => {
-    setColor(e.target.getAttribute("value"));
+  const handdleColorPicker = e => {
+    setColor(e.target.getAttribute('value'));
     setVisible(false);
-    e.target.classList.add("color-picker-expand");
+    e.target.classList.add('color-picker-expand');
   };
 
   const handdleAddDoc = async () => {
     if (title && body && color) {
-      const date = formatDate( new Date() );
-      await AddDoc(title, body, color, date, textContrast,textAlign);
-      navigate("/");
+      const date = formatDate(new Date());
+      await AddDoc(title, body, color, date, textContrast, textAlign);
+      navigate('/');
     } else {
-      setNoteError("You cannot save a note without title or body");
+      setNoteError('You cannot save a note without title or body');
       setTimeout(() => {
-        setNoteError("");
+        setNoteError('');
       }, 5000);
     }
   };
 
   useEffect(() => {
-    if (color === "#7BD5E1" || color === "#DDE595" || color === "#DDDDDD"  ) {
-      setTextContrast("#1b1b1b");
+    if (color === '#7BD5E1' || color === '#DDE595' || color === '#DDDDDD') {
+      setTextContrast('#1b1b1b');
     } else if (
-      color === "#F5A38A" ||
-      color === "#F3C57D" ||
-      color === "#C78DD0"
+      color === '#F5A38A' ||
+      color === '#F3C57D' ||
+      color === '#C78DD0'
     ) {
-      setTextContrast("#F6F1E9");
+      setTextContrast('#F6F1E9');
     }
   }, [color]);
 
@@ -77,31 +87,34 @@ const New = () => {
   //<Hr className="hr" opac={true} tc={`${ textContrast }70`}/>
 
   return (
-    <NewNote bg={color} tc={textContrast} id="new">
-      {noteError && <Notification>{noteError}</Notification>}
-      <div className="general-container">
-        <Header
-          textContrast={textContrast}
-          setVisible={setVisible}
-          handdleAddDoc={handdleAddDoc}
-          color={color}
-          setTextAlign={setTextAlign}
-          handdleColorPicker={handdleColorPicker}
-        />
-        {visible && (
-          <ColorPicker
-            handdleColorPicker={handdleColorPicker}
+    <>
+      <NewNote bg={color} tc={textContrast} id="new">
+        {noteError && <Notification>{noteError}</Notification>}
+        <div className="general-container">
+          <Header
+            textContrast={textContrast}
             setVisible={setVisible}
+            handdleAddDoc={handdleAddDoc}
+            color={color}
+            setTextAlign={setTextAlign}
+            handdleColorPicker={handdleColorPicker}
           />
-        )}
-        <BodyContent
-          textContrast={textContrast}
-          setTitle={setTitle}
-          setBody={setBody}
-          textAlign={textAlign}
-        />
-      </div>
-    </NewNote>
+          {visible && (
+            <ColorPicker
+              handdleColorPicker={handdleColorPicker}
+              setVisible={setVisible}
+            />
+          )}
+          <BodyContent
+            textContrast={textContrast}
+            setTitle={setTitle}
+            setBody={setBody}
+            textAlign={textAlign}
+          />
+        </div>
+      </NewNote>
+      <ConfigPanel />
+    </>
   );
 };
 
