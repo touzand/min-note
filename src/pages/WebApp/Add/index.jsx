@@ -5,7 +5,7 @@ import Notification from '../../../components/notification';
 import {useEffect} from 'react';
 import {NewNote} from './style';
 import Header from './header';
-import ColorPicker from './configurations/colorPicker';
+//import ColorPicker from './configurations/colorPicker';
 import BodyContent from './noteContent';
 import {Hr} from '../../../styled-components';
 import ConfigPanel from './configPanel';
@@ -99,12 +99,6 @@ const New = () => {
             setTextAlign={setTextAlign}
             handdleColorPicker={handdleColorPicker}
           />
-          {visible && (
-            <ColorPicker
-              handdleColorPicker={handdleColorPicker}
-              setVisible={setVisible}
-            />
-          )}
           <BodyContent
             textContrast={textContrast}
             setTitle={setTitle}

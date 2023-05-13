@@ -7,7 +7,7 @@ import {HiOutlineColorSwatch, HiOutlineSave} from 'react-icons/hi';
 import HeaderTop from '../../../../components/Header';
 import {FaAlignJustify, FaAlignLeft, FaAlignRight} from 'react-icons/fa';
 import {useState} from 'react';
-import ColorPicker from '../configurations/colorPicker';
+//import ColorPicker from '../configurations/colorPicker';
 
 const Header = props => {
   const [textAlignVisible, setTextAlignVisible] = useState(false);
