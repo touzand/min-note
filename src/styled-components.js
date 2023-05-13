@@ -25,7 +25,7 @@ export const HeaderButton = styled.button`
   border: none;
   color: var(--font-color);
   background-color: red;
-  padding:0 !important;
+  //padding:0 !important;
 
   & svg {
     font-size: 2rem;
@@ -48,6 +48,11 @@ export const IconButtom = styled.button`
   border-right: solid thin
     ${props => (props.right || props.both ? props.tc : 'transparent')};
   transition: none !important;
+padding:0;
+
+a{
+  padding:0;
+}
 
   button {
     background-color: red;
@@ -57,8 +62,9 @@ export const IconButtom = styled.button`
     background-color: red;
   }
 
-  & * {
+  &  svg {
     color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
+    margin:.75rem;
   }
 
   & svg {

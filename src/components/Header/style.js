@@ -22,9 +22,9 @@ margin-top:${props=>props.home ? '1rem' : '0'};
     color: var(--font-color);
   }
 
-  & div button {
-    padding: 0.75rem;
-  }
+  //& div button {
+    //padding: 0.75rem;
+  //}
 
   & a {
     padding: 0.75rem;
