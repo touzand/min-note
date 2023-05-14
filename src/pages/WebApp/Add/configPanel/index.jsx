@@ -1,4 +1,4 @@
-import BackgroundOption from './backgroundOption';
+import BackgroundOption from './BackgroundOption';
 import {buttonContent} from './bgCount';
 import {
   BackgroundConfig,

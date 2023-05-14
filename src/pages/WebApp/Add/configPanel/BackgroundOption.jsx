@@ -4,8 +4,10 @@ const BackgroundColorOption = styled.button`
 display:flex;
 align-items:center;
 justify-content:space-between;
+border:none;
+background-color:transparent;
 
-  figure {
+  div {
     width: 20px;
     height: 20px;
     background-color: ${props => props.hex_code ?? red};
@@ -18,7 +20,7 @@ const BackgroundOption = props => {
   return (
     <BackgroundColorOption hex_code={hex_code}>
       <span>{color_name}</span>
-      <figure className="color_thum"></figure>
+      <div className="color_thum"></div>
     </BackgroundColorOption>
   );
 };
