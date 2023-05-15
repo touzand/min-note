@@ -77,12 +77,8 @@ const New = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      //document.querySelector("header").classList.add("start");
-      //document.querySelector(".form").classList.add("start");
     }, 100);
   }, []);
-
-  //<Hr className="hr" opac={true} tc={`${ textContrast }70`}/>
 
   return (
     <>
