@@ -3,11 +3,17 @@ import styled from 'styled-components';
 const BackgroundColorOption = styled.button`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+gap:1rem;
   border: none;
   background-color: transparent;
   color: var(--font-color);
-padding:.25rem;
+padding:.5rem;
+
+&:hover{
+  background-color:#2d2f33;
+  border-radius:.25rem;
+};
 
 span{
   font-size:16px;
@@ -27,8 +33,8 @@ const BackgroundOption = props => {
 
   return (
     <BackgroundColorOption hex_code={hex_code}>
-      <span>{color_name}</span>
       <div className="color_thum"></div>
+      <span>{color_name}</span>
     </BackgroundColorOption>
   );
 };

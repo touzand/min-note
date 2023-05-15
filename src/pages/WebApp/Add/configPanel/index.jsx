@@ -13,10 +13,10 @@ const ConfigPanel = () => {
       <MainConfig>
         <BackgroundConfig>
           <h3>Background</h3>
-          <span>
+          <p>
             Customize note background color for note thumbnail display on the
             home screen.
-          </span>
+          </p>
           <div className='background_option_section'>
             {buttonContent.map(button => (
               <BackgroundOption
