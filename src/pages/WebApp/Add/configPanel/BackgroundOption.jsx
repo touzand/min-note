@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const BackgroundColorOption = styled.button`
   display: flex;
   align-items: start;
-  justify-content: start;
+  justify-content: ;
 gap:.5rem;
   border: none;
   background-color: transparent;
