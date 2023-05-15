@@ -7,11 +7,6 @@ export const HeaderContainer = styled.header`
   align-items:center;
   width: min(100%,800px);
 
-  *{
-  //font-size:32px !important;
-  }
-
-
   .header-subsection {
     display: flex;
     justify-content: center;
