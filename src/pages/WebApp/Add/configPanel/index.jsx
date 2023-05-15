@@ -24,6 +24,7 @@ const ConfigPanel = () => {
               <BackgroundOption
                 color_name={button.color_name}
                 hex_code={button.hex_code}
+                use_advice={button.use_advice}
               />
             ))}
           </div>
@@ -42,9 +43,9 @@ const ConfigPanel = () => {
   );
 };
 
-      //<FooterConfig>
-        //<article>p</article>
-        //<article>p</article>
-      //</FooterConfig>
+//<FooterConfig>
+//<article>p</article>
+//<article>p</article>
+//</FooterConfig>
 
 export default ConfigPanel;
