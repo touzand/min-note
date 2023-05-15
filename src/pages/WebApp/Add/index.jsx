@@ -75,11 +75,6 @@ const New = () => {
     }
   }, [color]);
 
-  useEffect(() => {
-    setTimeout(() => {
-    }, 100);
-  }, []);
-
   return (
     <>
       <NewNote bg={color} tc={textContrast} id="new">
