@@ -26,6 +26,12 @@ export const MainConfig = styled.main`
     font-size: 0.9rem;
     opacity: 0.4;
   }
+
+  & article{
+        display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
 `;
 
 export const BackgroundConfig = styled.article`
@@ -40,4 +46,9 @@ export const TextConfig = styled.article``;
 
 export const FooterConfig = styled.footer`
   background-color: blue;
+  display:flex;
+
+article{
+
+}
 `;

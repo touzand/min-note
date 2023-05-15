@@ -32,13 +32,19 @@ const ConfigPanel = () => {
       <MainConfig>
         <TextConfig>
           <h3>Text</h3>
-          <p>Customize note text properties for the body, excluding the title.</p>
-          <TextOption/>
+          <p>
+            Customize note text properties for the body, excluding the title.
+          </p>
+          <TextOption />
         </TextConfig>
       </MainConfig>
-      <FooterConfig></FooterConfig>
     </ConfigPanelContainer>
   );
 };
+
+      //<FooterConfig>
+        //<article>p</article>
+        //<article>p</article>
+      //</FooterConfig>
 
 export default ConfigPanel;
