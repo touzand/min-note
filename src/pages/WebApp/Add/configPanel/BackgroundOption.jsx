@@ -15,9 +15,21 @@ padding:.5rem;
   border-radius:.25rem;
 };
 
+article{
+  display:flex;
+  align-items:start;
+  flex-direction:column;
+  gap:0;
+
+  *{
+    margin:0;
+  }
+
 span{
   font-size:16px;
 }
+}
+
 
   div {
     width: 20px;
@@ -34,7 +46,10 @@ const BackgroundOption = props => {
   return (
     <BackgroundColorOption hex_code={hex_code}>
       <div className="color_thum"></div>
-      <span>{color_name}</span>
+      <article>
+      <p>{color_name}</p>
+        <span>Hola mundo</span>
+      </article>
     </BackgroundColorOption>
   );
 };

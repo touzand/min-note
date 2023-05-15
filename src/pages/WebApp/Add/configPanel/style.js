@@ -7,9 +7,9 @@ export const ConfigPanelContainer = styled.figure`
   margin: 0;
   color: white;
   width: 300px;
-  display:flex;
-  flex-direction:column;
-gap:.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 
   * {
     margin: 0;
@@ -27,10 +27,10 @@ export const MainConfig = styled.main`
     opacity: 0.4;
   }
 
-  & article{
-        display: flex;
+  & article {
+    display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 `;
 
@@ -46,9 +46,8 @@ export const TextConfig = styled.article``;
 
 export const FooterConfig = styled.footer`
   background-color: blue;
-  display:flex;
+  display: flex;
 
-article{
-
-}
+  article {
+  }
 `;
