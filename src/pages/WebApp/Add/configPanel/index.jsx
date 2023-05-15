@@ -5,7 +5,9 @@ import {
   ConfigPanelContainer,
   FooterConfig,
   MainConfig,
+  TextConfig,
 } from './style';
+import TextOption from './TextOption';
 
 const ConfigPanel = () => {
   return (
@@ -17,7 +19,7 @@ const ConfigPanel = () => {
             Customize note background color for note thumbnail display on the
             home screen.
           </p>
-          <div className='background_option_section'>
+          <div className="background_option_section">
             {buttonContent.map(button => (
               <BackgroundOption
                 color_name={button.color_name}
@@ -26,6 +28,13 @@ const ConfigPanel = () => {
             ))}
           </div>
         </BackgroundConfig>
+      </MainConfig>
+      <MainConfig>
+        <TextConfig>
+          <h3>Text</h3>
+          <p>Customize note text properties for the body, excluding the title.</p>
+          <TextOption/>
+        </TextConfig>
       </MainConfig>
       <FooterConfig></FooterConfig>
     </ConfigPanelContainer>
