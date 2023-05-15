@@ -19,7 +19,7 @@ padding:1rem;
 border-radius:.5rem;
 color:var(--font-color);
 
-span{
+span:nth-child(2){
   font-size:.9rem;
   opacity:.4;
 }
