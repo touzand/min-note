@@ -118,6 +118,23 @@ const Menu = props => {
           ))}
           </article>
         </article>
+        <article>
+          <Row>
+            <div>
+              <MdKeyboardArrowDown />
+              <h3>Background patterns</h3>
+            </div>
+            <div className="add-button">+</div>
+          </Row>
+          <div className='patterns_container'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </article>
         <article className="upgrade">
           <div>
             <Row>

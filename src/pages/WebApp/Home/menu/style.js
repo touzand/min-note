@@ -251,6 +251,19 @@ export const ContentContainer = styled.div`
     width:auto;
     padding:0;
   }
+
+  .patterns_container{
+display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  grid-gap: .5rem;
+
+    div{
+      //width:30px;
+      height:40px;
+      background-color:red;
+      border-radius:.25rem;
+    }
+  }
 `;
 
 export const Upgrade = styled.button`
