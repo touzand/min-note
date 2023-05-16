@@ -203,10 +203,14 @@ hr{
     }
 
     figure{
-      width:20px;
-      height:20px;
+      width:50px;
+      height:50px;
       margin:0;
       border-radius:.3rem;
+      display:grid;
+      place-items:center;
+      color:#1a1c20;
+      flex:1;
     }
   }
 
@@ -232,6 +236,20 @@ export const ContentContainer = styled.div`
 
   * {
     //pointer-events:none;
+  }
+
+  .color_count_container{
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-top:.5rem;
+  }
+
+  .color_count{
+    display:inline !important;
+    width:auto;
+    padding:0;
   }
 `;
 

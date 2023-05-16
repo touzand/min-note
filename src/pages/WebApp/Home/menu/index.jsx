@@ -106,15 +106,17 @@ const Menu = props => {
             </div>
             <div className="add-button">+</div>
           </Row>
+          <article className='color_count_container'>
           {buttonContent.map(button => (
-            <button>
+            <button className='color_count'>
               <div>
-                <FigureColor bg={button.hex_code} />
-                <h3>{button.color_name}</h3>
+                <FigureColor bg={button.hex_code}>
+                  <h3>{bgCounts[button.hex_code] ?? 0}</h3>
+                </FigureColor>
               </div>
-              <h3>{bgCounts[button.hex_code] ?? 0}</h3>
             </button>
           ))}
+          </article>
         </article>
         <article className="upgrade">
           <div>
