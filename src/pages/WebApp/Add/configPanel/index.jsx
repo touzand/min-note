@@ -8,8 +8,15 @@ import {
   TextConfig,
 } from './style';
 import TextOption from './TextOption';
+import {useState} from 'react'
 
 const ConfigPanel = () => {
+    const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleDivClick = (index) => {
+    setSelectedOption(index);
+  };
+
   return (
     <ConfigPanelContainer>
       <MainConfig>
@@ -20,8 +27,11 @@ const ConfigPanel = () => {
             home screen.
           </p>
           <div className="background_option_section">
-            {buttonContent.map(button => (
+            {buttonContent.map(( button, index ) => (
               <BackgroundOption
+                index={index}
+                selectedOption={selectedOption}
+                handleDivClick={handleDivClick}
                 color_name={button.color_name}
                 hex_code={button.hex_code}
                 use_advice={button.use_advice}

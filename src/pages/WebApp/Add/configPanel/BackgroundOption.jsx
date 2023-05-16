@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const BackgroundColorOption = styled.button`
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: ;
 gap:.5rem;
   border: none;
@@ -44,19 +44,26 @@ p{
     background-color:${props => props.hex_code ?? red};
     border-radius:.25rem;
   }
+
+input['type=radio']{
+  color:red;
+  border-color:red;
+  background-color:red;
+}
 `;
 
 const BackgroundOption = props => {
-  const {color_name, hex_code, use_advice} = props;
+  const {color_name, hex_code, use_advice, handleDivClick, selectedOption, index} = props;
 
   return (
-    <BackgroundColorOption hex_code={hex_code}>
-      {console.log(props)}
+    <BackgroundColorOption hex_code={hex_code} onClick={()=>handleDivClick(index)}>
       <div className="color_thum"></div>
       <article>
         <span>{color_name}</span>
         <p>{use_advice}</p>
       </article>
+      {console.log(selectedOption === index)}
+      <input type='radio' name='option' checked={selectedOption === index}/>
     </BackgroundColorOption>
   );
 };
