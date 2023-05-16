@@ -45,10 +45,14 @@ p{
     border-radius:.25rem;
   }
 
-input['type=radio']{
-  color:red;
-  border-color:red;
-  background-color:red;
+  .checked{
+    width:10px;
+    height:10px;
+    background-color:${props=>props.checked ? 'blue' : 'yellow'};
+  }
+
+input{
+  display:none;
 }
 `;
 
@@ -56,7 +60,7 @@ const BackgroundOption = props => {
   const {color_name, hex_code, use_advice, handleDivClick, selectedOption, index} = props;
 
   return (
-    <BackgroundColorOption hex_code={hex_code} onClick={()=>handleDivClick(index)}>
+    <BackgroundColorOption hex_code={hex_code} onClick={()=>handleDivClick(index)}  checked={selectedOption === index}>
       <div className="color_thum"></div>
       <article>
         <span>{color_name}</span>
@@ -64,6 +68,7 @@ const BackgroundOption = props => {
       </article>
       {console.log(selectedOption === index)}
       <input type='radio' name='option' checked={selectedOption === index}/>
+      <article className='checked'></article>
     </BackgroundColorOption>
   );
 };
