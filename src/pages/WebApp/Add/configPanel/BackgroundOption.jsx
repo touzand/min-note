@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const BackgroundColorOption = styled.button`
   display: flex;
   align-items: center;
-  justify-content: ;
+  justify-content: space-between;
 gap:.5rem;
   border: none;
   background-color: transparent;
@@ -14,6 +14,12 @@ padding:.5rem;
   background-color:#2d2f33;
   border-radius:.25rem;
 };
+
+&>article{
+  display:flex;
+  flex-direction:row !important;
+  gap:.5rem !important;
+}
 
 article{
   display:flex;
@@ -48,7 +54,8 @@ p{
   .checked{
     width:10px;
     height:10px;
-    background-color:${props=>props.checked ? 'blue' : 'yellow'};
+    border-radius:50%;
+    background-color:${props => (props.checked ? 'var(--complement-color)' : '#40414b')};
   }
 
 input{
@@ -57,18 +64,29 @@ input{
 `;
 
 const BackgroundOption = props => {
-  const {color_name, hex_code, use_advice, handleDivClick, selectedOption, index} = props;
+  const {
+    color_name,
+    hex_code,
+    use_advice,
+    handleDivClick,
+    selectedOption,
+    index,
+  } = props;
 
   return (
-    <BackgroundColorOption hex_code={hex_code} onClick={()=>handleDivClick(index)}  checked={selectedOption === index}>
+    <BackgroundColorOption
+      hex_code={hex_code}
+      onClick={() => handleDivClick(index,hex_code)}
+      checked={selectedOption === index}>
+      <article>
       <div className="color_thum"></div>
       <article>
         <span>{color_name}</span>
         <p>{use_advice}</p>
       </article>
-      {console.log(selectedOption === index)}
-      <input type='radio' name='option' checked={selectedOption === index}/>
-      <article className='checked'></article>
+      </article>
+      <input type="radio" name="option" checked={selectedOption === index} />
+      <article className="checked"></article>
     </BackgroundColorOption>
   );
 };

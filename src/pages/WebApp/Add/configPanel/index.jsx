@@ -10,11 +10,13 @@ import {
 import TextOption from './TextOption';
 import {useState} from 'react'
 
-const ConfigPanel = () => {
+const ConfigPanel = (props) => {
+  const {setColor} = props;
     const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleDivClick = (index) => {
+  const handleDivClick = (index,hex_code) => {
     setSelectedOption(index);
+    setColor(hex_code)
   };
 
   return (
