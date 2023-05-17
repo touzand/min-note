@@ -96,7 +96,7 @@ const New = () => {
           />
         </div>
       </NewNote>
-      <ConfigPanel setColor={setColor}/>
+      <ConfigPanel setColor={setColor} setTextAlign={setTextAlign}/>
     </>
   );
 };

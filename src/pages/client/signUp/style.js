@@ -1,19 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SignUpContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  width:100%;
-color:var(--font-color);
+  width: 100%;
+  color: var(--font-color);
 
-  *{
-  z-index:2;
+  * {
+    z-index: 2;
   }
 
-  .display{
-  display:block;
+  .display {
+    display: block;
   }
 
   .subsection {
@@ -21,28 +21,28 @@ color:var(--font-color);
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
-    padding:1rem;
+    padding: 1rem;
 
     div:nth-child(2) {
       width: 100% !important;
     }
 
-    article{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      width:100%;
-      margin:0;
+    article {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0;
 
-      p{
-        color:var(--font-color);
+      p {
+        color: var(--font-color);
       }
 
-      a{
-        color:var(--font-color);
-        font-weight:bold;
+      a {
+        color: var(--font-color);
+        font-weight: bold;
+      }
     }
-  }
   }
 
   a {
@@ -55,8 +55,8 @@ color:var(--font-color);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding:1rem;
-          padding-bottom: 0rem;
+    padding: 1rem;
+    padding-bottom: 0rem;
   }
 
   .wellcome {
@@ -88,7 +88,7 @@ color:var(--font-color);
 
   .hr-sect:before,
   .hr-sect:after {
-    content: "";
+    content: '';
     flex-grow: 1;
     background: #fff2;
     height: 1px;
@@ -99,29 +99,27 @@ color:var(--font-color);
 
   @media (min-width: 800px) {
     align-items: center;
-    flex:1;
-
+    flex: 1;
 
     //a:nth-child(2) {
-      //visibility: hidden;
+    //visibility: hidden;
     //}
 
-    input[type="submit"]:hover {
+    input[type='submit']:hover {
       transform: scale(1.1);
       cursor: pointer;
-          }
+    }
 
-          .signin-form{
-            width:350px;
-            padding:0;
-          }
+    .signin-form {
+      width: 350px;
+      padding: 0;
+    }
 
-      .subsection{
-        article{
-          width:350px;
-        }
+    .subsection {
+      article {
+        width: 350px;
       }
-
+    }
   }
 `;
 
@@ -134,8 +132,8 @@ export const Logo = styled.span`
 `;
 
 export const MasterContainer = styled.div`
-display: flex;
-flex-direction:row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
 `;
 

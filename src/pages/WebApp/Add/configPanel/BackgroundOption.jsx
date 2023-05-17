@@ -68,16 +68,16 @@ const BackgroundOption = props => {
     color_name,
     hex_code,
     use_advice,
-    handleDivClick,
-    selectedOption,
+    handleBackgroundChange,
+    selectedBackground,
     index,
   } = props;
 
   return (
     <BackgroundColorOption
       hex_code={hex_code}
-      onClick={() => handleDivClick(index,hex_code)}
-      checked={selectedOption === index}>
+      onClick={() => handleBackgroundChange(index,hex_code)}
+      checked={selectedBackground === index}>
       <article>
       <div className="color_thum"></div>
       <article>
@@ -85,7 +85,7 @@ const BackgroundOption = props => {
         <p>{use_advice}</p>
       </article>
       </article>
-      <input type="radio" name="option" checked={selectedOption === index} />
+      <input type="radio" name="option" checked={selectedBackground === index} />
       <article className="checked"></article>
     </BackgroundColorOption>
   );

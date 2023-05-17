@@ -12,12 +12,18 @@ import {useState} from 'react';
 import backgroundData from '../../../../helpers/backgroundData';
 
 const ConfigPanel = props => {
-  const {setColor} = props;
-  const [selectedOption, setSelectedOption] = useState(null);
+  const {setColor,setTextAlign} = props;
+  const [selectedBackground, setSelectedBackground] = useState(5);
+  const [selectedTextAlign, setSelectedTextAlign] = useState(0);
 
-  const handleDivClick = (index, hex_code) => {
-    setSelectedOption(index);
+  const handleBackgroundChange = (index, hex_code) => {
+    setSelectedBackground(index);
     setColor(hex_code);
+  };
+
+  const handleTextAlignChange = (index,value) => {
+    setSelectedTextAlign(index);
+    setTextAlign(value);
   };
 
   return (
@@ -33,8 +39,8 @@ const ConfigPanel = props => {
             {backgroundData.map((button, index) => (
               <BackgroundOption
                 index={index}
-                selectedOption={selectedOption}
-                handleDivClick={handleDivClick}
+                selectedBackground={selectedBackground}
+                handleBackgroundChange={handleBackgroundChange}
                 color_name={button.color_name}
                 hex_code={button.hex_code}
                 use_advice={button.use_advice}
@@ -49,7 +55,7 @@ const ConfigPanel = props => {
           <p>
             Customize note text properties for the body, excluding the title.
           </p>
-          <TextOption />
+          <TextOption setTextAlign={setTextAlign} handleTextAlignChange={handleTextAlignChange} selectedTextAlign={selectedTextAlign}/>
         </TextConfig>
       </MainConfig>
     </ConfigPanelContainer>
