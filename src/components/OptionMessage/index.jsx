@@ -1,14 +1,16 @@
 import {DeleteMessage} from "./style"
 
 const OptionMessage = (props) => {
+const {setState,message,action} = props;
+
   return(
     <div>
-        <DeleteMessage onClick={() => props.setState(false)}>
+        <DeleteMessage onClick={() => setState(false)}>
           <div className="content-container">
-            <p>{props.message}</p>
+            <p>{message}</p>
             <div>
-              <button onClick={props.action}>Yes</button>
-              <button onClick={() =>  props.setState(false)}>No</button>
+              <button onClick={action}>Yes</button>
+              <button onClick={() =>  setState(false)}>No</button>
             </div>
           </div>
         </DeleteMessage>
