@@ -1,15 +1,18 @@
-import {TitleContainer} from "./style";
+import {TitleContainer} from './style';
 
-const Title = (props) => {
+const Title = props => {
+const {tc,editable, setTitle,textAlign,content} = props;
+
   return (
     <TitleContainer
-      tc={props.tc}
+      tc={tc}
       role="textbox"
-      contentEditable={props.editable && true}
+      contentEditable={editable && true}
       spellCheck="false"
-      onKeyUp={(e) => props.setTitle(e.target.textContent)}
-      textAlign={props.textAlign}
-    >{props.content && props.content}</TitleContainer>
+      onKeyUp={e => setTitle(e.target.textContent)}
+      textAlign={textAlign}>
+      {content && content}
+    </TitleContainer>
   );
 };
 
