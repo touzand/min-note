@@ -5,14 +5,14 @@ import { userAuth } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Notification from "../../../components/notification";
+import Background from "../../../components/Background";
+import useIsMobile from "../../../hooks/useIsMobile";
 import {
   HelloContainer,
   Logo,
   MasterContainer,
   SignInContainer,
 } from "./style";
-import Background from "../../../components/Background";
-import useIsMobile from "../../../hooks/useIsMobile";
 
 const SignIn = () => {
   const [email, SetEmail] = useState("");

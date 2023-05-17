@@ -6,6 +6,7 @@ export const SignUpContainer = styled.div`
   justify-content: center;
   height: 100vh;
   width:100%;
+color:var(--font-color);
 
   *{
   z-index:2;
@@ -143,6 +144,7 @@ export const HelloContainer = styled.div`
     place-items:center;
     flex: 1;
     overflow: hidden;
+color:var(--font-color);
 
 
   article{

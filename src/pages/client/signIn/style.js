@@ -6,6 +6,7 @@ export const SignInContainer = styled.div`
   justify-content: center;
   height: 100vh;
   width:100%;
+color:var(--font-color);
 
   *{
   z-index:2;
@@ -139,6 +140,7 @@ export const MasterContainer = styled.div`
 
 export const HelloContainer = styled.div`
 display: none;
+color:var(--font-color);
 
 
 @media (min-width: 800px) {
