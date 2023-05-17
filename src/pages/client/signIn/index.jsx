@@ -11,7 +11,7 @@ import {
   MasterContainer,
   SignInContainer,
 } from "./style";
-import Background from "../../../components/background";
+import Background from "../../../components/Background";
 import useIsMobile from "../../../hooks/useIsMobile";
 
 const SignIn = () => {

@@ -12,8 +12,8 @@ export const BackgroundContainer = styled.div`
   *{
     pointer-events:none;
     z-index:1 !important;
-    //position:relative;
   }
+
   *::after{
     content: "";
     display: block;
@@ -21,6 +21,7 @@ export const BackgroundContainer = styled.div`
     filter: blur(86px);
     border-radius: 50%;
   }
+
   .top::after {
     background-color: var(--background-bubble-up);
     height: 550px;
@@ -28,6 +29,7 @@ export const BackgroundContainer = styled.div`
     left: -415px;
     top: -133px;
   }
+
   .middle::after {
     background-color: var(--background-bubble-middle);
     height: 494px;
@@ -35,6 +37,7 @@ export const BackgroundContainer = styled.div`
     right: -332px;
     top: -324px;
   }
+
   .bottom::after {
     background-color: var(--background-bubble-down);
     height: 282px;
@@ -44,7 +47,6 @@ export const BackgroundContainer = styled.div`
   }
 
   @media (min-width:800px){
-    //width:100%;
     position:relative;
   }
 `;
