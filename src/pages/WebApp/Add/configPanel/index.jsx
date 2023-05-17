@@ -1,5 +1,5 @@
 import BackgroundOption from './BackgroundOption';
-import {buttonContent} from './bgCount';
+
 import {
   BackgroundConfig,
   ConfigPanelContainer,
@@ -8,15 +8,16 @@ import {
   TextConfig,
 } from './style';
 import TextOption from './TextOption';
-import {useState} from 'react'
+import {useState} from 'react';
+import backgroundData from '../../../../helpers/backgroundData';
 
-const ConfigPanel = (props) => {
+const ConfigPanel = props => {
   const {setColor} = props;
-    const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleDivClick = (index,hex_code) => {
+  const handleDivClick = (index, hex_code) => {
     setSelectedOption(index);
-    setColor(hex_code)
+    setColor(hex_code);
   };
 
   return (
@@ -29,7 +30,7 @@ const ConfigPanel = (props) => {
             home screen.
           </p>
           <div className="background_option_section">
-            {buttonContent.map(( button, index ) => (
+            {backgroundData.map((button, index) => (
               <BackgroundOption
                 index={index}
                 selectedOption={selectedOption}

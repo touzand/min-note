@@ -2,7 +2,7 @@ import {Hr} from '../../styled-components';
 import {HeaderContainer} from './style';
 
 const HeaderTop = props => {
-const {home,className, children} = props;
+  const {home, className, children} = props;
 
   return (
     <>

@@ -1,4 +1,4 @@
-export let buttonContent = [
+const backgroundData = [
   {
     hex_code: '#F5A38A',
     color_name: 'Dark Salmon',
@@ -30,3 +30,5 @@ export let buttonContent = [
     use_advice:'Goals or objectives.',
   },
 ];
+
+export default backgroundData;

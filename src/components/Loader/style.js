@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from 'styled-components';
 
 const fadeOut = keyframes`
 0%{opacity:1;}
@@ -16,6 +16,5 @@ export const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: ${fadeOut} 0.3s ${(props) => props.start} ease both;
+  animation: ${fadeOut} 0.3s ${props => props.start} ease both;
 `;
-

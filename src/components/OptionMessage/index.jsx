@@ -1,21 +1,21 @@
-import {DeleteMessage} from "./style"
+import {DeleteMessage} from './style';
 
-const OptionMessage = (props) => {
-const {setState,message,action} = props;
+const OptionMessage = props => {
+  const {setState, message, action} = props;
 
-  return(
+  return (
     <div>
-        <DeleteMessage onClick={() => setState(false)}>
-          <div className="content-container">
-            <p>{message}</p>
-            <div>
-              <button onClick={action}>Yes</button>
-              <button onClick={() =>  setState(false)}>No</button>
-            </div>
+      <DeleteMessage onClick={() => setState(false)}>
+        <div className="content-container">
+          <p>{message}</p>
+          <div>
+            <button onClick={action}>Yes</button>
+            <button onClick={() => setState(false)}>No</button>
           </div>
-        </DeleteMessage>
+        </div>
+      </DeleteMessage>
     </div>
-    )
-}
+  );
+};
 
-export default OptionMessage
+export default OptionMessage;

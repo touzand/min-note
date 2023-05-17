@@ -19,8 +19,8 @@ import {
   Row,
 } from './style';
 
-import {buttonContent} from './bgCount';
 import Count from './Count';
+import backgroundData from '../../../../helpers/backgroundData';
 
 const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
@@ -107,7 +107,7 @@ const Menu = props => {
             <div className="add-button">+</div>
           </Row>
           <article className='color_count_container'>
-          {buttonContent.map(button => (
+          {backgroundData.map(button => (
             <button className='color_count'>
               <div>
                 <FigureColor bg={button.hex_code}>
