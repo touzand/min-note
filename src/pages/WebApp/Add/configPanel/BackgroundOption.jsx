@@ -9,6 +9,7 @@ gap:.5rem;
   background-color: transparent;
   color: var(--font-color);
 padding:.5rem;
+cursor:pointer;
 
 &:hover{
   background-color:#2d2f33;
@@ -44,8 +45,8 @@ p{
 
 
   div {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     //background-color: ${props => props.hex_code ?? red};
     background-color:${props => props.hex_code ?? red};
     border-radius:.25rem;

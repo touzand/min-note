@@ -6,7 +6,7 @@ export const ConfigPanelContainer = styled.figure`
   right: 1rem;
   margin: 0;
   color: white;
-  width: 300px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
