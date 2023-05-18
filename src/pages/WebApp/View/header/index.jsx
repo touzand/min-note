@@ -11,13 +11,13 @@ const Header = (props) => {
   return (
     <>
       <HeaderTop>
-        <IconButtom both={true} tc={`${props.data.text}70`}>
+        <IconButtom both={true} tc={`${props.data.text}`}>
           <Link to="/" translate="no">
             <BiArrowBack />
           </Link>
         </IconButtom>
         <div>
-          <IconButtom left={true} tc={`${props.data.text}70`}>
+          <IconButtom left={true} tc={`${props.data.text}`}>
             <div
               translate="no"
               to="/"
@@ -27,13 +27,13 @@ const Header = (props) => {
             </div>
           </IconButtom>
           {props.activeEdit ? (
-            <IconButtom right={true} tc={`${props.data.text}70`}>
+            <IconButtom right={true} tc={`${props.data.text}`}>
               <div to="/" onClick={props.handdleUpdate} translate="no">
                 <HiOutlineSave />
               </div>
             </IconButtom>
           ) : (
-            <IconButtom right={true} tc={`${props.data.text}70`}>
+            <IconButtom right={true} tc={`${props.data.text}`}>
               <div
                 to="/"
                 onClick={() => props.setActiveEdit(!props.activeEdit)}

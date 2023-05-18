@@ -56,7 +56,8 @@ p{
     width:10px;
     height:10px;
     border-radius:50%;
-    background-color:${props => (props.checked ? 'var(--complement-color)' : '#40414b')};
+    background-color:${props =>
+      props.checked ? 'var(--complement-color)' : '#40414b'};
   }
 
 input{
@@ -77,16 +78,20 @@ const BackgroundOption = props => {
   return (
     <BackgroundColorOption
       hex_code={hex_code}
-      onClick={() => handleBackgroundChange(index,hex_code)}
+      onClick={() => handleBackgroundChange(index, hex_code)}
       checked={selectedBackground === index}>
       <article>
-      <div className="color_thum"></div>
-      <article>
-        <span>{color_name}</span>
-        <p>{use_advice}</p>
+        <div className="color_thum"></div>
+        <article>
+          <span>{color_name}</span>
+          <p>{use_advice}</p>
+        </article>
       </article>
-      </article>
-      <input type="radio" name="option" checked={selectedBackground === index} />
+      <input
+        type="radio"
+        name="option"
+        checked={selectedBackground === index}
+      />
       <article className="checked"></article>
     </BackgroundColorOption>
   );
