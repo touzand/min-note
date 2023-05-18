@@ -64,6 +64,7 @@ a{
   &  svg {
     color: ${props => (props.tc ? props.tc + '70' : 'var(--font-color)')};
     margin:.75rem;
+    transition:none !important;
   }
 
   &:hover svg{
