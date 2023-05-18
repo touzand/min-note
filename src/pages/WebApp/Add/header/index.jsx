@@ -16,7 +16,7 @@ const Header = props => {
   return (
     <>
       <HeaderTop color={props.color}>
-        <IconButtom both={true} tc={`${props.textContrast}70`}>
+        <IconButtom both={true} tc={`${props.textContrast}`}>
           {' '}
           <Link to="/" translate="no">
             <BiArrowBack />
@@ -24,13 +24,13 @@ const Header = props => {
         </IconButtom>
         <div className="header-subsection">
           <IconButtom
-            tc={`${props.textContrast}70`}
+            tc={`${props.textContrast}`}
             left={true}
             translate="no">
             <VscSettingsGear />
           </IconButtom>
           <IconButtom
-            tc={`${props.textContrast}70`}
+            tc={`${props.textContrast}`}
             right={true}
             onClick={props.handdleAddDoc}
             translate="no">
@@ -41,7 +41,7 @@ const Header = props => {
       <Hr
         fadeIn={true}
         opac={true}
-        tc={`${props.textContrast}70`}
+        tc={`${props.textContrast}`}
         style={{borderColor: `${props.textContrast}70`}}
       />
     </>

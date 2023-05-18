@@ -26,4 +26,6 @@ margin-top:${props=>props.home ? '1rem' : '0'};
     justify-content: center;
     align-items: center;
   }
+
+  
 `;

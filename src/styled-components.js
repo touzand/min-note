@@ -43,9 +43,9 @@ export const IconButtom = styled.button`
   text-decoration: none;
   border: none;
   border-left: solid thin
-    ${props => (props.left || props.both ? props.tc : 'transparent')};
+    ${props => (props.left || props.both ? props.tc + '70' : 'transparent')};
   border-right: solid thin
-    ${props => (props.right || props.both ? props.tc : 'transparent')};
+    ${props => (props.right || props.both ? props.tc + '70' : 'transparent')};
   transition: none !important;
 padding:0;
 
@@ -62,8 +62,16 @@ a{
   }
 
   &  svg {
-    color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
+    color: ${props => (props.tc ? props.tc + '70' : 'var(--font-color)')};
     margin:.75rem;
+  }
+
+  &:hover svg{
+    color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
+  }
+
+  &:hover{
+    background-color:${props=>props.tc ? props.tc + '20' : red};
   }
 
   & svg {
