@@ -10,8 +10,7 @@ right:${props=>props.open ? '1rem' : '-40%'};
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  transition:all .3s ease-in-out;
-
+  transition:all .5s ease-in-out;
 
   * {
     margin: 0;

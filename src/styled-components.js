@@ -49,6 +49,11 @@ export const IconButtom = styled.button`
   transition: none !important;
 padding:0;
 
+${props=>props.configPanel && `
+  color:red !important;
+  background-color:red  !important;
+  `}
+
 a{
   padding:0;
 }
@@ -66,6 +71,7 @@ a{
     margin:.75rem;
     transition:none !important;
   }
+
 
   &:hover svg{
     color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
