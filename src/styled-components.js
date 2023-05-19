@@ -49,10 +49,13 @@ export const IconButtom = styled.button`
   transition: none !important;
 padding:0;
 
-${props=>props.configPanel && `
-  color:red !important;
-  background-color:red  !important;
-  `}
+color: ${props=>props.configOpen && props.tc};
+background-color: ${props=>props.configOpen && props.tc + '20'};
+
+//${props=>props.configOpen && `
+    //color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
+    //background-color:${props=>props.tc ? props.tc + '20' : red};
+  //`}
 
 a{
   padding:0;
