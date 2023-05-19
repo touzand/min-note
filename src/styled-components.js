@@ -52,11 +52,6 @@ padding:0;
 color: ${props=>props.configOpen && props.tc};
 background-color: ${props=>props.configOpen && props.tc + '20'};
 
-//${props=>props.configOpen && `
-    //color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
-    //background-color:${props=>props.tc ? props.tc + '20' : red};
-  //`}
-
 a{
   padding:0;
 }
@@ -77,7 +72,7 @@ a{
 
 
   &:hover svg{
-    color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
+    //color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
   }
 
   &:hover{

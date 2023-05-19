@@ -118,6 +118,7 @@ const Menu = props => {
           ))}
           </article>
         </article>
+        <hr />
         <article>
           <Row>
             <div>

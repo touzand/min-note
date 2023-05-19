@@ -20,7 +20,7 @@ const New = () => {
   const {AddDoc} = userAuth();
   const navigate = useNavigate();
   const [textAlign, setTextAlign] = useState('left');
-  const [configPanelOpen,setConfigPanelOpen] = useState(false)
+  const [configPanelOpen, setConfigPanelOpen] = useState(false);
 
   const formatDate = date => {
     const months = [
@@ -89,7 +89,7 @@ const New = () => {
             setTextAlign={setTextAlign}
             handdleColorPicker={handdleColorPicker}
             setConfigPanelOpen={setConfigPanelOpen}
-configPanelOpen={configPanelOpen}
+            configPanelOpen={configPanelOpen}
           />
           <BodyContent
             textContrast={textContrast}
@@ -99,7 +99,11 @@ configPanelOpen={configPanelOpen}
           />
         </div>
       </NewNote>
-      <ConfigPanel setColor={setColor} setTextAlign={setTextAlign} configPanelOpen={configPanelOpen}/>
+      <ConfigPanel
+        setColor={setColor}
+        setTextAlign={setTextAlign}
+        configPanelOpen={configPanelOpen}
+      />
     </>
   );
 };
