@@ -27,7 +27,7 @@ const Header = props => {
             tc={`${props.textContrast}`}
             left={true}
             translate="no"
-            onClick={()=>props.setConfigPanelOpen(!configPanelOpen)}
+            onClick={()=>props.setConfigPanelOpen(!props.configPanelOpen)}
           >
             <VscSettingsGear />
           </IconButtom>

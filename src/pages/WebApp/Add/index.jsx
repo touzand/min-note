@@ -88,7 +88,8 @@ const New = () => {
             color={color}
             setTextAlign={setTextAlign}
             handdleColorPicker={handdleColorPicker}
-            configPanelOpen={configPanelOpen}
+            setConfigPanelOpen={setConfigPanelOpen}
+configPanelOpen={configPanelOpen}
           />
           <BodyContent
             textContrast={textContrast}
@@ -98,7 +99,7 @@ const New = () => {
           />
         </div>
       </NewNote>
-      <ConfigPanel setColor={setColor} setTextAlign={setTextAlign}/>
+      <ConfigPanel setColor={setColor} setTextAlign={setTextAlign} configPanelOpen={configPanelOpen}/>
     </>
   );
 };

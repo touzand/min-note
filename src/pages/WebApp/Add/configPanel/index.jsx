@@ -12,7 +12,7 @@ import {useState} from 'react';
 import backgroundData from '../../../../helpers/backgroundData';
 
 const ConfigPanel = props => {
-  const {setColor,setTextAlign} = props;
+  const {setColor,setTextAlign,configPanelOpen} = props;
   const [selectedBackground, setSelectedBackground] = useState(5);
   const [selectedTextAlign, setSelectedTextAlign] = useState(0);
 
@@ -27,7 +27,8 @@ const ConfigPanel = props => {
   };
 
   return (
-    <ConfigPanelContainer>
+    <ConfigPanelContainer open={configPanelOpen}>
+      {console.log( configPanelOpen )}
       <MainConfig>
         <BackgroundConfig>
           <h3>Background</h3>

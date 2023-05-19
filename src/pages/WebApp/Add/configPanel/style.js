@@ -3,13 +3,15 @@ import styled from 'styled-components';
 export const ConfigPanelContainer = styled.figure`
   position: fixed;
   bottom: 1rem;
-right:${props=>props.open ? '1rem' : '-40%'}
+right:${props=>props.open ? '1rem' : '-40%'};
   margin: 0;
   color: white;
   width: 320px;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  transition:all .3s ease-in-out;
+
 
   * {
     margin: 0;
