@@ -20,6 +20,7 @@ const New = () => {
   const {AddDoc} = userAuth();
   const navigate = useNavigate();
   const [textAlign, setTextAlign] = useState('left');
+  const [configPanelOpen,setConfigPanelOpen] = useState(false)
 
   const formatDate = date => {
     const months = [
@@ -87,6 +88,7 @@ const New = () => {
             color={color}
             setTextAlign={setTextAlign}
             handdleColorPicker={handdleColorPicker}
+            configPanelOpen={configPanelOpen}
           />
           <BodyContent
             textContrast={textContrast}
