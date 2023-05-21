@@ -1,4 +1,4 @@
-import FilterContainer from './style';
+import { FilterButton, FilterContainer } from './style';
 import {BsSearch} from 'react-icons/bs';
 //import { handdleAdd } from '../../../../helpers/helpAdd';
 import {useNavigate} from 'react-router-dom';
@@ -20,7 +20,7 @@ const Filter = props => {
 
   return (
     <FilterContainer className={query && 'up-header'}>
-      <button onClick={() => handdleAdd(navigate)}>add</button>
+      <FilterButton onClick={() => handdleAdd(navigate)}>add</FilterButton>
       <div className="input">
         <BsSearch />
         <input
@@ -31,8 +31,8 @@ const Filter = props => {
           spellCheck="false"
         />
       </div>
-      <button>filter</button>
-      <button>filter</button>
+      <FilterButton>filter</FilterButton>
+      <FilterButton>filter</FilterButton>
     </FilterContainer>
   );
 };

@@ -1,6 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 
-const FilterContainer = styled.article`
+export const FilterContainer = styled.article`
   width: min(100%, 800px);
   margin: 1rem auto 1rem auto;
   display: flex;
@@ -23,16 +23,6 @@ const FilterContainer = styled.article`
 
   *:focus {
     outline: none;
-  }
-
-  button {
-    color: var(--font-color);
-    font-size: 24px;
-    background-color: #262626;
-  }
-
-  button:hover {
-    background-color: var(--complement-color);
   }
 
   .input {
@@ -59,4 +49,24 @@ const FilterContainer = styled.article`
     }
   }
 `;
-export default FilterContainer;
+
+
+export const FilterButton = styled.button`
+    color: var(--font-color);
+    font-size: 24px;
+    background-color: #262626;
+    display:flex;
+align-items:center;
+justify-content:center;
+gap:.5rem;
+
+svg{
+  font-size:2rem;
+}
+
+  &:hover {
+    background-color: var(--complement-color);
+  }
+
+`
+
