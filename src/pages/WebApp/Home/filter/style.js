@@ -59,9 +59,10 @@ export const FilterButton = styled.button`
 align-items:center;
 justify-content:center;
 gap:.5rem;
+font-size:24px;
 
 svg{
-  font-size:2rem;
+  font-size:inherit;
 }
 
   &:hover {
