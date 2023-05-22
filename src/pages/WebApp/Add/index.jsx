@@ -20,14 +20,15 @@ const New = () => {
 
   const [noteError, setNoteError] = useState('');
   const [visible, setVisible] = useState(false);
+  const [configPanelOpen, setConfigPanelOpen] = useState(false);
+
   const {AddDoc} = userAuth();
   const navigate = useNavigate();
-  const [configPanelOpen, setConfigPanelOpen] = useState(false);
 
   const handdleColorPicker = e => {
     setColor(e.target.getAttribute('value'));
-    setVisible(false);
-    e.target.classList.add('color-picker-expand');
+    //setVisible(false);
+    //e.target.classList.add('color-picker-expand');
   };
 
   const handdleAddDoc = async () => {
