@@ -5,10 +5,11 @@ import Notification from '../../../components/notification';
 import {useEffect} from 'react';
 import {NewNote} from './style';
 import Header from './header';
-//import ColorPicker from './configurations/colorPicker';
 import BodyContent from './noteContent';
 import {Hr} from '../../../styled-components';
 import ConfigPanel from './configPanel';
+import { formatDate } from '../../../helpers/helpFormatDate';
+//import ColorPicker from './configurations/colorPicker';
 
 const New = () => {
   const [noteError, setNoteError] = useState('');
@@ -21,29 +22,6 @@ const New = () => {
   const navigate = useNavigate();
   const [textAlign, setTextAlign] = useState('left');
   const [configPanelOpen, setConfigPanelOpen] = useState(false);
-
-  const formatDate = date => {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-
-    const month = months[date.getMonth()];
-    const day = date.getDate();
-    const year = date.getFullYear();
-
-    return `${month} ${day}, ${year}`;
-  };
 
   const handdleColorPicker = e => {
     setColor(e.target.getAttribute('value'));
