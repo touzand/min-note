@@ -30,10 +30,10 @@ const New = () => {
       await AddDoc(title, body, color, date, textContrast, textAlign);
       navigate('/');
     } else {
-      setNoteError('You cannot save a note without title or body');
-      setTimeout(() => {
-        setNoteError('');
-      }, 5000);
+      //setNoteError('You cannot save a note without title or body');
+      //setTimeout(() => {
+        //setNoteError('');
+      //}, 5000);
     }
   };
 
@@ -48,7 +48,6 @@ const New = () => {
     darkFontColorValidation.includes(color)
       ? setTextContrast('#1b1b1b')
       : setTextContrast('#F6F1E9');
-
   }, [color]);
 
   return (
