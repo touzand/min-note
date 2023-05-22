@@ -8,19 +8,20 @@ import Header from './header';
 import BodyContent from './noteContent';
 import {Hr} from '../../../styled-components';
 import ConfigPanel from './configPanel';
-import { formatDate } from '../../../helpers/helpFormatDate';
+import formatDate from '../../../helpers/helpFormatDate';
 //import ColorPicker from './configurations/colorPicker';
 
 const New = () => {
-  const [noteError, setNoteError] = useState('');
   const [color, setColor] = useState('#DDDDDD');
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [textContrast, setTextContrast] = useState('#1b1b1b');
+  const [textAlign, setTextAlign] = useState('left');
+
+  const [noteError, setNoteError] = useState('');
   const [visible, setVisible] = useState(false);
   const {AddDoc} = userAuth();
   const navigate = useNavigate();
-  const [textAlign, setTextAlign] = useState('left');
   const [configPanelOpen, setConfigPanelOpen] = useState(false);
 
   const handdleColorPicker = e => {
