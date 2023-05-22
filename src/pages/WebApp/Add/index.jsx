@@ -21,15 +21,8 @@ const New = () => {
   const [noteError, setNoteError] = useState('');
   const [visible, setVisible] = useState(false);
   const [configPanelOpen, setConfigPanelOpen] = useState(false);
-
   const {AddDoc} = userAuth();
   const navigate = useNavigate();
-
-  const handdleColorPicker = e => {
-    setColor(e.target.getAttribute('value'));
-    //setVisible(false);
-    //e.target.classList.add('color-picker-expand');
-  };
 
   const handdleAddDoc = async () => {
     if (title && body && color) {
@@ -45,13 +38,16 @@ const New = () => {
   };
 
   useEffect(() => {
-    if (color === '#7BD5E1' || color === '#DDE595' || color === '#DDDDDD') {
+    const darkFontColorValidation = [
+      '#7BD5E1',
+      '#DDE595',
+      '#DDDDDD',
+      '#F3C57D',
+    ];
+
+    if (darkFontColorValidation.includes(color)) {
       setTextContrast('#1b1b1b');
-    } else if (
-      color === '#F5A38A' ||
-      color === '#F3C57D' ||
-      color === '#C78DD0'
-    ) {
+    } else {
       setTextContrast('#F6F1E9');
     }
   }, [color]);
@@ -67,7 +63,6 @@ const New = () => {
             handdleAddDoc={handdleAddDoc}
             color={color}
             setTextAlign={setTextAlign}
-            handdleColorPicker={handdleColorPicker}
             setConfigPanelOpen={setConfigPanelOpen}
             configPanelOpen={configPanelOpen}
           />
