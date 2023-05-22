@@ -45,11 +45,10 @@ const New = () => {
       '#F3C57D',
     ];
 
-    if (darkFontColorValidation.includes(color)) {
-      setTextContrast('#1b1b1b');
-    } else {
-      setTextContrast('#F6F1E9');
-    }
+    darkFontColorValidation.includes(color)
+      ? setTextContrast('#1b1b1b')
+      : setTextContrast('#F6F1E9');
+
   }, [color]);
 
   return (
