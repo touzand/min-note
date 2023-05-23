@@ -28,7 +28,6 @@ const ConfigPanel = props => {
 
   return (
     <ConfigPanelContainer open={configPanelOpen}>
-      {console.log( configPanelOpen )}
       <MainConfig>
         <BackgroundConfig>
           <h3>Background</h3>
