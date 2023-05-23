@@ -79,7 +79,8 @@ const BackgroundOption = props => {
     <BackgroundColorOption
       hex_code={hex_code}
       onClick={() => handleBackgroundChange(index, hex_code)}
-      checked={selectedBackground === index}>
+      checked={selectedBackground === index}
+    >
       <article>
         <div className="color_thum"></div>
         <article>
