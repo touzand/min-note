@@ -2,17 +2,17 @@ import styled from 'styled-components';
 
 export const ConfigPanelContainer = styled.figure`
   position: fixed;
-  bottom: .5rem;
-right:${props=>props.open ? '.5rem' : '-10%'};
-opacity:${props=>props.open ? '1' : '0'};
-visibility:${props=>props.open ? 'visible' : 'hidden'};
+  bottom: 0.5rem;
+  right: ${props => (props.open ? '.5rem' : '-10%')};
+  opacity: ${props => (props.open ? '1' : '0')};
+  visibility: ${props => (props.open ? 'visible' : 'hidden')};
   margin: 0;
   color: white;
   width: 320px;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
-  transition:all .3s ease-in-out;
+  gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
 
   * {
     margin: 0;

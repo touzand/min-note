@@ -32,7 +32,7 @@ const New = () => {
     } else {
       //setNoteError('You cannot save a note without title or body');
       //setTimeout(() => {
-        //setNoteError('');
+      //setNoteError('');
       //}, 5000);
     }
   };
