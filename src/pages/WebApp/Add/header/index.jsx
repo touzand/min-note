@@ -17,7 +17,6 @@ const Header = props => {
     <>
       <HeaderTop color={props.color}>
         <IconButtom both={true} tc={`${props.textContrast}`}>
-          {' '}
           <Link to="/" translate="no">
             <BiArrowBack />
           </Link>
@@ -27,9 +26,8 @@ const Header = props => {
             tc={`${props.textContrast}`}
             left={true}
             translate="no"
-            onClick={()=>props.setConfigPanelOpen(!props.configPanelOpen)}
-            configOpen={props.configPanelOpen}
-          >
+            onClick={() => props.setConfigPanelOpen(!props.configPanelOpen)}
+            configOpen={props.configPanelOpen}>
             <VscSettingsGear />
           </IconButtom>
           <IconButtom
