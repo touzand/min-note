@@ -12,28 +12,37 @@ import {useState} from 'react';
 const Header = props => {
   const [textAlignVisible, setTextAlignVisible] = useState(false);
   const [colorPicker, setColorPicker] = useState(false);
+  const {
+    textContrast,
+    setVisible,
+    handdleAddDoc,
+    color,
+    setTextAlign,
+    setConfigPanelOpen,
+    configPanelOpen,
+  } = props;
 
   return (
     <>
-      <HeaderTop color={props.color}>
-        <IconButtom both={true} tc={`${props.textContrast}`}>
+      <HeaderTop color={color}>
+        <IconButtom both={true} tc={`${textContrast}`}>
           <Link to="/" translate="no">
             <BiArrowBack />
           </Link>
         </IconButtom>
         <div className="header-subsection">
           <IconButtom
-            tc={`${props.textContrast}`}
+            tc={`${textContrast}`}
             left={true}
             translate="no"
-            onClick={() => props.setConfigPanelOpen(!props.configPanelOpen)}
-            configOpen={props.configPanelOpen}>
+            onClick={() => setConfigPanelOpen(!configPanelOpen)}
+            configOpen={configPanelOpen}>
             <VscSettingsGear />
           </IconButtom>
           <IconButtom
-            tc={`${props.textContrast}`}
+            tc={`${textContrast}`}
             right={true}
-            onClick={props.handdleAddDoc}
+            onClick={handdleAddDoc}
             translate="no">
             <HiOutlineSave />
           </IconButtom>
@@ -42,8 +51,8 @@ const Header = props => {
       <Hr
         fadeIn={true}
         opac={true}
-        tc={`${props.textContrast}`}
-        style={{borderColor: `${props.textContrast}70`}}
+        tc={`${textContrast}`}
+        style={{borderColor: `${textContrast}70`}}
       />
     </>
   );
