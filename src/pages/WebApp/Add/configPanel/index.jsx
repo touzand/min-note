@@ -62,9 +62,4 @@ const ConfigPanel = props => {
   );
 };
 
-//<FooterConfig>
-//<article>p</article>
-//<article>p</article>
-//</FooterConfig>
-
 export default ConfigPanel;
