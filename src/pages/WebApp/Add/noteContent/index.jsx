@@ -1,27 +1,29 @@
-import TextArea from "../../../../components/textArea"
-import Title from "../../../../components/Title"
-import {BodyContentContainer} from "./style"
+import TextArea from '../../../../components/textArea';
+import Title from '../../../../components/Title';
+import {BodyContentContainer} from './style';
 
-const BodyContent = (props) => {
-  return(
+const BodyContent = props => {
+  const {textContrast, setTitle, setBody, textAlign} = props;
+
+  return (
     <BodyContentContainer>
-        <div className="form">
-          <Title 
-            tc={ props.textContrast }
-            setTitle={props.setTitle}
-            editable={true}
-            textAlign={props.textAlign}
-          />
-          <TextArea
-            placeholder="Type something..."
-            spellCheck="false"
-            tc={ props.textContrast }
-            setBody={props.setBody}
-            textAlign={props.textAlign}
-          />
-        </div>
+      <form>
+        <Title
+          tc={textContrast}
+          setTitle={setTitle}
+          editable={true}
+          textAlign={textAlign}
+        />
+        <TextArea
+          placeholder="Type something..."
+          spellCheck="false"
+          tc={textContrast}
+          setBody={setBody}
+          textAlign={textAlign}
+        />
+      </form>
     </BodyContentContainer>
-  )
-}
+  );
+};
 
-export default BodyContent
+export default BodyContent;
