@@ -53,9 +53,9 @@ const New = () => {
       '#F3C57D',
     ];
 
-    darkFontColorValidation.includes(color)
-      ? setTextContrast('#1b1b1b')
-      : setTextContrast('#F6F1E9');
+    darkFontColorValidation.includes(noteContent.background_color)
+      ? setNoteContent(prevState=>({...prevState,background_color:'#1b1b1b'}))
+      : setNoteContent(prevState=>({...prevState,background_color:'#F6F1E9'}))
   }, [noteContent.background_color]);
 
   const headerProps = {
@@ -87,7 +87,7 @@ const New = () => {
 
   return (
     <>
-      <NewNote bg={color} tc={textContrast} id="new">
+      <NewNote backgroundColor={noteContent.background_color} textAlign={noteContent.text_align} id="new">
         {noteError && <Notification>{noteError}</Notification>}
         <div className="general-container">
           <Header {...headerProps} />

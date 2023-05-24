@@ -6,7 +6,7 @@ const FadeIn = keyframes`
 `
 
 export const NewNote = styled.div`
-  background-color: ${(props) => props.bg};
+  background-color: ${(props) => props.backgroundColor};
   min-height: 100vh;
   transition: background-color 1s ease;
   font-family:Outfit;

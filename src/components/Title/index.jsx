@@ -2,7 +2,7 @@ import {TitleContainer} from './style';
 
 const Title = props => {
   //const {tc, editable, setTitle, textAlign, content,setNoteContent} = props;
-  const {setNoteContent,noteContent,editable} = props;
+  const {setNoteContent,noteContent,editable,content} = props;
 
   return (
     <TitleContainer

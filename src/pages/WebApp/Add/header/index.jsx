@@ -3,7 +3,7 @@ import {Hr, IconButtom} from '../../../../styled-components';
 import {HeaderContainer} from './style';
 import {BiArrowBack, BiFontFamily} from 'react-icons/bi';
 import {VscSettingsGear} from 'react-icons/vsc';
-import {HiOutlineColorSwatextColorContrasth, HiOutlineSave} from 'react-icons/hi';
+import {HiOutlineColorSwatch, HiOutlineSave} from 'react-icons/hi';
 import HeaderTop from '../../../../components/Header';
 import {FaAlignJustify, FaAlignLeft, FaAlignRight} from 'react-icons/fa';
 import {useState} from 'react';

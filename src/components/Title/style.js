@@ -13,16 +13,16 @@ export const TitleContainer = styled.span`
   font-weight: bold;
   line-height: 1;
   margin: 21.44px 0;
-  color: ${props => props.tc}70;
+  color: ${props => props.textColorContrast}70;
   transition: color 1s ease;
 
   &:focus {
-    color: ${props => props.tc};
+    color: ${props => props.textColorContrast};
   }
 
   &[contenteditable]:empty::before {
     content: 'Title';
-    color: ${props => props.tc}70;
+    color: ${props => props.textColorContrast}70;
     transition: color 1s ease;
   }
 `;

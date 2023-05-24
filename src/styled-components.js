@@ -76,7 +76,7 @@ a{
   }
 
   &:hover{
-    background-color:${props=>props.tc ? props.tc + '20' : red};
+    background-color:${props=>props.tc ? props.tc + '20' : 'red'};
   }
 
   & svg {
