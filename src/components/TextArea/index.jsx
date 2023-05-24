@@ -4,10 +4,10 @@ import {TextAreaComponent} from './style';
 const MIN_TEXTAREA_HEIGHT = 32;
 
 const TextArea = props => {
-  const {placeholder, spellCheck, setBody, tc, defaultValue, textAlign} = props;
+  const {placeholder, spellCheck, setBody, tc, defaultValue, textAlign,setNoteContent,noteContent} = props;
   const textareaRef = React.useRef(null);
   const [value, setValue] = React.useState('');
-  const onChange = event => setValue(event.target.value);
+  const handleValue = event => setValue(event.target.value);
 
   React.useLayoutEffect(() => {
     // Reset height - important to shrink on delete
@@ -21,14 +21,14 @@ const TextArea = props => {
 
   return (
     <TextAreaComponent
-      onChange={onChange}
+      onChange={handleValue}
       placeholder={placeholder}
       ref={textareaRef}
       spellCheck={spellCheck}
       onKeyUp={e => {
-        setBody(value);
+        setNoteContent(prevState=({...prevState,body:value}));
       }}
-      tc={tc}
+      textColorContrast={noteContent.text_color_contrast}
       style={{
         minHeight: MIN_TEXTAREA_HEIGHT,
         resize: 'none',

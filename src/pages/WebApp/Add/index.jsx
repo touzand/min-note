@@ -56,16 +56,15 @@ const New = () => {
     darkFontColorValidation.includes(color)
       ? setTextContrast('#1b1b1b')
       : setTextContrast('#F6F1E9');
-  }, [color]);
+  }, [noteContent.background_color]);
 
   const headerProps = {
-    textContrast,
     setVisible,
     handdleAddDoc,
-    color,
-    setTextAlign,
     setConfigPanelOpen,
     configPanelOpen,
+    setNoteContent,
+    noteContent
   };
 
   const bodyContentProps = {
