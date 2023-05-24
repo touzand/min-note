@@ -8,7 +8,7 @@ const heightOpen = keyframes`
 export const Hr = styled.hr`
   width: 100%;
   border-top: none;
-  border-color: ${props => (props.tc ? props.tc : 'var(--divisor-line-color)')};
+  border-color: ${props => (props.textColorContrast ? props.textColorContrast : 'var(--divisor-line-color)')};
   margin-top: 0rem;
   margin-bottom: 0;
   position: relative;
@@ -43,14 +43,14 @@ export const IconButtom = styled.button`
   text-decoration: none;
   border: none;
   border-left: solid thin
-    ${props => (props.left || props.both ? props.tc + '70' : 'transparent')};
+    ${props => (props.left || props.both ? props.textColorContrast + '70' : 'transparent')};
   border-right: solid thin
-    ${props => (props.right || props.both ? props.tc + '70' : 'transparent')};
+    ${props => (props.right || props.both ? props.textColorContrast + '70' : 'transparent')};
   transition: none !important;
 padding:0;
 
-color: ${props=>props.configOpen && props.tc};
-background-color: ${props=>props.configOpen && props.tc + '20'};
+color: ${props=>props.configOpen && props.textColorContrast};
+background-color: ${props=>props.configOpen && props.textColorContrast + '20'};
 
 a{
   padding:0;
@@ -65,18 +65,18 @@ a{
   }
 
   &  svg {
-    color: ${props => (props.tc ? props.tc + '70' : 'var(--font-color)')};
+    color: ${props => (props.textColorContrast ? props.textColorContrast + '70' : 'var(--font-color)')};
     margin:.75rem;
     transition:none !important;
   }
 
 
   &:hover svg{
-    //color: ${props => (props.tc ? props.tc : 'var(--font-color)')};
+    //color: ${props => (props.textColorContrast ? props.textColorContrast : 'var(--font-color)')};
   }
 
   &:hover{
-    background-color:${props=>props.tc ? props.tc + '20' : 'red'};
+    background-color:${props=>props.textColorContrast ? props.textColorContrast + '20' : 'red'};
   }
 
   & svg {
