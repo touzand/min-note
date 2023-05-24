@@ -33,7 +33,7 @@ const TextArea = props => {
       ref={textareaRef}
       spellCheck={spellCheck}
       onKeyUp={e => {
-        setNoteContent((prevState = {...prevState, body: value}));
+        setNoteContent(prevState => ({...prevState, body: value}));
       }}
       textColorContrast={noteContent.text_color_contrast}
       style={{
