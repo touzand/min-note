@@ -12,18 +12,18 @@ import {useState} from 'react';
 import backgroundData from '../../../../helpers/backgroundData';
 
 const ConfigPanel = props => {
-  const {setColor,setTextAlign,configPanelOpen} = props;
+  const {configPanelOpen,setNoteContent,noteContent} = props;
   const [selectedBackground, setSelectedBackground] = useState(5);
   const [selectedTextAlign, setSelectedTextAlign] = useState(0);
 
   const handleBackgroundChange = (index, hex_code) => {
     setSelectedBackground(index);
-    setColor(hex_code);
+    setNoteContent(prevState=>({...prevState,background_color:hex_code}));
   };
 
   const handleTextAlignChange = (index,value) => {
     setSelectedTextAlign(index);
-    setTextAlign(value);
+    setNoteContent(prevState=>({...prevState,text_align:value}));
   };
 
   return (
@@ -38,6 +38,7 @@ const ConfigPanel = props => {
           <div className="background_option_section">
             {backgroundData.map((button, index) => (
               <BackgroundOption
+                key={index}
                 index={index}
                 selectedBackground={selectedBackground}
                 handleBackgroundChange={handleBackgroundChange}
@@ -55,7 +56,7 @@ const ConfigPanel = props => {
           <p>
             Customize note text properties for the body, excluding the title.
           </p>
-          <TextOption setTextAlign={setTextAlign} handleTextAlignChange={handleTextAlignChange} selectedTextAlign={selectedTextAlign}/>
+          <TextOption setNoteContent={setNoteContent} handleTextAlignChange={handleTextAlignChange} selectedTextAlign={selectedTextAlign}/>
         </TextConfig>
       </MainConfig>
     </ConfigPanelContainer>

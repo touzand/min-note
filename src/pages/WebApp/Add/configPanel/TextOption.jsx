@@ -37,7 +37,7 @@ cursor:pointer;
 `;
 
 const TextOption = props => {
-  const {setTextAlign, handleTextAlignChange, selectedTextAlign} = props;
+  const {setNoteContent, handleTextAlignChange, selectedTextAlign} = props;
 
   return (
     <TextOptionContainer>

@@ -14,7 +14,7 @@ export const TextAreaComponent = styled.textarea`
     border: none;
     outline: none;
   font-size:24px;
-  text-align:${props=>props.textAlign && props.textAlign};
+text-align:${props=>props.textAlign && props.textAlign};
   font-family:Outfit;
     color: ${(props) => props.textColorContrast}70;
     transition: color 1s ease;

@@ -41,7 +41,7 @@ const TextArea = props => {
         resize: 'none',
       }}
       defaultValue={defaultValue || value}
-      textAlign={textAlign}
+      textAlign={noteContent.text_align}
     />
   );
 };
