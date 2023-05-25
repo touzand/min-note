@@ -76,7 +76,7 @@ const New = () => {
     noteContent
   };
 
-  const configPanel = {
+  const configPanelProps = {
     //setColor,
     //setTextAlign,
     configPanelOpen,
@@ -94,7 +94,7 @@ const New = () => {
           <BodyContent {...bodyContentProps} />
         </div>
       </NewNote>
-      <ConfigPanel />
+      <ConfigPanel {...configPanelProps} />
     </>
   );
 };
