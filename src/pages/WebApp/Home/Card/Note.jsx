@@ -40,13 +40,14 @@ const NoteContaier = styled.article`
 `;
 
 const Note = props => {
-  const {bg, title, date, key, id} = props;
+  //const {bg, title, date, key, id} = props;
+  const {background_color, title, date, key, id} = props;
 
   return (
     <Link to={`/note/${id}`} style={link}>
-      <NoteContaier bg={bg}>
+      <NoteContaier bg={background_color}>
         <p>{title}</p>
-        <Hr tc=" #0009" />
+        <Hr textColorContrast=" #0009" />
         <span>{date}</span>
       </NoteContaier>
     </Link>

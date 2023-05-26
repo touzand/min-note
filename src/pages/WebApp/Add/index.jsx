@@ -13,9 +13,10 @@ import formatDate from '../../../helpers/helpFormatDate';
 
 const New = () => {
   const [noteContent,setNoteContent] = useState({
-    background_color:'#DDDDDD',
+    date:'',
     title:'',
     body:'',
+    background_color:'#DDDDDD',
     text_color_contrast:'#1b1b1b',
     text_align:'left'
   })
@@ -33,9 +34,9 @@ const New = () => {
   const navigate = useNavigate();
 
   const handdleAddDoc = async () => {
-    if (title && body && color) {
-      const date = formatDate(new Date());
-      await AddDoc(title, body, color, date, textContrast, textAlign);
+    if (noteContent.title && noteContent.body) {
+      noteContent.date = formatDate(new Date());
+      await AddDoc(noteContent);
       navigate('/');
     } else {
       //setNoteError('You cannot save a note without title or body');
