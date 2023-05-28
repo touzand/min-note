@@ -22,7 +22,7 @@ const Filter = props => {
   return (
     <FilterContainer className={query && 'up-header'}>
       <FilterButton onClick={() => handdleAdd(navigate)}>
-      <span>add</span>
+      <span>New</span>
         <MdOutlinePostAdd/>
       </FilterButton>
       <div className="input">
@@ -35,8 +35,8 @@ const Filter = props => {
           spellCheck="false"
         />
       </div>
-      <FilterButton>filter</FilterButton>
-      <FilterButton>filter</FilterButton>
+      <FilterButton>Tag</FilterButton>
+      <FilterButton>Color</FilterButton>
     </FilterContainer>
   );
 };

@@ -39,14 +39,6 @@ export const ViewContainer = styled.div`
       animation: ${FadeUp} 0.5s 1s ease-in-out both;
     }
 
-    //& span:nth-child(1) {
-      //animation-delay: .9s;
-    //}
-
-    //& span:nth-child(2) {
-      //animation-delay: 1.2s;
-    //}
-
     & p {
       animation-delay: 1.5s;
     }
