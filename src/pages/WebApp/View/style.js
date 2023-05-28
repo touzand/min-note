@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ViewContainer = styled.div`
-  background-color: ${(props) => props.bg};
+  background-color: ${(props) => props.backgroundColor};
   min-height: 100vh;
   width: 100%;
 
@@ -23,7 +23,7 @@ export const ViewContainer = styled.div`
   }
 
   .note-content {
-    color: ${(props) => props.tc};
+    color: ${(props) => props.textColorContrast};
   }
 
   h1 {

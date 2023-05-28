@@ -41,7 +41,7 @@ const NoteContaier = styled.article`
 
 const Note = props => {
   //const {bg, title, date, key, id} = props;
-  const {background_color, title, date, key, id} = props;
+  const {background_color, title, date, key, id,text_align} = props;
 
   return (
     <Link to={`/note/${id}`} style={link}>

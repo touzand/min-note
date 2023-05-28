@@ -13,7 +13,8 @@ export const TitleContainer = styled.span`
   font-weight: bold;
   line-height: 1;
   margin: 21.44px 0;
-  color: ${props => props.textColorContrast}70;
+  //color: ${props => props.textColorContrast}70;
+color:${props=>props.contentEditable ? props.textColorContrast + 70 : props.textColorContrast};
   transition: color 1s ease;
 
   &:focus {

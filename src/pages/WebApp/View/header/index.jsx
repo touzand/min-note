@@ -11,13 +11,13 @@ const Header = (props) => {
   return (
     <>
       <HeaderTop>
-        <IconButtom both={true} tc={`${props.data.text}`}>
+        <IconButtom both={true} textColorContrast={`${props.noteContent.text_color_contrast}`}>
           <Link to="/" translate="no">
             <BiArrowBack />
           </Link>
         </IconButtom>
         <div>
-          <IconButtom left={true} tc={`${props.data.text}`}>
+          <IconButtom left={true} textColorContrast={`${props.noteContent.text_color_contrast}`}>
             <div
               translate="no"
               to="/"
@@ -27,13 +27,13 @@ const Header = (props) => {
             </div>
           </IconButtom>
           {props.activeEdit ? (
-            <IconButtom right={true} tc={`${props.data.text}`}>
+            <IconButtom right={true} textColorContrast={`${props.noteContent.text_color_contrast}`}>
               <div to="/" onClick={props.handdleUpdate} translate="no">
                 <HiOutlineSave />
               </div>
             </IconButtom>
           ) : (
-            <IconButtom right={true} tc={`${props.data.text}`}>
+            <IconButtom right={true} textColorContrast={`${props.noteContent.text_color_contrast}`}>
               <div
                 to="/"
                 onClick={() => props.setActiveEdit(!props.activeEdit)}
@@ -45,7 +45,7 @@ const Header = (props) => {
           )}
         </div>
       </HeaderTop>
-      <Hr tc={`${props.data.text}70`}/> 
+      <Hr textColorContrast={`${props.noteContent.text_color_contrast}`}/> 
     </>
   );
 };

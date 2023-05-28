@@ -9,7 +9,7 @@ const Title = props => {
       spellCheck="false"
       role="textbox"
       textColorContrast={noteContent.text_color_contrast}
-      contentEditable={editable && true}
+      contentEditable={editable}
       onKeyUp={e => setNoteContent(prevState=>( {...prevState,title:e.target.textContent} ))}
       textAlign={noteContent.text_align}>
       {content && content}

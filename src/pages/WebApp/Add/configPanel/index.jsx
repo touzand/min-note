@@ -23,8 +23,8 @@ const ConfigPanel = props => {
   };
 
   const handleTextAlignChange = (index,value) => {
-    setSelectedTextAlign(index);
     setNoteContent(prevState=>({...prevState,text_align:value}));
+    setSelectedTextAlign(index);
   };
 
   return (
