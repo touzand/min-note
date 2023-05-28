@@ -1,12 +1,17 @@
-import styled from "styled-components";
+import styled, {keyframes} from 'styled-components';
+
+const FadeUp = keyframes`
+0%{top:3rem;opacity:0;}
+100%{top:0;opacity:1;}
+`;
 
 export const ViewContainer = styled.div`
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${props => props.backgroundColor};
   min-height: 100vh;
   width: 100%;
 
   //*{
-    //border:solid thin red;
+  //border:solid thin red;
   //}
 
   header {
@@ -23,7 +28,28 @@ export const ViewContainer = styled.div`
   }
 
   .note-content {
-    color: ${(props) => props.textColorContrast};
+    color: ${props => props.textColorContrast};
+
+    * {
+      position: relative;
+      opacity: 0;
+    }
+
+    * {
+      animation: ${FadeUp} 0.5s 1s ease-in-out both;
+    }
+
+    //& span:nth-child(1) {
+      //animation-delay: .9s;
+    //}
+
+    //& span:nth-child(2) {
+      //animation-delay: 1.2s;
+    //}
+
+    & p {
+      animation-delay: 1.5s;
+    }
   }
 
   h1 {
@@ -41,7 +67,7 @@ export const ViewContainer = styled.div`
 
   .body {
     white-space: pre-wrap;
-    font-size:var(--font-size-pharag);
+    font-size: var(--font-size-pharag);
   }
 
   .edit-enable {
@@ -50,40 +76,39 @@ export const ViewContainer = styled.div`
     width: min(100%, 800px);
   }
 
-
   .title {
     font-size: var(--font-size-title);
-    content: "Title";
+    content: 'Title';
     margin: 3rem 0;
     line-height: 1;
     font-weight: bold;
     margin: 21.44px 0;
     outline: none;
-    color: ${(props) => props.tc}70;
+    color: ${props => props.tc}70;
     transition: color 1s ease;
   }
 
   .title:focus {
-    color: ${(props) => props.tc};
+    color: ${props => props.tc};
   }
 
   .body:focus {
-    color: ${(props) => props.tc};
+    color: ${props => props.tc};
   }
 
   .title[contenteditable]:empty::before {
-    content: "Title";
-    color: ${(props) => props.tc}70;
+    content: 'Title';
+    color: ${props => props.tc}70;
   }
 
   .date {
-    font-size:var(--font-size-pharag);
-    color: ${(props) => props.tc};
-    display:block;
+    font-size: var(--font-size-pharag);
+    color: ${props => props.tc};
+    display: block;
   }
 
   .date-edit {
-    color: ${(props) => props.tc}70;
+    color: ${props => props.tc}70;
   }
 
   textarea {
@@ -95,17 +120,17 @@ export const ViewContainer = styled.div`
     background-color: transparent;
     border: none;
     outline: none;
-    font-size:var(--font-size-pharag);
-    color: ${(props) => props.tc}70;
+    font-size: var(--font-size-pharag);
+    color: ${props => props.tc}70;
     transition: color 1s ease;
   }
 
   textarea::placeholder {
-    color: ${(props) => props.tc}70;
+    color: ${props => props.tc}70;
   }
 
   textarea:focus {
-    color: ${(props) => props.tc};
+    color: ${props => props.tc};
   }
 
   @media (min-width: 800px) {
