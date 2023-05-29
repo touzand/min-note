@@ -7,13 +7,10 @@ export const HeaderContainer = styled.header`
   width: min(100%, 800px);
   position:relative;
 margin-top:${props=>props.home ? '1rem' : '0'};
+  animation: downHeader 0.5s ease both;
 
-  & .up-header {
-    animation: upHeaderTop .5s ease both;
-  }
-
-  & .down-header {
-    animation: downHeaderTop .5s ease both;
+  &.up-header {
+    animation: upHeader 0.5s ease both;
   }
 
   h1 {

@@ -1,8 +1,8 @@
-import { FilterButton, FilterContainer } from './style';
+import {FilterButton, FilterContainer} from './style';
 import {BsSearch} from 'react-icons/bs';
-//import { handdleAdd } from '../../../../helpers/helpAdd';
 import {useNavigate} from 'react-router-dom';
-import {MdOutlinePostAdd} from 'react-icons/md'
+import {MdOutlinePostAdd} from 'react-icons/md';
+//import { handdleAdd } from '../../../../helpers/helpAdd';
 
 const Filter = props => {
   const {query, setQuery, data, handdleAdd} = props;
@@ -11,9 +11,9 @@ const Filter = props => {
   return (
     <FilterContainer className={query && 'up-header'}>
       <FilterButton onClick={() => handdleAdd(navigate)}>
-      <span>New</span>
-        <MdOutlinePostAdd/>
+        <span>New</span>
       </FilterButton>
+
       <div className="input">
         <BsSearch />
         <input
@@ -24,6 +24,7 @@ const Filter = props => {
           spellCheck="false"
         />
       </div>
+
       <FilterButton>Tag</FilterButton>
       <FilterButton>Color</FilterButton>
     </FilterContainer>

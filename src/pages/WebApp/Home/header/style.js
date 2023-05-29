@@ -8,6 +8,11 @@ const transitionExpand = keyframes`
 export const HeaderContainer = styled.header`
   width: 100%;
 
+  &.up-header {
+    animation: upHeader 0.5s ease both;
+  }
+
+
   h1 {
     color: red;
   }
