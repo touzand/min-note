@@ -8,17 +8,6 @@ const Filter = props => {
   const {query, setQuery, data, handdleAdd} = props;
   const navigate = useNavigate();
 
-  //const handdleAdd = () => {
-  //document
-  //.querySelector('.add-background-transition')
-  //.classList.add('background-transition-expand');
-  //setTimeout(() => {
-  //navigate('/new');
-  //}, 600);
-  //};
-
-  const handdleColorFilter = () => {};
-
   return (
     <FilterContainer className={query && 'up-header'}>
       <FilterButton onClick={() => handdleAdd(navigate)}>

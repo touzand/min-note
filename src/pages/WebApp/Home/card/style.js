@@ -1,14 +1,12 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-import {Hr} from '../../../../styled-components';
 
-const link = {
+export const link = {
   color: 'red',
   textDecoration: 'none',
   display: 'block',
 };
 
-const NoteContaier = styled.article`
+export const NoteContaier = styled.article`
   background-color: ${props => props.bg};
   border-radius: 0.25rem;
   text-align: left;
@@ -39,19 +37,3 @@ const NoteContaier = styled.article`
   }
 `;
 
-const Note = props => {
-  //const {bg, title, date, key, id} = props;
-  const {background_color, title, date, key, id,text_align} = props;
-
-  return (
-    <Link to={`/note/${id}`} style={link}>
-      <NoteContaier bg={background_color}>
-        <p>{title}</p>
-        <Hr textColorContrast=" #0009" />
-        <span>{date}</span>
-      </NoteContaier>
-    </Link>
-  );
-};
-
-export default Note;

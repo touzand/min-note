@@ -15,7 +15,7 @@ import NoNotes from './noNotes';
 import Filter from './filter';
 import Menu from './menu';
 import Loader from '../../../components/loader';
-import Note from './card/Note';
+import Card from './card';
 //... Styles
 import {
   BackgroundTransition,
@@ -102,7 +102,7 @@ const Home = ({children}) => {
           {data.length !== 0 ? (
             dataFilter.map(note => (
               //[> Aqui hace falta resolver el atributo key<]
-              <Note key={note.id} {...note} />
+              <Card key={note.id} {...note} />
             ))
           ) : (
             <NoNotes />
