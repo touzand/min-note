@@ -25,7 +25,7 @@ import {
 
 const Home = ({children}) => {
   const [searchVisible, setSearchVisible] = useState(false);
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(true);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState('');
   const [addTransition, setAddTransition] = useState(false);

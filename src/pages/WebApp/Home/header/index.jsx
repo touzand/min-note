@@ -24,15 +24,6 @@ const Header = props => {
   const {user, SignOut} = userAuth();
   const isMobile = useIsMobile(800);
 
-  //const handdleAdd = () => {
-    //document
-      //.querySelector('.add-background-transition')
-      //.classList.add('background-transition-expand');
-    //setTimeout(() => {
-      //navigate('/new');
-    //}, 600);
-  //};
-
   const handdleSignOut = async () => {
     try {
       await SignOut();
@@ -76,31 +67,3 @@ const Header = props => {
 };
 
 export default Header;
-
-//{!isMobile && (
-//<IconButtom
-//tc={`#F6F1E9`}
-//left={true}
-//onClick={handdleAdd}
-//translate="no"
-//>
-//<IoMdAdd/>
-//</IconButtom>
-//)}
-
-//<IconButtom
-//className="search"
-//onClick={() => props.setSearchVisible(true)}
-//translate="no"
-//tc={`#F6F1E9`}
-//>
-//<BsSearch/>
-//</IconButtom>
-//<IconButtom
-//tc={`#F6F1E9`}
-//onClick={() => setOptionMessage(true)}
-//translate="no"
-//right={!isMobile && true}
-//>
-//<GoSignOut/>
-//</IconButtom>
