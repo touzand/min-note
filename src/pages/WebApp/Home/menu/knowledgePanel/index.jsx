@@ -1,6 +1,8 @@
 import {KnowledgePanelContainer} from './style';
 
-const KnowledgePanel = () => {
+const KnowledgePanel = (props) => {
+const {wordCount,characterCount,noteCount} = props
+
   return (
     <KnowledgePanelContainer>
       <header>
@@ -9,18 +11,18 @@ const KnowledgePanel = () => {
 
       <main>
         <div className="main_top">
-          <h1>24</h1>
+          <h1>{ noteCount }</h1>
           <span>notes</span>
         </div>
 
         <div className="main_bottom grid">
           <div>
             <span>words</span>
-            <h2>0</h2>
+            <h2>{ wordCount }</h2>
           </div>
           <div>
             <span>characters</span>
-            <h2>0</h2>
+            <h2>{ characterCount }</h2>
           </div>
           <div>
             <span>tags</span>

@@ -27,6 +27,7 @@ const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
   const [bgCounts, setBgCounts] = useState({});
   const [characterCount, setCharacterCount] = useState(0);
+  const [wordCount, setWordCount] = useState(0);
   const {user, DeleteAllDoc} = userAuth();
   const navigate = useNavigate();
 
@@ -39,6 +40,12 @@ const Menu = props => {
   useEffect(() => {
     if (data.length != 0) {
       setCharacterCount(() => sumCharacters(data));
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (data.length != 0) {
+      setWordCount(() => sumWords(data));
     }
   }, [data]);
 
@@ -73,6 +80,19 @@ const Menu = props => {
     return sum;
   }
 
+  function sumWords(arr) {
+    let sum = 0;
+
+    arr.forEach(obj => {
+      if (obj.hasOwnProperty('body') && typeof obj.body === 'string') {
+        console.log(obj.body.split(' ').length)
+        sum += obj.body.split(' ').length;
+      }
+    });
+
+    return sum;
+  }
+
   const handdleClickOnMenu = e => {
     if (e.target === document.querySelector('#bg-menu')) {
       setMenu(false);
@@ -82,7 +102,7 @@ const Menu = props => {
   return (
     <BackgroundContainer onClick={handdleClickOnMenu} menu={menu} id="bg-menu">
       <ContentContainer>
-        <KnowledgePanel/>
+        <KnowledgePanel characterCount={characterCount} wordCount={wordCount} noteCount={data.length}/>
         {
         //<article>
           //<Row>
