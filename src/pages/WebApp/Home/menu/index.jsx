@@ -22,12 +22,16 @@ import {
 import Count from './Count';
 import backgroundData from '../../../../helpers/backgroundData';
 import KnowledgePanel from './knowledgePanel';
+import CountByColor from './CountByColor';
 
 const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
+  
   const [bgCounts, setBgCounts] = useState({});
+
   const [characterCount, setCharacterCount] = useState(0);
   const [wordCount, setWordCount] = useState(0);
+
   const {user, DeleteAllDoc} = userAuth();
   const navigate = useNavigate();
 
@@ -103,6 +107,7 @@ const Menu = props => {
     <BackgroundContainer onClick={handdleClickOnMenu} menu={menu} id="bg-menu">
       <ContentContainer>
         <KnowledgePanel characterCount={characterCount} wordCount={wordCount} noteCount={data.length}/>
+        <CountByColor/>
         {
         //<article>
           //<Row>
