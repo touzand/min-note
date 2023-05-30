@@ -7,27 +7,29 @@ const KnowledgePanel = () => {
         <h3>all u need to know</h3>
       </header>
 
-      <div>
-        <h1>0</h1>
-        <span>notes</span>
-      </div>
+      <main>
+        <div className="main_top">
+          <h1>24</h1>
+          <span>notes</span>
+        </div>
 
-      <div>
-        <div>
-          <span>words</span>
-          <h2>0</h2>
+        <div className="main_bottom grid">
+          <div>
+            <span>words</span>
+            <h2>0</h2>
+          </div>
+          <div>
+            <span>characters</span>
+            <h2>0</h2>
+          </div>
+          <div>
+            <span>tags</span>
+            <h2>0</h2>
+          </div>
         </div>
-        <div>
-          <span>characters</span>
-          <h2>0</h2>
-        </div>
-        <div>
-          <span>tags</span>
-          <h2>0</h2>
-        </div>
-      </div>
+      </main>
 
-      <div></div>
+      <footer></footer>
     </KnowledgePanelContainer>
   );
 };
