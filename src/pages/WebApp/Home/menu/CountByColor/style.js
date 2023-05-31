@@ -8,6 +8,7 @@ display:grid;
 height:350px;
 gap:1rem;
 box-sizing:border-box;
+grid-template-column:auto;
 grid-template-areas:
   "first first first second second"
   "first first first second second"
@@ -20,67 +21,43 @@ grid-template-areas:
   "fifth fifth sixth sixth seventh"
   "fifth fifth sixth sixth seventh";
 
-figure{
+div{
   margin:0;
   padding:0;
   border-radius:.25rem;
 }
 
-figure:nth-child(1){
+div:nth-child(1){
   grid-area:first;
   background-color:red;
-
-  &>span{
-    width:10px;
-    background-color:yellow;
-  }
-
-  //&>div{
-    //background-color:yellow;
-    //display:flex;
-    //flex-direction:column;
-    //justify-content:space-between;
-    //height:100%;
-
-    //span{
-      //display:flex;
-      //align-items:center;
-      //gap:.5rem;
-      //background-color:blue;
-
-      //div{
-        //background-color:purple;
-      //}
-    //}
-  //}
 }
 
-figure:nth-child(2){
+div:nth-child(2){
   grid-area:second;
   background-color:yellow;
 }
 
-figure:nth-child(3){
+div:nth-child(3){
   grid-area:third;
   background-color:purple;
 }
 
-figure:nth-child(4){
+div:nth-child(4){
   grid-area:fourth;
   background-color:pink;
 }
 
-figure:nth-child(5){
+div:nth-child(5){
   grid-area:fifth;
   background-color:green;
 }
 
-figure:nth-child(6){
+div:nth-child(6){
   grid-area:sixth;
   background-color:red;
 }
 
-figure:nth-child(7){
+div:nth-child(7){
   grid-area:seventh;
   background-color:navy;
 }
