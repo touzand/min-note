@@ -1,10 +1,12 @@
-import Count from "../Count";
-import { CountByColorGrid } from "./style";
+import Count from '../Count';
+import {CountByColorGrid} from './style';
 
 const CountByColor = () => {
-  return(
+  return (
     <CountByColorGrid>
-      <figure></figure>
+      <figure>
+        <span>count by <span>color</span></span>
+      </figure>
       <figure></figure>
       <figure></figure>
       <figure></figure>
@@ -12,8 +14,7 @@ const CountByColor = () => {
       <figure></figure>
       <figure></figure>
     </CountByColorGrid>
-
-  )
-}
+  );
+};
 
 export default CountByColor;

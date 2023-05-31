@@ -33,12 +33,12 @@ const Menu = props => {
     quantity: 0,
     words: 0,
     characters: 0,
-    byColor: {
-      darkSalmon: 0,
-      sandyBrown: 0,
-      khabi: 0,
-      lightSkyBlue: 0,
-      gainsboro: 0,
+    countByColor: {
+      //darkSalmon: 0,
+      //sandyBrown: 0,
+      //khabi: 0,
+      //lightSkyBlue: 0,
+      //gainsboro: 0,
     },
   });
 
@@ -52,9 +52,11 @@ const Menu = props => {
         quantity:data.length,
         words:sumWords(data),
         characters: sumCharacters(data),
+        countByColor: countBgOccurrences(data),
       }
     ))
 
+        console.log(data)
 
 
       //setBgCounts(() => countBgOccurrences(data));
@@ -76,8 +78,8 @@ const Menu = props => {
 
   const countBgOccurrences = arr => {
     return arr.reduce((countMap, obj) => {
-      const {bg} = obj;
-      countMap[bg] = (countMap[bg] || 0) + 1;
+      const {background_color} = obj;
+      countMap[background_color] = (countMap[background_color] || 0) + 1;
       return countMap;
     }, {});
   };

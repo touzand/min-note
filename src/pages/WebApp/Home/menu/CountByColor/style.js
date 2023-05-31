@@ -5,25 +5,54 @@ padding:1rem;
 padding-top:0;
 margin:0rem;
 display:grid;
-height:250px;
-gap:.5rem;
+height:350px;
+gap:1rem;
+box-sizing:border-box;
 grid-template-areas:
   "first first first second second"
   "first first first second second"
+  "first first first second second"
+  "first first first third third"
+  "first first first third third"
   "first first first third third"
   "first first first fourth fourth"
+  "first first first fourth fourth"
+  "fifth fifth sixth sixth seventh"
   "fifth fifth sixth sixth seventh";
 
 figure{
   margin:0;
   padding:0;
-  background-color:red;
   border-radius:.25rem;
 }
 
 figure:nth-child(1){
   grid-area:first;
-  background-color:;
+  background-color:red;
+
+  &>span{
+    width:10px;
+    background-color:yellow;
+  }
+
+  //&>div{
+    //background-color:yellow;
+    //display:flex;
+    //flex-direction:column;
+    //justify-content:space-between;
+    //height:100%;
+
+    //span{
+      //display:flex;
+      //align-items:center;
+      //gap:.5rem;
+      //background-color:blue;
+
+      //div{
+        //background-color:purple;
+      //}
+    //}
+  //}
 }
 
 figure:nth-child(2){
