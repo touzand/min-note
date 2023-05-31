@@ -1,7 +1,7 @@
 import {KnowledgePanelContainer} from './style';
 
 const KnowledgePanel = (props) => {
-const {wordCount,characterCount,noteCount} = props
+  const {quantity,words,characters,tags} = props.countsForKnowledge
 
   return (
     <KnowledgePanelContainer>
@@ -11,18 +11,18 @@ const {wordCount,characterCount,noteCount} = props
 
       <main>
         <div className="main_top">
-          <h1>{ noteCount }</h1>
+          <h1>{ quantity }</h1>
           <span>notes</span>
         </div>
 
         <div className="main_bottom grid">
           <div>
             <span>words</span>
-            <h2>{ wordCount }</h2>
+            <h2>{ words }</h2>
           </div>
           <div>
             <span>characters</span>
-            <h2>{ characterCount }</h2>
+            <h2>{ characters }</h2>
           </div>
           <div>
             <span>tags</span>
