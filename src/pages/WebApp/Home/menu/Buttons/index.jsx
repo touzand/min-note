@@ -26,8 +26,8 @@ const Buttons = () => {
     <ButtonsContainer>
       {
         buttonsData.map(btn=><Button>
-          {btn.icon}
           <span>{ btn.placeHolder }</span>
+          {btn.icon}
           </Button>)
       }
     </ButtonsContainer>
