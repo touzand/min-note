@@ -11,7 +11,7 @@ padding:1rem;
 button{
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:start;
   gap:1rem;
 }
 `
@@ -25,6 +25,6 @@ border-radius:.75rem;
 }
 
 svg{
-  font-size:1.75rem;
+  font-size:1.5rem;
 }
 `
