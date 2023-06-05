@@ -4,13 +4,19 @@ import {CountByColorGrid} from './style';
 const CountByColor = () => {
   return (
     <CountByColorGrid>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div className='top'>
+        <div>1</div>
+        <div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+        </div>
+      </div>
+      <div className='bottom'>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+      </div>
     </CountByColorGrid>
   );
 };
