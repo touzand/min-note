@@ -1,30 +1,35 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ButtonsContainer = styled.div`
-position:absolute;
-bottom:0;
-width:100%;
-display:flex;
-flex-direction:column;
-padding:1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
 
-button{
-  display:flex;
-  align-items:center;
-  justify-content:start;
-  gap:1rem;
-}
-`
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    border: solid thin #fff5;
+    color: #fff5;
+    cursor: pointer;
+  border-radius: 0.5rem;
+  }
+`;
 
 export const Button = styled.button`
-font-size:1.5rem;
-border-radius:.75rem;
+  font-size: 1.5rem;
 
-&:hover{
-  background-color:red !important;
-}
+  &:hover {
+    background-color: var(--font-color) !important;
+    color: black;
+  }
 
-svg{
-  font-size:1.5rem;
-}
-`
+  svg {
+    font-size: 1.5rem;
+  }
+`;
