@@ -22,6 +22,10 @@ export const CountByColorGrid = styled.figure`
   //"fifth fifth sixth sixth seventh"
   //"fifth fifth sixth sixth seventh";
 
+div{
+  border-radius:.25rem;
+}
+
   .top {
     display: flex;
     gap:1rem;
@@ -30,6 +34,7 @@ export const CountByColorGrid = styled.figure`
 
     &>div:nth-child(1){
       background-color:red;
+      position:relative;
       flex:3;
     }
 

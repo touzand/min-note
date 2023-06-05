@@ -5,7 +5,9 @@ const CountByColor = () => {
   return (
     <CountByColorGrid>
       <div className='top'>
-        <div>1</div>
+        <div>
+          1
+        </div>
         <div>
           <div>1</div>
           <div>1</div>

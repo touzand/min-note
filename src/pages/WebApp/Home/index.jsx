@@ -22,9 +22,11 @@ import {
   MasonryGrid,
   NotesGeneralContainer,
 } from './style';
+import ShortcutsModal from './modals/shortcuts';
 
 const Home = ({children}) => {
   const [searchVisible, setSearchVisible] = useState(false);
+  const [shortcutsModal,setShortcutsModal] = useState(false)
   const [menu, setMenu] = useState(true);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState('');
@@ -64,6 +66,7 @@ const Home = ({children}) => {
     menu,
     data,
     handdleAdd,
+    setShortcutsModal
   };
 
   const filterProps = {
@@ -88,6 +91,8 @@ const Home = ({children}) => {
 
   return (
     <>
+      {shortcutsModal && <ShortcutsModal setShortcutsModal={setShortcutsModal} shortcutsModal={shortcutsModal}/>}
+      
       <Menu {...menuProps} />
       <NotesGeneralContainer>
         <BackgroundTransition

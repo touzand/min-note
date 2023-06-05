@@ -26,7 +26,7 @@ import CountByColor from './CountByColor';
 import Buttons from './Buttons';
 
 const Menu = props => {
-  const {setMenu, menu, data, handdleAdd} = props;
+  const {setMenu, menu, data, handdleAdd,setShortcutsModal} = props;
 
   const [bgCounts, setBgCounts] = useState({});
 
@@ -120,8 +120,8 @@ const Menu = props => {
     <BackgroundContainer onClick={handdleClickOnMenu} menu={menu} id="bg-menu">
       <ContentContainer>
         <KnowledgePanel countsForKnowledge={countsForKnowledge}/>
-        <CountByColor />
-        <Buttons/>
+        <CountByColor/>
+        <Buttons setShortcutsModal={setShortcutsModal}/>
         {
           //<article>
           //<Row>
