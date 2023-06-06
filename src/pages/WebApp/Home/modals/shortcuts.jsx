@@ -1,47 +1,48 @@
-import styled, {keyframes} from 'styled-components'
+import styled, {keyframes} from 'styled-components';
 
 const fadeIn = keyframes`
-0%{background-color:red;}
-100%{background-color:yellow;}
-`
+0%{transform:translate(-50%,-50%) scale(.9);opacity:0}
+100%{transform:translate(-50%,-50%) scale(1);opacity:1}
+`;
 
 const fadeOut = keyframes`
-0%{background-color:green;}
-100%{background-color:blue;}
-`
+0%{transform:translate(-50%,-50%) scale(1);opacity:1}
+100%{transform:translate(-50%,-50%) scale(.9);opacity:0}
+`;
 
 const ShortcutsModalContainer = styled.div`
 background-color:red;
 height:200px;
 width:200px;
 
+border-radius:.5rem;
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-animation:${ fadeIn } 2s ease-in-out both;
-transition:all 1s ease-in-out;
+transition:all .3s ease-in-out both;
+animation:${fadeIn} .3s ease-in-out;
 
 &.close{
-animation:${ fadeOut } 2s ease-in-out both;
-//background-color:blue !important;
+animation:${fadeOut} .3s ease-in-out both;
 }
-`
+`;
 
 const ShortcutsModal = props => {
-  const {setShortcutsModal,shortcutsModal} = props;
+  const {setShortcutsModal, shortcutsModal} = props;
 
-  const onClose = (e) => {
-    e.target.classList.add('close')
-    setTimeout(()=>{
-      setShortcutsModal(false)
-    },2000)
-  }
+  const onClose = e => {
+    e.target.classList.add('close');
+    setTimeout(() => {
+      setShortcutsModal(false);
+    }, 300);
+  };
 
-  return(
-    <ShortcutsModalContainer onClick={(e)=>onClose(e)} shortcutsModal={shortcutsModal}>
-    </ShortcutsModalContainer>
-  )
-}
+  return (
+    <ShortcutsModalContainer
+      onClick={e => onClose(e)}
+      shortcutsModal={shortcutsModal}></ShortcutsModalContainer>
+  );
+};
 
 export default ShortcutsModal;
