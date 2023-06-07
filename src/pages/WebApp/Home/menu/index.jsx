@@ -17,6 +17,7 @@ import {
   FigureColor,
   AccountStatus,
   Row,
+  ModalBackground,
 } from './style';
 
 import Count from './Count';
@@ -24,9 +25,10 @@ import backgroundData from '../../../../helpers/backgroundData';
 import KnowledgePanel from './knowledgePanel';
 import CountByColor from './CountByColor';
 import Buttons from './Buttons';
+import ShortcutsModal from './../modals/shortcuts';
 
 const Menu = props => {
-  const {setMenu, menu, data, handdleAdd,setShortcutsModal} = props;
+  const {setMenu, menu, data, handdleAdd,setShortcutsModal,shortcutsModal} = props;
 
   const [bgCounts, setBgCounts] = useState({});
 
@@ -117,7 +119,12 @@ const Menu = props => {
   };
 
   return (
+    <>
+
     <BackgroundContainer onClick={handdleClickOnMenu} menu={menu} id="bg-menu">
+      <ModalBackground menu={menu}>
+      {shortcutsModal && <ShortcutsModal setShortcutsModal={setShortcutsModal} shortcutsModal={shortcutsModal}/>}
+      </ModalBackground>
       <ContentContainer>
         <KnowledgePanel countsForKnowledge={countsForKnowledge}/>
         <CountByColor/>
@@ -206,6 +213,7 @@ const Menu = props => {
         }
       </ContentContainer>
     </BackgroundContainer>
+    </>
   );
 };
 

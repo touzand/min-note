@@ -6,7 +6,7 @@ const Buttons = props => {
   const {setShortcutsModal, setMenu} = props
 
   const onShortcutsModalOpen = () =>{
-    setMenu(false)
+    //setMenu(false)
     setShortcutsModal(true)
   }
 

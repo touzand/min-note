@@ -9,6 +9,25 @@ const BackgroundOpacity = keyframes`
 100%{opacity:1;}
 `;
 
+export const ModalBackground = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+flex:1;
+width:100%;
+height:100%;
+pointer-events:none !important;
+opacity:0;
+transition:all .5s ease;
+${props =>
+  props.menu &&
+  `
+  opacity: 1;
+pointer-events:auto;
+  background-color: #00f;
+  `}
+`
+
 export const AccountStatus = styled.span`
   background-image: linear-gradient(#cb1bf9, #6a05df);
   padding: 0.5rem 0.75rem;
@@ -84,7 +103,9 @@ export const Row = styled.div`
 
 export const BackgroundContainer = styled.div`
 color:var(--font-color);
-  position: fixed;
+  position: absolute;
+height:100vh;
+display:flex;
   top: 0;
   bottom: 0;
   left: 0;
@@ -226,7 +247,7 @@ export const FigureColor = styled.figure`
 `;
 
 export const ContentContainer = styled.div`
-  position: fixed;
+  position: relative;
   top: 0;
   bottom: 0;
   right: -350px;
