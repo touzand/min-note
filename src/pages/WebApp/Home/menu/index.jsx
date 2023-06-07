@@ -121,7 +121,7 @@ const Menu = props => {
       <ContentContainer>
         <KnowledgePanel countsForKnowledge={countsForKnowledge}/>
         <CountByColor/>
-        <Buttons setShortcutsModal={setShortcutsModal}/>
+        <Buttons setShortcutsModal={setShortcutsModal} setMenu={setMenu}/>
         {
           //<article>
           //<Row>

@@ -3,12 +3,17 @@ import {AiOutlineTag} from 'react-icons/ai'
 import {BsFillPersonFill} from 'react-icons/bs'
 import {FaRegKeyboard} from 'react-icons/fa'
 const Buttons = props => {
-  const {setShortcutsModal} = props
+  const {setShortcutsModal, setMenu} = props
+
+  const onShortcutsModalOpen = () =>{
+    setMenu(false)
+    setShortcutsModal(true)
+  }
 
 let buttonsData = [
   {
     placeHolder:'Shortcuts',
-    action:setShortcutsModal,
+    action:onShortcutsModalOpen,
     icon:<FaRegKeyboard/>
   },
   {
@@ -26,7 +31,7 @@ let buttonsData = [
   return(
     <ButtonsContainer>
       {
-        buttonsData.map(btn=><Button onClick={()=>setShortcutsModal(true)}>
+        buttonsData.map(btn=><Button onClick={()=>btn.action()}>
           {btn.icon}
           <span>{ btn.placeHolder }</span>
           </Button>)
