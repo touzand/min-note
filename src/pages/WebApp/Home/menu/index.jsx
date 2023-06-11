@@ -114,18 +114,17 @@ const Menu = props => {
   }
 
   const handdleClickOnMenu = e => {
-    if (e.target === document.querySelector('#bg-menu')) {
+    if (e.target.parentNode === document.querySelector('#bg-menu')) {
       setMenu(false);
+      setShortcutsModal(false)
+      setTagsModal(false)
     }
   };
 
   return (
     <>
-      <BackgroundContainer
-        onClick={handdleClickOnMenu}
-        menu={menu}
-        id="bg-menu">
-        <ModalBackground menu={menu}>
+      <BackgroundContainer menu={menu} id="bg-menu">
+        <ModalBackground onClick={handdleClickOnMenu} menu={menu}>
           {shortcutsModal && (
             <ShortcutsModal
               setShortcutsModal={setShortcutsModal}
@@ -139,89 +138,11 @@ const Menu = props => {
         <ContentContainer>
           <KnowledgePanel countsForKnowledge={countsForKnowledge} />
           <CountByColor />
-          <Buttons setTagsModal={setTagsModal} setShortcutsModal={setShortcutsModal} setMenu={setMenu} />
-          {
-            //<article>
-            //<Row>
-            //<div>
-            //<div>
-            //<MdKeyboardArrowDown />
-            //</div>
-            //<h3>Manager</h3>
-            //</div>
-            //</Row>
-            //<Count text={characterCount} icon={RxLetterCaseToggle} />
-            //<Count text={data.length} icon={VscNote} />
-            //<button className="delete" onClick={() => handdleDeleteAll()}>
-            //<h3>Delete all</h3>
-            //<RiDeleteBinLine />
-            //</button>
-            //</article>
-            //<hr />
-            //<article>
-            //<Row onClick={handdleAdd} hover={true}>
-            //<div>
-            //<MdKeyboardArrowDown />
-            //<h3>Your notes</h3>
-            //</div>
-            //<div className="add-button">+</div>
-            //</Row>
-            //<article className='color_count_container'>
-            //{backgroundData.map(button => (
-            //<button className='color_count'>
-            //<div>
-            //<FigureColor bg={button.hex_code}>
-            //<h3>{bgCounts[button.hex_code] ?? 0}</h3>
-            //</FigureColor>
-            //</div>
-            //</button>
-            //))}
-            //</article>
-            //</article>
-            //<hr />
-            //<article>
-            //<Row>
-            //<div>
-            //<MdKeyboardArrowDown />
-            //<h3>Background patterns</h3>
-            //</div>
-            //<div className="add-button">+</div>
-            //</Row>
-            //<div className='patterns_container'>
-            //<div></div>
-            //<div></div>
-            //<div></div>
-            //<div></div>
-            //<div></div>
-            //<div></div>
-            //</div>
-            //</article>
-            //<article className="upgrade">
-            //<div>
-            //<Row>
-            //<div>
-            //<div>
-            //<MdKeyboardArrowDown />
-            //</div>
-            //<h3>My account</h3>
-            //</div>
-            //<AccountStatus>
-            //<AiFillTag />
-            //{user.status === 'premiun' ? 'Premiun' : 'Free'}
-            //</AccountStatus>
-            //</Row>
-            //<p>
-            //Unlock your potential with the Premium version. Exclusive benefits
-            //that will elevate your experience!
-            //</p>
-            //{user.status !== 'premiun' && (
-            //<Upgrade>
-            //<span>Upgrade</span>
-            //</Upgrade>
-            //)}
-            //</div>
-            //</article>
-          }
+          <Buttons
+            setTagsModal={setTagsModal}
+            setShortcutsModal={setShortcutsModal}
+            setMenu={setMenu}
+          />
         </ContentContainer>
       </BackgroundContainer>
     </>

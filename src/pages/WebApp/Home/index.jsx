@@ -64,8 +64,6 @@ const Home = ({children}) => {
     menu,
     data,
     handdleAdd,
-    setShortcutsModal,
-    shortcutsModal
   };
 
   const filterProps = {

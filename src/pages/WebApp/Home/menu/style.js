@@ -18,13 +18,13 @@ width:100%;
 height:100%;
 //pointer-events:none !important;
 opacity:0;
-transition:all .5s ease;
+transition:all .5s 1s ease;
 ${props =>
   props.menu &&
   `
   opacity: 1;
 pointer-events:auto;
-  background-color: #00f;
+  background-color: transparent;
   `}
 `
 
@@ -105,8 +105,9 @@ export const BackgroundContainer = styled.div`
 color:var(--font-color);
   position: absolute;
 height:100vh;
+width:100vw;
+overflow:hidden;
 display:flex;
-padding:2rem;
   top: 0;
   bottom: 0;
   left: 0;
