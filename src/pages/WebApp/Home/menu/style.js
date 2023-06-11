@@ -16,14 +16,14 @@ justify-content:center;
 flex:1;
 width:100%;
 height:100%;
-//pointer-events:none !important;
+pointer-events:none !important;
 opacity:0;
 transition:all .5s 1s ease;
 ${props =>
   props.menu &&
   `
   opacity: 1;
-pointer-events:auto;
+  pointer-events:auto !important;
   background-color: transparent;
   `}
 `
@@ -207,13 +207,8 @@ hr{
 
   button{
     //cursor:pointer;
-    display:flex;
-    justify-content:space-between;
     background-color:transparent;
-    border:none;
-    color:var(--font-color);
     align-items:center;
-    width:100%;
     padding:.75rem;
 
     &:hover{

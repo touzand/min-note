@@ -35,7 +35,7 @@ const Menu = props => {
   const [shortcutsModal, setShortcutsModal] = useState(false);
   const [tagsModal, setTagsModal] = useState(false);
 
-  const [countsForKnowledge, setCountForKnowledge] = useState({
+  const [countForKnowledge, setCountForKnowledge] = useState({
     quantity: 0,
     words: 0,
     characters: 0,
@@ -136,8 +136,8 @@ const Menu = props => {
           )}
         </ModalBackground>
         <ContentContainer>
-          <KnowledgePanel countsForKnowledge={countsForKnowledge} />
-          <CountByColor />
+          <KnowledgePanel countForKnowledge={countForKnowledge} />
+          <CountByColor countForKnowledge={countForKnowledge} />
           <Buttons
             setTagsModal={setTagsModal}
             setShortcutsModal={setShortcutsModal}
