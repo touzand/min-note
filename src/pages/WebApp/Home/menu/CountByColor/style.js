@@ -55,6 +55,49 @@ div{
     }
   }
 
+div{
+
+  h1,h2,p{
+  font-weight:100;
+  margin:.5rem;
+  }
+
+  p{
+    color:#0009;
+  }
+}
+
+
+  .f1{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    p{
+      color:#0009;
+    }
+
+    h1{
+      font-size:3rem;
+    }
+
+    & *{
+      margin:0;
+      padding:0;
+      margin:.75rem;
+    }
+  }
+  .f2,.f3{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .f3{}
+  .f4{}
+  .f5{}
+  .f6{}
+  .f7{}
+
   .bottom {
     display: flex;
       width:100%;

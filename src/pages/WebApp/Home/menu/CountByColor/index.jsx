@@ -11,17 +11,34 @@ const CountByColor = props => {
   return (
     <CountByColorGrid>
       <div className="top">
-        <SortFigure sort={sortedColors[0]?.[0]}>1</SortFigure>
+        <SortFigure className="f1" sort={sortedColors[0]?.[0]}>
+          <p>The background color : {sortedColors[0]?.[0]} is the most used</p>
+          <h1>{sortedColors[0]?.[1]}</h1>
+        </SortFigure>
         <div>
-        <SortFigure sort={sortedColors[1]?.[0]}>1</SortFigure>
-        <SortFigure sort={sortedColors[2]?.[0]}>1</SortFigure>
-        <SortFigure sort={sortedColors[3]?.[0]}>1</SortFigure>
+          <SortFigure className="f2" sort={sortedColors[1]?.[0]}>
+            <p>{sortedColors[1]?.[0]}</p>
+            <h2>{sortedColors[1]?.[1]}</h2>
+          </SortFigure>
+          <SortFigure className="f3" sort={sortedColors[2]?.[0]}>
+            <p>{sortedColors[2]?.[0]}</p>
+            <h2>{sortedColors[2]?.[1]}</h2>
+          </SortFigure>
+          <SortFigure className="f4" sort={sortedColors[3]?.[0]}>
+            <h2>{sortedColors[3]?.[1]}</h2>
+          </SortFigure>
         </div>
       </div>
       <div className="bottom">
-        <SortFigure sort={sortedColors[4]?.[0]}>1</SortFigure>
-        <SortFigure sort={sortedColors[5]?.[0]}>1</SortFigure>
-        <SortFigure sort={sortedColors[6]?.[0]}>1</SortFigure>
+        <SortFigure className="f5" sort={sortedColors[4]?.[0]}>
+            <h2>{sortedColors[4]?.[1]}</h2>
+        </SortFigure>
+        <SortFigure className="f6" sort={sortedColors[5]?.[0]}>
+            <h2>{sortedColors[5]?.[1]}</h2>
+        </SortFigure>
+        <SortFigure className="f7" sort={sortedColors[6]?.[0]}>
+            <h2>{sortedColors[6]?.[1]}</h2>
+        </SortFigure>
       </div>
     </CountByColorGrid>
   );
