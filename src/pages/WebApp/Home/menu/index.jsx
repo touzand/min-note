@@ -26,11 +26,14 @@ import KnowledgePanel from './knowledgePanel';
 import CountByColor from './CountByColor';
 import Buttons from './Buttons';
 import ShortcutsModal from './../modals/shortcuts';
+import TagsModal from '../modals/tags';
 
 const Menu = props => {
-  const {setMenu, menu, data, handdleAdd,setShortcutsModal,shortcutsModal} = props;
+  const {setMenu, menu, data, handdleAdd} = props;
 
   const [bgCounts, setBgCounts] = useState({});
+  const [shortcutsModal, setShortcutsModal] = useState(false);
+  const [tagsModal, setTagsModal] = useState(false);
 
   const [countsForKnowledge, setCountForKnowledge] = useState({
     quantity: 0,
@@ -50,17 +53,15 @@ const Menu = props => {
 
   useEffect(() => {
     if (data.length != 0) {
-      setCountForKnowledge(prevState=>(
-      {...prevState,
-        quantity:data.length,
-        words:sumWords(data),
+      setCountForKnowledge(prevState => ({
+        ...prevState,
+        quantity: data.length,
+        words: sumWords(data),
         characters: sumCharacters(data),
         countByColor: countBgOccurrences(data),
-      }
-    ))
+      }));
 
-        console.log(data)
-
+      console.log(data);
 
       //setBgCounts(() => countBgOccurrences(data));
       //setWordCount(() => sumWords(data));
@@ -120,99 +121,109 @@ const Menu = props => {
 
   return (
     <>
-
-    <BackgroundContainer onClick={handdleClickOnMenu} menu={menu} id="bg-menu">
-      <ModalBackground menu={menu}>
-      {shortcutsModal && <ShortcutsModal setShortcutsModal={setShortcutsModal} shortcutsModal={shortcutsModal}/>}
-      </ModalBackground>
-      <ContentContainer>
-        <KnowledgePanel countsForKnowledge={countsForKnowledge}/>
-        <CountByColor/>
-        <Buttons setShortcutsModal={setShortcutsModal} setMenu={setMenu}/>
-        {
-          //<article>
-          //<Row>
-          //<div>
-          //<div>
-          //<MdKeyboardArrowDown />
-          //</div>
-          //<h3>Manager</h3>
-          //</div>
-          //</Row>
-          //<Count text={characterCount} icon={RxLetterCaseToggle} />
-          //<Count text={data.length} icon={VscNote} />
-          //<button className="delete" onClick={() => handdleDeleteAll()}>
-          //<h3>Delete all</h3>
-          //<RiDeleteBinLine />
-          //</button>
-          //</article>
-          //<hr />
-          //<article>
-          //<Row onClick={handdleAdd} hover={true}>
-          //<div>
-          //<MdKeyboardArrowDown />
-          //<h3>Your notes</h3>
-          //</div>
-          //<div className="add-button">+</div>
-          //</Row>
-          //<article className='color_count_container'>
-          //{backgroundData.map(button => (
-          //<button className='color_count'>
-          //<div>
-          //<FigureColor bg={button.hex_code}>
-          //<h3>{bgCounts[button.hex_code] ?? 0}</h3>
-          //</FigureColor>
-          //</div>
-          //</button>
-          //))}
-          //</article>
-          //</article>
-          //<hr />
-          //<article>
-          //<Row>
-          //<div>
-          //<MdKeyboardArrowDown />
-          //<h3>Background patterns</h3>
-          //</div>
-          //<div className="add-button">+</div>
-          //</Row>
-          //<div className='patterns_container'>
-          //<div></div>
-          //<div></div>
-          //<div></div>
-          //<div></div>
-          //<div></div>
-          //<div></div>
-          //</div>
-          //</article>
-          //<article className="upgrade">
-          //<div>
-          //<Row>
-          //<div>
-          //<div>
-          //<MdKeyboardArrowDown />
-          //</div>
-          //<h3>My account</h3>
-          //</div>
-          //<AccountStatus>
-          //<AiFillTag />
-          //{user.status === 'premiun' ? 'Premiun' : 'Free'}
-          //</AccountStatus>
-          //</Row>
-          //<p>
-          //Unlock your potential with the Premium version. Exclusive benefits
-          //that will elevate your experience!
-          //</p>
-          //{user.status !== 'premiun' && (
-          //<Upgrade>
-          //<span>Upgrade</span>
-          //</Upgrade>
-          //)}
-          //</div>
-          //</article>
-        }
-      </ContentContainer>
-    </BackgroundContainer>
+      <BackgroundContainer
+        onClick={handdleClickOnMenu}
+        menu={menu}
+        id="bg-menu">
+        <ModalBackground menu={menu}>
+          {shortcutsModal && (
+            <ShortcutsModal
+              setShortcutsModal={setShortcutsModal}
+              shortcutsModal={shortcutsModal}
+            />
+          )}
+          {tagsModal && (
+            <TagsModal setTagsModal={setTagsModal} tagsModal={tagsModal} />
+          )}
+        </ModalBackground>
+        <ContentContainer>
+          <KnowledgePanel countsForKnowledge={countsForKnowledge} />
+          <CountByColor />
+          <Buttons setTagsModal={setTagsModal} setShortcutsModal={setShortcutsModal} setMenu={setMenu} />
+          {
+            //<article>
+            //<Row>
+            //<div>
+            //<div>
+            //<MdKeyboardArrowDown />
+            //</div>
+            //<h3>Manager</h3>
+            //</div>
+            //</Row>
+            //<Count text={characterCount} icon={RxLetterCaseToggle} />
+            //<Count text={data.length} icon={VscNote} />
+            //<button className="delete" onClick={() => handdleDeleteAll()}>
+            //<h3>Delete all</h3>
+            //<RiDeleteBinLine />
+            //</button>
+            //</article>
+            //<hr />
+            //<article>
+            //<Row onClick={handdleAdd} hover={true}>
+            //<div>
+            //<MdKeyboardArrowDown />
+            //<h3>Your notes</h3>
+            //</div>
+            //<div className="add-button">+</div>
+            //</Row>
+            //<article className='color_count_container'>
+            //{backgroundData.map(button => (
+            //<button className='color_count'>
+            //<div>
+            //<FigureColor bg={button.hex_code}>
+            //<h3>{bgCounts[button.hex_code] ?? 0}</h3>
+            //</FigureColor>
+            //</div>
+            //</button>
+            //))}
+            //</article>
+            //</article>
+            //<hr />
+            //<article>
+            //<Row>
+            //<div>
+            //<MdKeyboardArrowDown />
+            //<h3>Background patterns</h3>
+            //</div>
+            //<div className="add-button">+</div>
+            //</Row>
+            //<div className='patterns_container'>
+            //<div></div>
+            //<div></div>
+            //<div></div>
+            //<div></div>
+            //<div></div>
+            //<div></div>
+            //</div>
+            //</article>
+            //<article className="upgrade">
+            //<div>
+            //<Row>
+            //<div>
+            //<div>
+            //<MdKeyboardArrowDown />
+            //</div>
+            //<h3>My account</h3>
+            //</div>
+            //<AccountStatus>
+            //<AiFillTag />
+            //{user.status === 'premiun' ? 'Premiun' : 'Free'}
+            //</AccountStatus>
+            //</Row>
+            //<p>
+            //Unlock your potential with the Premium version. Exclusive benefits
+            //that will elevate your experience!
+            //</p>
+            //{user.status !== 'premiun' && (
+            //<Upgrade>
+            //<span>Upgrade</span>
+            //</Upgrade>
+            //)}
+            //</div>
+            //</article>
+          }
+        </ContentContainer>
+      </BackgroundContainer>
     </>
   );
 };

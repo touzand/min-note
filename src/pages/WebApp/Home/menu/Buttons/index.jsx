@@ -3,11 +3,18 @@ import {AiOutlineTag} from 'react-icons/ai'
 import {BsFillPersonFill} from 'react-icons/bs'
 import {FaRegKeyboard} from 'react-icons/fa'
 const Buttons = props => {
-  const {setShortcutsModal, setMenu} = props
+  const {setShortcutsModal, setMenu,setTagsModal} = props
 
   const onShortcutsModalOpen = () =>{
     //setMenu(false)
     setShortcutsModal(true)
+    setTagsModal(false)
+  }
+
+  const onTagsModalOpen = () =>{
+    //setMenu(false)
+    setShortcutsModal(false)
+    setTagsModal(true)
   }
 
 let buttonsData = [
@@ -18,7 +25,7 @@ let buttonsData = [
   },
   {
     placeHolder:'Tags',
-    action:'',
+    action:onTagsModalOpen,
     icon:<AiOutlineTag/>
   },
   {

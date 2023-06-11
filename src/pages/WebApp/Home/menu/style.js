@@ -16,7 +16,7 @@ justify-content:center;
 flex:1;
 width:100%;
 height:100%;
-pointer-events:none !important;
+//pointer-events:none !important;
 opacity:0;
 transition:all .5s ease;
 ${props =>
@@ -106,6 +106,7 @@ color:var(--font-color);
   position: absolute;
 height:100vh;
 display:flex;
+padding:2rem;
   top: 0;
   bottom: 0;
   left: 0;

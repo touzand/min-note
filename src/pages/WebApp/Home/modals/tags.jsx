@@ -10,8 +10,10 @@ const fadeOut = keyframes`
 100%{transform:scale(.9);opacity:0}
 `;
 
-const ShortcutsModalContainer = styled.div`
+const TagsModalContainer = styled.div`
 background-color:red;
+height:200px;
+width:200px;
 
 border-radius:.5rem;
 position:relative;
@@ -26,43 +28,21 @@ animation:${fadeOut} .3s ease-in-out both;
 }
 `;
 
-const Shortcut = styled.figure`
-span{
-display:flex;
-  align-items:end;
-gap:1rem;
-}
-
-b{
-  background-color:#1d1d1f;
-  border:solid thin black;
-  padding:.25rem .5rem;
-  border-radius:.25rem;
-}
-
-`
-
-const ShortcutsModal = props => {
-  const {setShortcutsModal, shortcutsModal} = props;
+const TagsModal = props => {
+  const {setTagsModal, tagsModal} = props;
 
   const onClose = e => {
     e.target.classList.add('close');
     setTimeout(() => {
-      setShortcutsModal(false);
+      setTagsModal(false);
     }, 300);
   };
 
   return (
-    <ShortcutsModalContainer
+    <TagsModalContainer
       onClick={e => onClose(e)}
-      shortcutsModal={shortcutsModal}>
-
-      <Shortcut>
-        <span><b>o</b>,<b>j</b> New note</span>
-      </Shortcut>
-
-    </ShortcutsModalContainer>
+      tagsModal={tagsModal}></TagsModalContainer>
   );
 };
 
-export default ShortcutsModal;
+export default TagsModal;
