@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const CountByColorGrid = styled.figure`
+color:black;
   padding: 1rem;
   padding-top: 0;
   margin: 0rem;
@@ -30,7 +31,6 @@ div{
     display: flex;
     gap:1rem;
     height:250px;
-    background-color:purple;
 
     &>div:nth-child(1){
       background-color:red;
@@ -39,7 +39,6 @@ div{
     }
 
     &>div:nth-child(2){
-      background-color:green;
       flex:2;
 
       display:flex;
@@ -48,7 +47,6 @@ div{
 
       & *{
         flex:2;
-        background-color:yellow;
       }
 
       & div:nth-child(3){
@@ -61,12 +59,10 @@ div{
     display: flex;
       width:100%;
     gap:1rem;
-    background-color:yellow;
     height:50px;
 
     & * {
       flex:2;
-      background-color:green;
     }
 
       & div:nth-child(3){
