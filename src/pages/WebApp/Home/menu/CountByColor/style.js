@@ -33,9 +33,9 @@ div{
     height:250px;
 
     &>div:nth-child(1){
-      background-color:red;
-      position:relative;
-      flex:3;
+      //background-color:${props=>props.sort ? props.sort : 'purple'};
+      //position:relative;
+      //flex:3;
     }
 
     &>div:nth-child(2){
@@ -76,3 +76,10 @@ div{
     border-radius: 0.25rem;
   }
 `;
+
+export const SortFigure = styled.div`
+      background-color:${props=>props.sort ? props.sort : 'transparent'};
+border:${props=>props.sort ? 'none' : 'dashed 2px grey'};
+      position:relative;
+      flex:3;
+`

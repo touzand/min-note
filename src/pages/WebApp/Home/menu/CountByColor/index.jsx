@@ -1,5 +1,5 @@
 import Count from '../Count';
-import {CountByColorGrid} from './style';
+import {CountByColorGrid, SortFigure} from './style';
 
 const CountByColor = props => {
   const {countForKnowledge} = props;
@@ -11,17 +11,17 @@ const CountByColor = props => {
   return (
     <CountByColorGrid>
       <div className="top">
-        <div style={{backgroundColor: sortedColors[0]?.[0]||'blue'}}>1</div>
+        <SortFigure sort={sortedColors[0]?.[0]}>1</SortFigure>
         <div>
-          <div style={{backgroundColor: sortedColors[1]?.[0]||'blue'}}>1</div>
-          <div style={{backgroundColor: sortedColors[2]?.[0]||'blue'}}>1</div>
-          <div style={{backgroundColor: sortedColors[3]?.[0]||'blue'}}>1</div>
+        <SortFigure sort={sortedColors[1]?.[0]}>1</SortFigure>
+        <SortFigure sort={sortedColors[2]?.[0]}>1</SortFigure>
+        <SortFigure sort={sortedColors[3]?.[0]}>1</SortFigure>
         </div>
       </div>
       <div className="bottom">
-        <div style={{backgroundColor: sortedColors[4]?.[0]||'blue'}}>1</div>
-        <div style={{backgroundColor: sortedColors[5]?.[0]||'blue'}}>1</div>
-        <div style={{backgroundColor: sortedColors[6]?.[0]||'blue'}}>1</div>
+        <SortFigure sort={sortedColors[4]?.[0]}>1</SortFigure>
+        <SortFigure sort={sortedColors[5]?.[0]}>1</SortFigure>
+        <SortFigure sort={sortedColors[6]?.[0]}>1</SortFigure>
       </div>
     </CountByColorGrid>
   );
