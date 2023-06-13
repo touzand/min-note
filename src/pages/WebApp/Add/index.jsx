@@ -21,12 +21,6 @@ const New = () => {
     text_align:'left'
   })
 
-  //const [color, setColor] = useState('#DDDDDD');
-  //const [title, setTitle] = useState('');
-  //const [body, setBody] = useState('');
-  //const [textContrast, setTextContrast] = useState('#1b1b1b');
-  //const [textAlign, setTextAlign] = useState('left');
-
   const [noteError, setNoteError] = useState('');
   const [visible, setVisible] = useState(false);
   const [configPanelOpen, setConfigPanelOpen] = useState(false);
@@ -69,17 +63,11 @@ const New = () => {
   };
 
   const bodyContentProps = {
-    //textContrast,
-    //setTitle,
-    //setBody,
-    //textAlign,
     setNoteContent,
     noteContent
   };
 
   const configPanelProps = {
-    //setColor,
-    //setTextAlign,
     configPanelOpen,
     setNoteContent,
     noteContent
