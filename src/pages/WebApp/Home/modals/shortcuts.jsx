@@ -30,17 +30,38 @@ const Shortcut = styled.figure`
 span{
 display:flex;
   align-items:end;
-gap:1rem;
+gap:.25rem;
 }
 
 b{
-  background-color:#1d1d1f;
-  border:solid thin black;
-  padding:.25rem .5rem;
-  border-radius:.25rem;
-}
 
+  background-color: rgb(243,243,243);
+    color: rgb(33,33,33);
+    margin-left: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 3px;
+    border: solid 1px #ccc;
+    border-bottom-color: #bbb;
+    box-shadow: inset 0 -1px 0 #bbb;
+    font-family: monospace;
+    font-size: 11px;
+
+    background-color: #1d1d1f;
+    border: solid 1px black;
+    box-shadow: none;
+    color: white;
 `
+
+const shortcutsList = [
+  '<span><b>o</b>,<b>j</b> New note</span>',
+  '<span><b>o</b>,<b>j</b> New note</span>',
+  '<span><b>o</b>,<b>j</b> New note</span>',
+  '<span><b>o</b>,<b>j</b> New note</span>',
+  '<span><b>o</b>,<b>j</b> New note</span>',
+]
 
 const ShortcutsModal = props => {
   const {setShortcutsModal, shortcutsModal} = props;
@@ -57,9 +78,12 @@ const ShortcutsModal = props => {
       onClick={e => onClose(e)}
       shortcutsModal={shortcutsModal}>
 
-      <Shortcut>
-        <span><b>o</b>,<b>j</b> New note</span>
+        {
+          shortcutsList.map(shortcut=>
+      <Shortcut dangerouslySetInnerHTML={{ __html: shortcut }}>
       </Shortcut>
+          )
+        }
 
     </ShortcutsModalContainer>
   );
