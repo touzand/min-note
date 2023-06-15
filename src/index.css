@@ -2,22 +2,17 @@
 
 :root {
   --font-color: #e9e9e9;
-  /*--background-color: #0a0a0a; original*/
   --background-color: #131517;
   --complement-color:#0062ae;
-  /*--background-color: #273547;*/
-  /*--background-color: #0a0a0a00;*/
   --divisor-line-color: red;
   --background-bubble-up: #31324b;
   --background-bubble-middle: #52724d;
   --background-bubble-down: #cc5a5a;
-  --desktop-width: 500px;
   --no-grey: #ddd4;
+  --option-background:#1a1c20;
+  --desktop-width: 500px;
   --font-size-title:64px;
   --font-size-pharag:24px;
-
-  --option-background:#1a1c20;
-  /*--option-color:red;*/
 }
 
 html {
