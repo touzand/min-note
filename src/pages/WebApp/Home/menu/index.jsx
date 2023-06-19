@@ -20,7 +20,7 @@ import {
   ModalBackground,
 } from './style';
 
-import Count from './Count';
+//import Count from './Count';
 import backgroundData from '../../../../helpers/backgroundData';
 import KnowledgePanel from './knowledgePanel';
 import CountByColor from './CountByColor';

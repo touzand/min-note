@@ -45,7 +45,7 @@ const Header = (props) => {
           )}
         </div>
       </HeaderTop>
-      <Hr textColorContrast={`${props.noteContent.text_color_contrast}`}/> 
+      <Hr downHeader={true} textColorContrast={`${props.noteContent.text_color_contrast}`}/> 
     </>
   );
 };

@@ -12,6 +12,7 @@ export const Hr = styled.hr`
   margin-top: 0rem;
   margin-bottom: 0;
   position: relative;
+${props=>props.downHeader && 'animation: downHeader 0.5s ease both'}
 `;
 
 export const HeaderButton = styled.button`

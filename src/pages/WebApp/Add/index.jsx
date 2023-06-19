@@ -33,10 +33,10 @@ const New = () => {
       await AddDoc(noteContent);
       navigate('/');
     } else {
-      //setNoteError('You cannot save a note without title or body');
-      //setTimeout(() => {
-      //setNoteError('');
-      //}, 5000);
+      setNoteError('You cannot save a note without title or body');
+      setTimeout(() => {
+      setNoteError('');
+      }, 5000);
     }
   };
 
@@ -78,7 +78,7 @@ const New = () => {
     <>
       <NewNote backgroundColor={noteContent.background_color} textAlign={noteContent.text_align} id="new">
         {console.log(noteContent.background_color)}
-        {noteError && <Notification>{noteError}</Notification>}
+        <Notification>hola mundo</Notification>
         <div className="general-container">
           <Header {...headerProps} />
           <BodyContent {...bodyContentProps} />
