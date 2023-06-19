@@ -13,7 +13,7 @@ import backgroundData from '../../../../helpers/backgroundData';
 
 const ConfigPanel = props => {
   const {configPanelOpen,setNoteContent,noteContent} = props;
-  const [selectedBackground, setSelectedBackground] = useState(5);
+  const [selectedBackground, setSelectedBackground] = useState(0);
   const [selectedTextAlign, setSelectedTextAlign] = useState(0);
 
   const handleBackgroundChange = (index, hex_code) => {

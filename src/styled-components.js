@@ -8,11 +8,14 @@ const heightOpen = keyframes`
 export const Hr = styled.hr`
   width: 100%;
   border-top: none;
-  border-color: ${props => (props.textColorContrast ? props.textColorContrast : 'var(--divisor-line-color)')};
+  border-color: ${props =>
+    props.textColorContrast
+      ? props.textColorContrast
+      : 'var(--divisor-line-color)'};
   margin-top: 0rem;
   margin-bottom: 0;
   position: relative;
-${props=>props.downHeader && 'animation: downHeader 0.5s ease both'}
+  ${props => props.downHeader && 'animation: downHeader 0.5s ease both'}
 `;
 
 export const HeaderButton = styled.button`
@@ -44,14 +47,21 @@ export const IconButtom = styled.button`
   text-decoration: none;
   border: none;
   border-left: solid thin
-    ${props => (props.left || props.both ? props.textColorContrast + '70' : 'transparent')};
+    ${props =>
+      props.left || props.both
+        ? props.textColorContrast + '70'
+        : 'transparent'};
   border-right: solid thin
-    ${props => (props.right || props.both ? props.textColorContrast + '70' : 'transparent')};
+    ${props =>
+      props.right || props.both
+        ? props.textColorContrast + '70'
+        : 'transparent'};
   transition: none !important;
 padding:0;
 
-color: ${props=>props.configOpen && props.textColorContrast};
-background-color: ${props=>props.configOpen && props.textColorContrast + '20'};
+color: ${props => props.configOpen && props.textColorContrast};
+background-color: ${props =>
+  props.configOpen && props.textColorContrast + '20'};
 
 a{
   padding:0;
@@ -66,18 +76,23 @@ a{
   }
 
   &  svg {
-    color: ${props => (props.textColorContrast ? props.textColorContrast + '70' : 'var(--font-color)')};
+    color: ${props =>
+      props.textColorContrast
+        ? props.textColorContrast + '70'
+        : 'var(--font-color)'};
     margin:.75rem;
     transition:none !important;
   }
 
 
   &:hover svg{
-    //color: ${props => (props.textColorContrast ? props.textColorContrast : 'var(--font-color)')};
+    //color: ${props =>
+      props.textColorContrast ? props.textColorContrast : 'var(--font-color)'};
   }
 
   &:hover{
-    background-color:${props=>props.textColorContrast ? props.textColorContrast + '20' : 'red'};
+    background-color:${props =>
+      props.textColorContrast ? props.textColorContrast + '20' : 'red'};
   }
 
   & svg {
@@ -94,7 +109,7 @@ a{
     display: flex;
     flex-direction: column;
     border-radius: 0.25rem;
-    //height:${props=>props.open ? '5px' : '100%'};
+    //height:${props => (props.open ? '5px' : '100%')};
     animation: ${heightOpen} 0.5s ease-in-out both;
     border: solid thin #2d2f33;
     color:var(--font-color);
