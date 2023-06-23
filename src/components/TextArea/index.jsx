@@ -13,7 +13,6 @@ const TextArea = props => {
     noteContent,
     textColorContrast
   } = props;
-
   const textareaRef = React.useRef(null);
   const [value, setValue] = React.useState('');
   const handleValue = event => setValue(event.target.value);
@@ -38,16 +37,16 @@ const TextArea = props => {
       onKeyUp={e => {
         setNoteContent(prevState => ({...prevState, body: value}));
       }}
-      textColorContrast={props.noteContent.text_color_contrast}
-      //style={{
-        //minHeight: MIN_TEXTAREA_HEIGHT,
-        //resize: 'none',
-      //}}
+      textColorContrast={textColorContrast || props.noteContent.text_color_contrast}
+      style={{
+        minHeight: MIN_TEXTAREA_HEIGHT,
+        resize: 'none',
+      }}
       defaultValue={defaultValue || value}
-      textAlign={props.noteContent.text_align}
+      //textAlign={textAlign || props.noteContent.text_align}
     />
       {
-        console.log(props)
+      console.log(props)
       }
     </>
   );

@@ -5,7 +5,6 @@ import { NoteContentContainer } from "./style";
 const NoteContent = (props) => {
   return (
     <NoteContentContainer className="note-content edit-enable" noteContent={props.noteContent}>
-      {console.log(props.noteContent)}
       <div className="note-content edit-enable">
         <Title
           editable={true}
@@ -39,9 +38,10 @@ const NoteContent = (props) => {
           textColorContrast={props.noteContent.text_color_contrast}
           //setBody={props.setBody}
           defaultValue={props.noteContent.body}
-          textAlign={props.noteContent.align}
+          textAlign={props.noteContent.text_align}
           setNoteContent={props.setNoteContent}
         />
+        {console.log(props)}
       </div>
     </NoteContentContainer>
   );
