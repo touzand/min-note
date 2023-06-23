@@ -1,4 +1,4 @@
-import TextArea from '../../../../components/textArea';
+import TextArea from '../../../../components/TextArea';
 import Title from '../../../../components/Title';
 import {BodyContentContainer} from './style';
 
