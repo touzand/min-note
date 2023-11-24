@@ -51,7 +51,7 @@ const Header = props => {
             alignItems: 'center',
             position: 'relative',
           }}>
-          <h1>All notes</h1>
+          <h1>Notes</h1>
           <div className="header-subsection">
             <HeaderButton
               tc={`#F6F1E9`}
