@@ -5,7 +5,7 @@ const FadeUp = keyframes`
 100%{top:0;opacity:1;}
 `;
 
-export const TitleContainer = styled.div`
+export const TitleContainer = styled.blockquote`
   border: none;
   outline: none;
   width: 100%;

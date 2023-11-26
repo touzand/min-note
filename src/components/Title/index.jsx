@@ -1,8 +1,20 @@
+import {useRef} from 'react';
 import {TitleContainer} from './style';
 
 const Title = props => {
   //const {tc, editable, setTitle, textAlign, content,setNoteContent} = props;
-  const {setNoteContent,noteContent,editable,content} = props;
+  const {setNoteContent, noteContent, editable, content} = props;
+
+  const titu = useRef(content);
+
+  const handdleUpdate = (e) => {
+    setNoteContent(prevState => ({
+      ...prevState,
+      title: e.target.textContent,
+    }));
+
+    //titu.current = e.target.textContent;
+  };
 
   return (
     <TitleContainer
@@ -11,11 +23,13 @@ const Title = props => {
       textColorContrast={noteContent.text_color_contrast}
       contentEditable={editable}
       suppressContentEditableWarning={true}
-     onKeyPress={e =>setNoteContent(prevState=>( {...prevState,title:e.target.textContent} )) //console.log(noteContent.title) 
-      }
       textAlign={noteContent.text_align}
-    >
-      {content && content}
+      onKeyPress={
+        e => handdleUpdate(e)
+        //console.log(titu,e.target.textContent)
+      }>
+      {titu.current ? titu.current : content}
+      {console.log(titu.current)}
     </TitleContainer>
   );
 };
