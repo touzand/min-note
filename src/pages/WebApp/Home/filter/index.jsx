@@ -24,9 +24,10 @@ const Filter = props => {
           spellCheck="false"
         />
       </div>
-
-      <FilterButton>Tag</FilterButton>
-      <FilterButton>Color</FilterButton>
+      {
+      //<FilterButton>Tag</FilterButton>
+      //<FilterButton>Color</FilterButton>
+      }
     </FilterContainer>
   );
 };

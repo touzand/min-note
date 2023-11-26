@@ -138,11 +138,13 @@ const Menu = props => {
         <ContentContainer>
           <KnowledgePanel countForKnowledge={countForKnowledge} />
           <CountByColor countForKnowledge={countForKnowledge} />
+          {
           <Buttons
             setTagsModal={setTagsModal}
             setShortcutsModal={setShortcutsModal}
             setMenu={setMenu}
           />
+          }
         </ContentContainer>
       </BackgroundContainer>
     </>

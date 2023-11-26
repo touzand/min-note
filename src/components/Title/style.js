@@ -38,4 +38,10 @@ export const TitleContainer = styled.blockquote`
     color: ${props => props.textColorContrast}70;
     transition: color 1s ease;
   }
+
+  &[contenteditable]:empty::before {
+    content: 'Title';
+    color: ${props => props.textColorContrast}70;
+    transition: color 1s ease;
+  }
 `;

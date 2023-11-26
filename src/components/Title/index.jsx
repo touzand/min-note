@@ -7,7 +7,7 @@ const Title = props => {
 
   const titu = useRef(content);
 
-  const handdleUpdate = (e) => {
+  const handdleUpdate = e => {
     setNoteContent(prevState => ({
       ...prevState,
       title: e.target.textContent,
@@ -28,8 +28,10 @@ const Title = props => {
         e => handdleUpdate(e)
         //console.log(titu,e.target.textContent)
       }>
-      {titu.current ? titu.current : content}
-      {console.log(titu.current)}
+      {content ? (titu.current ? titu.current : content) : ''}
+      {
+        //console.log(titu.current)
+      }
     </TitleContainer>
   );
 };
