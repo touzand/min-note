@@ -11,9 +11,10 @@ const Title = props => {
       textColorContrast={noteContent.text_color_contrast}
       contentEditable={editable}
       suppressContentEditableWarning={true}
-     onKeyUp={e =>setNoteContent(prevState=>( {...prevState,title:e.target.textContent} )) //console.log(noteContent.title) 
+     onKeyPress={e =>setNoteContent(prevState=>( {...prevState,title:e.target.textContent} )) //console.log(noteContent.title) 
       }
-      textAlign={noteContent.text_align}>
+      textAlign={noteContent.text_align}
+    >
       {content && content}
     </TitleContainer>
   );

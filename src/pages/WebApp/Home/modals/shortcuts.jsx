@@ -11,7 +11,7 @@ const fadeOut = keyframes`
 `;
 
 const ShortcutsModalContainer = styled.div`
-background-color:red;
+background-color:#1a1c20;
 
 border-radius:.5rem;
 position:relative;
@@ -56,6 +56,8 @@ b{
 `
 
 const shortcutsList = [
+  '<span><b>o</b>,<b>j</b> New note</span>',
+  '<span><b>o</b>,<b>j</b> New note</span>',
   '<span><b>o</b>,<b>j</b> New note</span>',
   '<span><b>o</b>,<b>j</b> New note</span>',
   '<span><b>o</b>,<b>j</b> New note</span>',
