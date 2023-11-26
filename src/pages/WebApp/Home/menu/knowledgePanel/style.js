@@ -50,8 +50,13 @@ export const KnowledgePanelContainer = styled.figure`
 
   footer {
     margin-top: 1rem;
+    margin-bottom: 1rem;
     height: 60px;
     border-radius: 0.5rem;
     border: dashed thin white;
   }
+
+p{
+  font-size:.8rem;
+}
 `;

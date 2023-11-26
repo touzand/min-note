@@ -35,6 +35,8 @@ const KnowledgePanel = props => {
       </main>
 
       <footer></footer>
+
+      <p>this panel will show u information constantly</p>
     </KnowledgePanelContainer>
   );
 };

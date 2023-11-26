@@ -10,7 +10,9 @@ const Title = props => {
       role="textbox"
       textColorContrast={noteContent.text_color_contrast}
       contentEditable={editable}
-      onKeyUp={e => setNoteContent(prevState=>( {...prevState,title:e.target.textContent} ))}
+      suppressContentEditableWarning={true}
+     onKeyUp={e =>setNoteContent(prevState=>( {...prevState,title:e.target.textContent} )) //console.log(noteContent.title) 
+      }
       textAlign={noteContent.text_align}>
       {content && content}
     </TitleContainer>
