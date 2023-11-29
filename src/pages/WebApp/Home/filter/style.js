@@ -1,7 +1,7 @@
 import styled, {keyframes} from 'styled-components';
 
 export const FilterContainer = styled.article`
-  width: min(100%, 800px);
+  width: min(100%,  var(--max-width-desktop));
   margin: 1rem auto 1rem auto;
   display: flex;
   gap: 0.5rem;

@@ -18,7 +18,7 @@ export const ViewContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: min(100%, 800px);
+    width: min(100%, var(--max-width-desktop));
     margin: auto;
 
     div {
@@ -97,6 +97,8 @@ export const ViewContainer = styled.div`
     font-size: var(--font-size-pharag);
     color: ${props => props.tc};
     display: block;
+    text-decoration:underline;
+    //border-bottom:thin solid ;
   }
 
   .date-edit {
@@ -140,7 +142,7 @@ export const ViewContainer = styled.div`
     }
 
     .note-content {
-      width: min(100%, 800px);
+      width: min(100%, var(--max-width-desktop));
       margin: auto;
     }
   }

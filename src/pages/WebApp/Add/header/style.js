@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
     display: flex;
   justify-content: space-between;
   align-items:center;
-  width: min(100%,800px);
+  width: min(100%,var(--max-width-desktop));
 
   .header-subsection {
     display: flex;

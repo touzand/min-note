@@ -1,7 +1,7 @@
 import styled, {keyframes} from 'styled-components';
 
 export const MasonryGrid = styled.div`
-  width: min(100%, 800px);
+  width: min(100%, var(--max-width-desktop));
   margin: 0 auto;
   columns: 5 180px;
   column-gap: 0.5rem;

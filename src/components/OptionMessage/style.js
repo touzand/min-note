@@ -38,7 +38,7 @@ export const DeleteMessage = styled.div`
         height: 2rem;
         background-color: #1b1b1b;
         border: none;
-        color: whitesmoke;
+        color: whitesmoke !important;
         font-weight: bold;
         border-radius: 0.25rem;
         cursor: pointer;
