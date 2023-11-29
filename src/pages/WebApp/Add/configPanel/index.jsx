@@ -19,7 +19,6 @@ const ConfigPanel = props => {
   const handleBackgroundChange = (index, hex_code) => {
     setNoteContent(prevState=>({...prevState,background_color:hex_code}));
     setSelectedBackground(index);
-    console.log({ index,hex_code })
   };
 
   const handleTextAlignChange = (index,value) => {

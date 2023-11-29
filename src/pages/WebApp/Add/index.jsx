@@ -77,7 +77,6 @@ const New = () => {
   return (
     <>
       <NewNote backgroundColor={noteContent.background_color} textAlign={noteContent.text_align} id="new">
-        {console.log(noteContent.background_color)}
         <Notification>hola mundo</Notification>
         <div className="general-container">
           <Header {...headerProps} />
