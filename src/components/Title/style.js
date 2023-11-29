@@ -45,7 +45,7 @@ export const TitleContainer = styled.blockquote`
     transition: color 1s ease;
   }
 
-@media (min-width: 800px) {
-  font-size:.25rem !important;
+@media (max-width: 800px) {
+  font-size:3rem !important;
 }
 `;

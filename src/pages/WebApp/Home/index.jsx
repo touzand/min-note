@@ -114,7 +114,9 @@ const Home = ({children}) => {
             onClick={handdleAdd}
             className="icon_button add"
             translate="no">
-            <span className="material_symbols_outlined">add</span>
+            {
+            //<span className="material_symbols_outlined">add</span>
+            }
           </button>
         )}
         <div>{children}</div>
