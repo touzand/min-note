@@ -41,7 +41,6 @@ const NoteContent = (props) => {
           textAlign={props.noteContent.text_align}
           setNoteContent={props.setNoteContent}
         />
-        {console.log(props)}
       </div>
     </NoteContentContainer>
   );

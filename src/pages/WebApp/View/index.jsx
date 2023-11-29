@@ -78,7 +78,6 @@ const View = () => {
     <ViewContainer
       backgroundColor={noteContent.background_color}
       textColorContrast={noteContent.text_color_contrast}>
-      {console.log(noteContent.title)}
       <Loader start=".5s" />
       {deleteMessage && (
         <OptionMessage
