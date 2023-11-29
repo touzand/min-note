@@ -29,6 +29,7 @@ export const ViewContainer = styled.div`
 
   .note-content {
     color: ${props => props.textColorContrast};
+    margin:1rem;
 
     * {
       position: relative;
@@ -146,4 +147,5 @@ export const ViewContainer = styled.div`
       margin: auto;
     }
   }
+
 `;

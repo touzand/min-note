@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ConfigPanelContainer = styled.figure`
   position: fixed;
   bottom: 0.5rem;
-  right: ${props => (props.open ? '.5rem' : '-35%')};
+  right: ${props => (props.open ? '.5rem' : '-100%')};
   //opacity: ${props => (props.open ? '1' : '0')};
   //visibility: ${props => (props.open ? 'visible' : 'hidden')};
   margin: 0;
@@ -13,6 +13,7 @@ export const ConfigPanelContainer = styled.figure`
   flex-direction: column;
   gap: 0.5rem;
   transition: all 0.5s ease-in-out;
+zoom:.9;
 
   * {
     margin: 0;

@@ -18,6 +18,10 @@ export const MasonryGrid = styled.div`
     justify-content:center;
     align-items:center;
   `}
+
+@media (max-width: 700px) {
+  columns: 5 140px;
+}
 `;
 
 export const BackgroundTransition = styled.div`

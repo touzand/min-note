@@ -9,6 +9,7 @@ export const KnowledgePanelContainer = styled.figure`
   display: flex;
   flex-direction: column;
   gap: 0;
+zoom:.8;
 
   * {
     padding: 0;

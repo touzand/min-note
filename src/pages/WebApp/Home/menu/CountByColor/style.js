@@ -22,6 +22,7 @@ color:black;
   //"first first first fourth fourth"
   //"fifth fifth sixth sixth seventh"
   //"fifth fifth sixth sixth seventh";
+zoom:.8;
 
 div{
   border-radius:.25rem;

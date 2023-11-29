@@ -39,7 +39,7 @@ export const FilterContainer = styled.article`
       height: 100%;
       padding: 0;
       border: none;
-      font-size: 24px;
+      font-size: 1.25rem;
       caret-color: var(--complement-color);
       color: var(--font-color);
 
@@ -59,7 +59,7 @@ export const FilterButton = styled.button`
 align-items:center;
 justify-content:center;
 gap:.5rem;
-font-size:24px;
+font-size:1.25rem;
 
 svg{
   font-size:inherit;

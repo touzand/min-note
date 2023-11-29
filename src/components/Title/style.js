@@ -44,4 +44,8 @@ export const TitleContainer = styled.blockquote`
     color: ${props => props.textColorContrast}70;
     transition: color 1s ease;
   }
+
+@media (min-width: 800px) {
+  font-size:.25rem !important;
+}
 `;

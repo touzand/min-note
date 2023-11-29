@@ -8,6 +8,7 @@ export const ButtonsContainer = styled.div`
   flex-direction: column;
   padding: 1rem;
   gap: 0.5rem;
+zoom:.8;
 
   button {
     display: flex;

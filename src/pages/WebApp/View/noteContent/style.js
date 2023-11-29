@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const NoteContentContainer = styled.div`
   .note-content {
     color: ${(props) => props.tc};
+    margin:5rem;
   }
 
   h1 {

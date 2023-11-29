@@ -102,6 +102,10 @@ export const Row = styled.div`
 `;
 
 export const BackgroundContainer = styled.div`
+@media (max-width: 700px) {
+  position:fixed;
+}
+
 color:var(--font-color);
   position: absolute;
 height:100vh;
@@ -237,6 +241,7 @@ hr{
     align-items:center;
     gap:1rem;
   }
+
 `;
 
 export const FigureColor = styled.figure`
@@ -249,7 +254,7 @@ export const ContentContainer = styled.div`
   bottom: 0;
   right: -350px;
   background-color: #1a1c20;
-  width: 350px;
+  width: 275px;
   overflow-y: scroll;
 
   * {
