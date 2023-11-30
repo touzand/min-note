@@ -15,7 +15,6 @@ This is a **minimalist** user-focused note-taking web app. being simple and easy
 5. Simple and intuitive design
 6. Note search system
 7. Custom configurations
-8. Tag system
 
 Visit the website to know more about [this application](https://touzand.github.io/min-notes)
 
