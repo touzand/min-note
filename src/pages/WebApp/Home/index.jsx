@@ -103,6 +103,9 @@ const Home = ({children}) => {
           {data.length !== 0 ? (
             dataFilter.map(note => (
               //[> Aqui hace falta resolver el atributo key<]
+              //[> Aqui hace falta resolver el atributo key<]
+              //[> Aqui hace falta resolver el atributo key<]
+              //[> Aqui hace falta resolver el atributo key<]
               <Card key={note.id} {...note} />
             ))
           ) : (
