@@ -5,9 +5,6 @@ const KnowledgePanel = props => {
 
   return (
     <KnowledgePanelContainer>
-      {
-      console.log(props.countsForKnowledge)
-      }
       <header>
         <h3>all u need to know</h3>
       </header>
