@@ -3659,7 +3659,7 @@ margin-top:${t=>t.home?"1rem":"0"};
     h3 {
       color: #3b3b3b;
     }
-`,$P=()=>D(DP,{children:[y("h3",{children:"You dont have any notes :( or it is still loading"}),y("h3",{children:'Click the " + " button to create a new note'})]}),LP=j.article`
+`,$P=()=>D(DP,{children:[y("h3",{children:"You dont have any notes :( or maybe it is still loading..."}),y("h3",{children:'Click the " + " button to create a new note'})]}),LP=j.article`
   width: min(100%,  var(--max-width-desktop));
   margin: 1rem auto 1rem auto;
   display: flex;
