@@ -1,6 +1,6 @@
 {
   "homepage":"https://github.com/touzand/min-notes",
-  "name":" MinNotes",
+  "name":"MinNotes",
   "private": true,
   "version": "0.0.0",
   "type": "module",
