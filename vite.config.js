@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/min-note',
+  base: '/min-notes',
   server: {
-    open: '/min-note',
+    open: '/min-notes',
   },
   plugins: [
     react({

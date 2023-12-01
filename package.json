@@ -1,12 +1,15 @@
 {
-  "name": "note",
+  "homepage":"https://github.com/touzand/min-notes/app",
+  "name": "Min notes",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy":"yarn run build",
+    "deploy":"gh-pages -d dist"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
