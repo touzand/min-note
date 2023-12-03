@@ -1,6 +1,6 @@
 import GoogleButton from 'react-google-button';
 import {Link} from 'react-router-dom';
-import Loader from '../../../components/loader';
+import Loader from '../../../components/Loader';
 import {userAuth} from '../../../contexts/AuthContext';
 import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
