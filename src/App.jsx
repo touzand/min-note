@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <AuthContextProvider>
-        <Router>
+        <Router basename='/'>
           <Routes>
             <Route path='/' element={<Protect><Home/></Protect>}/>
             <Route path='/new' element={<New/>}/>
