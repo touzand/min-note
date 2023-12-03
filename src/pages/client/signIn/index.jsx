@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import Notification from '../../../components/Notification';
 import useIsMobile from '../../../hooks/useIsMobile';
-import Background from '../../../components/Background';
+import Back from '../../../components/Back';
 import {HelloContainer, Logo, MasterContainer, SignInContainer} from './style';
 
 const SignIn = () => {
@@ -60,7 +60,7 @@ const SignIn = () => {
             </p>
           </article>
 
-          <Background />
+          <Back />
         </HelloContainer>
         <SignInContainer>
           <Loader start=".3s" />
@@ -99,7 +99,7 @@ const SignIn = () => {
               <Link to="/signup">Sign up here</Link>
             </article>
           </div>
-          {isMobile ? <Background /> : ''}
+          {isMobile ? <Back /> : ''}
         </SignInContainer>
       </MasterContainer>
     </>
