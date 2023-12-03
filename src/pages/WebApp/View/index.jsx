@@ -5,7 +5,7 @@ import {userAuth} from '../../../contexts/AuthContext';
 import {getDocs, collection} from 'firebase/firestore';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import Loader from '../../../components/loader';
+import Loader from '../../../components/Loader';
 import {useNavigate} from 'react-router-dom';
 import {ViewContainer} from './style';
 import OptionMessage from '../../../components/optionMessage';

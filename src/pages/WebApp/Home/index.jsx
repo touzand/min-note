@@ -14,7 +14,7 @@ import InputSearch from './inputSearch';
 import NoNotes from './noNotes';
 import Filter from './filter';
 import Menu from './menu';
-import Loader from '../../../components/loader';
+import Loader from '../../../components/Loader';
 import Card from './card';
 //... Styles
 import {
