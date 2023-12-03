@@ -1,6 +1,6 @@
 import {BackgroundContainer} from './style';
 
-const Back = () => {
+const Background = () => {
   return (
     <BackgroundContainer>
       <div className="top"></div>
@@ -10,4 +10,4 @@ const Back = () => {
   );
 };
 
-export default Back;
+export default Background;

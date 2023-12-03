@@ -12,7 +12,7 @@ import {
   SignUpContainer,
 } from "./style";
 import useIsMobile from "../../../hooks/useIsMobile";
-import Back from "../../../components/Background";
+import Background from "../../../components/Background";
 
 const SignUp = () => {
   const {
@@ -63,7 +63,7 @@ const SignUp = () => {
             </p>
           </article>
 
-          <Back />
+          <Background />
         </HelloContainer>
 
         <SignUpContainer>
@@ -103,7 +103,7 @@ const SignUp = () => {
               <Link to="/signin">Sig in here</Link>
             </article>
           </div>
-          {isMobile ? <Back /> : ""}
+          {isMobile ? <Background /> : ""}
         </SignUpContainer>
       </MasterContainer>
     </>
