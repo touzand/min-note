@@ -4,7 +4,7 @@ import { userAuth } from "../../../contexts/AuthContext";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
-import Notification from "../../../components/notification";
+import Notification from "../../../components/Notification";
 import {
   HelloContainer,
   Logo,
