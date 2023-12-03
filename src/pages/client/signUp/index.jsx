@@ -12,7 +12,7 @@ import {
   SignUpContainer,
 } from "./style";
 import useIsMobile from "../../../hooks/useIsMobile";
-import Back from "../../../components/Back";
+import Back from "../../../components/Background";
 
 const SignUp = () => {
   const {
