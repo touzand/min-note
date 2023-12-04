@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import Notification from '../../../components/Notification';
 import useIsMobile from '../../../hooks/useIsMobile';
-import { Background } from '../../../components/Background';
+import Background from "../../../components/Back";
 import {HelloContainer, Logo, MasterContainer, SignInContainer} from './style';
 
 const SignIn = () => {
