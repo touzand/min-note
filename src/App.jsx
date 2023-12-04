@@ -13,11 +13,11 @@ function App() {
       <AuthContextProvider>
         <Router basename='/'>
           <Routes>
-            <Route path='/' element={<Protect><Home/></Protect>}/>
-            <Route path='/new' element={<New/>}/>
-            <Route path='/note/:id' element={<View/>}/>
             <Route path='/signin' element={<SignIn/>}/>
             <Route path='/signup' element={<SignUp/>}/>
+            <Route path='/home' element={<Protect><Home/></Protect>}/>
+            <Route path='/new' element={<New/>}/>
+            <Route path='/note/:id' element={<View/>}/>
           </Routes>
         </Router>
       </AuthContextProvider>
