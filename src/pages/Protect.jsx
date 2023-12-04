@@ -4,7 +4,7 @@ import { userAuth } from "../contexts/AuthContext.jsx";
 const Protect = ({ children }) => {
   const { user } = userAuth();
 
-  if (!user) return <Navigate to="/signin"/>;
+  if (!user) return <Navigate to="/signup"/>;
   return children;
 };
 
