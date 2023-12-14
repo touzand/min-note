@@ -137,12 +137,32 @@ export const MasterContainer = styled.div`
   justify-content: center;
 `;
 
+//export const HelloContainer = styled.div`
+    //display: grid;
+    //place-items:center;
+    //flex: 1;
+    //overflow: hidden;
+//color:var(--font-color);
+
+
+  //article{
+    //width:300px;
+    //position:absolute;
+    //z-index:4;
+  //}
+  //}
+//`;
+
 export const HelloContainer = styled.div`
+display: none;
+color:var(--font-color);
+
+
+@media (min-width: 800px) {
     display: grid;
     place-items:center;
     flex: 1;
     overflow: hidden;
-color:var(--font-color);
 
 
   article{
