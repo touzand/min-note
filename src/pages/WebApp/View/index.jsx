@@ -38,6 +38,7 @@ const View = () => {
   }, []);
 
   const handdleUpdate = async () => {
+    console.log(noteContent)
     await UpdateDoc(
       user.uid,
       id,
