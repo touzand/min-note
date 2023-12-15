@@ -66,7 +66,7 @@ export const ViewContainer = styled.div`
   .edit-enable {
     display: flex;
     flex-direction: column;
-    width: min(100%, 800px);
+    //width: min(100%, 800px);
   }
 
   .title {
