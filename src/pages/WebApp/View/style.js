@@ -29,7 +29,7 @@ export const ViewContainer = styled.div`
 
   .note-content {
     color: ${props => props.textColorContrast};
-    margin:1rem;
+    padding:1rem;
 
     * {
       position: relative;

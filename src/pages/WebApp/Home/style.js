@@ -21,6 +21,7 @@ export const MasonryGrid = styled.div`
 
 @media (max-width: 700px) {
   columns: 5 140px;
+  margin-bottom:1rem;
 }
 `;
 
@@ -41,6 +42,7 @@ export const NotesGeneralContainer = styled.div`
   padding: 0 1rem;
 
   .add {
+    visibility:hidden;
     position: fixed;
     right: 1rem;
     bottom: 1rem;
