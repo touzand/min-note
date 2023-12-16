@@ -74,7 +74,7 @@ const SignUp = () => {
             <Notification final="error">{googleSignError}</Notification>
           )}
           <Loader start=".3s" />
-          <Logo>Min notes</Logo>
+          <Logo>Min note</Logo>
           <div className="signin-form">
             <form onSubmit={handdleSignUpWithEmail}>
               <span className="wellcome">Create an account</span>

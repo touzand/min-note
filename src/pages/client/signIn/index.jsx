@@ -64,7 +64,7 @@ const SignIn = () => {
         </HelloContainer>
         <SignInContainer>
           <Loader start=".3s" />
-          <Logo className="">Min notes</Logo>
+          <Logo className="">Min note</Logo>
           {signInError && (
             <Notification final="error">{signInError}</Notification>
           )}
