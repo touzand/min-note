@@ -1,4 +1,4 @@
-# Min notes
+# Min note
 
 A simple and elegant note-taking app built with React, designed for simplicity and ease of use.
 
@@ -54,11 +54,11 @@ This will launch the app in your default web browser at `http://localhost:5173`.
 
 ## Contributing
 
-If you would like to contribute to the development of Min notes, please reach out to the project maintainer. We welcome any and all contributions, including bug fixes, feature suggestions, and code improvements.
+If you would like to contribute to the development of Min note, please reach out to the project maintainer. We welcome any and all contributions, including bug fixes, feature suggestions, and code improvements.
 
 ## License
 
-Min notes is licensed under the [MIT License](https://opensource.org/licenses/MIT)
+Min note is licensed under the [MIT License](https://opensource.org/licenses/MIT)
 
 <hr/>
 
