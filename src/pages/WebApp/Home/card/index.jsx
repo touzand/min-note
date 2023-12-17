@@ -9,7 +9,9 @@ const Card = props => {
     <Link to={`/note/${id}`} style={link}>
       <NoteContaier bg={background_color}>
         <p>{title}</p>
-        <Hr textColorContrast=" #0009" />
+        {
+        //<Hr textColorContrast=" #0009" />
+        }
         <span>{date}</span>
       </NoteContaier>
     </Link>
