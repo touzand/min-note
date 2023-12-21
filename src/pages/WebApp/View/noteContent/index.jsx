@@ -4,8 +4,8 @@ import { NoteContentContainer } from "./style";
 
 const NoteContent = (props) => {
   return (
-    <NoteContentContainer className="note-content edit-enable" noteContent={props.noteContent}>
-      <div className="note-content edit-enable">
+    <NoteContentContainer className="" noteContent={props.noteContent}>
+      <div className="note-content">
         <Title
           editable={true}
           //tc={textContrast}
