@@ -71,6 +71,7 @@ export const NoteContentContainer = styled.div`
   }
 
   textarea {
+    padding:0;
     margin: 16px 0;
     width: 100%;
     height: 49vh;
@@ -80,8 +81,7 @@ export const NoteContentContainer = styled.div`
     border: none;
     outline: none;
     font-size: var(--font-size-pharag);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family:Outfit;
     color: ${(props) => props.tc}70;
     transition: color 1s ease;
   }
@@ -93,6 +93,9 @@ export const NoteContentContainer = styled.div`
   textarea:focus {
     color: ${(props) => props.tc};
   }
+textarea[contentEditable]{
+  padding:0 !important;
+}
 
   @media (min-width: 800px) {
     display: flex;
