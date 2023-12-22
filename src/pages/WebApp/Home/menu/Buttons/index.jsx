@@ -67,6 +67,7 @@ const Buttons = props => {
   };
 
   const CloseFullScreen = () => {
+    setFullScreen(false);
     if (document.cancelFullScreen) {
       document.cancelFullScreen();
     } else if (document.mozCancelFullScreen) {
