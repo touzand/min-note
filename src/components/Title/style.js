@@ -17,17 +17,12 @@ export const TitleContainer = styled.blockquote`
   font-size: var(--font-size-title);
   font-weight: bold;
   line-height: 1;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   color: ${props =>
     props.contentEditable
       ? props.textColorContrast + 70
       : props.textColorContrast};
   transition: color 1s ease;
-
-  //opacity: 0;
-  //position: relative;
-  //animation: ${props => (props.contenteditable ? 'none' : FadeUp)} 0.5s 1s
-    //ease-in-out both;
 
   &:focus {
     color: ${props => props.textColorContrast};
@@ -45,7 +40,7 @@ export const TitleContainer = styled.blockquote`
     transition: color 1s ease;
   }
 
-@media (max-width: 800px) {
-  font-size:2.5rem !important;
-}
+  @media (max-width: 800px) {
+    font-size: 2.5rem !important;
+  }
 `;

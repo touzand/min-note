@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from 'styled-components';
 
 const DeleteMessageFade = keyframes`
 0%{opacity:0}
@@ -12,7 +12,7 @@ export const DeleteMessage = styled.div`
   right: 0;
   bottom: 0;
   display: flex;
-  z-index:2;
+  z-index: 2;
   justify-content: center;
   align-items: center;
   background-color: #24242420;
@@ -50,4 +50,3 @@ export const DeleteMessage = styled.div`
     }
   }
 `;
-

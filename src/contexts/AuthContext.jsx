@@ -65,16 +65,8 @@ export const AuthContextProvider = ({children}) => {
     }
   };
 
-  const AddDoc = (noteContent) => {
+  const AddDoc = noteContent => {
     const docRef = addDoc(collection(db, user.uid), noteContent);
-    //const docRef = addDoc(collection(db, user.uid), {
-      //title,
-      //body,
-      //bg,
-      //date,
-      //text,
-      //align,
-    //});
     console.log(docRef.id);
   };
 
@@ -99,23 +91,17 @@ export const AuthContextProvider = ({children}) => {
     console.log('Hola mundo');
     console.log({db, user: user.uid});
 
-    // Obtiene una referencia a la colección
     const coleccionRef = firebase.firestore().collection(coleccion);
 
-    // Realiza una consulta para obtener todos los documentos de la colección
     coleccionRef
       .get()
       .then(querySnapshot => {
-        // Crea un objeto Batch
         const batch = firebase.firestore().batch();
 
-        // Itera sobre cada documento de la colección
         querySnapshot.forEach(doc => {
-          // Agrega cada documento al Batch para su eliminación
           batch.delete(doc.ref);
         });
 
-        // Ejecuta el Batch para eliminar los documentos
         return batch.commit();
       })
       .catch(error => {
