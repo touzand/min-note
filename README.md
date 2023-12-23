@@ -16,7 +16,7 @@ This is a **minimalist** user-focused note-taking web app. being simple and easy
 6. Note search system
 7. Custom configurations
 
-Visit the website to know more about [this application](https://minnote.netlify.app/)
+Visit the website to know more about this [web-application](https://minnote-client.netlify.app/)
 
 ## Getting Started
 
