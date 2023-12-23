@@ -95,7 +95,7 @@ export const ViewContainer = styled.div`
   }
 
   .date {
-    font-size: var(--font-size-pharag);
+    font-size:1rem;
     color: ${props => props.tc};
     display: block;
     text-decoration:underline;

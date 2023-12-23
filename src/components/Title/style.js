@@ -17,7 +17,7 @@ export const TitleContainer = styled.blockquote`
   font-size: var(--font-size-title);
   font-weight: bold;
   line-height: 1;
-  margin: 21.44px 0;
+  margin: .5rem 0;
   color: ${props =>
     props.contentEditable
       ? props.textColorContrast + 70
@@ -46,6 +46,6 @@ export const TitleContainer = styled.blockquote`
   }
 
 @media (max-width: 800px) {
-  font-size:3rem !important;
+  font-size:2.5rem !important;
 }
 `;
