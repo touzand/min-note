@@ -161,3 +161,70 @@ a{
     //transform: rotate(45deg);
   //}
 `;
+
+export const HelloContainerDesktop = styled.div`
+  display: none;
+  color: var(--font-color);
+
+  @media (min-width: 800px) {
+    display: grid;
+    place-items: center;
+    flex: 1;
+    overflow: hidden;
+
+    article {
+      width: 300px;
+      position: absolute;
+      z-index: 4;
+    }
+  }
+`;
+
+export const SignForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  padding-bottom: 0rem;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 350px;
+    padding: 0;
+  }
+`;
+
+export const SignFormSubsection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem;
+
+  div:nth-child(2) {
+    width: 100% !important;
+  }
+
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+
+    p {
+      color: var(--font-color);
+    }
+
+    a {
+      color: var(--font-color);
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 800px) {
+    width: 350px;
+    padding: 0;
+    padding-top: 1rem;
+  }
+`;

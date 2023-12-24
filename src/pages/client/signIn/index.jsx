@@ -6,13 +6,16 @@ import {useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import Notification from '../../../components/Notification';
 import useIsMobile from '../../../hooks/useIsMobile';
-import Background from "../../../components/Back";
-import {HelloContainer, Logo, MasterContainer, SignInContainer} from './style';
+import Background from '../../../components/Back';
+import {Logo, MasterContainer, SignInContainer} from './style';
+import {HelloContainerDesktop, SignForm, SignFormSubsection} from '../../../styled-components';
 
 const SignIn = () => {
   const [email, SetEmail] = useState('');
   const [password, SetPassword] = useState('');
   const navigate = useNavigate();
+  const isMobile = useIsMobile(800);
+
   const {
     googleSigIn,
     user,
@@ -20,13 +23,12 @@ const SignIn = () => {
     signInError,
     googleSignError,
   } = userAuth();
-  const isMobile = useIsMobile(800);
 
   const handdleSignInWithGoogle = async () => {
     try {
       await googleSigIn();
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -35,7 +37,7 @@ const SignIn = () => {
     try {
       await SignInWithEmail(email, password);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -48,7 +50,7 @@ const SignIn = () => {
   return (
     <>
       <MasterContainer>
-        <HelloContainer>
+        <HelloContainerDesktop>
           <article>
             <h3>Wellcome back</h3>
             <p>
@@ -61,15 +63,15 @@ const SignIn = () => {
           </article>
 
           <Background />
-        </HelloContainer>
+        </HelloContainerDesktop>
         <SignInContainer>
           <Loader start=".3s" />
-          <Logo className="">Min note</Logo>
+          <Logo>Min note</Logo>
           {signInError && (
             <Notification final="error">{signInError}</Notification>
           )}
           {googleSignError && <Notification>{googleSignError}</Notification>}
-          <div className="signin-form">
+          <SignForm>
             <span className="wellcome">
               {isMobile ? 'Wellcome back' : 'Login'}
             </span>
@@ -90,15 +92,15 @@ const SignIn = () => {
               </div>
               <input type="submit" value="Sig in" className="submit-button" />
             </form>
-          </div>
-          <div className="subsection">
+          </SignForm>
+          <SignFormSubsection>
             <div className="hr-sect">Or</div>
             <GoogleButton onClick={handdleSignInWithGoogle} />
             <article>
               <p>Dont have an account yet?</p>
               <Link to="/signup">Sign up here</Link>
             </article>
-          </div>
+          </SignFormSubsection>
           {isMobile ? <Background /> : ''}
         </SignInContainer>
       </MasterContainer>

@@ -1,18 +1,18 @@
-import Loader from "../../../components/Loader";
-import { Link } from "react-router-dom";
-import { userAuth } from "../../../contexts/AuthContext";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { GoogleButton } from "react-google-button";
-import Notification from "../../../components/Notification";
+import Loader from '../../../components/Loader';
+import {Link} from 'react-router-dom';
+import {userAuth} from '../../../contexts/AuthContext';
+import {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {GoogleButton} from 'react-google-button';
+import Notification from '../../../components/Notification';
+import {Logo, MasterContainer, SignUpContainer} from './style';
+import useIsMobile from '../../../hooks/useIsMobile';
+import Background from '../../../components/Back';
 import {
-  HelloContainer,
-  Logo,
-  MasterContainer,
-  SignUpContainer,
-} from "./style";
-import useIsMobile from "../../../hooks/useIsMobile";
-import Background from "../../../components/Back";
+  HelloContainerDesktop,
+  SignForm,
+  SignFormSubsection,
+} from '../../../styled-components';
 
 const SignUp = () => {
   const {
@@ -22,12 +22,12 @@ const SignUp = () => {
     createUserError,
     googleSignError,
   } = userAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const isMobile = useIsMobile(800);
 
-  const handdleSignUpWithEmail = async (e) => {
+  const handdleSignUpWithEmail = async e => {
     e.preventDefault();
     CreateUserWithEmail(email, password);
   };
@@ -42,14 +42,14 @@ const SignUp = () => {
 
   useEffect(() => {
     if (user != null) {
-      navigate("/");
+      navigate('/');
     }
   }, [user]);
 
   return (
     <>
       <MasterContainer>
-        <HelloContainer>
+        <HelloContainerDesktop>
           <article>
             <h3>Wellcome</h3>
             <p>
@@ -64,46 +64,45 @@ const SignUp = () => {
           </article>
 
           <Background />
-        </HelloContainer>
-
+        </HelloContainerDesktop>
         <SignUpContainer>
+          <Loader start=".3s" />
+          <Logo>Min note</Logo>
           {createUserError && (
             <Notification final="error">{createUserError}</Notification>
           )}
           {googleSignError && (
             <Notification final="error">{googleSignError}</Notification>
           )}
-          <Loader start=".3s" />
-          <Logo>Min note</Logo>
-          <div className="signin-form">
+          <SignForm>
             <form onSubmit={handdleSignUpWithEmail}>
               <span className="wellcome">Create an account</span>
               <div className="input">
                 <input
                   type="email"
                   placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={e => setEmail(e.target.value)}
                 />
               </div>
               <div className="input">
                 <input
                   type="password"
-                  placeholder="password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                  onChange={e => setPassword(e.target.value)}
                 />
               </div>
               <input type="submit" value="Sig up" className="submit-button" />
             </form>
-          </div>
-          <div className="subsection">
+          </SignForm>
+          <SignFormSubsection>
             <div className="hr-sect">Or</div>
             <GoogleButton onClick={handdleSignInWithGoogle} />
             <article>
               <p>Already have an account?</p>
               <Link to="/signin">Sig in here</Link>
             </article>
-          </div>
-          {isMobile ? <Background /> : ""}
+          </SignFormSubsection>
+          {isMobile ? <Background /> : <></>}
         </SignUpContainer>
       </MasterContainer>
     </>

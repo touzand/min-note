@@ -1,62 +1,25 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SignInContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  width:100%;
-color:var(--font-color);
+  width: 100%;
+  color: var(--font-color);
 
-  *{
-  z-index:2;
+  * {
+    z-index: 2;
   }
 
-  .display{
-  display:block;
-  }
-
-  .subsection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    padding:1rem;
-
-    div:nth-child(2) {
-      width: 100% !important;
-    }
-
-    article{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      width:100%;
-      margin:0;
-
-      p{
-        color:var(--font-color);
-      }
-
-      a{
-        color:var(--font-color);
-        font-weight:bold;
-    }
-  }
+  .display {
+    display: block;
   }
 
   a {
     color: whitesmoke;
     text-decoration: none;
     font-weight: bold;
-  }
-
-  .signin-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding:1rem;
-          padding-bottom: 0rem;
   }
 
   .wellcome {
@@ -88,7 +51,7 @@ color:var(--font-color);
 
   .hr-sect:before,
   .hr-sect:after {
-    content: "";
+    content: '';
     flex-grow: 1;
     background: #fff2;
     height: 1px;
@@ -99,29 +62,12 @@ color:var(--font-color);
 
   @media (min-width: 800px) {
     align-items: center;
-    flex:1;
+    flex: 1;
 
-
-    //a:nth-child(2) {
-      //visibility: hidden;
-    //}
-
-    input[type="submit"]:hover {
+    input[type='submit']:hover {
       transform: scale(1.1);
       cursor: pointer;
-          }
-
-          .signin-form{
-            width:350px;
-            padding:0;
-          }
-
-      .subsection{
-        article{
-          width:350px;
-        }
-      }
-
+    }
   }
 `;
 
@@ -139,21 +85,19 @@ export const MasterContainer = styled.div`
 `;
 
 export const HelloContainer = styled.div`
-display: none;
-color:var(--font-color);
+  display: none;
+  color: var(--font-color);
 
-
-@media (min-width: 800px) {
+  @media (min-width: 800px) {
     display: grid;
-    place-items:center;
+    place-items: center;
     flex: 1;
     overflow: hidden;
 
-
-  article{
-    width:300px;
-    position:absolute;
-    z-index:4;
-  }
+    article {
+      width: 300px;
+      position: absolute;
+      z-index: 4;
+    }
   }
 `;

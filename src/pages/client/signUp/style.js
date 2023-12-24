@@ -16,47 +16,10 @@ export const SignUpContainer = styled.div`
     display: block;
   }
 
-  .subsection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 1rem;
-
-    div:nth-child(2) {
-      width: 100% !important;
-    }
-
-    article {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin: 0;
-
-      p {
-        color: var(--font-color);
-      }
-
-      a {
-        color: var(--font-color);
-        font-weight: bold;
-      }
-    }
-  }
-
   a {
     color: whitesmoke;
     text-decoration: none;
     font-weight: bold;
-  }
-
-  .signin-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
-    padding-bottom: 0rem;
   }
 
   .wellcome {
@@ -101,24 +64,9 @@ export const SignUpContainer = styled.div`
     align-items: center;
     flex: 1;
 
-    //a:nth-child(2) {
-    //visibility: hidden;
-    //}
-
     input[type='submit']:hover {
       transform: scale(1.1);
       cursor: pointer;
-    }
-
-    .signin-form {
-      width: 350px;
-      padding: 0;
-    }
-
-    .subsection {
-      article {
-        width: 350px;
-      }
     }
   }
 `;
@@ -137,38 +85,20 @@ export const MasterContainer = styled.div`
   justify-content: center;
 `;
 
-//export const HelloContainer = styled.div`
-    //display: grid;
-    //place-items:center;
-    //flex: 1;
-    //overflow: hidden;
-//color:var(--font-color);
-
-
-  //article{
-    //width:300px;
-    //position:absolute;
-    //z-index:4;
-  //}
-  //}
-//`;
-
 export const HelloContainer = styled.div`
-display: none;
-color:var(--font-color);
+  display: none;
+  color: var(--font-color);
 
-
-@media (min-width: 800px) {
+  @media (min-width: 800px) {
     display: grid;
-    place-items:center;
+    place-items: center;
     flex: 1;
     overflow: hidden;
 
-
-  article{
-    width:300px;
-    position:absolute;
-    z-index:4;
-  }
+    article {
+      width: 300px;
+      position: absolute;
+      z-index: 4;
+    }
   }
 `;
