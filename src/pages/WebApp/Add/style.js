@@ -1,22 +1,23 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from 'styled-components';
 
 const FadeIn = keyframes`
   0%{opacity:0}
 100%{opacity:1}
-`
+`;
 
 export const NewNote = styled.div`
   min-height: 100vh;
   transition: background-color 1s ease;
-  font-family:Outfit;
-  background-color: ${(props) => props.backgroundColor};
+  font-family: Outfit;
+  background-color: ${props => props.backgroundColor};
 
-  *{
-    animation:${FadeIn} 1s ease;
+  * {
+    animation: ${FadeIn} 1s ease;
   }
 
   header *,
-  .form,.hr {
+  .form,
+  .hr {
     transition: all 0.2s ease-in-out;
   }
 
@@ -28,13 +29,13 @@ export const NewNote = styled.div`
     header {
       justify-content: space-between;
     }
-
-    .general-container {
-      width: 100%;
-      max-height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
   }
+`;
+
+export const GeneralContainer = styled.div`
+  width: 100%;
+  max-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

@@ -17,33 +17,44 @@ const Header = props => {
     handdleAddDoc,
     setConfigPanelOpen,
     configPanelOpen,
-    noteContent
+    noteContent,
   } = props;
 
+  const handdleSetConfigPanel = () => {
+    setConfigPanelOpen(!configPanelOpen);
+  };
+
+  const buttonsData = [
+    {
+      icon: <VscSettingsGear />,
+      func: handdleSetConfigPanel,
+    },
+    {
+      icon: <HiOutlineSave />,
+      func: handdleAddDoc,
+    },
+  ];
   return (
     <>
       <HeaderTop color={noteContent.background_color}>
-        <IconButtom both={true} textColorContrast={`${noteContent.text_color_contrast}`}>
+        <IconButtom
+          both={true}
+          textColorContrast={`${noteContent.text_color_contrast}`}>
           <Link to="/" translate="no">
             <BiArrowBack />
           </Link>
         </IconButtom>
         <div className="header-subsection">
-          <IconButtom
-            textColorContrast={`${noteContent.text_color_contrast}`}
-            left={true}
-            translate="no"
-            onClick={() => setConfigPanelOpen(!configPanelOpen)}
-            configOpen={configPanelOpen}>
-            <VscSettingsGear />
-          </IconButtom>
-          <IconButtom
-            textColorContrast={`${noteContent.text_color_contrast}`}
-            right={true}
-            onClick={handdleAddDoc}
-            translate="no">
-            <HiOutlineSave />
-          </IconButtom>
+          {buttonsData.map((button, index) => (
+            <IconButtom
+              textColorContrast={`${noteContent.text_color_contrast}`}
+              onClick={button.func}
+              left={index === 0 && true}
+              right={index === 1 && true}
+              translate="no">
+              {button.icon}
+            </IconButtom>
+          ))}
         </div>
       </HeaderTop>
       <Hr

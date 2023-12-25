@@ -3,29 +3,28 @@ import {userAuth} from '../../../contexts/AuthContext';
 import {useNavigate} from 'react-router-dom';
 import Notification from '../../../components/Notification';
 import {useEffect} from 'react';
-import {NewNote} from './style';
+import {GeneralContainer, NewNote} from './style';
 import Header from './header';
 import BodyContent from './noteContent';
 import {Hr} from '../../../styled-components';
 import ConfigPanel from './configPanel';
 import formatDate from '../../../helpers/helpFormatDate';
-//import ColorPicker from './configurations/colorPicker';
 
 const New = () => {
-  const [noteContent,setNoteContent] = useState({
-    date:'',
-    title:'',
-    body:'',
-    background_color:'#DDDDDD',
-    text_color_contrast:'#1b1b1b',
-    text_align:'left'
-  })
-
   const [noteError, setNoteError] = useState('');
   const [visible, setVisible] = useState(false);
   const [configPanelOpen, setConfigPanelOpen] = useState(false);
   const {AddDoc} = userAuth();
   const navigate = useNavigate();
+  const [errorNotification, setErrorNotification] = useState(false);
+  const [noteContent, setNoteContent] = useState({
+    date: '',
+    title: '',
+    body: '',
+    background_color: '#DDDDDD',
+    text_color_contrast: '#1b1b1b',
+    text_align: 'left',
+  });
 
   const handdleAddDoc = async () => {
     if (noteContent.title && noteContent.body) {
@@ -33,10 +32,11 @@ const New = () => {
       await AddDoc(noteContent);
       navigate('/');
     } else {
-      setNoteError('You cannot save a note without title or body');
+      setErrorNotification(true);
+
       setTimeout(() => {
-      setNoteError('');
-      }, 5000);
+        setErrorNotification(false);
+      }, 3000);
     }
   };
 
@@ -49,8 +49,14 @@ const New = () => {
     ];
 
     darkFontColorValidation.includes(noteContent.background_color)
-      ? setNoteContent(prevState=>({...prevState,text_color_contrast:'#1b1b1b'}))
-      : setNoteContent(prevState=>({...prevState,text_color_contrast:'#F6F1E9'}))
+      ? setNoteContent(prevState => ({
+          ...prevState,
+          text_color_contrast: '#1b1b1b',
+        }))
+      : setNoteContent(prevState => ({
+          ...prevState,
+          text_color_contrast: '#F6F1E9',
+        }));
   }, [noteContent.background_color]);
 
   const headerProps = {
@@ -59,31 +65,34 @@ const New = () => {
     setConfigPanelOpen,
     configPanelOpen,
     setNoteContent,
-    noteContent
+    noteContent,
   };
 
   const bodyContentProps = {
     setNoteContent,
-    noteContent
+    noteContent,
   };
 
   const configPanelProps = {
     configPanelOpen,
     setNoteContent,
-    noteContent
-
+    noteContent,
   };
 
   return (
     <>
-      <NewNote backgroundColor={noteContent.background_color} textAlign={noteContent.text_align} id="new">
-        {
-        //<Notification>hola mundo</Notification>
-          }
-        <div className="general-container">
+      {errorNotification && (
+        <Notification final="error">
+          You can´t save a note witout title or body
+        </Notification>
+      )}
+      <NewNote
+        backgroundColor={noteContent.background_color}
+        textAlign={noteContent.text_align}>
+        <GeneralContainer>
           <Header {...headerProps} />
           <BodyContent {...bodyContentProps} />
-        </div>
+        </GeneralContainer>
       </NewNote>
       <ConfigPanel {...configPanelProps} />
     </>

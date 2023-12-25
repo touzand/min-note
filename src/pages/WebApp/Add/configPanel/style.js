@@ -4,8 +4,6 @@ export const ConfigPanelContainer = styled.figure`
   position: fixed;
   bottom: 0.5rem;
   right: ${props => (props.open ? '.5rem' : '-100%')};
-  //opacity: ${props => (props.open ? '1' : '0')};
-  //visibility: ${props => (props.open ? 'visible' : 'hidden')};
   margin: 0;
   color: white;
   width: 320px;

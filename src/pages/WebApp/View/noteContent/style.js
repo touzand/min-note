@@ -1,19 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const NoteContentContainer = styled.div`
   .note-content {
-    color: ${(props) => props.tc};
-    //margin:5rem;
+    color: ${props => props.tc};
   }
 
   h1 {
     line-height: 2rem;
     line-break: break-word;
-    font-size:var(--font-size-title);
-  }
-
-  span {
-    //color: whitesmoke;
+    font-size: var(--font-size-title);
   }
 
   a {
@@ -21,9 +16,9 @@ export const NoteContentContainer = styled.div`
   }
 
   .body {
-    font-size:var(--font-size-pharag);
+    font-size: var(--font-size-pharag);
     white-space: pre-wrap;
-    font-weight:400px;
+    font-weight: 400px;
   }
 
   .edit-enable {
@@ -33,45 +28,45 @@ export const NoteContentContainer = styled.div`
 
   .title {
     font-size: var(--font-size-title);
-    content: "Title";
+    content: 'Title';
     margin: 3rem 0;
     line-height: 1;
     font-weight: bold;
     margin: 21.44px 0;
     outline: none;
-    color: ${(props) => props.tc}70;
+    color: ${props => props.tc}70;
     transition: color 1s ease;
   }
 
   .title:focus {
-    color: ${(props) => props.tc};
+    color: ${props => props.tc};
   }
 
   .body:focus {
-    color: ${(props) => props.tc};
+    color: ${props => props.tc};
   }
 
   .title[contenteditable]:empty::before {
-    content: "Title";
-    color: ${(props) => props.tc}70;
+    content: 'Title';
+    color: ${props => props.tc}70;
   }
 
   .date {
-    color: ${(props) => props.tc};
+    color: ${props => props.tc};
     white-space: pre-wrap;
-    font-weight:400px;
-    font-size:var(--font-size-pharag);
+    font-weight: 400px;
+    font-size: var(--font-size-pharag);
   }
 
   .date-edit {
-    color: ${(props) => props.tc}70;
+    color: ${props => props.tc}70;
     white-space: pre-wrap;
-    font-weight:400px;
-    font-size:var(--font-size-pharag);
+    font-weight: 400px;
+    font-size: var(--font-size-pharag);
   }
 
   textarea {
-    padding:0;
+    padding: 0;
     margin: 16px 0;
     width: 100%;
     height: 49vh;
@@ -81,21 +76,21 @@ export const NoteContentContainer = styled.div`
     border: none;
     outline: none;
     font-size: var(--font-size-pharag);
-    font-family:Outfit;
-    color: ${(props) => props.tc}70;
+    font-family: Outfit;
+    color: ${props => props.tc}70;
     transition: color 1s ease;
   }
 
   textarea::placeholder {
-    color: ${(props) => props.tc}70;
+    color: ${props => props.tc}70;
   }
 
   textarea:focus {
-    color: ${(props) => props.tc};
+    color: ${props => props.tc};
   }
-textarea[contentEditable]{
-  padding:0 !important;
-}
+  textarea[contentEditable] {
+    padding: 0 !important;
+  }
 
   @media (min-width: 800px) {
     display: flex;
@@ -112,4 +107,4 @@ textarea[contentEditable]{
       //position:relative;
     }
   }
-`
+`;
