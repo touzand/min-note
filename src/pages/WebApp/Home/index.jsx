@@ -88,7 +88,6 @@ const Home = ({children}) => {
 
   return (
     <>
-      
       <Menu {...menuProps} />
       <NotesGeneralContainer>
         <BackgroundTransition
@@ -96,33 +95,18 @@ const Home = ({children}) => {
           addTransition={addTransition}
         />
         <Loader start=".5s" />
-        {searchVisible && <InputSearch {...inputSearchProps} />}
+        {
+          //{searchVisible && <InputSearch {...inputSearchProps} />}
+        }
         <Header {...headerProps} />
         <Filter {...filterProps} />
         <MasonryGrid query={query} dataLength={data.length}>
           {data.length !== 0 ? (
-            dataFilter.map(note => (
-              //[> Aqui hace falta resolver el atributo key<]
-              //[> Aqui hace falta resolver el atributo key<]
-              //[> Aqui hace falta resolver el atributo key<]
-              //[> Aqui hace falta resolver el atributo key<]
-              <Card key={note.id} {...note} />
-            ))
+            dataFilter.map(note => <Card key={note.id + 1} {...note} />)
           ) : (
             <NoNotes />
           )}
         </MasonryGrid>
-        {isMobile && (
-          <button
-            onClick={handdleAdd}
-            className="icon_button add"
-            translate="no">
-            {
-            //<span className="material_symbols_outlined">add</span>
-            }
-          </button>
-        )}
-        <div>{children}</div>
       </NotesGeneralContainer>
     </>
   );

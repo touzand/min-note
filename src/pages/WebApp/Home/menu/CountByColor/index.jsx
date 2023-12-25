@@ -31,13 +31,13 @@ const CountByColor = props => {
       </div>
       <div className="bottom">
         <SortFigure className="f5" sort={sortedColors[4]?.[0]}>
-            <h2>{sortedColors[4]?.[1]}</h2>
+          <h2>{sortedColors[4]?.[1]}</h2>
         </SortFigure>
         <SortFigure className="f6" sort={sortedColors[5]?.[0]}>
-            <h2>{sortedColors[5]?.[1]}</h2>
+          <h2>{sortedColors[5]?.[1]}</h2>
         </SortFigure>
         <SortFigure className="f7" sort={sortedColors[6]?.[0]}>
-            <h2>{sortedColors[6]?.[1]}</h2>
+          <h2>{sortedColors[6]?.[1]}</h2>
         </SortFigure>
       </div>
     </CountByColorGrid>

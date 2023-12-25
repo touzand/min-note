@@ -10,18 +10,15 @@ import {AiFillTag} from 'react-icons/ai';
 //... Context
 import {userAuth} from '../../../../contexts/AuthContext';
 //... Styles
-import {
-  BackgroundContainer,
-  ContentContainer,
-} from './style';
-
+import {BackgroundContainer, ContentContainer} from './style';
 //import Count from './Count';
 import backgroundData from '../../../../helpers/backgroundData';
 import KnowledgePanel from './knowledgePanel';
 import CountByColor from './CountByColor';
 import Buttons from './Buttons';
-import ShortcutsModal from './../modals/shortcuts';
-import TagsModal from '../modals/tags';
+import {sumCharacters} from '../../../../helpers/helpSumCharacters';
+import {sumWords} from '../../../../helpers/helpSumWords';
+import {countBgOccurrences} from '../../../../helpers/helpCountBgOccurences';
 
 const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
@@ -29,22 +26,14 @@ const Menu = props => {
   const [bgCounts, setBgCounts] = useState({});
   const [shortcutsModal, setShortcutsModal] = useState(false);
   const [tagsModal, setTagsModal] = useState(false);
-
+  const {user, DeleteAllDoc} = userAuth();
+  const navigate = useNavigate();
   const [countForKnowledge, setCountForKnowledge] = useState({
     quantity: 0,
     words: 0,
     characters: 0,
-    countByColor: {
-      //darkSalmon: 0,
-      //sandyBrown: 0,
-      //khabi: 0,
-      //lightSkyBlue: 0,
-      //gainsboro: 0,
-    },
+    countByColor: {},
   });
-
-  const {user, DeleteAllDoc} = userAuth();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (data.length != 0) {
@@ -55,77 +44,38 @@ const Menu = props => {
         characters: sumCharacters(data),
         countByColor: countBgOccurrences(data),
       }));
-
-      console.log(data);
-
-      //setBgCounts(() => countBgOccurrences(data));
-      //setWordCount(() => sumWords(data));
-      //setCharacterCount(() => sumCharacters(data));
     }
   }, [data]);
 
-  //... Falta terminar la funcionalidad de eliminar todas la notas
-  const handdleDeleteAll = async () => {
-    try {
-      await DeleteAllDoc();
-      await navigate('/');
-    } catch (err) {
-      console.error(err);
-    }
-    //setDeleteMessage(false);
-  };
-
-  const countBgOccurrences = arr => {
-    return arr.reduce((countMap, obj) => {
-      const {background_color} = obj;
-      countMap[background_color] = (countMap[background_color] || 0) + 1;
-      return countMap;
-    }, {});
-  };
-
-  function sumCharacters(arr) {
-    let sum = 0;
-
-    arr.forEach(obj => {
-      if (obj.hasOwnProperty('body') && typeof obj.body === 'string') {
-        sum += obj.body.length;
-      }
-    });
-
-    return sum;
-  }
-
-  function sumWords(arr) {
-    let sum = 0;
-
-    arr.forEach(obj => {
-      if (obj.hasOwnProperty('body') && typeof obj.body === 'string') {
-        console.log(obj.body.split(' ').length);
-        sum += obj.body.split(' ').length;
-      }
-    });
-
-    return sum;
-  }
-
   const handdleClickOnMenu = e => {
-      setMenu(false);
-      setShortcutsModal(false)
-      setTagsModal(false)
+    setMenu(false);
+    setShortcutsModal(false);
+    setTagsModal(false);
   };
+
+  //... Falta terminar la funcionalidad de eliminar todas la notas
+  //const handdleDeleteAll = async () => {
+    //try {
+      //await DeleteAllDoc();
+      //await navigate('/');
+    //} catch (err) {
+      //console.error(err);
+    //}
+    //setDeleteMessage(false);
+  //};
 
   return (
     <>
-      <BackgroundContainer onClick={handdleClickOnMenu}  menu={menu}>
+      <BackgroundContainer onClick={handdleClickOnMenu} menu={menu}>
         <ContentContainer>
           <KnowledgePanel countForKnowledge={countForKnowledge} />
           <CountByColor countForKnowledge={countForKnowledge} />
           {
-          <Buttons
-            setTagsModal={setTagsModal}
-            setShortcutsModal={setShortcutsModal}
-            setMenu={setMenu}
-          />
+            <Buttons
+              setTagsModal={setTagsModal}
+              setShortcutsModal={setShortcutsModal}
+              setMenu={setMenu}
+            />
           }
         </ContentContainer>
       </BackgroundContainer>

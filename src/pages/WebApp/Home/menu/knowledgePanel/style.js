@@ -9,7 +9,7 @@ export const KnowledgePanelContainer = styled.figure`
   display: flex;
   flex-direction: column;
   gap: 0;
-zoom:.8;
+  zoom: 0.8;
 
   * {
     padding: 0;
@@ -57,7 +57,7 @@ zoom:.8;
     border: dashed thin white;
   }
 
-p{
-  font-size:.8rem;
-}
+  p {
+    font-size: 0.8rem;
+  }
 `;
