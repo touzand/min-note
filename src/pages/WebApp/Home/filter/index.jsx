@@ -1,11 +1,10 @@
-import {FilterButton, FilterContainer} from './style';
-import {BsSearch} from 'react-icons/bs';
+import {FilterContainer, FilterButton, InputSearchBar} from './style';
 import {useNavigate} from 'react-router-dom';
-import {MdOutlinePostAdd} from 'react-icons/md';
-//import { handdleAdd } from '../../../../helpers/helpAdd';
+//React icons
+import {BsSearch} from 'react-icons/bs';
 
 const Filter = props => {
-  const {query, setQuery, data, handdleAdd} = props;
+  const {query, setQuery, handdleAdd} = props;
   const navigate = useNavigate();
 
   return (
@@ -14,7 +13,7 @@ const Filter = props => {
         <span>New</span>
       </FilterButton>
 
-      <div className="input">
+      <InputSearchBar>
         <BsSearch />
         <input
           type="text"
@@ -23,11 +22,7 @@ const Filter = props => {
           autoComplete="off"
           spellCheck="false"
         />
-      </div>
-      {
-      //<FilterButton>Tag</FilterButton>
-      //<FilterButton>Color</FilterButton>
-      }
+      </InputSearchBar>
     </FilterContainer>
   );
 };

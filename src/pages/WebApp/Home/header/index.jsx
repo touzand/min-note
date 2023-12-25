@@ -1,8 +1,6 @@
 //... React
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-//... Styled
-import {HeaderContainer} from './style';
 //... Hooks
 import useIsMobile from '../../../../hooks/useIsMobile';
 // ... Context
@@ -21,27 +19,27 @@ const Header = props => {
   const isMobile = useIsMobile(800);
 
   return (
-      <HeaderTop className={query && 'up-header'} home={true}>
-        <article
-          className={`${searchVisible ? 'up-header' : 'down-header'}`}
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            position: 'relative',
-          }}>
-          <h1>All notes</h1>
-          <div className="header-subsection">
-            <HeaderButton
-              tc={`#F6F1E9`}
-              onClick={() => setMenu(true)}
-              translate="no">
-              <CgMenuGridO />
-            </HeaderButton>
-          </div>
-        </article>
-      </HeaderTop>
+    <HeaderTop className={query && 'up-header'} home={true}>
+      <article
+        className={`${searchVisible ? 'up-header' : 'down-header'}`}
+        style={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          position: 'relative',
+        }}>
+        <h1>All notes</h1>
+        <div className="header-subsection">
+          <HeaderButton
+            tc={`#F6F1E9`}
+            onClick={() => setMenu(true)}
+            translate="no">
+            <CgMenuGridO />
+          </HeaderButton>
+        </div>
+      </article>
+    </HeaderTop>
   );
 };
 

@@ -101,7 +101,7 @@ const SignIn = () => {
               <Link to="/signup">Sign up here</Link>
             </article>
           </SignFormSubsection>
-          {isMobile ? <Background /> : ''}
+          {isMobile && <Background />}
         </SignInContainer>
       </MasterContainer>
     </>

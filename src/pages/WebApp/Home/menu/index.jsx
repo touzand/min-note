@@ -11,13 +11,8 @@ import {AiFillTag} from 'react-icons/ai';
 import {userAuth} from '../../../../contexts/AuthContext';
 //... Styles
 import {
-  Upgrade,
   BackgroundContainer,
   ContentContainer,
-  FigureColor,
-  AccountStatus,
-  Row,
-  ModalBackground,
 } from './style';
 
 //import Count from './Count';
@@ -114,27 +109,14 @@ const Menu = props => {
   }
 
   const handdleClickOnMenu = e => {
-    if (e.target.parentNode === document.querySelector('#bg-menu')) {
       setMenu(false);
       setShortcutsModal(false)
       setTagsModal(false)
-    }
   };
 
   return (
     <>
-      <BackgroundContainer menu={menu} id="bg-menu">
-        <ModalBackground onClick={handdleClickOnMenu} menu={menu}>
-          {shortcutsModal && (
-            <ShortcutsModal
-              setShortcutsModal={setShortcutsModal}
-              shortcutsModal={shortcutsModal}
-            />
-          )}
-          {tagsModal && (
-            <TagsModal setTagsModal={setTagsModal} tagsModal={tagsModal} />
-          )}
-        </ModalBackground>
+      <BackgroundContainer onClick={handdleClickOnMenu}  menu={menu}>
         <ContentContainer>
           <KnowledgePanel countForKnowledge={countForKnowledge} />
           <CountByColor countForKnowledge={countForKnowledge} />

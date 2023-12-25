@@ -102,7 +102,7 @@ const SignUp = () => {
               <Link to="/signin">Sig in here</Link>
             </article>
           </SignFormSubsection>
-          {isMobile ? <Background /> : <></>}
+          {isMobile && <Background />}
         </SignUpContainer>
       </MasterContainer>
     </>
