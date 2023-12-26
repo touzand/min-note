@@ -1,8 +1,24 @@
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
+
+const FadeUp = keyframes`
+0%{top:3rem;opacity:0;}
+100%{top:0;opacity:1;}
+`;
 
 export const NoteContentContainer = styled.div`
   .note-content {
     color: ${props => props.tc};
+    padding: 1rem;
+
+    * {
+      position: relative;
+      opacity: 0;
+      animation: ${FadeUp} 0.5s 1s ease-in-out both;
+    }
+
+    & p {
+      animation-delay: 1.5s;
+    }
   }
 
   h1 {
@@ -105,6 +121,11 @@ export const NoteContentContainer = styled.div`
       width: 700px;
       max-height: auto;
       //position:relative;
+    }
+
+    .note-content {
+      width: min(100%, var(--max-width-desktop));
+      margin: auto;
     }
   }
 `;

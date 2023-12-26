@@ -10,10 +10,6 @@ export const ViewContainer = styled.div`
   min-height: 100vh;
   width: 100%;
 
-  //*{
-  //border:solid thin red;
-  //}
-
   header {
     display: flex;
     justify-content: space-between;
@@ -27,40 +23,13 @@ export const ViewContainer = styled.div`
     }
   }
 
-  .note-content {
-    color: ${props => props.textColorContrast};
-    padding:1rem;
-
-    * {
-      position: relative;
-      opacity: 0;
-    }
-
-    * {
-      animation: ${FadeUp} 0.5s 1s ease-in-out both;
-    }
-
-    & p {
-      animation-delay: 1.5s;
-    }
-  }
-
   h1 {
     line-height: 2rem;
     line-break: break-word;
   }
 
-  span {
-    //color: whitesmoke;
-  }
-
   a {
     text-decoration: none;
-  }
-
-  .body {
-    white-space: pre-wrap;
-    font-size: var(--font-size-pharag);
   }
 
   .edit-enable {
@@ -85,24 +54,8 @@ export const ViewContainer = styled.div`
     color: ${props => props.tc};
   }
 
-  .body:focus {
-    color: ${props => props.tc};
-  }
-
   .title[contenteditable]:empty::before {
     content: 'Title';
-    color: ${props => props.tc}70;
-  }
-
-  .date {
-    font-size:1rem;
-    color: ${props => props.tc};
-    display: block;
-    text-decoration:underline;
-    //border-bottom:thin solid ;
-  }
-
-  .date-edit {
     color: ${props => props.tc}70;
   }
 
@@ -136,16 +89,43 @@ export const ViewContainer = styled.div`
     header {
       justify-content: space-between;
     }
+  }
+`;
 
-    .general-container {
-      //max-height: auto;
-      //position:relative;
-    }
+export const NoteContentContainer = styled.div`
+  color: ${props => props.textColorContrast};
+  padding: 1rem;
 
-    .note-content {
-      width: min(100%, var(--max-width-desktop));
-      margin: auto;
-    }
+  * {
+    position: relative;
+    opacity: 0;
+    animation: ${FadeUp} 0.5s 1s ease-in-out both;
   }
 
+  & p {
+    animation-delay: 1.5s;
+  }
+
+  @media (min-width: 800px) {
+    width: min(100%, var(--max-width-desktop));
+    margin: auto;
+  }
+`;
+
+export const Date = styled.span`
+  font-size: var(--font-size-pharag);
+  color: ${props => props.tc};
+  display: block;
+  text-decoration: underline;
+  text-align: ${props => props.textAlign};
+`;
+
+export const Body = styled.p`
+  white-space: pre-wrap;
+  font-size: var(--font-size-pharag);
+  text-align: ${props => props.textAlign};
+
+  &:focus {
+    color: ${props => props.tc};
+  }
 `;

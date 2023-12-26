@@ -7,7 +7,7 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import Loader from '../../../components/Loader';
 import {useNavigate} from 'react-router-dom';
-import {ViewContainer} from './style';
+import {Body, Date, NoteContentContainer, ViewContainer} from './style';
 import OptionMessage from '../../../components/OptionMessage';
 import Notification from '../../../components/Notification';
 import Header from './header';
@@ -38,7 +38,7 @@ const View = () => {
   }, []);
 
   const handdleUpdate = async () => {
-    console.log(noteContent)
+    console.log(noteContent);
     await UpdateDoc(
       user.uid,
       id,
@@ -49,9 +49,9 @@ const View = () => {
     setSuccessNotification(true);
 
     setTimeout(() => {
-      setSuccessNotification(false)
-    }, 2000)
-  }
+      setSuccessNotification(false);
+    }, 2000);
+  };
 
   const handdleDelete = async () => {
     try {
@@ -63,31 +63,20 @@ const View = () => {
     setDeleteMessage(false);
   };
 
-  useEffect(() => {
-    (() => {
-      if (activeEdit) {
-        //document.querySelector('.title').textContent = noteContent.title
-          //? title
-          //: data.title;
-      } else {
-        return;
-      }
-    })();
-  }, [activeEdit]);
-
   return (
     <ViewContainer
       backgroundColor={noteContent.background_color}
       textColorContrast={noteContent.text_color_contrast}>
-      <Loader start=".5s" />
+      {!data && <Loader start="5s" />}
+
       {deleteMessage && (
         <OptionMessage
-          message="Are you sure that do u wanna delete this note?"
+          message="Are you sure that do you want to delete this note?"
           action={handdleDelete}
           setState={setDeleteMessage}
         />
       )}
-      <div className="general-container" style={{width: '100vw'}}>
+      <div style={{width: '100vw'}}>
         {successNotification && (
           <Notification final="success">Note updated successfully</Notification>
         )}
@@ -102,26 +91,22 @@ const View = () => {
           <NoteContent
             noteContent={noteContent}
             setNoteContent={setNoteContent}
-            //setTitle={setTitle}
-            //setBody={setBody}
-
             activeEdit={activeEdit}
           />
         ) : (
-          <div className="note-content">
+          <NoteContentContainer
+            textColorContrast={noteContent.text_color_contrast}>
             <Title
               content={title ?? noteContent.title}
               editable={false}
               textAlign={noteContent.text_align}
               noteContent={noteContent}
             />
-            <span className="date" style={{textAlign: noteContent.text_align}}>
-              {noteContent.date}
-            </span>
-            <p className="body" style={{textAlign: noteContent.text_align}}>
+            <Date textAlign={noteContent.text_align}>{noteContent.date}</Date>
+            <Body textAlign={noteContent.text_align}>
               {body ? body : noteContent.body}
-            </p>
-          </div>
+            </Body>
+          </NoteContentContainer>
         )}
       </div>
     </ViewContainer>

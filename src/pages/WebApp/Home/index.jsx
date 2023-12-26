@@ -94,7 +94,6 @@ const Home = ({children}) => {
           id="add_background_transition"
           addTransition={addTransition}
         />
-        <Loader start=".5s" />
         {
           //{searchVisible && <InputSearch {...inputSearchProps} />}
         }
