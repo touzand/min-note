@@ -16,9 +16,9 @@ import backgroundData from '../../../../helpers/backgroundData';
 import KnowledgePanel from './knowledgePanel';
 import CountByColor from './CountByColor';
 import Buttons from './Buttons';
-import {sumCharacters} from '../../../../helpers/helpSumCharacters';
 import {sumWords} from '../../../../helpers/helpSumWords';
 import {countBgOccurrences} from '../../../../helpers/helpCountBgOccurences';
+import { sumCharacters } from '../../../../helpers/helpSumCharacters';
 
 const Menu = props => {
   const {setMenu, menu, data, handdleAdd} = props;
