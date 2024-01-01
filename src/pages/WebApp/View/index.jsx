@@ -14,6 +14,7 @@ import Header from './header';
 import NoteContent from './noteContent';
 import {Hr} from '../../../styled-components';
 import Title from '../../../components/Title';
+import formatDate from '../../../helpers/helpFormatDate';
 
 const View = () => {
   const [data, setData] = useState([]);
@@ -23,6 +24,8 @@ const View = () => {
   const [activeEdit, setActiveEdit] = useState(false);
   const [title, setTitle] = useState(noteContent.title);
   const [body, setBody] = useState('');
+  const [lastUpdate, setLastUpdate] = useState(noteContent.last_update);
+  const [lastUp, setLastUp] = useState();
   const [deleteMessage, setDeleteMessage] = useState(false);
   const [successNotification, setSuccessNotification] = useState(false);
   const navigate = useNavigate();
@@ -37,14 +40,35 @@ const View = () => {
     AddDoc();
   }, []);
 
+  useEffect(() => {
+    console.log(noteContent.last_update)
+  }, [noteContent.last_update]);
+
+  const datePush = () => {
+    const newDate = formatDate(new window.Date());
+
+    if (noteContent.last_update.includes(newDate)) {
+      const newLastUpdate = noteContent.last_update.filter(
+        date => date !== newDate,
+      );
+      newLastUpdate.push(newDate);
+      noteContent.last_update = newLastUpdate;
+    } else {
+      noteContent.last_update.push(newDate);
+    }
+  };
+
   const handdleUpdate = async () => {
-    console.log(noteContent);
+    await datePush();
+
     await UpdateDoc(
       user.uid,
       id,
-      body ? body : noteContent.body,
       title ? title : noteContent.title,
+      body ? body : noteContent.body,
+      lastUpdate ? lastUpdate : noteContent.last_update,
     );
+
     setActiveEdit(!activeEdit);
     setSuccessNotification(true);
 
@@ -68,7 +92,6 @@ const View = () => {
       backgroundColor={noteContent.background_color}
       textColorContrast={noteContent.text_color_contrast}>
       {!data && <Loader start="5s" />}
-
       {deleteMessage && (
         <OptionMessage
           message="Are you sure that do you want to delete this note?"
@@ -102,7 +125,9 @@ const View = () => {
               textAlign={noteContent.text_align}
               noteContent={noteContent}
             />
-            <Date textAlign={noteContent.text_align}>{noteContent.date}</Date>
+            <Date textAlign={noteContent.text_align}>
+              {noteContent.last_update && noteContent.last_update[noteContent.last_update.length - 1]}
+            </Date>
             <Body textAlign={noteContent.text_align}>
               {body ? body : noteContent.body}
             </Body>

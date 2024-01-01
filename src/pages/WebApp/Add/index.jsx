@@ -18,7 +18,7 @@ const New = () => {
   const navigate = useNavigate();
   const [errorNotification, setErrorNotification] = useState(false);
   const [noteContent, setNoteContent] = useState({
-    date: '',
+    last_update: [],
     title: '',
     body: '',
     background_color: '#DDDDDD',
@@ -28,7 +28,7 @@ const New = () => {
 
   const handdleAddDoc = async () => {
     if (noteContent.title && noteContent.body) {
-      noteContent.date = formatDate(new Date());
+      noteContent.last_update.push(formatDate(new Date()));
       await AddDoc(noteContent);
       navigate('/');
     } else {
