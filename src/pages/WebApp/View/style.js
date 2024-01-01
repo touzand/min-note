@@ -19,7 +19,7 @@ export const ViewContainer = styled.div`
 
     div {
       display: flex;
-      gap: 0.25rem;
+      //gap: 0.25rem;
     }
   }
 
@@ -109,6 +109,7 @@ export const NoteContentContainer = styled.div`
   @media (min-width: 800px) {
     width: min(100%, var(--max-width-desktop));
     margin: auto;
+  padding: 0rem;
   }
 `;
 

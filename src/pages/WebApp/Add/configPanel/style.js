@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const ConfigPanelContainer = styled.figure`
   position: fixed;
-  bottom: 0.5rem;
-  right: ${props => (props.open ? '.5rem' : '-100%')};
+  bottom: 1rem;
+  right: ${props => (props.open ? '1rem' : '-100%')};
   margin: 0;
   color: white;
   width: 320px;
@@ -11,11 +11,23 @@ export const ConfigPanelContainer = styled.figure`
   flex-direction: column;
   gap: 0.5rem;
   transition: all 0.5s ease-in-out;
-zoom:.9;
+  zoom: 0.9;
 
   * {
     margin: 0;
   }
+
+@media (max-width: 500px) {
+  width:100%;
+  gap:0;
+  right:0rem;
+  bottom: ${props => (props.open ? '0rem' : '-100%')};
+
+  >*{
+    border-radius:0 !important;
+    border-top:solid thin #141414;
+  }
+}
 `;
 
 export const MainConfig = styled.main`
@@ -35,18 +47,18 @@ export const MainConfig = styled.main`
     gap: 0.25rem;
   }
 
-  &>div:nth-child(3){
-  margin-top:1rem;
-    border:solid thin #131313;
-}
+  & > div:nth-child(3) {
+    margin-top: 1rem;
+    border: solid thin #131313;
+  }
 
-figure:nth-child(odd){
-  background-color:#131313;
-}
+  figure:nth-child(odd) {
+    background-color: #131313;
+  }
 
-figure{
-  padding:.5rem;
-}
+  figure {
+    padding: 0.5rem;
+  }
 `;
 
 export const BackgroundConfig = styled.article`

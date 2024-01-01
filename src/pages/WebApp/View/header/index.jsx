@@ -6,7 +6,7 @@ import {BiArrowBack, BiFontFamily} from 'react-icons/bi';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {FiEdit} from 'react-icons/fi';
 import {HiOutlineSave} from 'react-icons/hi';
-import { MdHistoryEdu } from "react-icons/md";
+import { RiFileList3Line } from "react-icons/ri";
 
 const Header = props => {
   return (
@@ -28,7 +28,7 @@ const Header = props => {
               props.setHistoryLastUpdateOpen(!props.historyLastUpdateOpen)
             }}
             translate="no">
-            <MdHistoryEdu/>
+            <RiFileList3Line/>
           </IconButtom>
 
           <IconButtom
