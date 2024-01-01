@@ -74,7 +74,7 @@ export const AuthContextProvider = ({children}) => {
     return getDocs(collection(db, user.uid));
   };
 
-  const UpdateDoc = (coll, docu, body, title,last_update) => {
+  const UpdateDoc = (coll, docu, title, body,last_update) => {
     const docRef = doc(db, coll, docu);
     console.log(docRef)
 
