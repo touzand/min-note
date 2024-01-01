@@ -109,7 +109,6 @@ export const NoteContentContainer = styled.div`
   @media (min-width: 800px) {
     width: min(100%, var(--max-width-desktop));
     margin: auto;
-  padding: 0rem;
   }
 `;
 
@@ -117,8 +116,12 @@ export const Date = styled.span`
   font-size: var(--font-size-pharag);
   color: ${props => props.tc};
   display: block;
-  text-decoration: underline;
   text-align: ${props => props.textAlign};
+color: ${props=>props.backgroundColor};
+background-color: ${props=>props.textColorContrast};
+  display: inline;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
 `;
 
 export const Body = styled.p`

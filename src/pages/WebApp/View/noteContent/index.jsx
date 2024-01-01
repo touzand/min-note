@@ -4,7 +4,7 @@ import {NoteContentContainer} from './style';
 
 const NoteContent = props => {
   return (
-    <NoteContentContainer noteContent={props.noteContent}>
+    <NoteContentContainer noteContent={props.noteContent} activeEdit={props.activeEdit}>
       <div className="note-content">
         <Title
           editable={true}

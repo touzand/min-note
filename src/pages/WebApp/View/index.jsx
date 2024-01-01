@@ -94,17 +94,19 @@ const View = () => {
       backgroundColor={noteContent.background_color}
       textColorContrast={noteContent.text_color_contrast}>
       {!data && <Loader start="5s" />}
-        <ConfigPanelContainer open={historyLastUpdateOpen}>
-          <MainConfig>
-            <h3>last update history</h3>
-            <p>Here you can see the date when you do any change of this note</p>
-              <div>
-            {
-              noteContent.last_update && noteContent.last_update.slice().reverse().map(dateItem=><figure>{dateItem}</figure>)
-            }
-                </div>
-          </MainConfig>
-        </ConfigPanelContainer>
+      <ConfigPanelContainer open={historyLastUpdateOpen}>
+        <MainConfig>
+          <h3>last update history</h3>
+          <p>Here you can see the date when you do any change of this note</p>
+          <div>
+            {noteContent.last_update &&
+              noteContent.last_update
+                .slice()
+                .reverse()
+                .map(dateItem => <figure>{dateItem}</figure>)}
+          </div>
+        </MainConfig>
+      </ConfigPanelContainer>
       {deleteMessage && (
         <OptionMessage
           message="Are you sure that do you want to delete this note?"
@@ -140,7 +142,10 @@ const View = () => {
               textAlign={noteContent.text_align}
               noteContent={noteContent}
             />
-            <Date textAlign={noteContent.text_align}>
+            <Date
+              textAlign={noteContent.text_align}
+              textColorContrast={noteContent.text_color_contrast}
+              backgroundColor={noteContent.background_color}>
               {noteContent.last_update &&
                 noteContent.last_update[noteContent.last_update.length - 1]}
             </Date>

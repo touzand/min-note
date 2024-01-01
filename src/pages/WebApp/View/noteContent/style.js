@@ -1,4 +1,4 @@
-import styled,{keyframes} from 'styled-components';
+import styled, {css, keyframes} from 'styled-components';
 
 const FadeUp = keyframes`
 0%{top:3rem;opacity:0;}
@@ -8,12 +8,15 @@ const FadeUp = keyframes`
 export const NoteContentContainer = styled.div`
   .note-content {
     color: ${props => props.tc};
-    padding: 1rem;
+    padding:1rem;
 
     * {
       position: relative;
-      opacity: 0;
-      animation: ${FadeUp} 0.5s 1s ease-in-out both;
+      ${props =>
+        !props.activeEdit &&
+        css`
+          animation: ${FadeUp} 0.5s 1s ease-in-out both
+        `}
     }
 
     & p {
@@ -67,19 +70,19 @@ export const NoteContentContainer = styled.div`
     color: ${props => props.tc}70;
   }
 
-  .date {
-    color: ${props => props.tc};
-    white-space: pre-wrap;
-    font-weight: 400px;
-    font-size: var(--font-size-pharag);
-  }
+  //.date {
+    //color: ${props => props.tc};
+    //white-space: pre-wrap;
+    //font-weight: 400px;
+    //font-size: var(--font-size-pharag);
+  //}
 
-  .date-edit {
-    color: ${props => props.tc}70;
-    white-space: pre-wrap;
-    font-weight: 400px;
-    font-size: var(--font-size-pharag);
-  }
+  //.date-edit {
+    //color: ${props => props.tc}70;
+    //white-space: pre-wrap;
+    //font-weight: 400px;
+    //font-size: var(--font-size-pharag);
+  //}
 
   textarea {
     padding: 0;
@@ -126,6 +129,7 @@ export const NoteContentContainer = styled.div`
     .note-content {
       width: min(100%, var(--max-width-desktop));
       margin: auto;
+      padding:0;
     }
   }
 `;
