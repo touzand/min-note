@@ -12,7 +12,7 @@ const Card = props => {
         {
           //<Hr textColorContrast=" #0009" />
         }
-        <span>{last_update[0]}</span>
+        <span>{last_update[last_update.length - 1]}</span>
       </NoteContaier>
     </Link>
   );

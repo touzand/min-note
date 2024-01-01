@@ -15,6 +15,7 @@ import NoteContent from './noteContent';
 import {Hr} from '../../../styled-components';
 import Title from '../../../components/Title';
 import formatDate from '../../../helpers/helpFormatDate';
+import {ConfigPanelContainer, MainConfig} from '../Add/configPanel/style';
 
 const View = () => {
   const [data, setData] = useState([]);
@@ -28,6 +29,7 @@ const View = () => {
   const [lastUp, setLastUp] = useState();
   const [deleteMessage, setDeleteMessage] = useState(false);
   const [successNotification, setSuccessNotification] = useState(false);
+  const [historyLastUpdateOpen, setHistoryLastUpdateOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const View = () => {
   }, []);
 
   useEffect(() => {
-    console.log(noteContent.last_update)
+    console.log(noteContent.last_update);
   }, [noteContent.last_update]);
 
   const datePush = () => {
@@ -92,6 +94,17 @@ const View = () => {
       backgroundColor={noteContent.background_color}
       textColorContrast={noteContent.text_color_contrast}>
       {!data && <Loader start="5s" />}
+        <ConfigPanelContainer open={historyLastUpdateOpen}>
+          <MainConfig>
+            <h3>last update history</h3>
+            <p>Here you can see the date when you do any change of this note</p>
+              <div>
+            {
+              noteContent.last_update && noteContent.last_update.slice().reverse().map(dateItem=><figure>{dateItem}</figure>)
+            }
+                </div>
+          </MainConfig>
+        </ConfigPanelContainer>
       {deleteMessage && (
         <OptionMessage
           message="Are you sure that do you want to delete this note?"
@@ -109,6 +122,8 @@ const View = () => {
           activeEdit={activeEdit}
           noteContent={noteContent}
           setActiveEdit={setActiveEdit}
+          setHistoryLastUpdateOpen={setHistoryLastUpdateOpen}
+          historyLastUpdateOpen={historyLastUpdateOpen}
         />
         {activeEdit ? (
           <NoteContent
@@ -126,7 +141,8 @@ const View = () => {
               noteContent={noteContent}
             />
             <Date textAlign={noteContent.text_align}>
-              {noteContent.last_update && noteContent.last_update[noteContent.last_update.length - 1]}
+              {noteContent.last_update &&
+                noteContent.last_update[noteContent.last_update.length - 1]}
             </Date>
             <Body textAlign={noteContent.text_align}>
               {body ? body : noteContent.body}

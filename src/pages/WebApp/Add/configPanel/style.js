@@ -34,6 +34,19 @@ export const MainConfig = styled.main`
     flex-direction: column;
     gap: 0.25rem;
   }
+
+  &>div:nth-child(3){
+  margin-top:1rem;
+    border:solid thin #131313;
+}
+
+figure:nth-child(odd){
+  background-color:#131313;
+}
+
+figure{
+  padding:.5rem;
+}
 `;
 
 export const BackgroundConfig = styled.article`
