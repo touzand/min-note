@@ -7,6 +7,7 @@ const Title = props => {
   const titu = useRef(content);
 
   const handdleUpdate = e => {
+      console.log(e.target.innerText);
     if (e.keyCode === 46 || e.keyCode === 8) {
       console.log(e.target.textContent);
       setNoteContent(prevState => ({
@@ -14,7 +15,7 @@ const Title = props => {
         title: e.target.textContent,
       }));
     } else {
-      console.log(e.target.textContent);
+      console.log(e.target);
       setNoteContent(prevState => ({
         ...prevState,
         title: e.target.textContent,
@@ -30,8 +31,10 @@ const Title = props => {
       contentEditable={editable}
       suppressContentEditableWarning={true}
       textAlign={noteContent.text_align}
-      onKeyDown={e => handdleUpdate(e)}>
-      {content ? (titu.current ? titu.current : content) : ''}
+      onKeyUp={e => handdleUpdate(e)}>
+      {
+      content ? (titu.current ? titu.current : content) : ''
+      }
       {console.log(content)}
     </TitleContainer>
   );
