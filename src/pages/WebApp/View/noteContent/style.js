@@ -84,32 +84,32 @@ export const NoteContentContainer = styled.div`
     //font-size: var(--font-size-pharag);
   //}
 
-  textarea {
-    padding: 0;
-    margin: 16px 0;
-    width: 100%;
-    height: 49vh;
-    resize: none;
-    padding-bottom: 2rem;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: var(--font-size-pharag);
-    font-family: Outfit;
-    color: ${props => props.tc}70;
-    transition: color 1s ease;
-  }
+  //textarea {
+    //padding: 0;
+    //margin: 16px 0;
+    //width: 100%;
+    //height: 49vh;
+    //resize: none;
+    //padding-bottom: 2rem;
+    //background-color: transparent;
+    //border: none;
+    //outline: none;
+    //font-size: var(--font-size-pharag);
+    //font-family: Outfit;
+    //color: ${props => props.tc}70;
+    //transition: color 1s ease;
+  //}
 
-  textarea::placeholder {
-    color: ${props => props.tc}70;
-  }
+  //textarea::placeholder {
+    //color: ${props => props.tc}70;
+  //}
 
-  textarea:focus {
-    color: ${props => props.tc};
-  }
-  textarea[contentEditable] {
-    padding: 0 !important;
-  }
+  //textarea:focus {
+    //color: ${props => props.tc};
+  //}
+  //textarea[contentEditable] {
+    //padding: 0 !important;
+  //}
 
   @media (min-width: 800px) {
     display: flex;

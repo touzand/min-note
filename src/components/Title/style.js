@@ -5,7 +5,8 @@ const FadeUp = keyframes`
 100%{top:0;opacity:1;}
 `;
 
-export const TitleContainer = styled.blockquote`
+export const TitleContainer = styled.textarea`
+  background-color: transparent;
   border: none;
   outline: none;
   width: 100%;
@@ -23,6 +24,7 @@ export const TitleContainer = styled.blockquote`
       ? props.textColorContrast + 70
       : props.textColorContrast};
   transition: color 1s ease;
+  font-family: Outfit;
 
   &:focus {
     color: ${props => props.textColorContrast};

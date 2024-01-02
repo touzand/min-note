@@ -59,27 +59,27 @@ export const ViewContainer = styled.div`
     color: ${props => props.tc}70;
   }
 
-  textarea {
-    margin: 16px 0;
-    width: 100%;
-    height: 49vh;
-    resize: none;
-    padding-bottom: 2rem;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: var(--font-size-pharag);
-    color: ${props => props.tc}70;
-    transition: color 1s ease;
-  }
+  //textarea {
+    //margin: 16px 0;
+    //width: 100%;
+    //height: 49vh;
+    //resize: none;
+    //padding-bottom: 2rem;
+    //background-color: transparent;
+    //border: none;
+    //outline: none;
+    //font-size: var(--font-size-pharag);
+    //color: ${props => props.tc}70;
+    //transition: color 1s ease;
+  //}
 
-  textarea::placeholder {
-    color: ${props => props.tc}70;
-  }
+  //textarea::placeholder {
+    //color: ${props => props.tc}70;
+  //}
 
-  textarea:focus {
-    color: ${props => props.tc};
-  }
+  //textarea:focus {
+    //color: ${props => props.tc};
+  //}
 
   @media (min-width: 800px) {
     display: flex;
