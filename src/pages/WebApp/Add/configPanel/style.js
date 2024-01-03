@@ -12,6 +12,7 @@ export const ConfigPanelContainer = styled.figure`
   gap: 0.5rem;
   transition: all 0.5s ease-in-out;
   zoom: 0.9;
+z-index:9;
 
   * {
     margin: 0;

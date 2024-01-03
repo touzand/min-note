@@ -13,6 +13,7 @@ const BodyContent = props => {
           spellCheck="false"
           setNoteContent={setNoteContent}
           noteContent={noteContent}
+          placeholder="Title"
         />
         <TextArea
           placeholder="Type something..."

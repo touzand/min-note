@@ -7,7 +7,13 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import Loader from '../../../components/Loader';
 import {useNavigate} from 'react-router-dom';
-import {Body, Date, NoteContentContainer, ViewContainer} from './style';
+import {
+  BodyProp,
+  Date,
+  NoteContentContainer,
+  TitleProp,
+  ViewContainer,
+} from './style';
 import OptionMessage from '../../../components/OptionMessage';
 import Notification from '../../../components/Notification';
 import Header from './header';
@@ -136,12 +142,9 @@ const View = () => {
         ) : (
           <NoteContentContainer
             textColorContrast={noteContent.text_color_contrast}>
-            <Title
-              content={title ?? noteContent.title}
-              editable={false}
-              textAlign={noteContent.text_align}
-              noteContent={noteContent}
-            />
+            <TitleProp textAlign={noteContent.text_align}>
+              {title ?? noteContent.title}
+            </TitleProp>
             <Date
               textAlign={noteContent.text_align}
               textColorContrast={noteContent.text_color_contrast}
@@ -149,9 +152,9 @@ const View = () => {
               {noteContent.last_update &&
                 noteContent.last_update[noteContent.last_update.length - 1]}
             </Date>
-            <Body textAlign={noteContent.text_align}>
+            <BodyProp textAlign={noteContent.text_align}>
               {body ? body : noteContent.body}
-            </Body>
+            </BodyProp>
           </NoteContentContainer>
         )}
       </div>

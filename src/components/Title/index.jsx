@@ -1,10 +1,10 @@
-import React,{useRef,useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {TitleContainer} from './style';
 
-const MIN_TEXTAREA_HEIGHT = 32;
 
 const Title = props => {
-  const {setNoteContent, noteContent, editable, content} = props;
+  const {setNoteContent, noteContent, editable, content,placeholder} = props;
+const MIN_TEXTAREA_HEIGHT = 32;
 
   const titu = useRef(content);
 
@@ -22,47 +22,23 @@ const Title = props => {
     )}px`;
   }, [value]);
 
-  const handdleUpdate = e => {
-      console.log(e.target.innerText.slice(-1));
-    if (e.keyCode === 46 || e.keyCode === 8) {
-      console.log(e.target.textContent);
-      setNoteContent(prevState => ({
-        ...prevState,
-        title: e.target.textContent,
-      }));
-    } else {
-      console.log(e.target);
-      setNoteContent(prevState => ({
-        ...prevState,
-        title: e.target.textContent,
-      }));
-    }
-  };
-
   return (
     <TitleContainer
-        onChange={handleValue}
-      spellCheck="false"
-      role="textbox"
-        ref={textareaRef}
-      textColorContrast={noteContent.text_color_contrast}
       contentEditable={editable}
-      suppressContentEditableWarning={true}
+      onChange={handleValue}
+      spellCheck="false"
+      ref={textareaRef}
+        placeholder={placeholder}
+      textColorContrast={noteContent.text_color_contrast}
       textAlign={noteContent.text_align}
       defaultValue={content}
-        style={{
-          minHeight: MIN_TEXTAREA_HEIGHT,
-          resize: 'none',
-        }}
-        onKeyUp={e => {
-          setNoteContent(prevState => ({...prevState, title: value}));
-        }}
-    >
-      {
-      //content ? (titu.current ? titu.current : content) : ''
-      }
-      {console.log(content)}
-    </TitleContainer>
+      style={{
+        minHeight: MIN_TEXTAREA_HEIGHT,
+        resize: 'none',
+      }}
+      onKeyUp={e => {
+        setNoteContent(prevState => ({...prevState, title: value}));
+      }}/>
   );
 };
 

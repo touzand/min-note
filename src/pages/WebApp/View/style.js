@@ -117,14 +117,15 @@ export const Date = styled.span`
   color: ${props => props.tc};
   display: block;
   text-align: ${props => props.textAlign};
-color: ${props=>props.backgroundColor};
-background-color: ${props=>props.textColorContrast};
-  display: inline;
+  color: ${props => props.backgroundColor};
+  background-color: ${props => props.textColorContrast};
+  display: inline-block;
   padding: 0.25rem;
+margin-top:1rem;
   border-radius: 0.25rem;
 `;
 
-export const Body = styled.p`
+export const BodyProp = styled.p`
   white-space: pre-wrap;
   font-size: var(--font-size-pharag);
   text-align: ${props => props.textAlign};
@@ -132,4 +133,29 @@ export const Body = styled.p`
   &:focus {
     color: ${props => props.tc};
   }
+`;
+
+export const TitleProp = styled.p`
+  text-align: ${props => props.textAlign && props.textAlign};
+  line-height: 1;
+  font-size: var(--font-size-title);
+  font-weight: bold;
+  line-height: 1;
+  margin: 0.5rem 0;
+  color: ${props =>
+    props.contentEditable
+      ? props.textColorContrast + 70
+      : props.textColorContrast};
+  transition: color 1s ease;
+  font-family: Outfit;
+      animation-delay: 1s !important;
+
+  &:focus {
+    color: ${props => props.textColorContrast};
+  }
+
+  @media (max-width: 800px) {
+    font-size: 2.5rem !important;
+  }
+
 `;

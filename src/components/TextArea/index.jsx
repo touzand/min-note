@@ -31,21 +31,21 @@ const TextArea = props => {
     <>
       <TextAreaComponent
         onChange={handleValue}
-        placeholder={placeholder}
-        ref={textareaRef}
         spellCheck={spellCheck}
-        onKeyUp={e => {
-          setNoteContent(prevState => ({...prevState, body: value}));
-        }}
+        ref={textareaRef}
+        placeholder={placeholder}
         textColorContrast={
           textColorContrast || props.noteContent.text_color_contrast
         }
+        textAlign={textAlign || props.noteContent.text_align}
+        defaultValue={defaultValue || value}
         style={{
           minHeight: MIN_TEXTAREA_HEIGHT,
           resize: 'none',
         }}
-        defaultValue={defaultValue || value}
-        textAlign={textAlign || props.noteContent.text_align}
+        onKeyUp={e => {
+          setNoteContent(prevState => ({...prevState, body: value}));
+        }}
       />
     </>
   );

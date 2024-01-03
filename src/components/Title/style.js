@@ -12,7 +12,7 @@ export const TitleContainer = styled.textarea`
   width: 100%;
   display: block;
   resize: none;
-  text-align: ${props => props.textAlign && props.textAlign};
+padding:0;
 
   line-height: 1;
   font-size: var(--font-size-title);
