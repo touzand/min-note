@@ -30,7 +30,7 @@ const New = () => {
     if (noteContent.title && noteContent.body) {
       noteContent.last_update.push(formatDate(new Date()));
       await AddDoc(noteContent);
-      navigate('/');
+      await navigate('/');
     } else {
       setErrorNotification(true);
 
